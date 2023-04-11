@@ -14,6 +14,62 @@ html {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
+.container-lg {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .container-lg {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-lg {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-lg {
+    width: 540px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-lg {
+    width: 850px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg {
+    width: 1200px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-lg {
+    width: 1350px;
+    max-width: 100%;
+  }
+}
 
 .container {
   position: relative;

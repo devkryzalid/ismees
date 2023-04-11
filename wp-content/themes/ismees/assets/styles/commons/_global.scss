@@ -3,6 +3,7 @@ html {
 }
 
 body{
+	background-color: $mainBG;
 
 	&.no-scroll{
 		overflow: hidden;
@@ -11,45 +12,47 @@ body{
 	}
 }
 
-h1{
-	@include fontSize(48, 56);
-}
+// Mixin template : $font-family, $font-style, $font-weight, $min-font-size, $max-font-size, $min-line-height, $max-line-height, $text-transform: null, $letter-spacing: null, $color: $darkBlue
 
-h2{
-	@include fontSize(36, 45);
-}
-
-h3{
-	@include fontSize(22, 28);
-}
-
-h4{
-	@include fontSize(20, 24);
-}
-
-h5{
-	@include fontSize(18, 22);
-}
-
-p{
-	@include fontSize(16, 25);
-}
-
-@media (max-width: $mobile){
-	h1{
-		@include fontSize(32, 38);
-	}
-	
-	h2{
-		@include fontSize(24, 29);
-	}
-	
-	h3{
-		@include fontSize(22, 27);
+h1 {	
+	&.large {
+		@include responsive-font($primaryFont, normal, 700, 52px, 120px, 52px, 140px, uppercase);
 	}
 
-	p{
-		@include fontSize(14,22);
+	&.small {
+		@include responsive-font($primaryFont, normal, 700, 40px, 80px, 45px, 80px, null, -0.03em);
+	}
+}
+
+h2 {
+	@include responsive-font($primaryFont, normal, 700, 32px, 58px, 36px, 60px, uppercase);
+
+	&.small {
+		@include responsive-font($primaryFont, normal, 700, 42px, 42px, 48px, 48px, uppercase, -0.02em);
+	}
+}
+
+h3 {
+	@include responsive-font($primaryFont, normal, 400, 25px, 37px, 26px, 40px);
+
+	&.small {
+		@include responsive-font($primaryFont, normal, 700, 24px, 24px, 28px, 28px, uppercase);
+	}
+}
+
+h4 {
+	@include responsive-font($primaryFont, normal, 600, 20px, 24px, 28px, 28px);
+}
+
+h5 {
+	@include responsive-font($primaryFont, normal, 500, 16px, 16px, 24px, 24px);
+}
+  
+p {
+	@include responsive-font($secondaryFont, normal, 400, 18px, 21px, 26px, 33px, null, -0.01em);
+
+	&.small {
+		@include responsive-font($secondaryFont, normal, 400, 16px, 18px, 22px, 25px, null, -0.01em);
 	}
 }
 

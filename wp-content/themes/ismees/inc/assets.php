@@ -9,7 +9,7 @@
 function adding_scripts_and_styles() {
 
 	// -- Main JS
-	wp_enqueue_script( 'site-main', get_template_directory_uri() . '/dist/scripts/main.min.js', array(), true );
+	wp_enqueue_script( 'site-main', get_template_directory_uri() . '/dist/scripts/app.js', array(), true );
 	// -- Pages
 	/*
 	switch ( $template ) {

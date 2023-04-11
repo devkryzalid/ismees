@@ -1,4 +1,50 @@
-
 <footer class="footer">
-    FOOTER
+        <div class="container-lg">
+            <div class="main-footer">
+                <div class="main-footer__column">
+                    <p class="main-footer__title">{{ __('Nous joindre', 'ismees') }}</p>
+                    <a class="mail" href="mailto:{{ options.mail }}">{{ options.mail }}</a>
+                    {% include "partials/socials.twig" %}
+                </div>
+                {% for item in menu_footer.items %}
+                    <div class="main-footer__column">
+                        <p class="main-footer__title">{{ item.title }}</p>
+                        {% if item.children %}
+                            <ul class="child-menu">
+                                {% for subItem in item.children %}
+                                    <li class="{{ subItem.classes | join(' ') }} footer-subItem">
+                                        <a target="{{ subItem.target }}" href="{{ subItem.link }}">{{ subItem.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="sub-footer">
+                <div class="partners-ctn">
+                    <div class="partner">
+                        <p class="partner-text">{{ __('En partenariat avec', 'ismees') }}</p>
+                        <a href="https://www.google.com/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-enseignement-quebec.svg" alt="" /></a>
+                    </div>
+                    <div class="partner">
+                        <p class="partner-text">{{ __('Réalisé par', 'ismees') }}</p>
+                        <a href="https://www.google.ca/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-ismees.svg" alt=""/></a>
+                    </div>
+                    <div class="partner">
+                        <a href="https://www.google.ca/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-universite-quebec.svg" alt=""/></a>
+                    </div>
+                </div>
+                <div class="sub-footer-infos">
+                    <ul class="footer-links">
+                        {% for item in submenu_footer.items %}
+                            <li class="footer-link">
+                                <a href="{{ item.url }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <p class="creator">{{ __('Site web par', 'ismees') }}<a href="https://www.kryzalid.net/" target="_blank" class="bold">{{ __('Kryzalid', 'ismees') }}</a></p>
+                </div>
+            </div>
+        </div>
 </footer>

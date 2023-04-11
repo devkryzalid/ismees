@@ -1,3 +1,26 @@
+// This function calculate the clamp() with pixel values but WIHOUT px.
+// Here, the screen range is set by default between 375px and 1400px.
+@function clamp-calc($min-value, $max-value, $min-width: 375, $max-width: 1400) {
+  $min-value-rem: $min-value / 16;
+  $max-value-rem: $max-value / 16;
+  $slope: ($max-value - $min-value) / ($max-width - $min-width);
+  $yAxisIntersection: $min-value-rem - $slope * ($min-width / 16);
+  $slopeFinal: $slope * 100;
+  $return-value: clamp(#{$min-value-rem}rem, #{$yAxisIntersection}rem + #{$slopeFinal}vw, #{$max-value-rem}rem);
+  @return $return-value;
+}
+
+@mixin responsive-font($font-family, $font-style, $font-weight, $min-font-size, $max-font-size, $min-line-height, $max-line-height, $text-transform: null, $letter-spacing: null, $color: $darkBlue, $min-width: 375, $max-width: 1400) {
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: clamp-calc($min-font-size, $max-font-size, $min-width, $max-width);
+  line-height: clamp-calc($min-line-height, $max-line-height, $min-width, $max-width);
+  text-transform: $text-transform;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
 // transition
 @mixin transition($transition) {
   transition: $transition;
