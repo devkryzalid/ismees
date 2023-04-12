@@ -35,6 +35,11 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
 
 .vscode
 .DS_Store
