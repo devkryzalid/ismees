@@ -45,3 +45,4 @@ function wpdocs_theme_add_editor_styles()
 	wp_enqueue_style( 'site-admin-style', get_template_directory_uri() . '/dist/styles/editor.css', array() );
 }
 add_action('enqueue_block_editor_assets', 'wpdocs_theme_add_editor_styles');
+

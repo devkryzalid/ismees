@@ -40,10 +40,13 @@ function gutenberg_allowed_block_types( $allowed_blocks ) {
 		'core/embed',
 		'core/spacer',
 		'core/shortcode',
+		'core/group',
 		'core/embed/youtube',
 
 		'acf/slider',
 		'acf/accordion',
+
+		'gravityforms/form',
 
 	);
 }

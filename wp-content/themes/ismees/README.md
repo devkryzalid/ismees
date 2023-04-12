@@ -10,19 +10,19 @@ It's just for minimum security and improved performance.
 
 AND OBVIOUSLY, CHANGE "Authentication Unique Keys and Salts" values in `wp-config.php`.
 
-After the configuration, go to the wp-content/themes/ directory and *wordpress-ismees* theme.
+After the configuration, go to the wp-content/themes/ directory and *ismees* theme.
 
 ### Install Timber
 
 ```bash
-cd wp-content/themes/wordpress-ismees/
+cd wp-content/themes/ismees/
 composer install
 ```
 
 ### Compile and minify assets
 
 ```bash
-cd wp-content/themes/wordpress-ismees/
+cd wp-content/themes/ismees/
 ```
 
 Using webpack auto-reload on save

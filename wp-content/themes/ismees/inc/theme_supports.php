@@ -64,11 +64,13 @@ function theme_supports() {
 
 	add_theme_support( 'menus' );
 
-	/**
-	 * This disables all customs colors in Gutenberg
-	 *
-	 */
-	add_theme_support( 'editor-color-palette' );
-	add_theme_support( 'disable-custom-colors' );
+}
 
+
+/**
+ * Change logo URL on login page
+ *
+ */
+function change_login_url() {
+	return site_url();
 }

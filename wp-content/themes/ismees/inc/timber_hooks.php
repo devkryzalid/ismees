@@ -14,9 +14,13 @@ function add_to_context( $context ) {
 	$context['menu_primary'] = new \Timber\Menu( 'menu-primary', [ 'depth' => 4 ] );
 	$context['menu_secondary'] = new \Timber\Menu( 'menu-secondary' );
 	$context['menu_cta'] = new \Timber\Menu( 'menu-cta' );
+
 	$context['menu_footer'] = new \Timber\Menu( 'menu-footer' );
 	$context['submenu_footer'] = new \Timber\Menu( 'submenu-footer' );
 	$context['options'] = get_fields('options');
+
+	//Lang
+	// $context['lang'] = ICL_LANGUAGE_CODE;
 
 	/*
      * Create a custom breadcrumb
@@ -36,19 +40,23 @@ function add_to_context( $context ) {
  *
  * @param string $twig get extension.
  */
-function add_to_twig( $twig ) {
-	$twig->addExtension( new Twig\Extensions\DateExtension() );
+function add_to_twig($twig)
+{
+	$twig->addExtension(new Twig\Extensions\DateExtension());
 	/**
 	 * Filter time_ago, but modifiable !
 	 */
 	$twig->addFilter(
 		new Twig\TwigFilter(
 			'timey_ago',
-			function( $string ) {
-				return time_elapsed_string( $string ); // this function is in functions.php
+			function ($string) {
+				return time_elapsed_string($string); // this function is in functions.php
 			}
 		)
 	);
+
+	$twig->addFunction(new Timber\Twig_Function('get_primary_taxonomy', 'get_primary_taxonomy'));
+	$twig->addFunction(new Timber\Twig_Function('dd', 'dd'));
 
 	return $twig;
 }

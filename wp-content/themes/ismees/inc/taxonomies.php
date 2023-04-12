@@ -39,3 +39,25 @@ function register_taxonomies() {
 	
 	sample_type_taxonomy($labelsGlobal, $argsGlobal);
 }
+
+/**
+ * get primary yoast term or first in taxonomy list
+ *
+ * @param  string   $post_id
+ * @param  string   $taxonomy
+ * @return string|object|null
+ */
+function get_primary_taxonomy(string $post_id, string $taxonomy, bool $return_object = false)
+{
+    $term = null;
+    $primary = yoast_get_primary_term_id($taxonomy, $post_id);
+    if (!$primary) {
+        $terms = wp_get_post_terms($post_id, $taxonomy);
+        if (!empty($terms) && isset($terms[0])) {
+            $term = ($return_object == 'object') ? $terms[0] : $terms[0]->name;
+        }
+    } else {
+        $term = ($return_object == 'object') ? new Timber\Term($primary) : get_term($primary, $taxonomy)->name;
+    }
+    return $term;
+}

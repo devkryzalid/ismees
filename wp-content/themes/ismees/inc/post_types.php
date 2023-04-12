@@ -86,17 +86,6 @@ function add_rewrite_rules($wp_rewrite)
 	$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 }
 
-function change_nouvelle_links($post_link, $id = 0)
-{
-	$post = get_post($id);
-
-	if (is_object($post) && $post->post_type == 'post') {
-		return home_url('/nouvelles/' . $post->post_name . '/');
-	}
-
-	return $post_link;
-}
-
 function change_nouvelle_archive_link($link, $post_type)
 {
 	if ('post' == $post_type) {

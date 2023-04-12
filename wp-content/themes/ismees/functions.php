@@ -112,15 +112,18 @@ $hooks_filters = [
 	'locale' => [
 		10 => ['name' => 'set_current_language', 'args' => 1],
 	],
- 	'post_link' =>
-	 	[1 => ['name' => 'change_nouvelle_links', 'args' => 3]
-	],
  	'post_type_archive_link' =>
 	 	[10 => ['name' => 'change_nouvelle_archive_link', 'args' => 2]
 	],
  	'register_post_type_args' =>
 	 	[20 => ['name' => 'customize_default_wp_post_type', 'args' => 2]
 	],
+	'login_headerurl' => [
+        10 => ['name' => 'change_login_url', 'args' => 1],
+    ],
+    'login_enqueue_scripts' => [
+        10 => ['name' => 'wpdocs_theme_add_editor_styles', 'args' => 1],
+    ],
 	// 'acf/fields/google_map/api' => [
 		// 10 => ['name' => 'google_map_api', 'args' => 1],
 	// ],
@@ -214,26 +217,4 @@ if (function_exists('acf_add_options_page')) {
 		'menu_title'  => __('Config du thème', 'goute-au-loisir'),
 		'parent_slug' => 'theme-general-settings',
 	));
-}
-
-/**
- * get primary yoast term or first in taxonomy list
- *
- * @param  string   $post_id
- * @param  string   $taxonomy
- * @return string|object|null
- */
-function get_primary_taxonomy(string $post_id, string $taxonomy, bool $return_object = false)
-{
-    $term = null;
-    $primary = yoast_get_primary_term_id($taxonomy, $post_id);
-    if (!$primary) {
-        $terms = wp_get_post_terms($post_id, $taxonomy);
-        if (!empty($terms) && isset($terms[0])) {
-            $term = ($return_object == 'object') ? $terms[0] : $terms[0]->name;
-        }
-    } else {
-        $term = ($return_object == 'object') ? get_term($primary, $taxonomy) : get_term($primary, $taxonomy)->name;
-    }
-    return $term;
 }

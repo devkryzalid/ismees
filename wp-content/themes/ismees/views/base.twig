@@ -6,8 +6,6 @@
 <!--<![endif]-->
 <head>
 	<meta charset="{{ site.charset }}" />
-	{% block title %}<title>{{ post.title }}</title>{% endblock %}
-    <meta name="description" content="{{ site.description }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	{{ function('wp_head') }}
 </head>
-<body {{ body_class }} ?>
+<body class="{{ body_class }}" ?>
 	{% include 'partials/header.twig' %}
 	<div class="page">
 		{% block content %}
@@ -23,5 +21,7 @@
 	</div>
 	{% include 'partials/footer.twig' %}
 	{{ function('wp_footer') }}
+
+	{% block specific_script %}{% endblock %}
 </body>
 </html>

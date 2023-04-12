@@ -9,8 +9,8 @@
  * 3. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
-
-html {
+ 
+ html {
   font-family: sans-serif; /* 1 */
   line-height: 1.15; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */
@@ -31,6 +31,7 @@ html {
  */
 
 body {
+  padding: 0;
   margin: 0;
 }
 
@@ -59,14 +60,6 @@ figcaption,
 figure,
 main { /* 1 */
   display: block;
-}
-
-/**
- * Add the correct margin in IE 8.
- */
-
-figure {
-  margin: 1em 40px;
 }
 
 /**
@@ -101,7 +94,6 @@ pre {
 a {
   background-color: transparent; /* 1 */
   -webkit-text-decoration-skip: objects; /* 2 */
-  text-decoration: none;
 }
 
 /**
@@ -112,8 +104,7 @@ a {
 a:active,
 a:hover,
 a:focus {
-  outline-width: 0;
-  text-decoration: none;
+  //outline-width: 0;
 }
 
 ul {
