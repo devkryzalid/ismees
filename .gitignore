@@ -1,37 +1,41 @@
+# ignore everything in the root except the "wp-content" directory.
 *.log
 phpcs.xml
 wp-config.php
 wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
 wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/mu-plugins/
-wp-content/themes/starter-theme
-wp-content/themes/starter-theme/*
-wp-content/themes/wordpress-kryzaplate/node_modules
-wp-content/themes/wordpress-kryzaplate/vendor
+wp-content/themes/ismees/node_modules
+wp-content/themes/ismees/vendor
 wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
-wp-content/plugins/better-wp-security/
-wp-content/plugins/wp-rocket/
-wp-content/node_modules
-wp-content/wp-rocket-config/
+
+wp-content/plugins/*
+!wp-content/plugins/sitepress-multilingual-cms
+!wp-content/plugins/acfml
+!wp-content/plugins/wp-seo-multilingual
+!wp-content/plugins/advanced-custom-fields-pro
+!wp-content/plugins/advanced-nocaptcha-recaptcha
+!wp-content/plugins/wicked-folders-pro
+!wp-content/plugins/wordpress-seo
+!wp-content/plugins/gravityforms
+!wp-content/plugins/permalink-manager
+!wp-content/plugins/broken-link-checker
+!wp-content/plugins/acf-icon-picker
+
+# ignore specific themes
 wp-content/themes/twenty*/
 
-.DS_Store
-*.DS_Store
-
+# ignore node dependency directories
+node_modules/
 .htaccess
-
-/.htaccess
-/license.txt
-/readme.html
-/sitemap.xml
-/sitemap.xml.gz
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
 
 .vscode
-
-wp-content/plugins/kryzalid-module/admin/xml/
+.DS_Store
+*.DS_Store

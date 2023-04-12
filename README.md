@@ -2,4 +2,4 @@
 
 A empty wordpress template made for Kryzalid projects
 
-More details in __wp-content/themes/wordpress-kryzaplate/README.md__
+More details in __wp-content/themes/ismees/README.md__

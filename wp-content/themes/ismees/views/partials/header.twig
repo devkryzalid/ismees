@@ -1,3 +1,28 @@
-<header class="header">
-	HEADER
+<header id="header" class="-open">
+	<div id="header-mobile">
+		<div class="burger-menu -closed">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="logo-ctn jsBlockLink">
+			<a href="{{ site.home_url }}"></a>
+			<img id="header-logo" src="{{ theme.link }}/assets/images/logo.svg" alt="Logo de l'ISMÉES"/>
+		</div>
+		<a class="header-search" href="{{ options.header_search.url }}"><i class="icon-search"></i></a>
+	</div>
+	<div id="header-ctn">
+		<div class="burger-menu -opened">
+			<span></span>
+			<span></span>
+		</div>
+		<div class="logo-ctn jsBlockLink">
+			<a href="{{ site.home_url }}"></a>
+			<img id="header-logo" src="{{ theme.link }}/assets/images/logo.svg" alt="Logo de l'ISMÉES"/>
+		</div>
+
+		{% include 'partials/menu/primary-menu.twig' %}
+		
+		{% include 'partials/menu/secondary-menu.twig' %}
+	</div>
 </header>

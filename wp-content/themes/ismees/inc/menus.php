@@ -11,7 +11,6 @@ register_nav_menus(
 	[
 		'menu-primary' => esc_html__( 'Primary', 'ismees' ),
 		'menu-secondary' => esc_html__( 'Secondary', 'ismees' ),
-		'menu-cta' => esc_html__( 'Call to Action', 'ismees' ),
 		'menu-footer' => esc_html__( 'Footer Main', 'ismees' ),
 		'submenu-footer' => esc_html__( 'Footer Sub', 'ismees' ),
 	]

@@ -1,0 +1,16 @@
+<div id="secondary-menu">
+    <div class="header-secondary-links">
+        <ul class="menu-items">
+            {% for item in menu_secondary.items %}
+                <li class="{{ item.classes | join(' ') }} main-item">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="#" class="wpml">EN</a>
+        <a class="header-search" href="{{ options.header_search.url }}"><i class="icon-search"></i></a>
+    </div>
+    <div class="header-cta">
+        <a href="{{ options.header_cta.url }}">{{ options.header_cta.title }}</a>
+    </div>
+</div>

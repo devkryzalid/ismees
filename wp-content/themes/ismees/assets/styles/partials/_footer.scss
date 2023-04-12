@@ -33,7 +33,7 @@
 
             .footer-subItem {
                 margin-bottom: 20px;
-                @include responsive-font($primaryFont, normal, 400, 15, 18, 18, 21);
+                @include responsive-font($primaryFont, 400, 15, 18, 18, 21);
 
                 &:last-child {
                     margin-bottom: 0;
@@ -42,11 +42,11 @@
         }
 
         .mail {
-            @include responsive-font($primaryFont, normal, 500, 16, 20, 26, 26, null, null, $blue);
+            @include responsive-font($primaryFont, 500, 16, 20, 26, 26, null, null, $blue);
         }
 
         &__title {
-            @include responsive-font($primaryFont, normal, 700, 20, 24, 26, 28, uppercase);
+            @include responsive-font($primaryFont, 700, 20, 24, 26, 28, uppercase);
             margin-top: 0;
             margin-bottom: clamp-calc(20, 40);
         }
@@ -69,7 +69,7 @@
             }
 
             p {
-                @include responsive-font($secondaryFont, normal, 400, 12, 12, 17, 17);
+                @include responsive-font($secondaryFont, 400, 12, 12, 17, 17);
                 text-align: left;
                 display: block;
             }
@@ -95,7 +95,7 @@
             }
 
             a, p {
-                @include responsive-font($primaryFont, normal, 400, 13, 13, 17, 17);
+                @include responsive-font($primaryFont, 400, 13, 13, 17, 17);
                 text-align: center;
                 display: block;
             }

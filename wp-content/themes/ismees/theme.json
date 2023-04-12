@@ -405,17 +405,17 @@
 				},
 				":hover": {
                     "color": {
-                        "text": "var(--wp--preset--color--black)"
+                        "text": "var(--wp--preset--color--purple)"
                     }
 				},
 				":focus": {
                     "color": {
-                        "text": "var(--wp--preset--color--black)"
+                        "text": "var(--wp--preset--color--purple)"
                     }
 				},
 				":active": {
 					"color": {
-						"text": "var(--wp--preset--color--black)"
+						"text": "var(--wp--preset--color--purple)"
 					}
 				},
 				"typography": {

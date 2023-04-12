@@ -1,0 +1,146 @@
+#primary-menu {
+    display: flex;
+    gap: clamp-calc(20, 60, 992, 1400);
+    padding: 0;
+    margin: 0;
+
+    .main-item {
+        min-height: 120px;
+    }
+
+    .menu-item {
+        display: flex;
+        
+        a {
+            display: flex;
+            align-items: center;
+            @include transition($basicTransition);
+            @include responsive-font($primaryFont, 500, 19, 22, 23, 26);
+
+            i {
+                font-size: 12px;
+                margin-right: 10px;
+                transform: rotate(0);
+                color: $blue;
+                @include transition($basicTransition);
+            }
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    .menu-item-has-children {   
+
+        .child-menu {
+            padding: 30px 30px 80px;
+            padding-left: clamp-calc(35, 60);
+            z-index: 1100;
+            position: absolute;
+            @include position(100%, 0, null, 0);
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            background-color: white;
+
+            &:has(> .has-sub-child) {
+                display: flex;
+            }
+
+            li {
+                margin-top: 15px;
+                margin-bottom: 15px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .subItem {
+
+                &.has-sub-child {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: clamp-calc(20, 50);
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    flex: 1;
+
+                    .has-sub-child-title {
+                        @include responsive-font($primaryFont, 700, 17, 20, 21, 24, uppercase, null, $purple);
+                        margin-bottom: clamp-calc(20, 40);
+                        cursor: default;
+                    }
+                }
+            
+                a {
+                    @include responsive-font($primaryFont, 400, 17, 20, 21, 24);
+                    transition: $basicTransition;
+                }
+            }
+        }
+
+        .has-child-link {
+            display: flex;
+            align-items: center;            
+        }
+
+        &:hover {
+
+            .has-child-link {       
+                color: $blue; 
+
+                i {
+                    transform: rotate(-90deg);
+                }
+            }
+
+            .child-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        flex-wrap: wrap;
+        margin-bottom: 40px !important;
+
+
+
+        .menu-item-has-children {   
+            display: flex;
+            flex-direction: column;
+
+            .has-child-link {
+                margin-bottom: 30px
+            }
+
+            .child-menu {
+                @include flex(flex-start, flex-start, column);
+                background-color: transparent;
+                opacity: 1;
+                padding: 0;
+                position: initial;
+                visibility: visible;
+                @include transition($basicTransition);
+
+                &:has(> .has-sub-child) {
+                    gap: 30px;
+                }
+
+                li {
+                    margin-top: 0;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -39,6 +39,38 @@
             "append": ""
         },
         {
+            "key": "field_6436f835278a9",
+            "label": "Lien Soutien immédiat",
+            "name": "header_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_6436fe0264743",
+            "label": "Lien recherche",
+            "name": "header_search",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_6435a30e00eaa",
             "label": "Réseaux sociaux",
             "name": "",
@@ -193,5 +225,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681237637
+    "modified": 1681325584
 }
