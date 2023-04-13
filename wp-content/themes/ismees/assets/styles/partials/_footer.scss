@@ -19,13 +19,19 @@
         .socials-list {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 40px;
             margin-bottom: 0;
             margin-top: clamp-calc(30, 45);
 
             span {
                 color: $blue;
-                font-size: 24px;
+                font-size: clamp-calc(30, 40);
+                @include transition($basicTransition);
+                display: block;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
 
@@ -43,6 +49,13 @@
 
         .mail {
             @include responsive-font($primaryFont, 500, 16, 20, 26, 26, null, null, $blue);
+            @include transition($basicTransition);
+            position: relative;
+            left: 0;
+
+            &:hover {
+                left: 5px;
+            }
         }
 
         &__title {
@@ -82,6 +95,11 @@
 
             .partner-logo {
                 height: clamp-calc(25, 40, 320);
+                @include transition($basicTransition);
+
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
 
@@ -122,9 +140,6 @@
 
             a {
                 @include transition($basicTransition);
-                &:hover {
-                    color: $purple;
-                }
             }
         }
     }

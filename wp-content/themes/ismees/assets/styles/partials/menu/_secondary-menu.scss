@@ -15,7 +15,6 @@
         }
 
         &:hover {
-
             a {
                 background-color: $darkBlue;
                 color: $yellow;
@@ -29,6 +28,14 @@
         .header-search {
             margin-right: clamp-calc(20, 35, 992, 1400);
             margin-left: clamp-calc(20, 35, 992, 1400);
+
+            i {
+                font-size: 22px;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
 
         .main-item {
@@ -46,9 +53,18 @@
         }
     }
 
+    .menu-items {
+        @include flex();
+    }
+
     @media(max-width: 992px) {
         @include flex(flex-start, flex-start, column-reverse);
         gap: 30px;
+
+        .menu-items {
+            @include flex(flex-start, flex-start, column);
+            gap: 20px;
+        }
 
         .header-secondary-links {
             @include flex(flex-start, flex-start, column);

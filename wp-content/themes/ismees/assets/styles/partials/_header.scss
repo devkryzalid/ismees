@@ -13,7 +13,6 @@ body.customize-support {
     @include transition($basicTransition);
     z-index: 5000;
     background-color: white;
-    overflow: hidden;
 
     ul {
         padding: 0;
@@ -24,7 +23,7 @@ body.customize-support {
         position: fixed;
         background-color: white;
 
-        .header-cta {
+        #secondary-menu .header-cta a {
             border-radius: 8px;
         }
     }
@@ -64,6 +63,7 @@ body.customize-support {
     }
 
     @media(max-width: 992px) {
+        overflow: hidden;
 
         #secondary-menu, 
         #primary-menu {
@@ -72,9 +72,15 @@ body.customize-support {
 
         #header-mobile {
             @include flex(center, space-between);
+
+            .header-search {
+                i {
+                    font-size: 22px;
+                }
+            }
         }
 
-        .header-cta {
+        #secondary-menu .header-cta a {
             border-radius: 8px;
         }
 
@@ -114,18 +120,31 @@ body.customize-support {
             width: 30px;
             height: 30px;
             min-height: 30px;
+            cursor: pointer;
+            @include transition($shortTransition);
 
             span {
-                @include transition($basicTransition);
                 display: block;
                 height: 3px;
                 width: 30px;
                 border-radius: 100px;
                 background-color: $darkBlue;
                 margin-bottom: 7px;
+                @include transition($shortTransition);
 
                 &:last-child {
                     margin-bottom: 0;
+                }
+            }
+
+            &.-closed {
+                &:hover {
+                    span {
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
                 }
             }
 
@@ -142,6 +161,9 @@ body.customize-support {
                 span:nth-child(2) {
                     margin-top: -3px;
                     transform: rotate(-45deg);
+                }
+                &:hover {
+                    transform: rotate(180deg);
                 }
             }
         }

@@ -42,4 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove("-sticky");
         }
     });
+
+    const menuMainItems = document.querySelectorAll("#primary-menu .menu-item-has-children.main-item");
+
+    window.addEventListener('resize', (e) => {
+        menuMainItems.forEach((item) => {
+            const menuSubItems = item.querySelector(".child-menu");
+            let marginItems = item.getBoundingClientRect().x;
+
+            window.innerWidth > 992 ? menuSubItems.style.paddingLeft = `${marginItems}px` : menuSubItems.style.paddingLeft = '0px';    
+        });
+    });
+
+    window.dispatchEvent(new Event("resize"));
 });

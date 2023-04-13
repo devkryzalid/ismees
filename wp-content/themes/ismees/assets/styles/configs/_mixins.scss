@@ -10,7 +10,7 @@
   @return $return-value;
 }
 
-@mixin responsive-font($font-family, $font-weight, $min-font-size, $max-font-size, $min-line-height, $max-line-height, $text-transform: null, $letter-spacing: null, $color: $darkBlue, $font-style: normal, $min-screen-width: 375, $max-screen-width: 1400) {
+@mixin responsive-font($font-family, $font-weight, $min-font-size, $max-font-size, $min-line-height, $max-line-height, $text-transform: null, $letter-spacing: null, $color: null, $font-style: normal, $min-screen-width: 375, $max-screen-width: 1400) {
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: clamp-calc($min-font-size, $max-font-size, $min-screen-width, $max-screen-width);

@@ -31,8 +31,8 @@
 				},
 				{
 					"slug": "purple",
-					"color": "Mauve",
-					"name": "#7D2D63"
+					"color": "#7D2D63",
+					"name": "Mauve"
 				},
 				{
 					"slug": "green-mint",
@@ -405,17 +405,17 @@
 				},
 				":hover": {
                     "color": {
-                        "text": "var(--wp--preset--color--purple)"
+                        "text": "var(--wp--preset--color--blue)"
                     }
 				},
 				":focus": {
                     "color": {
-                        "text": "var(--wp--preset--color--purple)"
+                        "text": "var(--wp--preset--color--blue)"
                     }
 				},
 				":active": {
 					"color": {
-						"text": "var(--wp--preset--color--purple)"
+						"text": "var(--wp--preset--color--blue)"
 					}
 				},
 				"typography": {

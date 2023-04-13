@@ -34,7 +34,7 @@
     .menu-item-has-children {   
 
         .child-menu {
-            padding: 30px 30px 80px;
+            padding: 50px 30px 80px;
             padding-left: clamp-calc(35, 60);
             z-index: 1100;
             position: absolute;
@@ -110,14 +110,13 @@
         flex-wrap: wrap;
         margin-bottom: 40px !important;
 
-
-
         .menu-item-has-children {   
             display: flex;
             flex-direction: column;
 
             .has-child-link {
-                margin-bottom: 30px
+                margin-bottom: 30px;
+                cursor: default;
             }
 
             .child-menu {
@@ -138,6 +137,16 @@
 
                     &:last-child {
                         margin-bottom: 0;
+                    }
+                }
+            }
+
+            &:hover {
+                .has-child-link {       
+                    color: $darkBlue; 
+    
+                    i {
+                        transform: rotate(0);
                     }
                 }
             }
