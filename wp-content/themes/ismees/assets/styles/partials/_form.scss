@@ -1,0 +1,207 @@
+.footer-form {
+    position: relative;
+    margin-bottom: -40px;
+
+    .dropdown-form-button {
+        max-width: clamp-calc(400, 777, 400, 1600);
+        margin-left: auto;
+        position: relative;
+        min-height: 200px;
+        @include flex();
+
+        &::after {
+            content: "";
+            position: absolute;
+            @include position(0, 0, 0, 0);
+            background-image: url("/assets/images/ellipseBG.svg");
+            background-repeat: no-repeat;
+        }
+
+        .form-image {
+            position: absolute;
+            top: -20px;
+            left: 60px;
+            z-index: 10;
+            width: clamp-calc(175, 340, 375, 992);
+        }
+        
+        .subscribe-button {
+            cursor: pointer;
+            @include responsive-font($primaryFont, 500, 22, 32, 26, 38);
+            z-index: 10;
+            margin-left: 50px;
+            margin-top: 50px;
+            display: flex;
+
+            i {
+                font-size: 20px;
+                transform: rotate(90deg);
+                margin-left: 15px;
+            }
+        }
+    }
+
+    #subscriptionForm {
+        background-color: $yellow;
+        padding-top: clamp-calc(60, 100);
+        padding-bottom: clamp-calc(100, 140);
+        border-radius: 50px 0 0 0;
+
+        .error {
+            display: none;
+            @include responsive-font($primaryFont, 500, 14, 14, 20, 20, null, null, red);
+            position: absolute;
+            left: 0;
+            bottom: -30px;
+        }
+
+        .introduction {
+            @include flex(center, space-between);
+            margin-bottom: 40px;
+            gap: clamp-calc(20, 40, 992);
+
+            p {
+                margin: 0;
+                @include responsive-font($secondaryFont, 500, 20, 24, 28, 32);
+            }
+
+            .radio-ctn {
+                gap: clamp-calc(20, 40, 992);
+                @include flex(flex-start, flex-start);
+
+                input[type="radio"] {
+                    display: none;
+                }
+
+                .radio-circle {
+                    display: inline-block;
+                    width: 20px;
+                    min-width: 20px;
+                    height: 20px;
+                    min-height: 20px;
+                    border-radius: 50%;
+                    position: relative;
+                    background-color: white;
+                }
+
+                input[type="radio"]:checked + .radio-circle::before {
+                    content: "";
+                    display: block;
+                    width: 10px;
+                    min-width: 10px;
+                    height: 10px;
+                    min-height: 10px;
+                    background-color: #482BD9;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                label {
+                    @include responsive-font($primaryFont, 500, 16, 18, 18, 20);
+                    @include flex(flex-start);
+                    gap: 20px;
+                }
+            }
+        }
+
+        .inputs-ctn {
+            gap: 20px;
+            @include flex(center, space-between);
+
+            .input {
+                @include flex(flex-start, flex-start, column);
+                position: relative;
+                width: 100%;
+
+                input {
+                    background-color: white;
+                    height: 60px;
+                    width: 100%;
+                    padding: 0 10px;
+                    font-size: 16px;
+                    border-radius: 4px;
+                    border: none;
+                    outline: none;
+                    @include responsive-font($primaryFont, 400, 16, 18, 18, 20, null, null, $darkBlue);
+
+                    &::placeholder {
+                        @include responsive-font($primaryFont, 400, 16, 18, 18, 20);
+                    }
+                }
+            }
+
+            .main-button {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        
+        #subscriptionForm {
+
+            .error {
+                display: none;
+                @include responsive-font($primaryFont, 500, 14, 14, 20, 20, null, null, red);
+                position: absolute;
+                left: 0;
+                bottom: -25px;
+            }
+
+            .introduction {
+                @include flex(flex-start, flex-start, column)
+            }
+
+            .inputs-ctn {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 30px;
+
+                .input {
+                    width: calc(50% - 15px);
+                }
+            }
+        }
+    
+    }
+
+    @media(max-width: 767px) {
+
+        .dropdown-form-button {
+            max-width: clamp-calc(400, 777, 400, 1600);
+            margin-left: auto;
+            position: relative;
+            border-radius: 50% 0 0 50%;
+            min-height: 200px;
+            @include flex();
+    
+            &::after {
+                content: "";
+                position: absolute;
+                @include position(0, 0, 0, 0);
+                background-image: url("/assets/images/ellipseBG.svg");
+                background-repeat: no-repeat;
+            }
+    
+            .form-image {
+                top: 0;
+            }
+
+            .subscribe-button {
+                margin-left: 0;
+            }
+        }
+
+        #subscriptionForm {
+            border-radius: 0;
+            .inputs-ctn {
+                .input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

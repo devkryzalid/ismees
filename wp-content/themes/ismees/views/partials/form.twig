@@ -1,0 +1,44 @@
+<div class="footer-form">
+    <div class="dropdown-form-button">
+        <img class="form-image" src="{{ theme.link }}/assets/images/paper-plane.svg" />
+        <a class="subscribe-button">{{ __('Abonnez-vous à l’infolettre', 'ismees') }}<i class="icon-simple-arrow-right"></i></a>
+    </div>
+    <form id="subscriptionForm">
+        <div class="container-lg">
+            <div class="introduction">
+                <p>Lorem ipsum dolor sit amet consectetur. In tristique posuere pharetra nulla nisl.</p>
+                <div class="radio-ctn">
+                    <label>
+                        <input type="radio" name="status" value="etudiant" required checked>
+                        <span class="radio-circle"></span>
+                        {{ __('Étudiant', 'ismees') }}
+                    </label>
+                    <label>
+                        <input type="radio" name="status" value="personnel">
+                        <span class="radio-circle"></span>
+                        {{ __('Membre du personnel', 'ismees') }}
+                    </label>
+                </div>
+            </div>
+            <div class="inputs-ctn">
+                <div class="input">
+                    <input type="text" id="name" placeholder="Prénom" required>
+                    <span id="nameError" class="error">{{ __('Le prénom est invalide', 'ismees') }}</span>
+                </div>
+                <div class="input">
+                    <input type="text" id="surname" placeholder="Nom" required>
+                    <span id="surnameError" class="error">{{ __('Le champs nom est invalide', 'ismees') }}</span>
+                </div>
+                <div class="input">
+                    <input type="email" id="email" placeholder="Courriel" required>
+                    <span id="emailError" class="error">{{ __('Le courriel est invalide', 'ismees') }}</span>
+                </div>
+                <div class="input">
+                    <input type="text" id="establishment" placeholder="Établissement ou organisation" required>
+                    <span id="establishmentError" class="error">{{ __('L\'établissement est invalide', 'ismees') }}</span>
+                </div>
+                <button class="main-button -blue" type="submit">{{ __('Je m\'abonne', 'ismees') }}<i class="icon-arrow-right-bold"></i></button>
+            </div>
+        </div>
+    </form>
+</div>

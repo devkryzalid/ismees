@@ -5164,6 +5164,38 @@ a {
     line-height: auto;
   }
 }
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.main-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1rem, 0.9542682927rem + 0.1951219512vw, 1.125rem);
+  line-height: clamp(1.125rem, 1.0792682927rem + 0.1951219512vw, 1.25rem);
+  font-style: normal;
+  padding: 8px 16px;
+  border-radius: 8px;
+  min-height: 60px;
+}
+.main-button i {
+  margin-left: 10px;
+}
+.main-button.-blue {
+  background-color: #4E61F3;
+  color: white;
+}
+.main-button.-blue:hover {
+  background-color: #4E61F3;
+  color: white;
+}
+
 .footer {
   position: relative;
   background-color: white;
@@ -5216,7 +5248,6 @@ a {
   font-weight: 500;
   font-size: clamp(1rem, 0.9085365854rem + 0.3902439024vw, 1.25rem);
   line-height: clamp(1.625rem, 1.625rem + 0vw, 1.625rem);
-  color: #4E61F3;
   font-style: normal;
   transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -5517,6 +5548,239 @@ body.customize-support #header {
   }
   #header .burger-menu.-opened:hover {
     transform: rotate(180deg);
+  }
+}
+
+.footer-form {
+  position: relative;
+  margin-bottom: -40px;
+}
+.footer-form .dropdown-form-button {
+  max-width: clamp(25rem, 17.1458333333rem + 31.4166666667vw, 48.5625rem);
+  margin-left: auto;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.footer-form .dropdown-form-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/ellipseBG.eb2109324905bcf671f4.svg);
+  background-repeat: no-repeat;
+}
+.footer-form .dropdown-form-button .form-image {
+  position: absolute;
+  top: -20px;
+  left: 60px;
+  z-index: 10;
+  width: clamp(10.9375rem, 4.6697730956rem + 26.7423014587vw, 21.25rem);
+}
+.footer-form .dropdown-form-button .subscribe-button {
+  cursor: pointer;
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.375rem, 1.1463414634rem + 0.9756097561vw, 2rem);
+  line-height: clamp(1.625rem, 1.3506097561rem + 1.1707317073vw, 2.375rem);
+  font-style: normal;
+  z-index: 10;
+  margin-left: 50px;
+  margin-top: 50px;
+  display: flex;
+}
+.footer-form .dropdown-form-button .subscribe-button i {
+  font-size: 20px;
+  transform: rotate(90deg);
+  margin-left: 15px;
+}
+.footer-form #subscriptionForm {
+  background-color: #FFE352;
+  padding-top: clamp(3.75rem, 2.8353658537rem + 3.9024390244vw, 6.25rem);
+  padding-bottom: clamp(6.25rem, 5.3353658537rem + 3.9024390244vw, 8.75rem);
+  border-radius: 50px 0 0 0;
+}
+.footer-form #subscriptionForm .error {
+  display: none;
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  line-height: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
+  color: red;
+  font-style: normal;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+}
+.footer-form #subscriptionForm .introduction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: clamp(1.25rem, -1.7892156863rem + 4.9019607843vw, 2.5rem);
+}
+.footer-form #subscriptionForm .introduction p {
+  margin: 0;
+  font-family: "Karla", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.1585365854rem + 0.3902439024vw, 1.5rem);
+  line-height: clamp(1.75rem, 1.6585365854rem + 0.3902439024vw, 2rem);
+  font-style: normal;
+}
+.footer-form #subscriptionForm .introduction .radio-ctn {
+  gap: clamp(1.25rem, -1.7892156863rem + 4.9019607843vw, 2.5rem);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.footer-form #subscriptionForm .introduction .radio-ctn input[type=radio] {
+  display: none;
+}
+.footer-form #subscriptionForm .introduction .radio-ctn .radio-circle {
+  display: inline-block;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+}
+.footer-form #subscriptionForm .introduction .radio-ctn input[type=radio]:checked + .radio-circle::before {
+  content: "";
+  display: block;
+  width: 10px;
+  min-width: 10px;
+  height: 10px;
+  min-height: 10px;
+  background-color: #482BD9;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer-form #subscriptionForm .introduction .radio-ctn label {
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.9542682927rem + 0.1951219512vw, 1.125rem);
+  line-height: clamp(1.125rem, 1.0792682927rem + 0.1951219512vw, 1.25rem);
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.footer-form #subscriptionForm .inputs-ctn {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-form #subscriptionForm .inputs-ctn .input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+}
+.footer-form #subscriptionForm .inputs-ctn .input input {
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 0.9542682927rem + 0.1951219512vw, 1.125rem);
+  line-height: clamp(1.125rem, 1.0792682927rem + 0.1951219512vw, 1.25rem);
+  color: #242457;
+  font-style: normal;
+}
+.footer-form #subscriptionForm .inputs-ctn .input input::placeholder {
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 0.9542682927rem + 0.1951219512vw, 1.125rem);
+  line-height: clamp(1.125rem, 1.0792682927rem + 0.1951219512vw, 1.25rem);
+  font-style: normal;
+}
+.footer-form #subscriptionForm .inputs-ctn .main-button {
+  white-space: nowrap;
+}
+@media (max-width: 992px) {
+  .footer-form #subscriptionForm .error {
+    display: none;
+    font-family: "Rubik", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+    line-height: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
+    color: red;
+    font-style: normal;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+  }
+  .footer-form #subscriptionForm .introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .footer-form #subscriptionForm .inputs-ctn {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+  .footer-form #subscriptionForm .inputs-ctn .input {
+    width: calc(50% - 15px);
+  }
+}
+@media (max-width: 767px) {
+  .footer-form .dropdown-form-button {
+    max-width: clamp(25rem, 17.1458333333rem + 31.4166666667vw, 48.5625rem);
+    margin-left: auto;
+    position: relative;
+    border-radius: 50% 0 0 50%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-form .dropdown-form-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/ellipseBG.eb2109324905bcf671f4.svg);
+    background-repeat: no-repeat;
+  }
+  .footer-form .dropdown-form-button .form-image {
+    top: 0;
+  }
+  .footer-form .dropdown-form-button .subscribe-button {
+    margin-left: 0;
+  }
+  .footer-form #subscriptionForm {
+    border-radius: 0;
+  }
+  .footer-form #subscriptionForm .inputs-ctn .input {
+    width: 100%;
   }
 }
 

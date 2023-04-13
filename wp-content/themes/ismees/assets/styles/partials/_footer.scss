@@ -48,7 +48,7 @@
         }
 
         .mail {
-            @include responsive-font($primaryFont, 500, 16, 20, 26, 26, null, null, $blue);
+            @include responsive-font($primaryFont, 500, 16, 20, 26, 26);
             @include transition($basicTransition);
             position: relative;
             left: 0;
