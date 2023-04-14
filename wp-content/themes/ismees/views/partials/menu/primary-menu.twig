@@ -6,7 +6,7 @@
                 <ul class="child-menu">
                     {% for subItem in item.children %}
                         <li class="{{ subItem.classes | join(' ') }} subItem {{ subItem.children ? 'has-sub-child' : '' }}">
-                            <a target="{{ subItem.target }}" class="{{ subItem.children ? 'has-sub-child-title' : '' }}" href="{{ subItem.link }}">{{ subItem.title }}</a>
+                            <a target="{{ subItem.target }}" {% if subItem.children %}class="has-sub-child-title" tabindex="-1"{% endif %} href="{{ subItem.link }}">{{ subItem.title }}</a>
                             {% if subItem.children %}
                                 <ul class="subChild-menu">
                                     {% for lastItem in subItem.children %}

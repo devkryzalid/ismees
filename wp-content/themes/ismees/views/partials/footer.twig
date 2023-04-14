@@ -1,15 +1,15 @@
 {% include "partials/form.twig" %}
 <footer class="footer">
-    <div class="container-lg">
+    <div class="container-sm">
         <div class="main-footer">
             <div class="main-footer__column">
-                <p class="main-footer__title">{{ __('Nous joindre', 'ismees') }}</p>
+                <h3 class="main-footer__title">{{ __('Nous joindre', 'ismees') }}</h3>
                 <a class="mail" href="mailto:{{ options.mail }}">{{ options.mail }}</a>
                 {% include "partials/socials.twig" %}
             </div>
             {% for item in menu_footer.items %}
                 <div class="main-footer__column">
-                    <p class="main-footer__title">{{ item.title }}</p>
+                    <h3 class="main-footer__title">{{ item.title }}</h3>
                     {% if item.children %}
                         <ul class="child-menu">
                             {% for subItem in item.children %}
@@ -26,14 +26,14 @@
             <div class="partners-ctn">
                 <div class="partner">
                     <p class="partner-text">{{ __('En partenariat avec', 'ismees') }}</p>
-                    <a href="https://www.google.com/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-enseignement-quebec.svg" alt="" /></a>
+                    <a href="https://www.google.com/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-enseignement-quebec.svg" alt="{{ __('Logo de l\'Ensignement Supérieur du Québec', 'ismees') }}" /></a>
                 </div>
                 <div class="partner">
                     <p class="partner-text">{{ __('Réalisé par', 'ismees') }}</p>
-                    <a href="https://www.google.ca/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-ismees.svg" alt=""/></a>
+                    <a href="https://www.google.ca/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-ismees.svg" alt="{{ __('Logo de l\'ISMÉES', 'ismees') }}"/></a>
                 </div>
                 <div class="partner">
-                    <a href="https://www.google.ca/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-universite-quebec.svg" alt=""/></a>
+                    <a href="https://www.quebec.ca/" target="_blank"><img class="partner-logo" src="{{ theme.link }}/assets/images/logo-universite-quebec.svg" alt="{{ __('Logo de l\'Université du Québec', 'ismees') }}"/></a>
                 </div>
             </div>
             <div class="sub-footer-infos">

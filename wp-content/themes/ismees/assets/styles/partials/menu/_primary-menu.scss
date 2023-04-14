@@ -89,7 +89,8 @@
             align-items: center;            
         }
 
-        &:hover {
+        &:hover, 
+        &:focus-within {
 
             .has-child-link {       
                 color: $blue; 

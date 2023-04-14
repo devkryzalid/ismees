@@ -1,6 +1,24 @@
 .footer-form {
     position: relative;
     margin-bottom: -40px;
+    @include transition($basicTransition);
+
+    &.-show {
+        .dropdown-form-button {
+            
+            .subscribe-button {
+    
+                i {
+                    transform: rotate(270deg);
+                }
+            }
+        }
+
+        #subscriptionForm {
+            opacity: 1;
+            max-height: 5000px;
+        }
+    }
 
     .dropdown-form-button {
         max-width: clamp-calc(400, 777, 400, 1600);
@@ -37,15 +55,21 @@
                 font-size: 20px;
                 transform: rotate(90deg);
                 margin-left: 15px;
+                @include flex();
             }
         }
     }
 
     #subscriptionForm {
         background-color: $yellow;
-        padding-top: clamp-calc(60, 100);
-        padding-bottom: clamp-calc(100, 140);
         border-radius: 50px 0 0 0;
+        max-height: 0;
+        @include transition($basicTransition);
+
+        .container-lg {
+            padding-top: clamp-calc(60, 100);
+            padding-bottom: clamp-calc(100, 140);
+        }
 
         .error {
             display: none;

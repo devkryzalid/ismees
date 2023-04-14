@@ -63,4 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
             await submitForm();
         }
     });
+
+    const openFormButton = document.querySelector(".subscribe-button");
+    const footerForm = document.querySelector(".footer-form");
+
+    openFormButton.addEventListener('click', () => {
+        footerForm.classList.toggle('-show');
+    });
 });

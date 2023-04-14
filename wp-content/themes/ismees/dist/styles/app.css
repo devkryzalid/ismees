@@ -5183,6 +5183,10 @@ button {
   padding: 8px 16px;
   border-radius: 8px;
   min-height: 60px;
+  transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
 }
 .main-button i {
   margin-left: 10px;
@@ -5192,8 +5196,7 @@ button {
   color: white;
 }
 .main-button.-blue:hover {
-  background-color: #4E61F3;
-  color: white;
+  background-color: #0e24cd;
 }
 
 .footer {
@@ -5554,6 +5557,17 @@ body.customize-support #header {
 .footer-form {
   position: relative;
   margin-bottom: -40px;
+  transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+.footer-form.-show .dropdown-form-button .subscribe-button i {
+  transform: rotate(270deg);
+}
+.footer-form.-show #subscriptionForm {
+  opacity: 1;
+  max-height: 5000px;
 }
 .footer-form .dropdown-form-button {
   max-width: clamp(25rem, 17.1458333333rem + 31.4166666667vw, 48.5625rem);
@@ -5598,12 +5612,23 @@ body.customize-support #header {
   font-size: 20px;
   transform: rotate(90deg);
   margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .footer-form #subscriptionForm {
   background-color: #FFE352;
+  border-radius: 50px 0 0 0;
+  max-height: 0;
+  transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+.footer-form #subscriptionForm .container-lg {
   padding-top: clamp(3.75rem, 2.8353658537rem + 3.9024390244vw, 6.25rem);
   padding-bottom: clamp(6.25rem, 5.3353658537rem + 3.9024390244vw, 8.75rem);
-  border-radius: 50px 0 0 0;
 }
 .footer-form #subscriptionForm .error {
   display: none;
@@ -5879,13 +5904,13 @@ body.customize-support #header {
   display: flex;
   align-items: center;
 }
-#primary-menu .menu-item-has-children:hover .has-child-link {
+#primary-menu .menu-item-has-children:hover .has-child-link, #primary-menu .menu-item-has-children:focus-within .has-child-link {
   color: #4E61F3;
 }
-#primary-menu .menu-item-has-children:hover .has-child-link i {
+#primary-menu .menu-item-has-children:hover .has-child-link i, #primary-menu .menu-item-has-children:focus-within .has-child-link i {
   transform: rotate(-90deg);
 }
-#primary-menu .menu-item-has-children:hover .child-menu {
+#primary-menu .menu-item-has-children:hover .child-menu, #primary-menu .menu-item-has-children:focus-within .child-menu {
   opacity: 1;
   visibility: visible;
 }
