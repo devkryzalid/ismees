@@ -10,9 +10,15 @@
 @import "commons/buttons";
 @import "commons/gutenberg";
 
+@import "views/page";
+
 @import "partials/footer";
 @import "partials/header";
 @import "partials/form";
+@import "partials/breadscrum";
+@import "partials/social-share";
 
 @import "partials/menu/primary-menu";
 @import "partials/menu/secondary-menu";
+
+@import "partials/banners/basic-banner";

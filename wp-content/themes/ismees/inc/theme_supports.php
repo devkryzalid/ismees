@@ -74,3 +74,7 @@ function theme_supports() {
 function change_login_url() {
 	return site_url();
 }
+
+function filter_wpseo_breadcrumb_separator($this_options_breadcrumbs_sep) {
+    return '<i class="icon-simple-arrow-right"></i>';
+};

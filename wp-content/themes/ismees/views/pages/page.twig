@@ -1,4 +1,21 @@
 {% extends 'base.twig' %}
 {% block content %}
-    <h1>Kryzalid Wordpress BoilerPlate</h1>
+<main class="page-content">
+    {% include "partials/banners/basic-banner.twig" with {
+        'post': page
+    }%}
+    <div class="container-lg">
+        {% include "partials/socials-share.twig" with {
+            'url': page.link
+        }%}
+        <div class="container-sm">
+            <div class="gutenberg">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/page.js"></script>
 {% endblock %}

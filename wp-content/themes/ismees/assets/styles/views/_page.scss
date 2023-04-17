@@ -1,0 +1,17 @@
+body.page {
+
+    #header {
+        background-color: transparent;
+
+        &.-sticky {
+            background-color: white;
+        }
+    }
+
+    .page-content {
+
+        .container-lg {
+            position: relative;
+        }
+    }
+}

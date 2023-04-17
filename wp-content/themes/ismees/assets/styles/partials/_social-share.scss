@@ -1,0 +1,51 @@
+.share-content {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 100%;
+    
+    .socials-share-ctn {
+        @include flex(center, center, column);
+        gap: 15px;
+        position: sticky;
+        top: 170px;
+        right: 0;
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .share-label {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            text-transform: uppercase;
+            @include fontSize(13px, 16px, 700);
+            font-family: $primaryFont;
+        }
+
+        .list-ctn {
+            @include flex(center, center, column);
+            gap: 15px;
+
+            li {
+                display: flex;
+                @include transition($basicTransition);
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+            }
+
+            i {
+                font-size: clamp-calc(18, 24, 768, 992);
+                color: $blue;
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        display: none;
+    }
+}

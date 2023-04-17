@@ -1,0 +1,36 @@
+.basic-banner {
+
+    .banner-content-ctn {
+        padding-top: clamp-calc(120, 185);
+        padding-bottom: clamp-calc(100, 150);
+        background-color: $mint;
+        @include flex(center, center, column);
+
+        .title-ctn {
+            @include flex(center, center, column);
+        }
+
+        .page-title {
+            margin-top: 80px;
+            margin-bottom: clamp-calc(18, 35);
+            text-align: center;
+        }
+        
+        .title-decoration {
+            display: flex;
+
+            img {
+                width: clamp-calc(160, 260, 375, 992);
+            }
+        }
+    }
+
+    .banner-image {
+        width: 100%;
+        min-height: 500px;
+        object-fit: cover;
+        border-radius: 50px;
+        position: relative;
+        margin-top: -50px;
+    }
+}

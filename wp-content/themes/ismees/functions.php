@@ -66,6 +66,9 @@ $hooks_actions = [
 	'phpmailer_init' => [
         10 => ['name' => 'mailtrap', 'args' => 1],
     ],
+	'wpseo_breadcrumb_separator' => [
+		10 => ['name' => 'filter_wpseo_breadcrumb_separator', 'args' => 1]
+	],
 	'generate_rewrite_rules' => [
 		10 => ['name' => 'add_rewrite_rules', 'args' => 1]
 	]

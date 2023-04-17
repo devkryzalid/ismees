@@ -1,0 +1,16 @@
+<div class="basic-banner">
+    <div class="banner-content-ctn">
+        <div class="container-lg">
+            <div class="title-ctn">
+                {% include "partials/breadscrum.twig" %}
+                <h1 class="page-title">{{ post.title }}</h1>
+                <div class="title-decoration">
+                    <img src="{{ theme.link }}/assets/images/wavy-line.svg" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if post.thumbnail %}
+        <img class="banner-image" src="{{ post.thumbnail }}" alt={{ __('Image de', 'ismees') ~ post.title }}/>
+    {% endif %}
+</div>
