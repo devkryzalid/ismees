@@ -1,10 +1,114 @@
 /**
 * Style only call in Administration
 */
+@import './configs/icons';
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-$primaryFont: 'Montserrat', Helvetica, Arial, sans-serif;
-$textColor: black;
-$complementaryColor: black;
+// Variables
+$blue: #4E61F3;
+$darkBlue: #242457;
+$yellow: #FFE352;
+$lightBlue: #9EB2D9;
+
+$salmon: #FF9594;
+$mint: #72CBA6;
+$darkGreen: #285F5E;
+$purple: #7D2D63;
+
+$mainBG: #F4F2EB;
+
+$titleColor: $darkBlue;
+$textColor: $darkBlue;
+
+//Fonts
+$primaryFont: 'Rubik', Helvetica, Arial, sans-serif;
+$secondaryFont: 'Karla', Helvetica, Arial, sans-serif;
+
+//Mixins
+@mixin flex($align: center, $justify: center, $direction: row, $gap: null) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    @if $gap { gap: $gap; }
+  }
+@function clamp-calc($min-value, $max-value, $min-screen-width: 375, $max-screen-width: 1400) {
+    $min-value-rem: $min-value / 16;
+    $max-value-rem: $max-value / 16;
+    $slope: ($max-value - $min-value) / ($max-screen-width - $min-screen-width);
+    $y-axis-intersection: $min-value-rem - $slope * ($min-screen-width / 16);
+    $slope-final: $slope * 100;
+    $return-value: clamp(#{$min-value-rem}rem, #{$y-axis-intersection}rem + #{$slope-final}vw, #{$max-value-rem}rem);
+    @return $return-value;
+  }
+  
+  @mixin responsive-font($font-family, $font-weight, $min-font-size, $max-font-size, $min-line-height, $max-line-height, $text-transform: null, $letter-spacing: null, $color: null, $font-style: normal, $min-screen-width: 375, $max-screen-width: 1400) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: clamp-calc($min-font-size, $max-font-size, $min-screen-width, $max-screen-width);
+    line-height: clamp-calc($min-line-height, $max-line-height, $min-screen-width, $max-screen-width);
+    text-transform: $text-transform;
+    letter-spacing: $letter-spacing;
+    color: $color;
+    font-style: $font-style;
+  }
+
+  // Global style
+
+  h1 {	
+	&.large {
+		@include responsive-font($primaryFont, 700, 52, 120, 52, 140, uppercase);
+	}
+
+	&.small {
+		@include responsive-font($primaryFont, 700, 40, 80, 45, 80, null, -0.03em);
+	}
+}
+
+h2 {
+	&.large {
+		@include responsive-font($primaryFont, 700, 32, 58, 36, 60, uppercase);
+	}
+}
+
+h3 {
+	&.large {
+		@include responsive-font($primaryFont, 400, 25, 35, 26, 40, none);
+	}
+}
+  
+p {
+	&.small {
+		@include responsive-font($secondaryFont, 400, 16, 18, 22, 25, null, -0.01em);
+	}
+}
+
+.main-button {
+    @include flex();
+    @include responsive-font($primaryFont, 600, 16, 18, 18, 20, null, null);
+    padding-top: clamp-calc(6, 15);
+    padding-bottom: clamp-calc(6, 15);
+    padding-right: clamp-calc(20, 30);
+    padding-left: clamp-calc(20, 30);
+    border-radius: 8px;
+    min-height: 60px;
+    text-decoration: none;
+
+    i {
+        margin-left: 10px;
+    }
+
+    &.-blue {
+        background-color: $blue;
+        color: white;
+
+        &:hover {
+            background-color: $blue;
+            color: white;
+        }
+    }
+}
+  
 
 .editor-post-title{
     .editor-post-title__input{
@@ -23,18 +127,96 @@ $complementaryColor: black;
     color: $textColor !important;
     font-size: 16px;
 
-    h1,h2,h3,h4,h5{
-        font-weight: bold !important;
-        color: $textColor !important;
-    }
+    /*** Bloc cta ***/
 
-    /*** Block Boutons ***/
+    .bloc-cta {
+        @include flex(center, center, column);
+        background-color: white;
+        gap: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: clamp-calc(17, 50);
+        padding-right: clamp-calc(17, 50);
+        border-radius: 25px;
+        margin-top: clamp-calc(60, 100);
+        margin-bottom: clamp-calc(60, 100);
     
-    .wp-block-button__link{
+        .title, .text {
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    /*** Bloc buttons ***/
+    
+    .wp-block-buttons {
+        margin: 40px 0;
+
+        .wp-block-button {
+
+            &.is-style-outline {
+
+                .wp-block-button__link {
+                    border: none;
+                    background-color: white;
+                    color: $blue;
+                    padding: 15px 30px;
+
+                    &::after {
+                        color: $blue;
+                    }
+
+                    &:hover {
+                        background-color: $blue;
+                        color: white;
+
+                        &::after {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*** Bloc media / text ***/
+
+    .wp-block-media-text {
+        gap: 40px;
+
+        .wp-block-media-text__media {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
+        .wp-block-media-text__content {
+            padding: 0;
+        }
+
+        @media(max-width: 992px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    /*** Bloc title and arrow ***/
+
+    .title-arrow {
+        display: flex;
+        gap: 8px;
+    
+        .title {
+            @include responsive-font($primaryFont, 600, 20, 20, 28, 28, uppercase, null, $darkGreen);
+            margin-bottom: 20px;
+        }
     }
 
 
-    /*** Block Google Maps ***/
+    /*** Bloc Google Maps ***/
 
     .gmap-wrapper{
         width: 100%;
@@ -89,56 +271,105 @@ $complementaryColor: black;
 
     /*** Block Slider ***/
 
-    .content-slider-ctn{
-        .swiper-wrapper{
-            display: flex;
-            flex-wrap: wrap;
+    // .content-slider-ctn{
+    //     .swiper-wrapper{
+    //         display: flex;
+    //         flex-wrap: wrap;
 
-            .swiper-slide{
-                margin-right: 15px;
-                width: calc(100% / 3 - 10px);
+    //         .swiper-slide{
+    //             margin-right: 15px;
+    //             width: calc(100% / 3 - 10px);
 
-                &:nth-child(3n){
-                    margin-right: 0;
-                }
-            }
-        }
-    }
+    //             &:nth-child(3n){
+    //                 margin-right: 0;
+    //             }
+    //         }
+    //     }
+    // }
 
-    /*** Block Accordion ***/
+    /*** Bloc Accordion ***/
 
-    .content-accordion-ctn{
-        background-color: #E7F0F4;
-        padding: 20px 30px;
-        transition: all 0.5s ease;
-    
-        .title{
-            font-size: 18px;
-            font-weight: 800;
-            color: $textColor;
+    .content-accordion-ctn {
+        margin: 0;
+        border-bottom: 1px solid rgba(36, 36, 87, 0.3);
+          
+        .title { 
             margin: 0;
-            padding-right: 40px;
-            position: relative
+            position: relative;
+            padding: 30px 40px 30px 0;
+            cursor: pointer;
+            border-bottom: none;
+    
+            p {
+              @include responsive-font($primaryFont, 600, 20, 24, 28, 28, null, null , $blue);
+              opacity: 1;
+              margin: 0 50px 0 0;
+              pointer-events: none;
+            }
         }
     
-        .inner{
-            height: 100%;
-            overflow: hidden;
-            transition: all 0.5s ease;
+        .inner {
+          padding: 0 40px 40px 0;
+        }
     
-            div{
-                padding: 15px 0;
+        i {
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: $blue;
+          background-color: white;
+          font-size: 20px;
+          width: 50px;
+          height: 50px;
+          min-width: 50px;
+          min-height: 50px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          &.minus { display: flex; }
+          .plus { display: none; }
+        }
+    
+        p {
+            opacity: 0.7;
+        }
+    }
+
+
+    /*** Bloc quote ***/
+
+    .wp-block-quote {
+        margin-left: 0;
+        padding-left: 58px;
+        padding-bottom: 1px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-repeat: no-repeat;
+            width: 30px;
+            pointer-events: none;
+            background-image: url("/assets/images/alternative-wavy-line.svg");
+            background-size: auto 100%;
+            background-size: contain;
+        }
+
+        @media(max-width: 992px) {
+            &::before {
+                background-image: url("/assets/images/alternative-wavy-line-mobile.svg");
             }
         }
     }
 
-
-    /*** Block Block ***/
-
-    .wp-block-quote{
-    }
-
-    /*** Block File ***/
+    /*** Bloc File ***/
 
     .wp-block-file{
         display: flex;

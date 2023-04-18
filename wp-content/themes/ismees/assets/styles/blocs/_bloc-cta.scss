@@ -1,0 +1,18 @@
+.bloc-cta {
+    @include flex(center, center, column);
+    background-color: white;
+    gap: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: clamp-calc(17, 50);
+    padding-right: clamp-calc(17, 50);
+    border-radius: 25px;
+    margin-top: clamp-calc(60, 100);
+    margin-bottom: clamp-calc(60, 100);
+    width: 100%;
+
+    .title, .text {
+        text-align: center;
+        margin: 0;
+    }
+}

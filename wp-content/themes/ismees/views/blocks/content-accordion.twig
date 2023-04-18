@@ -1,5 +1,9 @@
-<div class="content-accordion-ctn js-accordion">
-    <p class="title">{{ fields["title"] }}</p>
+<div class="content-accordion-ctn js-accordion" data-aos="fade-up" data-aos-delay="300">
+    <div class="title">
+        <p>{{ fields.title }}</p>
+        <i class="icon-plus plus"></i>
+        <i class="icon-minus minus"></i>
+  </div>
     <div class="inner">
         <div>
             {{fields["content"]}}

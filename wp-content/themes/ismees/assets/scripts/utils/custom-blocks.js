@@ -41,7 +41,7 @@ document.querySelectorAll('.content-accordion-ctn').forEach((el, index) => {
 
   title.addEventListener('click', ({ target }) => {
     const parent = target.parentElement
-    const content = parent.querySelector('.content');
+    const content = parent.querySelector('.inner');
 
     if (parent.classList.contains('open')) {
       parent.classList.remove('open');

@@ -1,4 +1,136 @@
 .gutenberg {
     margin-top: clamp-calc(80, 120);
     margin-bottom: clamp-calc(90, 110);
+
+    .wp-block-embed-youtube{
+        //max-width: 992px;
+        margin: 60px auto;
+        
+        .wp-block-embed__wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @media (max-width:1500px) {
+            max-width: 992px;
+        }
+    }
+
+    .wp-block-embed-soundcloud {
+        margin-right: 0;
+        margin-left: 0;
+
+        iframe {
+            width: 100%;
+        }
+    }
+        .wp-block-buttons {
+            margin: 40px 0;
+
+            .wp-block-button {
+
+                &.is-style-outline {
+
+                    .wp-block-button__link {
+                        border: none;
+                        background-color: white;
+                        color: $blue;
+                        padding: 15px 30px;
+
+                        &::after {
+                            color: $blue;
+                        }
+
+                        &:hover {
+                            background-color: $blue;
+                            color: white;
+
+                            &::after {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    .wp-block-media-text {
+        gap: 40px;
+
+        .wp-block-media-text__media {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+        }
+        .wp-block-media-text__content {
+            padding: 0;
+        }
+    }
+
+    ul {
+        padding-left: 20px;
+        li {
+            position: relative;
+            padding-left: 20px;
+
+            &::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: $blue;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .wp-block-quote {
+        margin-left: 0;
+        padding-left: 58px;
+        padding-bottom: 1px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-repeat: no-repeat;
+            width: 30px;
+            pointer-events: none;
+            background-image: url("/assets/images/alternative-wavy-line.svg");
+            background-size: auto 100%;
+            background-size: contain;
+        }
+    }
+
+    @media(max-width: 992px) {
+        .wp-block-media-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wp-block-quote {
+    
+            &::before {
+                background-image: url("/assets/images/alternative-wavy-line-mobile.svg");
+            }
+        }
+    }
 }

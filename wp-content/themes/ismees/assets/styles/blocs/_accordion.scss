@@ -1,0 +1,55 @@
+.content-accordion-ctn {
+    margin: 0;
+    overflow: hidden;
+    @include transition($basicTransition);
+    border-bottom: 1px solid rgba(36, 36, 87, 0.3);
+      
+    .title { 
+        margin: 0;
+        position: relative;
+        padding: 30px 40px 30px 0;
+        cursor: pointer;
+        border-bottom: none;
+
+        p {
+          @include responsive-font($primaryFont, 600, 20, 24, 28, 28, null, null , $blue);
+          opacity: 1;
+          margin: 0 50px 0 0;
+          pointer-events: none;
+        }
+    }
+
+    .inner {
+      padding: 0 40px 40px 0;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: $blue;
+      background-color: white;
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &.minus { display: none; }
+    }
+  
+    &.open {
+        .plus { display: none; }
+        .minus { display: flex; }
+    }
+
+    p {
+        opacity: 0.7;
+    }
+}

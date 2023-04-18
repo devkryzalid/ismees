@@ -4573,9 +4573,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: #F4F2EB;
-}
 body.no-scroll {
   height: 100%;
   width: 100%;
@@ -4584,83 +4581,43 @@ body.no-scroll {
 h1.large {
   font-family: "Rubik", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(3.25pxrem, 1.6951219512pxrem + 6.6341463415pxvw, 7.5pxrem);
-  line-height: clamp(3.25pxrem, 1.237804878pxrem + 8.5853658537pxvw, 8.75pxrem);
+  font-size: clamp(3.25rem, 1.6951219512rem + 6.6341463415vw, 7.5rem);
+  line-height: clamp(3.25rem, 1.237804878rem + 8.5853658537vw, 8.75rem);
   text-transform: uppercase;
   font-style: normal;
 }
 h1.small {
   font-family: "Rubik", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(2.5pxrem, 1.5853658537pxrem + 3.9024390244pxvw, 5pxrem);
-  line-height: clamp(2.8125pxrem, 2.012195122pxrem + 3.4146341463pxvw, 5pxrem);
+  font-size: clamp(2.5rem, 1.5853658537rem + 3.9024390244vw, 5rem);
+  line-height: clamp(2.8125rem, 2.012195122rem + 3.4146341463vw, 5rem);
   letter-spacing: -0.03em;
   font-style: normal;
 }
 
-h2 {
+h2.large {
   font-family: "Rubik", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(2pxrem, 1.4054878049pxrem + 2.5365853659pxvw, 3.625pxrem);
-  line-height: clamp(2.25pxrem, 1.7012195122pxrem + 2.3414634146pxvw, 3.75pxrem);
+  font-size: clamp(2rem, 1.4054878049rem + 2.5365853659vw, 3.625rem);
+  line-height: clamp(2.25rem, 1.7012195122rem + 2.3414634146vw, 3.75rem);
   text-transform: uppercase;
-  font-style: normal;
-}
-h2.small {
-  font-family: "Rubik", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: clamp(2.625pxrem, 2.625pxrem + 0pxvw, 2.625pxrem);
-  line-height: clamp(3pxrem, 3pxrem + 0pxvw, 3pxrem);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
   font-style: normal;
 }
 
-h3 {
+h3.large {
   font-family: "Rubik", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(1.5625pxrem, 1.2881097561pxrem + 1.1707317073pxvw, 2.3125pxrem);
-  line-height: clamp(1.625pxrem, 1.3048780488pxrem + 1.3658536585pxvw, 2.5pxrem);
-  font-style: normal;
-}
-h3.small {
-  font-family: "Rubik", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.5pxrem, 1.5pxrem + 0pxvw, 1.5pxrem);
-  line-height: clamp(1.75pxrem, 1.75pxrem + 0pxvw, 1.75pxrem);
-  text-transform: uppercase;
+  font-size: clamp(1.5625rem, 1.3338414634rem + 0.9756097561vw, 2.1875rem);
+  line-height: clamp(1.625rem, 1.3048780488rem + 1.3658536585vw, 2.5rem);
+  text-transform: none;
   font-style: normal;
 }
 
-h4 {
-  font-family: "Rubik", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.25pxrem, 1.1585365854pxrem + 0.3902439024pxvw, 1.5pxrem);
-  line-height: clamp(1.75pxrem, 1.75pxrem + 0pxvw, 1.75pxrem);
-  font-style: normal;
-}
-
-h5 {
-  font-family: "Rubik", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: clamp(1pxrem, 1pxrem + 0pxvw, 1pxrem);
-  line-height: clamp(1.5pxrem, 1.5pxrem + 0pxvw, 1.5pxrem);
-  font-style: normal;
-}
-
-p {
-  font-family: "Karla", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: clamp(1.125pxrem, 1.056402439pxrem + 0.2926829268pxvw, 1.3125pxrem);
-  line-height: clamp(1.625pxrem, 1.4649390244pxrem + 0.6829268293pxvw, 2.0625pxrem);
-  letter-spacing: -0.01em;
-  font-style: normal;
-}
 p.small {
   font-family: "Karla", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(1pxrem, 0.9542682927pxrem + 0.1951219512pxvw, 1.125pxrem);
-  line-height: clamp(1.375pxrem, 1.306402439pxrem + 0.2926829268pxvw, 1.5625pxrem);
+  font-size: clamp(1rem, 0.9542682927rem + 0.1951219512vw, 1.125rem);
+  line-height: clamp(1.375rem, 1.306402439rem + 0.2926829268vw, 1.5625rem);
   letter-spacing: -0.01em;
   font-style: normal;
 }
@@ -5197,6 +5154,26 @@ button {
   cursor: pointer;
 }
 
+.main-button a[target=_blank]:after, .main-button a[href$=".pdf"]:after, .main-button a[href$=".doc"]:after, .main-button input[target=_blank]:after, .main-button input[href$=".pdf"]:after, .main-button input[href$=".doc"]:after, .main-button div[target=_blank]:after, .main-button div[href$=".pdf"]:after, .main-button div[href$=".doc"]:after, .main-button .wp-block-file__button[target=_blank]:after, .main-button .wp-block-file__button[href$=".pdf"]:after, .main-button .wp-block-file__button[href$=".doc"]:after, .transparent-btn a[target=_blank]:after, .transparent-btn a[href$=".pdf"]:after, .transparent-btn a[href$=".doc"]:after, .transparent-btn input[target=_blank]:after, .transparent-btn input[href$=".pdf"]:after, .transparent-btn input[href$=".doc"]:after, .transparent-btn div[target=_blank]:after, .transparent-btn div[href$=".pdf"]:after, .transparent-btn div[href$=".doc"]:after, .transparent-btn .wp-block-file__button[target=_blank]:after, .transparent-btn .wp-block-file__button[href$=".pdf"]:after, .transparent-btn .wp-block-file__button[href$=".doc"]:after, .cta-btn a[target=_blank]:after, .cta-btn a[href$=".pdf"]:after, .cta-btn a[href$=".doc"]:after, .cta-btn input[target=_blank]:after, .cta-btn input[href$=".pdf"]:after, .cta-btn input[href$=".doc"]:after, .cta-btn div[target=_blank]:after, .cta-btn div[href$=".pdf"]:after, .cta-btn div[href$=".doc"]:after, .cta-btn .wp-block-file__button[target=_blank]:after, .cta-btn .wp-block-file__button[href$=".pdf"]:after, .cta-btn .wp-block-file__button[href$=".doc"]:after, .wp-block-button a[target=_blank]:after, .wp-block-button a[href$=".pdf"]:after, .wp-block-button a[href$=".doc"]:after, .wp-block-button input[target=_blank]:after, .wp-block-button input[href$=".pdf"]:after, .wp-block-button input[href$=".doc"]:after, .wp-block-button div[target=_blank]:after, .wp-block-button div[href$=".pdf"]:after, .wp-block-button div[href$=".doc"]:after, .wp-block-button .wp-block-file__button[target=_blank]:after, .wp-block-button .wp-block-file__button[href$=".pdf"]:after, .wp-block-button .wp-block-file__button[href$=".doc"]:after {
+  font-family: "icomoon";
+  content: "\e907";
+  position: relative;
+  margin-left: 15px;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  color: white;
+}
+.main-button a[target=_blank]:hover:after, .main-button a[href$=".pdf"]:hover:after, .main-button a[href$=".doc"]:hover:after, .main-button input[target=_blank]:hover:after, .main-button input[href$=".pdf"]:hover:after, .main-button input[href$=".doc"]:hover:after, .main-button div[target=_blank]:hover:after, .main-button div[href$=".pdf"]:hover:after, .main-button div[href$=".doc"]:hover:after, .main-button .wp-block-file__button[target=_blank]:hover:after, .main-button .wp-block-file__button[href$=".pdf"]:hover:after, .main-button .wp-block-file__button[href$=".doc"]:hover:after, .transparent-btn a[target=_blank]:hover:after, .transparent-btn a[href$=".pdf"]:hover:after, .transparent-btn a[href$=".doc"]:hover:after, .transparent-btn input[target=_blank]:hover:after, .transparent-btn input[href$=".pdf"]:hover:after, .transparent-btn input[href$=".doc"]:hover:after, .transparent-btn div[target=_blank]:hover:after, .transparent-btn div[href$=".pdf"]:hover:after, .transparent-btn div[href$=".doc"]:hover:after, .transparent-btn .wp-block-file__button[target=_blank]:hover:after, .transparent-btn .wp-block-file__button[href$=".pdf"]:hover:after, .transparent-btn .wp-block-file__button[href$=".doc"]:hover:after, .cta-btn a[target=_blank]:hover:after, .cta-btn a[href$=".pdf"]:hover:after, .cta-btn a[href$=".doc"]:hover:after, .cta-btn input[target=_blank]:hover:after, .cta-btn input[href$=".pdf"]:hover:after, .cta-btn input[href$=".doc"]:hover:after, .cta-btn div[target=_blank]:hover:after, .cta-btn div[href$=".pdf"]:hover:after, .cta-btn div[href$=".doc"]:hover:after, .cta-btn .wp-block-file__button[target=_blank]:hover:after, .cta-btn .wp-block-file__button[href$=".pdf"]:hover:after, .cta-btn .wp-block-file__button[href$=".doc"]:hover:after, .wp-block-button a[target=_blank]:hover:after, .wp-block-button a[href$=".pdf"]:hover:after, .wp-block-button a[href$=".doc"]:hover:after, .wp-block-button input[target=_blank]:hover:after, .wp-block-button input[href$=".pdf"]:hover:after, .wp-block-button input[href$=".doc"]:hover:after, .wp-block-button div[target=_blank]:hover:after, .wp-block-button div[href$=".pdf"]:hover:after, .wp-block-button div[href$=".doc"]:hover:after, .wp-block-button .wp-block-file__button[target=_blank]:hover:after, .wp-block-button .wp-block-file__button[href$=".pdf"]:hover:after, .wp-block-button .wp-block-file__button[href$=".doc"]:hover:after {
+  color: #4E61F3;
+}
+.main-button a[href$=".pdf"]:after, .main-button a[href$=".doc"]:after, .main-button a[download]:after, .main-button input[href$=".pdf"]:after, .main-button input[href$=".doc"]:after, .main-button input[download]:after, .main-button div[href$=".pdf"]:after, .main-button div[href$=".doc"]:after, .main-button div[download]:after, .main-button .wp-block-file__button[href$=".pdf"]:after, .main-button .wp-block-file__button[href$=".doc"]:after, .main-button .wp-block-file__button[download]:after, .transparent-btn a[href$=".pdf"]:after, .transparent-btn a[href$=".doc"]:after, .transparent-btn a[download]:after, .transparent-btn input[href$=".pdf"]:after, .transparent-btn input[href$=".doc"]:after, .transparent-btn input[download]:after, .transparent-btn div[href$=".pdf"]:after, .transparent-btn div[href$=".doc"]:after, .transparent-btn div[download]:after, .transparent-btn .wp-block-file__button[href$=".pdf"]:after, .transparent-btn .wp-block-file__button[href$=".doc"]:after, .transparent-btn .wp-block-file__button[download]:after, .cta-btn a[href$=".pdf"]:after, .cta-btn a[href$=".doc"]:after, .cta-btn a[download]:after, .cta-btn input[href$=".pdf"]:after, .cta-btn input[href$=".doc"]:after, .cta-btn input[download]:after, .cta-btn div[href$=".pdf"]:after, .cta-btn div[href$=".doc"]:after, .cta-btn div[download]:after, .cta-btn .wp-block-file__button[href$=".pdf"]:after, .cta-btn .wp-block-file__button[href$=".doc"]:after, .cta-btn .wp-block-file__button[download]:after, .wp-block-button a[href$=".pdf"]:after, .wp-block-button a[href$=".doc"]:after, .wp-block-button a[download]:after, .wp-block-button input[href$=".pdf"]:after, .wp-block-button input[href$=".doc"]:after, .wp-block-button input[download]:after, .wp-block-button div[href$=".pdf"]:after, .wp-block-button div[href$=".doc"]:after, .wp-block-button div[download]:after, .wp-block-button .wp-block-file__button[href$=".pdf"]:after, .wp-block-button .wp-block-file__button[href$=".doc"]:after, .wp-block-button .wp-block-file__button[download]:after {
+  content: "\e90b";
+}
+
 .main-button {
   display: flex;
   flex-direction: row;
@@ -5207,13 +5184,16 @@ button {
   font-size: clamp(1rem, 0.9542682927rem + 0.1951219512vw, 1.125rem);
   line-height: clamp(1.125rem, 1.0792682927rem + 0.1951219512vw, 1.25rem);
   font-style: normal;
-  padding: 8px 16px;
-  border-radius: 8px;
-  min-height: 60px;
   transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
+  padding-top: clamp(0.375rem, 0.1692073171rem + 0.8780487805vw, 0.9375rem);
+  padding-bottom: clamp(0.375rem, 0.1692073171rem + 0.8780487805vw, 0.9375rem);
+  padding-right: clamp(1.25rem, 1.0213414634rem + 0.9756097561vw, 1.875rem);
+  padding-left: clamp(1.25rem, 1.0213414634rem + 0.9756097561vw, 1.875rem);
+  border-radius: 8px;
+  min-height: 60px;
 }
 .main-button i {
   margin-left: 10px;
@@ -5230,7 +5210,117 @@ button {
   margin-top: clamp(5rem, 4.0853658537rem + 3.9024390244vw, 7.5rem);
   margin-bottom: clamp(5.625rem, 5.1676829268rem + 1.9512195122vw, 6.875rem);
 }
+.gutenberg .wp-block-embed-youtube {
+  margin: 60px auto;
+}
+.gutenberg .wp-block-embed-youtube .wp-block-embed__wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.gutenberg .wp-block-embed-youtube .wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1500px) {
+  .gutenberg .wp-block-embed-youtube {
+    max-width: 992px;
+  }
+}
+.gutenberg .wp-block-embed-soundcloud {
+  margin-right: 0;
+  margin-left: 0;
+}
+.gutenberg .wp-block-embed-soundcloud iframe {
+  width: 100%;
+}
+.gutenberg .wp-block-buttons {
+  margin: 40px 0;
+}
+.gutenberg .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link {
+  border: none;
+  background-color: white;
+  color: #4E61F3;
+  padding: 15px 30px;
+}
+.gutenberg .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link::after {
+  color: #4E61F3;
+}
+.gutenberg .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:hover {
+  background-color: #4E61F3;
+  color: white;
+}
+.gutenberg .wp-block-buttons .wp-block-button.is-style-outline .wp-block-button__link:hover::after {
+  color: white;
+}
+.gutenberg .wp-block-media-text {
+  gap: 40px;
+}
+.gutenberg .wp-block-media-text .wp-block-media-text__media {
+  height: 100%;
+}
+.gutenberg .wp-block-media-text .wp-block-media-text__media img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.gutenberg .wp-block-media-text .wp-block-media-text__content {
+  padding: 0;
+}
+.gutenberg ul {
+  padding-left: 20px;
+}
+.gutenberg ul li {
+  position: relative;
+  padding-left: 20px;
+}
+.gutenberg ul li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4E61F3;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gutenberg .wp-block-quote {
+  margin-left: 0;
+  padding-left: 58px;
+  padding-bottom: 1px;
+  position: relative;
+}
+.gutenberg .wp-block-quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  width: 30px;
+  pointer-events: none;
+  background-image: url(../images/alternative-wavy-line.f96086815abc8f6ea38d.svg);
+  background-size: auto 100%;
+  background-size: contain;
+}
+@media (max-width: 992px) {
+  .gutenberg .wp-block-media-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .gutenberg .wp-block-quote::before {
+    background-image: url(../images/alternative-wavy-line-mobile.f82284872a267c01b4b9.svg);
+  }
+}
 
+body.page {
+  background-color: #F4F2EB;
+}
 body.page #header {
   background-color: transparent;
 }
@@ -5891,10 +5981,6 @@ body.customize-support #header {
   top: 170px;
   right: 0;
 }
-.share-content .socials-share-ctn ul {
-  padding: 0;
-  margin: 0;
-}
 .share-content .socials-share-ctn .share-label {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -5913,14 +5999,14 @@ body.customize-support #header {
   justify-content: center;
   gap: 15px;
 }
-.share-content .socials-share-ctn .list-ctn li {
+.share-content .socials-share-ctn .list-ctn a {
   display: flex;
   transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
 }
-.share-content .socials-share-ctn .list-ctn li:hover {
+.share-content .socials-share-ctn .list-ctn a:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
@@ -6214,4 +6300,102 @@ body.customize-support #header {
   border-radius: 50px;
   position: relative;
   margin-top: -50px;
+}
+
+.content-accordion-ctn {
+  margin: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(36, 36, 87, 0.3);
+}
+.content-accordion-ctn .title {
+  margin: 0;
+  position: relative;
+  padding: 30px 40px 30px 0;
+  cursor: pointer;
+  border-bottom: none;
+}
+.content-accordion-ctn .title p {
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1585365854rem + 0.3902439024vw, 1.5rem);
+  line-height: clamp(1.75rem, 1.75rem + 0vw, 1.75rem);
+  color: #4E61F3;
+  font-style: normal;
+  opacity: 1;
+  margin: 0 50px 0 0;
+  pointer-events: none;
+}
+.content-accordion-ctn .inner {
+  padding: 0 40px 40px 0;
+}
+.content-accordion-ctn i {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #4E61F3;
+  background-color: white;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-accordion-ctn i.minus {
+  display: none;
+}
+.content-accordion-ctn.open .plus {
+  display: none;
+}
+.content-accordion-ctn.open .minus {
+  display: flex;
+}
+.content-accordion-ctn p {
+  opacity: 0.7;
+}
+
+.bloc-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  gap: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: clamp(1.0625rem, 0.3079268293rem + 3.2195121951vw, 3.125rem);
+  padding-right: clamp(1.0625rem, 0.3079268293rem + 3.2195121951vw, 3.125rem);
+  border-radius: 25px;
+  margin-top: clamp(3.75rem, 2.8353658537rem + 3.9024390244vw, 6.25rem);
+  margin-bottom: clamp(3.75rem, 2.8353658537rem + 3.9024390244vw, 6.25rem);
+  width: 100%;
+}
+.bloc-cta .title, .bloc-cta .text {
+  text-align: center;
+  margin: 0;
+}
+
+.title-arrow {
+  display: flex;
+  gap: 8px;
+  margin-top: 100px;
+}
+.title-arrow .title {
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
+  line-height: clamp(1.75rem, 1.75rem + 0vw, 1.75rem);
+  text-transform: uppercase;
+  color: #285F5E;
+  font-style: normal;
+  margin-bottom: 20px;
 }

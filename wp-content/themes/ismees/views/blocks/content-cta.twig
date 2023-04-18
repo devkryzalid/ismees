@@ -1,0 +1,13 @@
+<div class="bloc-cta">
+    {% if fields.title %}
+        <h3 class="title large">{{ fields.title }}</h3>
+    {% endif %}
+    {% if fields.description %}
+        <p class="text">{{ fields.description }}</p>
+    {% endif %}
+    {% if fields.button.url %}
+        <div class="button-ctn">
+            <a class="main-button -blue" href="{{ fields.button.url }}" target="{{ fields.button.target }}">{{ fields.button.title }}</a>
+        </div>
+    {% endif %}
+</div>

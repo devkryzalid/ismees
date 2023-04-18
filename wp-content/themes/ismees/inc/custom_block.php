@@ -9,23 +9,47 @@ function register_custom_blocks() {
 		$acf_render_callback = 'acf_block_render_callback';
 
 		// register a slider block
-		acf_register_block(
-			array(
-				'name'				=> 'slider',
-				'title'				=> __('Visionneuse'),
-				'description'		=> __('Add a custom slider'),
-				'render_callback'	=> $acf_render_callback,
-				'category'			=> 'formatting',
-				'icon'				=> 'images-alt',
-			)
-		);
+		// acf_register_block(
+		// 	array(
+		// 		'name'				=> 'slider',
+		// 		'title'				=> __('Visionneuse'),
+		// 		'description'		=> __('Add a custom slider'),
+		// 		'render_callback'	=> $acf_render_callback,
+		// 		'category'			=> 'formatting',
+		// 		'icon'				=> 'images-alt',
+		// 	)
+		// );
 
-		// register a accordion block
+		// register a accordion bloc
 		acf_register_block(
 			array(
 				'name'				=> 'accordion',
 				'title'				=> __('Accordéon'),
 				'description'		=> __('Add a custom accordion'),
+				'render_callback'	=> $acf_render_callback,
+				'category'			=> 'formatting',
+				'icon'				=> 'list-view',
+			)
+		);
+
+		// register a cta bloc
+		acf_register_block(
+			array(
+				'name'				=> 'cta',
+				'title'				=> __('Appel à l\'action'),
+				'description'		=> __('Ajouter un appel à l\'action'),
+				'render_callback'	=> $acf_render_callback,
+				'category'			=> 'formatting',
+				'icon'				=> 'list-view',
+			)
+		);
+
+		// register a cta bloc
+		acf_register_block(
+			array(
+				'name'				=> 'title-arrow',
+				'title'				=> __('Titre et flèche'),
+				'description'		=> __('Ajouter un titre avec une flèche'),
 				'render_callback'	=> $acf_render_callback,
 				'category'			=> 'formatting',
 				'icon'				=> 'list-view',

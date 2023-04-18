@@ -43,11 +43,9 @@ function gutenberg_allowed_block_types( $allowed_blocks ) {
 		'core/group',
 		'core/embed/youtube',
 
-		'acf/slider',
 		'acf/accordion',
-
-		'gravityforms/form',
-
+		'acf/cta',
+		'acf/title-arrow'
 	);
 }
 

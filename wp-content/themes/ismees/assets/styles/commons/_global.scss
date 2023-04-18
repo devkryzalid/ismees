@@ -3,8 +3,7 @@ html {
 }
 
 body{
-	background-color: $mainBG;    
-	
+
 	&.no-scroll{
 		height: 100%;
   		width: 100%;
@@ -15,43 +14,29 @@ body{
 
 h1 {	
 	&.large {
-		@include responsive-font($primaryFont, 700, 52px, 120px, 52px, 140px, uppercase);
+		@include responsive-font($primaryFont, 700, 52, 120, 52, 140, uppercase);
 	}
 
 	&.small {
-		@include responsive-font($primaryFont, 700, 40px, 80px, 45px, 80px, null, -0.03em);
+		@include responsive-font($primaryFont, 700, 40, 80, 45, 80, null, -0.03em);
 	}
 }
 
 h2 {
-	@include responsive-font($primaryFont, 700, 32px, 58px, 36px, 60px, uppercase);
-
-	&.small {
-		@include responsive-font($primaryFont, 700, 42px, 42px, 48px, 48px, uppercase, -0.02em);
+	&.large {
+		@include responsive-font($primaryFont, 700, 32, 58, 36, 60, uppercase);
 	}
 }
 
 h3 {
-	@include responsive-font($primaryFont, 400, 25px, 37px, 26px, 40px);
-
-	&.small {
-		@include responsive-font($primaryFont, 700, 24px, 24px, 28px, 28px, uppercase);
+	&.large {
+		@include responsive-font($primaryFont, 400, 25, 35, 26, 40, none);
 	}
-}
-
-h4 {
-	@include responsive-font($primaryFont, 600, 20px, 24px, 28px, 28px);
-}
-
-h5 {
-	@include responsive-font($primaryFont, 500, 16px, 16px, 24px, 24px);
 }
   
 p {
-	@include responsive-font($secondaryFont, 400, 18px, 21px, 26px, 33px, null, -0.01em);
-
 	&.small {
-		@include responsive-font($secondaryFont, 400, 16px, 18px, 22px, 25px, null, -0.01em);
+		@include responsive-font($secondaryFont, 400, 16, 18, 22, 25, null, -0.01em);
 	}
 }
 
