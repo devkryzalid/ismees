@@ -129,6 +129,12 @@ p {
 
     /*** Bloc cta ***/
 
+    .wp-block-columns {
+        .bloc-cta {
+            margin: 0;
+        }
+    }
+
     .bloc-cta {
         @include flex(center, center, column);
         background-color: white;
@@ -140,10 +146,16 @@ p {
         border-radius: 25px;
         margin-top: clamp-calc(60, 100);
         margin-bottom: clamp-calc(60, 100);
+        width: 100%;
     
         .title, .text {
             text-align: center;
             margin: 0;
+        }
+
+        .main-button {
+            text-align: center;
+            text-decoration: none;
         }
     }
 
@@ -239,7 +251,40 @@ p {
         }
     }
 
-    /*** Block Custom Gallery ***/
+    /*** Bloc Soundcloud ***/
+
+    .wp-block-embed-soundcloud {
+        margin-right: 0;
+        margin-left: 0;
+
+        iframe {
+            width: 100%;
+        }
+    }
+
+    /*** Bloc Cover ***/
+
+    .wp-block-cover {
+        padding: 50px;
+
+        .wp-block-cover__background, img {
+            border-radius: 20px;
+        }
+
+        p {
+            @include responsive-font($primaryFont, 700, 24, 24, 28, 28);
+        }
+    }
+
+    /*** Bloc Gallery ***/
+
+    .wp-block-image {
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    /*** Bloc Custom Gallery ***/
 
     .custom-gallery-ctn{
         max-width: 100%;

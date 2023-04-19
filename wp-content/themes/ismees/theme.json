@@ -191,8 +191,8 @@
                 },
 				"spacing": {
 					"margin": {
-						"top": "30px",
-						"bottom": "30px"
+						"top": "40px",
+						"bottom": "40px"
 					}
 				}
 			},
@@ -207,8 +207,28 @@
 					"margin": {
 						"right": "0",
 						"left": "0",
-						"top": "clamp(2.5rem, 1.5854rem + 3.9024vw, 5rem)",
-						"bottom": "clamp(2.5rem, 1.5854rem + 3.9024vw, 5rem)"
+						"top": "clamp(3.75rem, 2.8354rem + 3.9024vw, 6.25rem)",
+						"bottom": "clamp(3.75rem, 2.8354rem + 3.9024vw, 6.25rem)"
+					}
+				}
+			},
+			"core/embed": {
+				"spacing": {
+					"margin": {
+						"right": "0",
+						"left": "0",
+						"top": "clamp(3.75rem, 2.8354rem + 3.9024vw, 6.25rem)",
+						"bottom": "clamp(3.75rem, 2.8354rem + 3.9024vw, 6.25rem)"
+					}
+				}
+			},
+			"core/cover": {
+				"spacing": {
+					"margin": {
+						"right": "0",
+						"left": "0",
+						"top": "clamp(3.75rem, 2.8354rem + 3.9024vw, 6.25rem)",
+						"bottom": "clamp(3.75rem, 2.8354rem + 3.9024vw, 6.25rem)"
 					}
 				}
 			},

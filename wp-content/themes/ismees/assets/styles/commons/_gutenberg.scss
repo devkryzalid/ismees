@@ -2,9 +2,43 @@
     margin-top: clamp-calc(80, 120);
     margin-bottom: clamp-calc(90, 110);
 
-    .wp-block-embed-youtube{
+    p {
+        a {
+            color: $blue;
+            position: relative;
+            @include transition($shortTransition);
+            top: 0;
+
+            &:hover {
+                top: -2px;
+            }
+        }
+    }
+
+    .wp-block-image {
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    .wp-block-cover {
+        padding: 50px;
+
+        .wp-block-cover__background, img {
+            border-radius: 20px;
+        }
+
+        p {
+            @include responsive-font($primaryFont, 700, 24, 24, 28, 28);
+        }
+    }
+
+    .wp-block-embed-youtube {
         //max-width: 992px;
-        margin: 60px auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: clamp-calc(60, 100);
+        margin-bottom: clamp-calc(60, 100);
         
         .wp-block-embed__wrapper {
             position: relative;
@@ -32,35 +66,36 @@
             width: 100%;
         }
     }
-        .wp-block-buttons {
-            margin: 40px 0;
 
-            .wp-block-button {
+    .wp-block-buttons {
+        margin: 40px 0;
 
-                &.is-style-outline {
+        .wp-block-button {
 
-                    .wp-block-button__link {
-                        border: none;
-                        background-color: white;
+            &.is-style-outline {
+
+                .wp-block-button__link {
+                    border: none;
+                    background-color: white;
+                    color: $blue;
+                    padding: 15px 30px;
+
+                    &::after {
                         color: $blue;
-                        padding: 15px 30px;
+                    }
+
+                    &:hover {
+                        background-color: $blue;
+                        color: white;
 
                         &::after {
-                            color: $blue;
-                        }
-
-                        &:hover {
-                            background-color: $blue;
                             color: white;
-
-                            &::after {
-                                color: white;
-                            }
                         }
                     }
                 }
             }
         }
+    }
 
     .wp-block-media-text {
         gap: 40px;
@@ -81,6 +116,7 @@
 
     ul {
         padding-left: 20px;
+
         li {
             position: relative;
             padding-left: 20px;
@@ -90,11 +126,26 @@
                 width: 7px;
                 height: 7px;
                 border-radius: 50%;
-                background-color: $blue;
+                background-color: $darkBlue;
                 position: absolute;
                 left: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                top: 12px;
+            }
+
+            ul {
+                li {
+                    &::before {
+                        content: "";
+                        width: 7px;
+                        height: 7px;
+                        border: 1px solid $darkBlue;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        position: absolute;
+                        left: 0;
+                        top: 12px;
+                    }
+                }
             }
         }
     }
