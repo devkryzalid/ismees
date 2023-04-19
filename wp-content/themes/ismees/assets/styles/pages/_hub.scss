@@ -1,0 +1,131 @@
+.page-template-hub {
+
+    @media(min-width: 993px) {
+        #secondary-menu .header-cta a {
+            background-color: $purple;
+            color: white;
+    
+            &:hover {
+                background-color: white;
+                color: $purple;
+            }
+        }
+    }
+
+    .hub {
+        padding-bottom: 120px;
+        background-color: $mainBG;
+    
+        .hub-footer {
+            padding-top: clamp-calc(60, 100);
+    
+            p {
+                text-align: center;
+            }
+        }
+
+        .thematics-ctn {
+            padding-top: 50px;
+            border-radius: 50px;
+            background-color: $mainBG;
+            margin-top: -50px;
+
+            .thematic {
+                position: relative;
+                border-bottom: 1px solid rgba($darkBlue, 0.3);
+                padding-left: clamp-calc(15, 75);
+                padding-right: clamp-calc(15, 75);
+                padding-top: clamp-calc(30, 50);
+                padding-bottom: clamp-calc(30, 50);
+                cursor: pointer;
+                display: flex;
+                gap: clamp-calc(20, 75, 768, 1400);
+
+                .content-ctn {
+                    @include flex(center, space-between);
+                }
+
+                .image-ctn {
+                    position: absolute;
+                    right: 35px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                    opacity: 0;
+                    @include transition($basicTransition);
+                }
+
+                &__title, &__excerpt {
+                    width: 33%;
+                }
+
+                &__title {
+                    @include transition($basicTransition);
+                    @include responsive-font($primaryFont, 400, 20, 32, 22, 40);
+                }
+
+                &__excerpt {
+                    opacity: 0.7;
+                }
+
+                &__image {
+                    width: clamp-calc(100, 380);
+                    min-height: 80px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    background-color: $lightBlue;
+                }
+
+                &:hover {
+                    .thematic__title {
+                        font-weight: 700;
+                    }
+
+                    .image-ctn {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        .hub {
+            .thematics-ctn {
+    
+                .thematic {
+                    @include flex(flex-start, space-between, row);
+                    gap: clamp-calc(20, 100, 375, 992);
+                    padding-right: 0;
+                    padding-left: 0;
+                    margin-left: 20px;
+                    margin-right: 20px;
+
+                    .content-ctn {
+                        @include flex(flex-start, space-between, column);
+                    }
+    
+                    .image-ctn {
+                        opacity: 1;
+                        display: flex;
+                        position: initial;
+                        transform: translateY(0);
+                    }
+
+                    &__title, &__excerpt {
+                        width: 100%;
+                    }
+    
+                    &__title {
+                        font-weight: 700;
+                        margin: 0;
+                    }
+
+                    i {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.banner-content-title {
+
+    .banner-content-ctn {
+        padding-top: clamp-calc(120, 185);
+        padding-bottom: clamp-calc(140, 150);
+        background-color: $yellow;
+        @include flex(center, center, column);
+
+        .ontitle {
+          @include responsive-font($primaryFont, 400, 28, 45, 36, 53);
+          margin: 0
+        }
+
+        .title-ctn {
+            @include flex(center, center, column);
+        }
+
+        .page-title {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .title-decoration {
+            display: flex;
+
+            img {
+                width: clamp-calc(160, 260, 375, 992);
+            }
+        }
+
+        .gutenberg {
+          margin-top: 40px;
+          margin-bottom: 0;
+
+          p {
+            text-align: center;
+            @include responsive-font($primaryFont, 400, 20, 26, 26, 36);
+            margin: 0;
+          }
+        }
+    }
+
+    .banner-image {
+        width: 100%;
+        min-height: 500px;
+        object-fit: cover;
+        border-radius: 50px;
+        position: relative;
+        margin-top: -50px;
+    }
+
+    @keyframes draw {
+        from {
+          stroke-dashoffset: 1000;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    
+      path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw 1.2s 0.3s linear forwards;
+      }
+}

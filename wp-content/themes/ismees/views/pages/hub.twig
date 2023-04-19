@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+{% block content %}
+    <main class="hub" data-aos="fade" data-aos-delay="300">
+        {% include "partials/banners/banner-content-title.twig" with {
+                'ontitle': post.ontitle
+            }
+        %}
+        <div class="thematics-ctn">
+            {% for thematic in thematics %}
+                <div class="thematic jsBlockLink">
+                    <div class="content-ctn">
+                        <p class="thematic__title">{{ thematic.title }}</p>
+                        <p class="thematic__excerpt small">{{ thematic.post_excerpt }}</p>
+                        <a href="{{ thematic.link }}" aria-label="{{ __('Lien vers', 'ismees') ~ thematic.title }}"><i class="icon-arrow-right-bold"></i></a>
+                    </div>
+                    <div class="image-ctn">
+                        <img class="thematic__image" src="{{ thematic.thumbnail }}" alt="{{ __('Image de ', 'ismees') ~ thematic.title }}"/>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="container-md">
+            <div class="hub-footer">
+                <p class="small">{{ post.end_page_text}}</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/page.js"></script>
+{% endblock %}

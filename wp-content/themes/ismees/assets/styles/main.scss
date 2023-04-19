@@ -10,7 +10,9 @@
 @import "commons/buttons";
 @import "commons/gutenberg";
 
-@import "views/page";
+@import "pages/page";
+@import "pages/hub";
+@import "pages/single-thematic";
 
 @import "partials/footer";
 @import "partials/header";
@@ -22,6 +24,7 @@
 @import "partials/menu/secondary-menu";
 
 @import "partials/banners/basic-banner";
+@import "partials/banners/banner-content-title";
 
 @import "blocs/accordion";
 @import "blocs/bloc-cta";

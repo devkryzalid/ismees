@@ -1,6 +1,6 @@
 {% extends 'base.twig' %}
 {% block content %}
-<main class="page-content">
+<main class="page-content" data-aos="fade" data-aos-delay="300">
     {% include "partials/banners/basic-banner.twig" with {
         'post': page
     }%}
@@ -8,7 +8,7 @@
         {% include "partials/socials-share.twig" with {
             'pageUrl': page.link
         }%}
-        <div class="container-sm">
+        <div class="container-sm" data-aos="fade-up" data-aos-delay="300">
             <div class="gutenberg">
                 {{ page.content }}
             </div>

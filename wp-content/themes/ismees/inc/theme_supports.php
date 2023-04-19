@@ -23,6 +23,12 @@ function theme_supports() {
 	*/
 	add_theme_support( 'post-thumbnails' );
 
+	/**
+     * Add excerpt on page
+     */
+    add_post_type_support( 'page', 'excerpt' );
+	add_post_type_support( 'thematic', 'excerpt' );
+
 	/*
 	* Add image size.
 	*

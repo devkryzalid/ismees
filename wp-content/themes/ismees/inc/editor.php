@@ -25,6 +25,7 @@ function gutenberg_allowed_block_types( $allowed_blocks ) {
 		'core/gallery',
 		'core/quote',
 		'core/cover',
+		'core/table',
 		'core/file',
 		'core/buttons',
 		'core/text-columns',

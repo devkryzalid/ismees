@@ -4,7 +4,8 @@
 
     p {
         a {
-            color: $blue;
+            color: $darkGreen;
+            text-decoration: underline;
             position: relative;
             @include transition($shortTransition);
             top: 0;
