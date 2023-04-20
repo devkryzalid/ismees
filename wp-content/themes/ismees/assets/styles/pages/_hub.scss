@@ -1,28 +1,8 @@
 .page-template-hub {
 
-    @media(min-width: 993px) {
-        #secondary-menu .header-cta a {
-            background-color: $purple;
-            color: white;
-    
-            &:hover {
-                background-color: white;
-                color: $purple;
-            }
-        }
-    }
-
     .hub {
         padding-bottom: 120px;
         background-color: $mainBG;
-    
-        .hub-footer {
-            padding-top: clamp-calc(60, 100);
-    
-            p {
-                text-align: center;
-            }
-        }
 
         .subjects-ctn {
             padding-top: 50px;
@@ -78,9 +58,10 @@
                     width: clamp-calc(100, 380);
                     min-height: 80px;
                     max-height: 320px;
-                    object-fit: cover;
+                    object-fit: contain;
                     border-radius: 8px;
                     background-color: $lightBlue;
+                    padding: clamp-calc(5, 20);
                 }
 
                 &:hover {
@@ -92,6 +73,22 @@
                         opacity: 1;
                     }
                 }
+            }
+        }
+
+        .hub-footer {
+            padding-top: clamp-calc(60, 100);
+        }
+    }
+
+    @media(min-width: 993px) {
+        #secondary-menu .header-cta a {
+            background-color: $purple;
+            color: white;
+    
+            &:hover {
+                background-color: white;
+                color: $purple;
             }
         }
     }

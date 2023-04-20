@@ -5381,25 +5381,9 @@ body.page .page-content .container-lg {
   position: relative;
 }
 
-@media (min-width: 993px) {
-  .page-template-hub #secondary-menu .header-cta a {
-    background-color: #7D2D63;
-    color: white;
-  }
-  .page-template-hub #secondary-menu .header-cta a:hover {
-    background-color: white;
-    color: #7D2D63;
-  }
-}
 .page-template-hub .hub {
   padding-bottom: 120px;
   background-color: #F4F2EB;
-}
-.page-template-hub .hub .hub-footer {
-  padding-top: clamp(3.75rem, 2.8353658537rem + 3.9024390244vw, 6.25rem);
-}
-.page-template-hub .hub .hub-footer p {
-  text-align: center;
 }
 .page-template-hub .hub .subjects-ctn {
   padding-top: 50px;
@@ -5465,15 +5449,29 @@ body.page .page-content .container-lg {
   width: clamp(6.25rem, -0.1524390244rem + 27.3170731707vw, 23.75rem);
   min-height: 80px;
   max-height: 320px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   background-color: #9EB2D9;
+  padding: clamp(0.3125rem, -0.0304878049rem + 1.4634146341vw, 1.25rem);
 }
 .page-template-hub .hub .subjects-ctn .subject:hover .subject__title {
   font-weight: 700;
 }
 .page-template-hub .hub .subjects-ctn .subject:hover .image-ctn {
   opacity: 1;
+}
+.page-template-hub .hub .hub-footer {
+  padding-top: clamp(3.75rem, 2.8353658537rem + 3.9024390244vw, 6.25rem);
+}
+@media (min-width: 993px) {
+  .page-template-hub #secondary-menu .header-cta a {
+    background-color: #7D2D63;
+    color: white;
+  }
+  .page-template-hub #secondary-menu .header-cta a:hover {
+    background-color: white;
+    color: #7D2D63;
+  }
 }
 @media (max-width: 992px) {
   .page-template-hub .hub .subjects-ctn .subject {
@@ -6536,13 +6534,11 @@ body.customize-support #header {
   margin-bottom: 0;
 }
 .banner-content-title .banner-content-ctn .gutenberg p {
-  text-align: center;
   font-family: "Rubik", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(1.25rem, 1.112804878rem + 0.5853658537vw, 1.625rem);
   line-height: clamp(1.625rem, 1.3963414634rem + 0.9756097561vw, 2.25rem);
   font-style: normal;
-  margin: 0;
 }
 @keyframes draw {
   from {

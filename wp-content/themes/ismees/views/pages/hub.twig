@@ -2,7 +2,8 @@
 {% block content %}
     <main class="hub" data-aos="fade" data-aos-delay="300">
         {% include "partials/banners/banner-content-title.twig" with {
-                'ontitle': post.ontitle
+                'ontitle': post.ontitle,
+                'introduction': post.introduction
             }
         %}
         <div class="subjects-ctn">
@@ -26,8 +27,8 @@
             {% endfor %}
         </div>
         <div class="container-md">
-            <div class="hub-footer">
-                <p class="small">{{ post.end_page_text}}</p>
+            <div class="hub-footer gutenberg">
+                {{ post.content}}
             </div>
         </div>
     </main>

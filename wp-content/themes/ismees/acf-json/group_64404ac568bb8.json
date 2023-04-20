@@ -24,10 +24,10 @@
         },
         {
             "key": "field_64404ac5d257b",
-            "label": "Texte de fin de page",
-            "name": "end_page_text",
+            "label": "Texte d'introduction",
+            "name": "introduction",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -37,10 +37,10 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -61,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681938407
+    "modified": 1682020055
 }
