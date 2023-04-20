@@ -40,6 +40,8 @@ function redirect_archive_template($template)
 function register_post_types() {
 	subject_custom_post_type();
 	thematic_custom_post_type();
+	member_resource_custom_post_type();
+	student_resource_custom_post_type();
 }
 
 

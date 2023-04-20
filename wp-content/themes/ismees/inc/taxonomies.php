@@ -37,8 +37,10 @@ function register_taxonomies() {
         'show_in_rest'      => true
 	];
 	
-	subject_type_taxonomy($labelsGlobal, $argsGlobal);
-    thematic_type_taxonomy($labelsGlobal, $argsGlobal);
+	target_taxonomy($labelsGlobal, $argsGlobal);
+    thematic_intervention_taxonomy($labelsGlobal, $argsGlobal);
+    resource_category_taxonomy($labelsGlobal, $argsGlobal);
+    resource_type_taxonomy($labelsGlobal, $argsGlobal);
 }
 
 /**

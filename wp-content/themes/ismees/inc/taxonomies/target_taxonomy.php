@@ -1,9 +1,9 @@
 <?php
 
 /**
- * create taxo for Thematic
+ * create taxo for Target
  */
-function thematic_type_taxonomy($labelsGlobal, $argsGlobal)
+function target_taxonomy($labelsGlobal, $argsGlobal)
 {
     $labels = [
         'name'          => _x('Cibles', 'taxonomy general name', 'ismees'),
@@ -12,8 +12,8 @@ function thematic_type_taxonomy($labelsGlobal, $argsGlobal)
     ];
     $args = [
         'labels'  => array_merge($labelsGlobal, $labels),
-        'rewrite' => ['slug' => __('thematic-target', 'ismees')],
+        'rewrite' => ['slug' => __('cible', 'ismees')],
     ];
 
-    register_taxonomy('thematic_target', ['thematic'], array_merge($argsGlobal, $args));
+    register_taxonomy('target', ['subject', 'thematic', 'page', 'member_resource', 'student_resource' ], array_merge($argsGlobal, $args));
 }
