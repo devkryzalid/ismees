@@ -1,23 +1,23 @@
 <?php
 
 /**
- * Add thematic custom post type
+ * Add subject custom post type
  */
-function thematic_custom_post_type()
+function subject_custom_post_type()
 {
     $labels = array(
-        'name'                     => 'Thématiques',
-        'singular_name'            => 'Thématique',
-        'all_items'                => 'Toutes les Thématiques',
+        'name'                     => 'Sujets',
+        'singular_name'            => 'Sujet',
+        'all_items'                => 'Tous les Sujets',
         'add_new'                  => 'Ajouter',
         'add_new_item'             => 'Ajouter',
         'edit_item'                => 'Modifier',
         'new_item'                 => 'Nouveau',
-        'view_item'                => 'Voir la thématique',
-        'search_items'             => 'Trouver une thématique',
+        'view_item'                => 'Voir le sujet',
+        'search_items'             => 'Trouver un sujet',
         'not_found'                => 'Pas de résultat',
         'not_found_in_trash'       => 'Pas de résultat',
-        'menu_name'                => 'Thématiques',
+        'menu_name'                => 'Sujets',
         'item_published'           => 'Publié',
         'item_published_privately' => 'Publié de façon privée',
         'item_scheduled'           => 'Programmé',
@@ -40,7 +40,7 @@ function thematic_custom_post_type()
         'has_archive'         => true,
         'query_var'           => true,
         'can_export'          => true,
-        'rewrite'             => array('slug' => __('thématique', 'ismees'), 'with_front' => true),
+        'rewrite'             => array('slug' => __('sujet', 'ismees'), 'with_front' => true),
     );
-    register_post_type('thematic', $args);
+    register_post_type('subject', $args);
 }

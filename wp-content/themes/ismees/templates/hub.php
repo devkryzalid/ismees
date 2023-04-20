@@ -4,15 +4,15 @@
  */
 $context = Timber::context();
 
-$thematics = [
-    'post_type'      => 'thematic',
+$subjects = [
+    'post_type'      => 'subject',
     'post_status'    => 'publish',
     'orderby'       => 'title',
     'order'          => 'ASC',
     'nopaging'       => false,
 ];
 
-$context['thematics'] = new Timber\PostQuery($thematics);
+$context['subjects'] = new Timber\PostQuery($subjects);
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 

@@ -38,7 +38,8 @@ function redirect_archive_template($template)
  * Put here every register function that are in /post_types/*.php files
  */
 function register_post_types() {
-	sample_custom_post_type();
+	subject_custom_post_type();
+	thematic_custom_post_type();
 }
 
 

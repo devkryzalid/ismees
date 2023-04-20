@@ -37,7 +37,8 @@ function register_taxonomies() {
         'show_in_rest'      => true
 	];
 	
-	sample_type_taxonomy($labelsGlobal, $argsGlobal);
+	subject_type_taxonomy($labelsGlobal, $argsGlobal);
+    thematic_type_taxonomy($labelsGlobal, $argsGlobal);
 }
 
 /**

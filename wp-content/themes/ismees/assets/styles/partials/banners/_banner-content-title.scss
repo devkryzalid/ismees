@@ -41,15 +41,6 @@
         }
     }
 
-    .banner-image {
-        width: 100%;
-        min-height: 500px;
-        object-fit: cover;
-        border-radius: 50px;
-        position: relative;
-        margin-top: -50px;
-    }
-
     @keyframes draw {
         from {
           stroke-dashoffset: 1000;

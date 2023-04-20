@@ -28,6 +28,7 @@ function theme_supports() {
      */
     add_post_type_support( 'page', 'excerpt' );
 	add_post_type_support( 'thematic', 'excerpt' );
+	add_post_type_support( 'subject', 'excerpt' );
 
 	/*
 	* Add image size.

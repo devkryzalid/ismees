@@ -24,13 +24,13 @@
             }
         }
 
-        .thematics-ctn {
+        .subjects-ctn {
             padding-top: 50px;
             border-radius: 50px;
             background-color: $mainBG;
             margin-top: -50px;
 
-            .thematic {
+            .subject {
                 position: relative;
                 border-bottom: 1px solid rgba($darkBlue, 0.3);
                 padding-left: clamp-calc(15, 75);
@@ -39,10 +39,12 @@
                 padding-bottom: clamp-calc(30, 50);
                 cursor: pointer;
                 display: flex;
-                gap: clamp-calc(20, 75, 768, 1400);
+                gap: clamp-calc(20, 50, 768, 1400);
 
                 .content-ctn {
                     @include flex(center, space-between);
+                    width: 100%;
+                    gap: clamp-calc(20, 75, 768, 1400);
                 }
 
                 .image-ctn {
@@ -55,8 +57,8 @@
                     @include transition($basicTransition);
                 }
 
-                &__title, &__excerpt {
-                    width: 33%;
+                &__title, &__excerpt, &__btn {
+                    width: calc(33% - 34px);
                 }
 
                 &__title {
@@ -68,16 +70,21 @@
                     opacity: 0.7;
                 }
 
+                &__btn {
+                    @include flex(center, flex-end);
+                }
+
                 &__image {
                     width: clamp-calc(100, 380);
                     min-height: 80px;
+                    max-height: 320px;
                     object-fit: cover;
                     border-radius: 8px;
                     background-color: $lightBlue;
                 }
 
                 &:hover {
-                    .thematic__title {
+                    .subject__title {
                         font-weight: 700;
                     }
 
@@ -91,9 +98,9 @@
 
     @media(max-width: 992px) {
         .hub {
-            .thematics-ctn {
+            .subjects-ctn {
     
-                .thematic {
+                .subject {
                     @include flex(flex-start, space-between, row);
                     gap: clamp-calc(20, 100, 375, 992);
                     padding-right: 0;

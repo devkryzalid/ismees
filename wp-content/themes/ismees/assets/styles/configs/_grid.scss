@@ -5,7 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- .container,
  .container-fluid,
  .container-xxl,
  .container-xl,
@@ -13,52 +12,61 @@
  .container-md,
  .container-sm {
    width: 100%;
-   padding-right: var(--bs-gutter-x, 0.75rem);
-   padding-left: var(--bs-gutter-x, 0.75rem);
+   padding-right: var(--bs-gutter-x, 1.25rem);
+   padding-left: var(--bs-gutter-x, 1.25rem);
    margin-right: auto;
    margin-left: auto;
    max-width: 1920px;
  }
  
  @media (min-width: 576px) {
-   .container-sm, .container {
+   .container-sm {
      max-width: 540px;
    }
  }
  @media (min-width: 768px) {
-  .container-sm, .container {
+  .container-sm {
      max-width: 720px;
    }
  }
  @media (min-width: 992px) {
-  .container-md, .container-sm, .container {
+  .container-md, .container-sm {
      max-width: 950px;
    }
  }
  @media (min-width: 1100px) {
-  .container-lg, .container-md, .container {
+  .container-lg, .container-md {
     max-width: 1050px;
   }
 }
  @media (min-width: 1200px) {
-  .container-xxl, .container-xl, .container-lg, .container {
+  .container-xxl, .container-xl, .container-lg {
      max-width: 1140px;
    }
  }
  @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container {
+  .container-xxl, .container-xl {
     max-width: 1200px;
   }
 }
  @media (min-width: 1500px) {
-   .container-xxl, .container {
+   .container-xxl {
      max-width: 1300px;
    }
  }
  @media (min-width: 1700px) {
-  .container-xxl,  .container {
+  .container-xxl {
     max-width: 1500px;
   }
+}
+
+.container {
+  width: 100%;
+  padding-right: clamp-calc(20, 75, 375, 992);
+  padding-left: clamp-calc(20, 75, 375, 992);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1920px;
 }
  .row {
    --bs-gutter-x: 2.5rem;
