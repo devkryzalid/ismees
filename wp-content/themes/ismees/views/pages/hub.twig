@@ -26,11 +26,13 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="container-md">
-            <div class="hub-footer gutenberg">
-                {{ post.content}}
+        {% if post.content %}
+            <div class="container-md">
+                <div class="hub-footer gutenberg">
+                    {{ post.content }}
+                </div>
             </div>
-        </div>
+        {% endif %}
     </main>
 {% endblock %}
 {% block specific_script %}
