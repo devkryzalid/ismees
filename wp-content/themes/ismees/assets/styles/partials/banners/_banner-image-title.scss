@@ -1,0 +1,43 @@
+.banner-image-title {
+    @include flex(center, center);
+    background-color: $lightBlue;
+    padding-top: clamp-calc(120, 185);
+    padding-bottom: clamp-calc(90, 150);
+
+    .banner-ctn {
+        @include flex(center, center, column);
+    }
+
+    .banner-content-ctn {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .title-ctn {
+            @include flex(flex-start, flex-start, column);
+        
+            .page-title {
+                margin-bottom: clamp-calc(18, 60);
+                font-size: clamp-calc(40, 86, 375, 1700);
+                line-height: clamp-calc(43, 80, 375, 1700)
+            }
+
+            .anchor {
+                @include flex(center, flex-start);
+                @include responsive-font($primaryFont, 500, 20, 22, 24, 26);
+
+                i {
+                    color: $blue;
+                    margin-right: 15px;
+                }
+            }
+        }
+
+        .banner-image {
+            min-height: 300px;
+            max-height: 600px;
+            width: 100%;
+            object-fit: contain;
+            position: relative;
+        }
+    }
+}

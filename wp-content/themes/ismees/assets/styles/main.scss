@@ -12,19 +12,28 @@
 
 @import "pages/page";
 @import "pages/hub";
+@import "pages/single-subject";
 @import "pages/single-thematic";
+@import "pages/member-resource";
+@import "pages/student-resource";
 
 @import "partials/footer";
 @import "partials/header";
 @import "partials/form";
 @import "partials/breadscrum";
 @import "partials/social-share";
+@import "partials/more-resources";
 
 @import "partials/menu/primary-menu";
 @import "partials/menu/secondary-menu";
 
 @import "partials/banners/basic-banner";
+@import "partials/banners/banner-image-title";
 @import "partials/banners/banner-content-title";
+
+@import "partials/cards/basic-card";
+
+@import "partials/lists/basic-card-list";
 
 @import "blocs/accordion";
 @import "blocs/bloc-cta";

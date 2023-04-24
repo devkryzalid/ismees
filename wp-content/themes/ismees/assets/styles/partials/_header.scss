@@ -12,7 +12,7 @@ body.customize-support {
     left: 0;
     @include transition($basicTransition);
     z-index: 5000;
-    background-color: white;
+    background-color: transparent;
 
     ul {
         padding: 0;

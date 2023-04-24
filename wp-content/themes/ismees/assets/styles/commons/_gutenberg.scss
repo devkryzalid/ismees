@@ -1,6 +1,4 @@
 .gutenberg {
-    margin-top: clamp-calc(80, 120);
-    margin-bottom: clamp-calc(90, 110);
 
     p {
         a {
@@ -121,6 +119,11 @@
         li {
             position: relative;
             padding-left: 20px;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             &::before {
                 content: "";
@@ -135,6 +138,12 @@
 
             ul {
                 li {
+                    margin-bottom: 10px;
+            
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    
                     &::before {
                         content: "";
                         width: 7px;

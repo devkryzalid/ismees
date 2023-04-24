@@ -48,3 +48,8 @@ a {
 	transition: $basicTransition;
 	text-decoration: none;
 }
+
+.page-content {
+	padding-top: clamp-calc(80, 120);
+    padding-bottom: clamp-calc(90, 110);
+}

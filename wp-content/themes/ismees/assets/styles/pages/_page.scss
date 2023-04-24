@@ -1,14 +1,6 @@
 body.page {
     background-color: $mainBG;
 
-    #header {
-        background-color: transparent;
-
-        &.-sticky {
-            background-color: white;
-        }
-    }
-
     .page-content {
 
         .container-lg {

@@ -1,0 +1,18 @@
+<div class="banner-image-title">
+    <div class="container-lg">
+        <div class="banner-ctn">
+            {% include "partials/breadscrum.twig" %}
+            <div class="banner-content-ctn">
+                {% if post.thumbnail %}
+                    <img data-aos="fade-up" data-aos-delay="500" class="banner-image" src="{{ post.thumbnail }}" alt={{ __('Image de', 'ismees') ~ post.title }}/>
+                {% endif %}
+                <div class="title-ctn">
+                    <h1 class="page-title" data-aos="fade-up" data-aos-delay="500">{{ post.title }}</h1>
+                    {% if anchor %}
+                        <a class="anchor" href="{{ anchor }}"><i class="icon-right-arrow-long"></i>{{ __('Ressources utiles', 'ismees')}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{# It takes Items value from parent page #}
+
+<div id="resources" class="more-resources">
+    <div class="container-lg">
+        <h2 class="resources-title">{{ __('Ressources utiles ', 'ismees')}} <span>{{ __(' à découvrir', 'ismees')}}</span></h2>
+        {% include "partials/lists/basic-card-list.twig" %}
+        <div class="button-ctn">
+            <a class="main-button -blue">{{ __('Consulter toutes les ressources', 'ismees')}}</a>
+        </div>
+    </div>
+</div>

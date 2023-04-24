@@ -1,0 +1,28 @@
+.more-resources {
+    @include flex(center, center, column);
+    padding-top: clamp-calc(80, 120);
+    padding-bottom: clamp-calc(80, 120);
+    background-color: $mainBG;
+    border-radius: 50px 50px 0 0;
+    z-index: 3;
+    position: relative;
+    margin-top: -50px;
+
+    .resources-title {
+        margin: 0;
+        text-align: center;
+    }
+
+    .items-ctn {
+        margin-top: 65px;
+        margin-bottom: clamp-calc(80, 110);
+    }
+
+    .button-ctn {
+        display: flex;
+
+        .main-button {
+            margin: 0 auto;
+        }
+    }
+}
