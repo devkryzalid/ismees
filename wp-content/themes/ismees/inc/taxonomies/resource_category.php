@@ -7,7 +7,7 @@ function resource_category_taxonomy($labelsGlobal, $argsGlobal)
 {
     $labels = [
         'name'          => _x('Catégories', 'taxonomy general name', 'ismees'),
-        'singular_name' => _x('Catégory', 'taxonomy singular name', 'ismees'),
+        'singular_name' => _x('Catégorie', 'taxonomy singular name', 'ismees'),
         'menu_name'     => __('Catégories', 'ismees'),
     ];
     $args = [

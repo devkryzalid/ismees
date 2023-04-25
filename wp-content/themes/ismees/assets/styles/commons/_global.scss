@@ -53,3 +53,16 @@ a {
 	padding-top: clamp-calc(80, 120);
     padding-bottom: clamp-calc(90, 110);
 }
+
+.jsBlockLink {
+	cursor: pointer;
+}
+
+.bottom-decoration {
+	font-weight: 700;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	display: inline-block;
+	padding-bottom: 15px; /* set the height of the underline */
+}

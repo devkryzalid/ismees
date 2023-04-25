@@ -2,7 +2,7 @@
     @include flex(center, center);
     background-color: $lightBlue;
     padding-top: clamp-calc(120, 185);
-    padding-bottom: clamp-calc(90, 150);
+    padding-bottom: clamp-calc(120, 150);
 
     .banner-ctn {
         @include flex(center, center, column);
@@ -11,14 +11,15 @@
     .banner-content-ctn {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: clamp-calc(45, 100, 992, 1750);
 
         .title-ctn {
-            @include flex(flex-start, flex-start, column);
+            @include flex(flex-start, center, column);
         
             .page-title {
                 margin-bottom: clamp-calc(18, 60);
-                font-size: clamp-calc(40, 86, 375, 1700);
-                line-height: clamp-calc(43, 80, 375, 1700)
+                font-size: clamp-calc(40, 86, 1200, 1700);
+                line-height: clamp-calc(43, 80, 1200, 1700)
             }
 
             .anchor {
@@ -28,6 +29,15 @@
                 i {
                     color: $blue;
                     margin-right: 15px;
+                    position: relative;
+                    left: 0;
+                    @include transition($basicTransition);
+                }
+
+                &:hover {
+                    i {
+                        left: 8px;
+                    }
                 }
             }
         }
@@ -38,6 +48,25 @@
             width: 100%;
             object-fit: contain;
             position: relative;
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .banner-content-ctn {
+            @include flex(center, center, column-reverse);
+
+            .title-ctn {
+                @include flex(flex-start, flex-start, column);
+            
+                .page-title {
+                    text-align: center;
+                }
+    
+                .anchor {
+                    display: none;
+                }
+            }
         }
     }
 }

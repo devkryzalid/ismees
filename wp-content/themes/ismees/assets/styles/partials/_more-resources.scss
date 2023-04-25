@@ -9,6 +9,7 @@
     margin-top: -50px;
 
     .resources-title {
+        @include responsive-font($primaryFont, 400, 35, 50, 40, 60);
         margin: 0;
         text-align: center;
     }

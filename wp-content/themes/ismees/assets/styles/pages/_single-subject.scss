@@ -11,10 +11,63 @@
         background-color: white;
         position: relative;
         z-index: 2;
-        padding-bottom: clamp-calc(140, 160);
+        padding-bottom: clamp-calc(150, 200);
         
         .container-lg {
             position: relative;
+        }
+    
+        .reviews-back-ctn {
+            padding-top: clamp-calc(30, 50);
+            margin-top: clamp-calc(20, 80);
+            @include flex(center, space-between);
+            border-top: 2px solid rgba($darkBlue, 0.7);
+
+            p {
+                @include responsive-font($primaryFont, 600, 14, 16, 24, 24, null, null, rgba($darkBlue, 0.7));
+                margin: 0;
+            }
+
+            .back-button {
+                @include responsive-font($primaryFont, 600, 16, 18, 17, 19, null, null, $blue);
+                display: flex;
+                align-items: center;
+
+                i {
+                    position: relative;
+                    color: $blue;
+                    margin-right: 15px;
+                    transform: rotate(180deg);
+                    left: 0;
+                    @include transition($basicTransition);
+                }
+
+                &:hover {
+                    i {
+                        left: -8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-decoration {
+        background-image: url('/assets/images/wave-salmon.svg');
+    }
+
+    @media(max-width: 767px) {
+        .page-content {
+
+            .reviews-back-ctn {
+                @include flex(flex-start, flex-start, column);
+
+                .reviews-ctn {
+                    width: 100%;
+                    padding-top: 30px;
+                    margin-top: 30px;
+                    border-top: 1px solid rgba($darkBlue, 0.3);
+                }
+            }
         }
     }
 }

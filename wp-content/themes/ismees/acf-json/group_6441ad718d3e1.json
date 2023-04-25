@@ -37,7 +37,7 @@
                 "id": ""
             },
             "post_type": [
-                "subject"
+                "student_resource"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -70,5 +70,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682026105
+    "modified": 1682429710
 }

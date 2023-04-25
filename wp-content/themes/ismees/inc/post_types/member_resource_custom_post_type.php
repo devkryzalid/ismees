@@ -7,7 +7,7 @@ function member_resource_custom_post_type()
 {
     $labels = array(
         'name'                     => 'Ressources pour le personnel',
-        'singular_name'            => 'Ressource étudiant.e',
+        'singular_name'            => 'Ressource pour le personnel',
         'all_items'                => 'Toutes les ressources pour le personnel',
         'add_new'                  => 'Ajouter',
         'add_new_item'             => 'Ajouter',

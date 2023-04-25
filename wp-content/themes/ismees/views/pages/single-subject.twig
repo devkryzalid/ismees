@@ -15,12 +15,20 @@
                 <div class="gutenberg">
                     {{ subject.content }}
                 </div>
+                <div class="reviews-back-ctn">
+                    <a class="back-button" href="{{ options.config_subjects }}"><i class="icon-right-arrow-long"></i>{{ __('Retour aux sujets', 'ismees')}}</a>
+                    <div class="reviews-ctn">
+                        <p>{{ __('Ce contenu vous a-t-il été utile ?', 'ismees') }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     {% if subject.meta('resources') %}
         {% include "partials/more-resources.twig" with {
-            'items': subject.meta('resources')
+            'items': subject.meta('resources'),
+            'taxonomy': 'resource_category',
+            'redirectionUrl': options.config_students_resources
         } %}
     {% endif %}
 </main>
