@@ -30,6 +30,7 @@ wp-content/themes/twenty*/
 
 # ignore node dependency directories
 node_modules/
+vendor/
 .htaccess
 # ignore log files and databases
 *.log
