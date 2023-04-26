@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+{% block content %}
+<main class="single-subject" data-aos="fade" data-aos-delay="300">
+    {% include "partials/banners/banner-image-title.twig" with {
+            'post': thematic,
+            'taxonomy': 'thematic_intervention'
+        }
+    %}
+
+    {% include "partials/page-content/content-reviews.twig" with {
+            'page': thematic,
+            'backBtnLink': options.config_subjects,
+            'backBtnText': __('Retour aux niveaux d’intervention', 'ismees')
+        } 
+    %}
+    
+    {% if thematic.meta('resources') %}
+        {% include "partials/more-resources.twig" with {
+            'items': thematic.meta('resources'),
+            'taxonomy': 'resource_category',
+            'redirectionUrl': options.config_members_resources
+        } %}
+    {% endif %}
+</main>
+{% endblock %}

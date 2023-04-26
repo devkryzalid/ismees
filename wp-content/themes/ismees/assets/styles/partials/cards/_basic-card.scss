@@ -7,8 +7,10 @@
         background-color: $darkBlue;
         border-radius: 12px;
         overflow: hidden;
+        width: 100%;
 
         .card-image {
+            height: clamp-calc(200, 300);
             width: 100%;
             object-fit: cover;
             border-radius: 12px;

@@ -1,24 +1,22 @@
-<header id="header">
+<header id="header" class="-not-sticky">
 	<div id="header-mobile">
 		<div class="burger-menu -closed">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-		<div class="logo-ctn jsBlockLink">
+		<div class="logo-ctn">
 			<a href="{{ site.home_url }}" aria-label="{{ __('Lien vers l\'accueil', 'ismees') }}"></a>
-			<img class="header-logo" src="{{ theme.link }}/assets/images/logo.svg" alt="Logo de l'ISMÉES"/>
 		</div>
-		<a class="header-search" href="{{ options.header_search.url }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i></a>
+		<a class="header-search" href="{{ options.search }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i></a>
 	</div>
 	<div id="header-ctn">
 		<div class="burger-menu -opened">
 			<span></span>
 			<span></span>
 		</div>
-		<div class="logo-ctn jsBlockLink">
+		<div class="logo-ctn">
 			<a href="{{ site.home_url }}" aria-label="{{ __('Lien vers l\'accueil', 'ismees') }}"></a>
-			<img class="header-logo" src="{{ theme.link }}/assets/images/logo.svg" alt="Logo de l'ISMÉES"/>
 		</div>
 
 		{% include 'partials/menu/primary-menu.twig' %}

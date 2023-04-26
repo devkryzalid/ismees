@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(window.scrollY >= 50) {
             header.classList.add("-sticky");
+            header.classList.remove("-not-sticky");
 
             const stickyHeader = document.querySelector('.-sticky');
             const stickyHeaderHeight = stickyHeader.offsetHeight + 'px';
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } else {
             header.classList.remove("-sticky");
+            header.classList.add("-not-sticky");
         }
     });
 
@@ -57,4 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.dispatchEvent(new Event("resize"));
+    window.dispatchEvent(new Event("scroll"));
+
 });

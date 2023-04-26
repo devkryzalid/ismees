@@ -1,0 +1,106 @@
+body.thematic-template-default {
+    background-color: $mainBG;
+
+    #breadcrumbs {
+        span, a {
+            color: white;
+        }
+
+        i {
+            color: rgba(white, 0.3);
+        }
+    }
+
+    .banner-image-title {
+        background-color: $darkBlue;
+
+        .banner-content-ctn {
+            
+            .ontitle-title {
+                color: white;
+            }
+
+            .title-ctn {
+                .page-title {
+                    color: white;
+                    margin-bottom: 0;
+                }
+            }
+    
+            .banner-image {
+                border-radius: 24px;
+            }
+        }
+    }
+
+    .bottom-decoration {
+        background-image: url('/assets/images/wave-green.svg');
+    }
+
+    #header.-not-sticky {
+
+        .logo-ctn {
+            background-image: url('/assets/images/logo-white.svg');
+        }
+
+        #header-mobile {
+            .burger-menu {
+                span {
+                    background-color: white;
+                }
+            }
+        }
+
+        .header-search {
+            color: white;
+        }
+    }
+
+    @media(min-width: 993px) {
+
+        #header.-not-sticky {
+
+            #primary-menu {
+
+                .main-item {
+                    &>a {
+                        color: white;
+
+                        i {
+                            color: white;
+                        }
+                    }
+
+                    &:hover > a {
+                        color: rgba(white, 0.7);
+                    }
+                }
+            }
+
+            #secondary-menu  {
+
+                .wpml, 
+                a {
+                    color: white;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                .header-cta {
+                    a {
+                        background-color: $mint;
+                        color: $darkBlue;
+                
+                        &:hover {
+                            background-color: white;
+                            color: $mint;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}

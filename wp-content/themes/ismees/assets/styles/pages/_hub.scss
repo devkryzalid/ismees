@@ -84,13 +84,16 @@
     }
 
     @media(min-width: 993px) {
-        #secondary-menu .header-cta a {
-            background-color: $purple;
-            color: white;
-    
-            &:hover {
-                background-color: white;
-                color: $purple;
+
+        #header.-not-sticky {
+            #secondary-menu .header-cta a {
+                background-color: $purple;
+                color: white;
+        
+                &:hover {
+                    background-color: white;
+                    color: $purple;
+                }
             }
         }
     }

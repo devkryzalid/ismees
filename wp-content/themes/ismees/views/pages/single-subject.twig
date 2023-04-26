@@ -6,24 +6,14 @@
             'anchor': "#resources"
         }
     %}
-    <div class="page-content">
-        <div class="container-lg">
-            {% include "partials/socials-share.twig" with {
-                'pageUrl': subject.link
-            } %}
-            <div class="container-sm" data-aos="fade-up" data-aos-delay="300">
-                <div class="gutenberg">
-                    {{ subject.content }}
-                </div>
-                <div class="reviews-back-ctn">
-                    <a class="back-button" href="{{ options.config_subjects }}"><i class="icon-right-arrow-long"></i>{{ __('Retour aux sujets', 'ismees')}}</a>
-                    <div class="reviews-ctn">
-                        <p>{{ __('Ce contenu vous a-t-il été utile ?', 'ismees') }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    {% include "partials/page-content/content-reviews.twig" with {
+            'page': subject,
+            'backBtnLink': options.config_subjects,
+            'backBtnText': __('Retour aux sujets', 'ismees')
+        } 
+    %}
+    
     {% if subject.meta('resources') %}
         {% include "partials/more-resources.twig" with {
             'items': subject.meta('resources'),

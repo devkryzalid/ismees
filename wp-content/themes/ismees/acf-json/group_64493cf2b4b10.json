@@ -1,13 +1,13 @@
 {
-    "key": "group_6441af2cbc11e",
-    "title": "Page détail thématique",
+    "key": "group_64493cf2b4b10",
+    "title": "Taxonomie intervention",
     "fields": [
         {
-            "key": "field_6441af2d8e8d7",
-            "label": "Sur-titre",
-            "name": "ontitle",
+            "key": "field_64493cf23da6a",
+            "label": "Numéro hiérarchique",
+            "name": "number_intervention",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,17 +17,19 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
+            "min": "",
+            "max": "",
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_6441af428e8d8",
-            "label": "Ressources",
-            "name": "resources",
+            "key": "field_6449491133e1c",
+            "label": "Couleur",
+            "name": "color_intervention",
             "aria-label": "",
-            "type": "relationship",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,28 +38,26 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "member_resource"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": ""
+            "choices": {
+                "#72CBA6": "Vert",
+                "#FFE352": "Jaune",
+                "#9EB2D9": "Bleu"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "taxonomy",
                 "operator": "==",
-                "value": "thematic"
+                "value": "thematic_intervention"
             }
         ]
     ],
@@ -70,5 +70,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682521641
+    "modified": 1682524806
 }
