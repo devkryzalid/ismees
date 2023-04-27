@@ -37,56 +37,11 @@ body.thematic-template-default {
         background-image: url('/assets/images/wave-green.svg');
     }
 
-    #header.-not-sticky {
-
-        .logo-ctn {
-            background-image: url('/assets/images/logo-white.svg');
-        }
-
-        #header-mobile {
-            .burger-menu {
-                span {
-                    background-color: white;
-                }
-            }
-        }
-
-        .header-search {
-            color: white;
-        }
-    }
-
     @media(min-width: 993px) {
 
         #header.-not-sticky {
 
-            #primary-menu {
-
-                .main-item {
-                    &>a {
-                        color: white;
-
-                        i {
-                            color: white;
-                        }
-                    }
-
-                    &:hover > a {
-                        color: rgba(white, 0.7);
-                    }
-                }
-            }
-
             #secondary-menu  {
-
-                .wpml, 
-                a {
-                    color: white;
-
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
 
                 .header-cta {
                     a {

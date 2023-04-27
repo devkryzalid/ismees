@@ -14,10 +14,30 @@ body.customize-support {
     z-index: 5000;
     background-color: transparent;
 
-    ul {
-        padding: 0;
-        margin: 0;
+    &.-white-background {
+        background-color: white;
     }
+
+    &.-not-sticky {
+
+        &.-reverse-header {
+            .logo-ctn {
+                background-image: url('/assets/images/logo-white.svg');
+            }
+    
+            #header-mobile {
+                .burger-menu {
+                    span {
+                        background-color: white;
+                    }
+                }
+            }
+    
+            .header-search {
+                color: white;
+            }
+        }
+    }    
 
     &.-sticky {
         position: fixed;
@@ -26,6 +46,11 @@ body.customize-support {
         #secondary-menu .header-cta a {
             border-radius: 8px;
         }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
     }
 
     #header-ctn,
@@ -174,6 +199,44 @@ body.customize-support {
                 &:hover {
                     transform: rotate(180deg);
                 }
+            }
+        }
+    }
+
+    @media(min-width: 993px) {
+
+        &.-not-sticky {
+
+            &.-reverse-header {
+
+                #primary-menu {
+
+                    .main-item {
+                        &>a {
+                            color: white;
+    
+                            i {
+                                color: white;
+                            }
+                        }
+    
+                        &:hover > a {
+                            color: rgba(white, 0.7);
+                        }
+                    }
+                }
+    
+                #secondary-menu  {
+    
+                    .wpml, 
+                    a {
+                        color: white;
+    
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                }   
             }
         }
     }

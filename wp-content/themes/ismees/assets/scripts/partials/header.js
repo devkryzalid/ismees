@@ -61,4 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatchEvent(new Event("resize"));
     window.dispatchEvent(new Event("scroll"));
 
+    // ********* White background on the header when user hover the menu dropdown ********* //
+
+    const primaryMenuItems = document.querySelectorAll('#primary-menu .main-item');
+
+    primaryMenuItems.forEach((item) => {
+        item.addEventListener('mouseover', () => {
+            header.classList.add('-white-background');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            header.classList.remove('-white-background');
+        });
+    });
 });

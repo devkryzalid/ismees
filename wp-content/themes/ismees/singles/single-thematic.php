@@ -10,4 +10,3 @@ $timber_post = new Timber\Post();
 $context['thematic'] = $timber_post;
 
 Timber::render('pages/single-thematic.twig', $context);
-

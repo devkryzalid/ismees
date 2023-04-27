@@ -42,6 +42,15 @@
             }
         }
     }
+
+    .reviews-ctn {
+        @include flex();
+        gap: 20px;
+
+        .likebtn-wrapper {
+            height: 38px;
+        }
+    }
     
     @media(max-width: 767px) {
 
