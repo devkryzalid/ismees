@@ -3,26 +3,6 @@
     "title": "Page détail thématique",
     "fields": [
         {
-            "key": "field_6441af2d8e8d7",
-            "label": "Sur-titre",
-            "name": "ontitle",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6441af428e8d8",
             "label": "Ressources",
             "name": "resources",
@@ -70,5 +50,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682521641
+    "modified": 1682624374
 }

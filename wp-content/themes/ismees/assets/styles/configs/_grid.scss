@@ -7,7 +7,6 @@
 
  .container-fluid,
  .container-xxl,
- .container-xl,
  .container-lg,
  .container-md,
  .container-sm {
@@ -60,14 +59,21 @@
   }
 }
 
-.container {
+.container, .container-xl {
   width: 100%;
-  padding-right: clamp-calc(20, 75, 375, 992);
-  padding-left: clamp-calc(20, 75, 375, 992);
   margin-right: auto;
   margin-left: auto;
   max-width: 1920px;
 }
+.container {
+  padding-right: clamp-calc(20, 75, 375, 992);
+  padding-left: clamp-calc(20, 75, 375, 992);
+}
+.container-xl {
+  padding-right: clamp-calc(20, 125);
+  padding-left: clamp-calc(20, 125);
+}
+
  .row {
    --bs-gutter-x: 2.5rem;
    --bs-gutter-y: 0;

@@ -5,10 +5,7 @@
 {% endif %}
 
 <div class="banner-image-title">
-{# <pre>
-    {{ dd(interventionColor) }}
-</pre> #}
-    <div class="container-lg">
+    <div class="{{ containerClass ? containerClass : 'container-xl' }}">
         <div class="banner-ctn">
             {% include "partials/breadscrum.twig" %}
             <div class="banner-content-ctn">
@@ -16,7 +13,7 @@
                     <img data-aos="fade-up" data-aos-delay="500" class="banner-image" src="{{ post.thumbnail }}" alt={{ __('Image de', 'ismees') ~ post.title }}/>
                 {% endif %}
                 <div class="title-ctn">
-                    {% if taxonomy %}
+                    {% if taxonomy and ontitleTitle  %}
                         <div class="ontitle-ctn" data-aos="fade-right" data-aos-delay="500">
                             <div class="ontitle-number-ctn">
                                 <p class="ontitle-number">{{ ontitleNumber }}</p>
