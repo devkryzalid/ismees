@@ -21,6 +21,7 @@ wp-content/plugins/*
 !wp-content/plugins/wicked-folders-pro
 !wp-content/plugins/wordpress-seo
 !wp-content/plugins/gravityforms
+!wp-content/plugins/likebtn-like-button
 !wp-content/plugins/permalink-manager
 !wp-content/plugins/broken-link-checker
 !wp-content/plugins/acf-icon-picker
