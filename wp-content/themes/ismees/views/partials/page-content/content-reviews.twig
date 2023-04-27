@@ -1,3 +1,4 @@
+{% if page.content %}
 <div class="page-content content-reviews">
     <div class="container-lg">
         {% include "partials/socials-share.twig" with {
@@ -12,10 +13,11 @@
                 <div class="reviews-ctn">
                     <p>{{ __('Ce contenu vous a-t-il été utile ?', 'ismees') }}</p>
                     {% filter shortcodes %}
-                        [likebtn theme="custom" icon_l_url="http://ismees.local/wp-content/uploads/2023/04/like.svg#121" icon_d_url="http://ismees.local/wp-content/uploads/2023/04/dislike.svg#122" bg_c="rgba(250,250,250,0)" brdr_c="rgba(198,198,198,0)" label_fs="r" lang="auto" show_like_label="0" tooltip_enabled="0" ef_voting="push" newline="1" popup_hide_on_outside_click="0" counter_show="0" counter_count="1" share_enabled="0" bp_notify="0"]
+                        [likebtn theme="custom" icon_l_url="http://ismees.kryzastage3.com/wp-content/uploads/2023/04/like.svg#161" icon_d_url="http://ismees.kryzastage3.com/wp-content/uploads/2023/04/dislike.svg#159" bg_c="rgba(250,250,250,0)" brdr_c="rgba(198,198,198,0)" label_fs="r" lang="auto" show_like_label="0" tooltip_enabled="0" wrap="0" popup_hide_on_outside_click="0" counter_show="0" share_enabled="0" bp_notify="0"]
                     {% endfilter %}
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endif %}

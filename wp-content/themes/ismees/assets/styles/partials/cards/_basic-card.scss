@@ -1,5 +1,6 @@
 .card-ctn {
     @include flex(flex-start, flex-start, column);
+    margin-bottom: clamp-calc(0, 50, 375, 993);
 
     .card-image-ctn {
         @include flex();
