@@ -15,5 +15,5 @@ function resource_type_taxonomy($labelsGlobal, $argsGlobal)
         'rewrite' => ['slug' => __('types', 'ismees')],
     ];
 
-    register_taxonomy('resource_type', ['student_resource', 'member_resource' ], array_merge($argsGlobal, $args));
+    register_taxonomy('resource_type', ['student-resource', 'member-resource' ], array_merge($argsGlobal, $args));
 }

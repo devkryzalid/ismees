@@ -42,5 +42,5 @@ function member_resource_custom_post_type()
         'can_export'          => true,
         'rewrite'             => array('slug' => __('ressource-personnel', 'ismees'), 'with_front' => true),
     );
-    register_post_type('member_resource', $args);
+    register_post_type('member-resource', $args);
 }

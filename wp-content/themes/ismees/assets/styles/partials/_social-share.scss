@@ -40,6 +40,27 @@
         }
     }
 
+    &.-block {
+        position: initial;
+
+        .socials-share-ctn {
+            @include flex(flex-start, flex-start, column);
+            gap: 20px;
+            position: initial;
+    
+            .share-label {
+                writing-mode: initial ;
+                text-orientation: initial;
+                text-transform: uppercase;
+            }
+    
+            .list-ctn {
+                @include flex(center, flex-start, row);
+                gap: 20px;
+            }
+        }   
+    }
+
     @media(max-width: 767px) {
         display: none;
     }

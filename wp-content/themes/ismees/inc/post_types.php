@@ -44,7 +44,6 @@ function register_post_types() {
 	student_resource_custom_post_type();
 }
 
-
 /**
  * DOESN'T MISSING CALL THERE HOOK IN FUNCTIONS.PHP
  * in hook actions : 

@@ -10,7 +10,9 @@
             {% include "partials/breadscrum.twig" %}
             <div class="banner-content-ctn">
                 {% if post.thumbnail %}
-                    <img data-aos="fade-up" data-aos-delay="500" class="banner-image" src="{{ post.thumbnail }}" alt={{ __('Image de', 'ismees') ~ post.title }}/>
+                    <img data-aos="fade-up" data-aos-delay="500" class="banner-image {{ fullHeight ? '-full-height' : '' }}" src="{{ post.thumbnail }}" alt={{ __('Image de', 'ismees') ~ post.title }}/>
+                {% else %}
+                    <img data-aos="fade-up" data-aos-delay="500" class="banner-image -full-height" src="{{ src ? src : theme.link ~ '/assets/images/default-image.png' }}" alt={{ __('Image de', 'ismees') ~ post.title }}/>
                 {% endif %}
                 <div class="title-ctn">
                     {% if taxonomy and ontitleTitle  %}

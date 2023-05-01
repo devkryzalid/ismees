@@ -42,5 +42,5 @@ function student_resource_custom_post_type()
         'can_export'          => true,
         'rewrite'             => array('slug' => __('ressource-etudiant', 'ismees'), 'with_front' => true),
     );
-    register_post_type('student_resource', $args);
+    register_post_type('student-resource', $args);
 }

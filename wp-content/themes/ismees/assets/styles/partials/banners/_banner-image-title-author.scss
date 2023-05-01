@@ -1,0 +1,95 @@
+.banner-image-title-author {
+    @include flex(center, center);
+    background-color: $mainBG;
+    padding-top: clamp-calc(120, 185);
+    padding-bottom: clamp-calc(120, 150);
+
+    .banner-ctn {
+        @include flex(center, center, column);
+    }
+
+    .banner-content-ctn {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp-calc(45, 100, 992, 1750);
+
+        .title-ctn {
+            @include flex(flex-start, space-between, column);
+ 
+            .ontitle-ctn {
+                display: flex;
+                align-items: center;
+                margin-bottom: clamp-calc(20, 30);
+
+                .card-icon-ctn {
+                    background-color: $yellow;
+                    width: clamp-calc(42, 60);
+                    height: clamp-calc(42, 60);
+                    border-radius: 50%;
+                    padding: 10px;
+                    margin-right: clamp-calc(15, 20);
+
+                    .card-icon {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .ontitle-title {
+                    @include responsive-font($primaryFont, 500, 18, 22, 22, 26, uppercase);
+                    margin: 0;
+                }
+            }
+        
+            .page-title {
+                margin-bottom: clamp-calc(18, 60);
+                font-size: clamp-calc(40, 86, 1200, 1700);
+                line-height: clamp-calc(43, 80, 1200, 1700);
+                text-transform: none;
+                margin: 0;
+            }
+
+            .author-ctn {
+                display: flex;
+                gap: clamp-calc(10, 15);
+                margin-top: clamp-calc(35, 90);
+
+                .author-infos-ctn {
+                    .author-name {
+                        @include responsive-font($primaryFont, 600, 16, 18, 19, 22);
+                        margin-bottom: 5px;
+                        margin-top: 0
+                    }
+                    .author-position {
+                        @include responsive-font($primaryFont, 500, 13, 15, 16, 18, null, null, rgba($darkBlue, 0.7));
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .banner-image {
+            min-height: 300px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            display: flex;
+            align-self: center;
+            border-radius: 20px;
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .banner-content-ctn {
+            display: flex;
+            flex-direction: column;
+
+            .title-ctn {
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{% extends 'base.twig' %}
+{% block content %}
+<main class="page-resource" data-aos="fade" data-aos-delay="300">
+    {% include "partials/banners/banner-image-title-author.twig" with {
+            'post': post,
+            'taxonomy': 'resource_category',
+        }
+    %}
+
+    {% include "partials/page-content/content-details-reviews.twig" with {
+            'page': post,
+            'students': true,
+            'backBtnLink': options.config_students_resources,
+            'backBtnText': __('Retour aux ressources', 'ismees')
+        }
+    %}
+    
+    {% include "partials/more-resources.twig" with {
+        'items': related_posts,
+        'taxonomy': 'resource_category',
+        'redirectionUrl': options.config_students_resources
+    } %}
+</main>
+{% endblock %}

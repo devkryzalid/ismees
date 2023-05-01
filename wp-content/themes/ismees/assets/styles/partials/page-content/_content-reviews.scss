@@ -1,14 +1,4 @@
-.content-reviews.page-content {
-    border-radius: 50px 50px 0 0;
-    margin-top: -50px;
-    background-color: white;
-    position: relative;
-    z-index: 2;
-    padding-bottom: clamp-calc(150, 200);
-    
-    .container-lg {
-        position: relative;
-    }
+.content-reviews {
 
     .reviews-back-ctn {
         padding-top: clamp-calc(30, 50);
@@ -44,15 +34,17 @@
     }
 
     .reviews-ctn {
-        @include flex();
+        @include flex(center, flex-start);
         gap: 20px;
 
         .likebtn-wrapper {
             height: 38px;
         }
     }
-    
+
     @media(max-width: 767px) {
+
+        padding: 0;
 
         .reviews-back-ctn {
             @include flex(flex-start, flex-start, column);

@@ -7,19 +7,17 @@
         }
     %}
 
-    {% include "partials/page-content/content-reviews.twig" with {
+    {% include "partials/page-content/content-reviews-socials.twig" with {
             'page': subject,
             'backBtnLink': options.config_subjects,
             'backBtnText': __('Retour aux sujets', 'ismees')
         } 
     %}
     
-    {% if subject.meta('resources') %}
-        {% include "partials/more-resources.twig" with {
-            'items': subject.meta('resources'),
-            'taxonomy': 'resource_category',
-            'redirectionUrl': options.config_students_resources
-        } %}
-    {% endif %}
+    {% include "partials/more-resources.twig" with {
+        'items': subject.meta('resources'),
+        'taxonomy': 'resource_category',
+        'redirectionUrl': options.config_students_resources
+    } %}
 </main>
 {% endblock %}

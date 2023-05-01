@@ -15,5 +15,5 @@ function resource_category_taxonomy($labelsGlobal, $argsGlobal)
         'rewrite' => ['slug' => __('catégories', 'ismees')],
     ];
 
-    register_taxonomy('resource_category', ['student_resource', 'member_resource' ], array_merge($argsGlobal, $args));
+    register_taxonomy('resource_category', ['student-resource', 'member-resource' ], array_merge($argsGlobal, $args));
 }

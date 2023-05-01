@@ -39,7 +39,7 @@
 
     .card-taxonomies-ctn {
         @include flex(center, flex-start);
-        margin-top: clamp-calc(10, 20);
+        margin-top: clamp-calc(15, 25);
         flex-wrap: wrap;
         gap: 5px 15px;
 

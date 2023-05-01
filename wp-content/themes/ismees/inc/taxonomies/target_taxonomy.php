@@ -15,5 +15,5 @@ function target_taxonomy($labelsGlobal, $argsGlobal)
         'rewrite' => ['slug' => __('cible', 'ismees')],
     ];
 
-    register_taxonomy('target', ['subject', 'thematic', 'page', 'member_resource', 'student_resource' ], array_merge($argsGlobal, $args));
+    register_taxonomy('target', ['subject', 'thematic', 'page', 'member-resource', 'student-resource' ], array_merge($argsGlobal, $args));
 }

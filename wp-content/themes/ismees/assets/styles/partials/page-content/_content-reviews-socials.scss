@@ -1,0 +1,26 @@
+.content-reviews-socials.page-content {
+    border-radius: 50px 50px 0 0;
+    margin-top: -50px;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    padding-bottom: clamp-calc(150, 200);
+    
+    .container-lg {
+        position: relative;
+    }
+    
+    @media(max-width: 767px) {
+
+        .reviews-back-ctn {
+            @include flex(flex-start, flex-start, column);
+
+            .reviews-ctn {
+                width: 100%;
+                padding-top: 30px;
+                margin-top: 30px;
+                border-top: 1px solid rgba($darkBlue, 0.3);
+            }
+        }
+    }
+}

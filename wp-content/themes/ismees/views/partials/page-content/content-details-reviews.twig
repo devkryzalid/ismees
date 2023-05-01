@@ -1,0 +1,43 @@
+{% if page.content %}
+<div class="page-content content-details-reviews">
+    <div class="container-xl">
+        <div class="content-details-reviews-ctn">
+            <div class="article-infos-ctn" data-aos="fade-up" data-aos-delay="500">
+                {% if page.terms('resource_type') %}
+                    <div class="types-ctn">
+                        {% if students %}
+                            <p class="types-title">{{ __('Sujets', 'ismees') }}</p>
+                        {% else %}
+                            <p class="types-title">{{ __('Thématiques', 'ismees') }}</p>  
+                        {% endif %}
+                        {% for type in post.terms('resource_type') %}
+                            <div class="type">
+                                <p>{{ type.name }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if page.terms('resource_category') %}
+                    <div class="categories-ctn">
+                        {% if page.terms('target')[0].slug == 'students' %}
+                            <p class="categories-title">{{ __('Catégories', 'ismees') }}</p>
+                        {% else %}
+                            <p class="categories-title">{{ __('Populations étudiantes', 'ismees') }}</p>
+                        {% endif %}
+                        {% for category in page.terms('resource_category') %}
+                            <div class="category">
+                                <p>{{ category.name }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% include "partials/socials/socials-share.twig" with {
+                    'pageUrl': page.link,
+                    'block': true
+                } %}
+            </div>
+            {% include "partials/page-content/content-reviews.twig" %}
+        </div>
+    </div>
+</div>
+{% endif %}

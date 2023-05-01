@@ -3,25 +3,24 @@
 <main class="single-subject" data-aos="fade" data-aos-delay="300">
     {% include "partials/banners/banner-image-title.twig" with {
             'post': thematic,
+            'fullHeight': true,
             'taxonomy': 'thematic_intervention',
             'containerClass': 'container'
         }
     %}
 
-    {% include "partials/page-content/content-reviews.twig" with {
+    {% include "partials/page-content/content-reviews-socials.twig" with {
             'page': thematic,
             'backBtnLink': options.config_subjects,
             'backBtnText': __('Retour aux niveaux d’intervention', 'ismees')
-        } 
+        }
     %}
     
-    {% if thematic.meta('resources') %}
-        {% include "partials/more-resources.twig" with {
-            'items': thematic.meta('resources'),
-            'taxonomy': 'resource_category',
-            'redirectionUrl': options.config_members_resources
-        } %}
-    {% endif %}
+    {% include "partials/more-resources.twig" with {
+        'items': thematic.meta('resources'),
+        'taxonomy': 'resource_category',
+        'redirectionUrl': options.config_members_resources
+    } %}
 </main>
 {% endblock %}
 {% block specific_script %}
