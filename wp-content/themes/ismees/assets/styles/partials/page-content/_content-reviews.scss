@@ -40,6 +40,15 @@
         .likebtn-wrapper {
             height: 38px;
         }
+
+        .likebtn-icon {
+            transform: scale(1);
+            @include transition($basicTransition);
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
     }
 
     @media(max-width: 767px) {

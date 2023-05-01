@@ -1,9 +1,9 @@
 {
-    "key": "group_644be81314ddd",
-    "title": "Page ressources étudiant.es",
+    "key": "group_64502f0157887",
+    "title": "Page ressources le personnel",
     "fields": [
         {
-            "key": "field_644be813b5af1",
+            "key": "field_64502f015e20a",
             "label": "Auteur",
             "name": "author",
             "aria-label": "",
@@ -19,7 +19,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_644be86ab5af2",
+                    "key": "field_64502f015fb8b",
                     "label": "Nom",
                     "name": "name",
                     "aria-label": "",
@@ -39,7 +39,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_644be874b5af3",
+                    "key": "field_64502f015fb9d",
                     "label": "Prénom",
                     "name": "surname",
                     "aria-label": "",
@@ -59,7 +59,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_644be884b5af4",
+                    "key": "field_64502f015fbb2",
                     "label": "Poste",
                     "name": "position",
                     "aria-label": "",
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "key": "field_64502bc339356",
+            "key": "field_64502f015e214",
             "label": "Sujet(s) associé(s)",
             "name": "subjects",
             "aria-label": "",
@@ -95,7 +95,7 @@
                 "id": ""
             },
             "post_type": [
-                "subject"
+                "thematic"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -115,7 +115,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "student-resource"
+                "value": "member-resource"
             }
         ]
     ],
@@ -128,5 +128,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682976538
+    "modified": 1682976584
 }
