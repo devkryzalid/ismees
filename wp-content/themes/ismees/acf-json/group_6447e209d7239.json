@@ -1,6 +1,6 @@
 {
     "key": "group_6447e209d7239",
-    "title": "Taxonomie Catégories des Ressources",
+    "title": "Icônes pour taxonomies",
     "fields": [
         {
             "key": "field_6447e20a1c076",
@@ -26,6 +26,13 @@
                 "operator": "==",
                 "value": "resource_category"
             }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "resource_type"
+            }
         ]
     ],
     "menu_order": 0,
@@ -37,5 +44,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682457980
+    "modified": 1683048451
 }

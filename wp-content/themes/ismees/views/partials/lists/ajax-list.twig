@@ -1,0 +1,14 @@
+<div class="list-items-ajax">
+
+    <div id="ajax-content">
+        <div id="display-filters"></div>
+        <div class="inner">
+            {% if items is empty %}
+                {% include 'partials/no-result-item.twig' %}
+            {% else %}
+                {% include 'partials/lists/basic-card-list.twig' %}
+            {% endif %}
+        </div>
+    </div>
+
+</div>

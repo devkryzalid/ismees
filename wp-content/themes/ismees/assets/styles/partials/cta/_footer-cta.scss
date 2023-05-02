@@ -1,0 +1,36 @@
+.footer-cta {
+    background-color: $lightBlue;
+    z-index: 3;
+    padding-top: clamp-calc(80, 160);
+    padding-bottom: clamp-calc(40, 85);
+    border-radius: 50px 50px 0px 0px;
+    margin-top: -50px;
+    position: relative;
+
+    .cta-content-ctn {
+        @include flex(center, center, column);
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: clamp-calc(30, 50);
+        max-width: clamp-calc(375, 950);
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cta-background-image {
+        position: absolute;
+        top: clamp-calc(35, 72);
+        left: clamp-calc(20, 220, 992, 1600);
+        object-fit: contain;
+        width: clamp-calc(70, 176);
+    }
+
+    @media(max-width: 767px) {
+        .cta-background-image {
+            display: none;
+        }
+    }
+}

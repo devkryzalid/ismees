@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+{% block content %}
+<main class="resources-hub" data-aos="fade" data-aos-delay="300">
+    {% include "partials/banners/banner-title-illustrations.twig" with {
+        'students': true
+    } %}
+
+    {% include "partials/lists/ajax-list.twig" with {
+        'items': resources,
+        'taxonomy': 'resource_category'
+    } %}
+    
+    {% include "partials/cta/footer-cta.twig" %}
+</main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/resources.js"></script>
+{% endblock %}

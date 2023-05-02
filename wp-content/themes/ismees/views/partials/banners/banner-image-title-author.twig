@@ -17,9 +17,11 @@
                     <div>
                         {% if taxonomy and onTitle %}
                             <div class="ontitle-ctn" data-aos="fade-right" data-aos-delay="500">
-                                <div class="card-icon-ctn">
-                                    <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ iconCategory ~ '.svg' }}" alt="" />
-                                </div>
+                                {% if iconCategory %}
+                                    <div class="card-icon-ctn">
+                                        <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ iconCategory ~ '.svg' }}" alt="" />
+                                    </div>
+                                {% endif %}
                                 <p class="ontitle-title">{{ onTitle }}</p>
                             </div>
                         {% endif %}

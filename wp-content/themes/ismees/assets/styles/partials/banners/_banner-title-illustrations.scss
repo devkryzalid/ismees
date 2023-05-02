@@ -1,0 +1,21 @@
+.banner-title-illustration {
+    padding-top: clamp-calc(120, 185);
+    padding-bottom: clamp-calc(120, 150);
+    background-color: white;
+
+    .banner-ctn {
+        @include flex(center, center, column);
+
+        .banner-title {
+            margin-top: 0;
+            margin-bottom: clamp-calc(15, 30);
+            text-align: center
+        }
+    
+        .subtitle {
+            @include responsive-font($primaryFont, 400, 25, 45, 30, 50, null, -0.03rem);
+            margin: 0;
+            text-align: center;
+        }
+    }
+}

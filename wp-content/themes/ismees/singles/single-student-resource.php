@@ -3,20 +3,21 @@
 
 $context = Timber::context();
 $timber_post = new Timber\Post();
-$categories = get_primary_taxonomy($timber_post->ID, 'resource_category', true);
+$category = get_primary_taxonomy($timber_post->ID, 'resource_category', true);
 
 $related_posts = [
     'post_type'      => 'student-resource',
     'post_status'    => 'publish',
     'posts_per_page' => 6,
+    'orderby'        => 'date',
     'post__not_in'   => [$timber_post->ID],
     'tax_query'      => [
         [
             'taxonomy' => 'resource_category',
             'field'    => 'term_id',
-            'terms'    => $categories,
+            'terms'    => $category,
         ]
-    ]
+    ],
 ];
 
 /**
@@ -26,5 +27,4 @@ $context['post'] = $timber_post;
 $context['related_posts'] = new Timber\PostQuery($related_posts);
 
 
-Timber::render('pages/student-resource.twig', $context);
-
+Timber::render('pages/single-student-resource.twig', $context);

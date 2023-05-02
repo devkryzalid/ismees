@@ -1,0 +1,16 @@
+<div class="banner-title-illustration">
+    <div class="container-xxl">
+        <div class="banner-ctn">
+            {% include "partials/breadscrum.twig" %}
+            <h1 class="banner-title">{{ page.title }}</h1>
+            {% if students %}
+                <p class="subtitle">{{ __('pour la ', 'ismees') }} <span class="background-line -green">{{ __('population étudiante', 'ismees') }}</span></p>
+                <img src="{{theme.link}}/assets/images/bubble-heart" alt="" />
+            {% elseif members %}
+                <p class="subtitle">{{ __('pour le ', 'ismees') }} <span class="background-line -red">{{ __('personnel des établissements', 'ismees') }}</span></p>
+                <img src="{{theme.link}}/assets/images/light-bulb" alt="" />
+            {% endif %}
+            <img src="{{theme.link}}/assets/images/loop-line-grey" alt="" />
+        </div>
+    </div>
+</div>

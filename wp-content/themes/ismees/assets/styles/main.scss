@@ -14,8 +14,9 @@
 @import "pages/hub";
 @import "pages/single-subject";
 @import "pages/single-thematic";
-@import "pages/member-resource";
-@import "pages/page-resource";
+@import "pages/member-resources";
+@import "pages/student-resources";
+@import "pages/single-resource";
 
 @import "partials/footer";
 @import "partials/header";
@@ -31,6 +32,7 @@
 @import "partials/banners/banner-image-title";
 @import "partials/banners/banner-image-title-author";
 @import "partials/banners/banner-content-title";
+@import "partials/banners/banner-title-illustrations";
 
 @import "partials/cards/basic-card";
 
@@ -39,6 +41,8 @@
 @import "partials/page-content/content-reviews";
 @import "partials/page-content/content-reviews-socials";
 @import "partials/page-content/content-details-reviews";
+
+@import "partials/cta/footer-cta";
 
 @import "blocs/accordion";
 @import "blocs/bloc-cta";
