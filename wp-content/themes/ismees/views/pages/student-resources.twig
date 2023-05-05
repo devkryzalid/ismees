@@ -4,10 +4,26 @@
     {% include "partials/banners/banner-title-illustrations.twig" with {
         'students': true
     } %}
+{# 
+    <pre>
+    {% for resource in resources %}
+        {{ dd(resource.meta('subjects')) }}
+    {% endfor %}
 
-    {% include "partials/lists/ajax-list.twig" with {
+</pre> #}
+
+    {% include "partials/ajax/filters.twig" with {
+        'types': types,
+        'categories': categories,
+        'filterName': __('Catégories', 'ismees'),
+        'secondFilterName': __('Population étudiante', 'ismees'),
+        'resourceType': 'resource_student_type',
+        'url': '/ajax/resources'
+    } %}
+
+    {% include "partials/ajax/ajax-list.twig" with {
         'items': resources,
-        'taxonomy': 'resource_category'
+        'taxonomy': 'resource_category',
     } %}
     
     {% include "partials/cta/footer-cta.twig" %}

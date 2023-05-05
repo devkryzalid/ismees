@@ -40,7 +40,8 @@ function register_taxonomies() {
 	target_taxonomy($labelsGlobal, $argsGlobal);
     thematic_intervention_taxonomy($labelsGlobal, $argsGlobal);
     resource_category_taxonomy($labelsGlobal, $argsGlobal);
-    resource_type_taxonomy($labelsGlobal, $argsGlobal);
+    resource_student_type_taxonomy($labelsGlobal, $argsGlobal);
+    resource_member_type_taxonomy($labelsGlobal, $argsGlobal);
 }
 
 /**

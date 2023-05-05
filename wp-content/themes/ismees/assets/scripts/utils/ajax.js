@@ -13,6 +13,7 @@
 
 // Dependancies
 import axios from 'axios';
+import jsBlockLink from './jsBlockLink';
 
 // Default values for DOM elements ids
 const defaultFormId = 'ajax-form';
@@ -121,13 +122,17 @@ export default class AjaxForm {
     this.updateCurrentUrl(params);
 
     this.toggleLoading(false);
-    this.updateContentHtml(data);
+    this.updateContentHtml(data.html);
+
+    // Check if needed "next" button on new page
+    this.checkPagination(data.pages_total);
 
     // Optional
     this.onDataChange(data);
     this.toggleClearButton();
     this.setActiveFiltersCount();
   }
+
 
   // Return all form data and params in object format
   getFormData = () => {
@@ -158,6 +163,15 @@ export default class AjaxForm {
         });
       }
     })
+  }
+
+  // Check if needed "next" button on new page
+  checkPagination = (max) => {
+    const pageElement = this.pagination.querySelector('#next-page a');
+    if(!max || this.currentPage == max)
+      pageElement.classList.add('disabled');
+    else
+      pageElement.classList.remove('disabled');
   }
 
   // Axios ajax call
@@ -192,6 +206,8 @@ export default class AjaxForm {
   updateContentHtml = (html = '') => {
     this.innerContainer.innerHTML = html;
     this.initPagination();
+
+    new jsBlockLink();
   }
   
   // Replace current url param string with new params
@@ -210,8 +226,14 @@ export default class AjaxForm {
 
   // Un-check all boxes and reload data
   clearFilters = () => {
-    this.formContainer.querySelectorAll('input:checked').forEach(i => { i.checked = false; });
-    this.onFormChange();
+    this.formContainer.querySelectorAll('.dropdown-filter input:checked').forEach(i => { i.click(); });
+    
+    this.formContainer.querySelector('.search-ctn input').value = '';
+    this.currentPage = 1;
+
+    setTimeout(() => {
+      this.onFormChange();
+    }, 200);
   }
 
   // Fetch first part of current url, and remove trailing slash
@@ -268,9 +290,9 @@ export default class AjaxForm {
     return this.formContainer.querySelectorAll('input:checked').length;
   }
 
-  // Scroll to ajax content
-  scrollToContent = () => {
-    setTimeout(() => { window.scroll({ top: this.formContainer.offsetTop - 150, behavior: 'smooth' }); }, 10); 
+   // Scroll to ajax content
+   scrollToContent = () => {
+    setTimeout(() => { window.scroll({ top: this.formContainer.offsetTop + this.formContainer.offsetHeight - 150, behavior: 'smooth' }); }, 10); 
   }
   
   // Delay helper function

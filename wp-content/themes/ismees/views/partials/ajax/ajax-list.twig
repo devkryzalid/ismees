@@ -1,0 +1,19 @@
+<div class="list-items-ajax">
+
+    <div class="container">
+        <div id="ajax-content">
+            <div id="display-filters"></div>
+            <div class="inner">
+                {% if items is empty %}
+                    {% include 'partials/ajax/no-result-item.twig' %}
+                {% else %}
+                    {% include 'partials/lists/basic-card-list.twig' with {
+                        'items': resources
+                    } %}
+                {% endif %}
+            </div>
+        </div>
+		{% include 'partials/lists/pagination.twig' with {'pages': posts.pagination(15).pages } %}
+    </div>
+
+</div>

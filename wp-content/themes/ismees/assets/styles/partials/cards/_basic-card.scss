@@ -1,5 +1,12 @@
 .card-ctn {
     @include flex(flex-start, flex-start, column);
+    position: relative;
+
+    .card-title,
+    .card-image-ctn,
+    .card-taxonomies-ctn {
+        z-index: 5;
+    }
 
     .card-image-ctn {
         @include flex();
@@ -28,7 +35,7 @@
             padding: 10px;
             bottom: clamp-calc(14, 20);
             left: clamp-calc(14, 20);
-            z-index: 5;
+            z-index: 6;
 
             .card-icon {
                 width: 100%;
@@ -57,6 +64,7 @@
         margin-top: clamp-calc(15, 25);
         flex-wrap: wrap;
         gap: 5px 15px;
+        z-index: 5;
 
         .card-taxonomy {
             display: flex;
@@ -94,22 +102,39 @@
     .card-title {
         @include responsive-font($primaryFont, 400, 28, 32, 31, 40);
         margin-top: clamp-calc(15, 25);
+
+        &:hover {
+            color: $darkBlue;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        left: -20px;
+        bottom: -20px;
+        background-color: white;
+        border-radius: 20px;
+        opacity: 0;
+        @include transition($basicTransition);
     }
 
     &:hover {
+        &::after {
+            opacity: 1;
+        }
+
         .card-image-ctn {
     
             .card-image {
-                transform: scale(1.1);
+                opacity: 1;
             }
             .card-type {
                 opacity: 1;
                 border-radius: 12px;
             }
-        }
-
-        .card-title {
-            color: $blue;
         }
     }
 }

@@ -1,0 +1,10 @@
+<nav data-aos="fade" data-aos-delay="300" id="ajax-pagination" class="pagination-ctn">
+    <div class="ajax-page next" id="next-page">
+        {# If on search page or not #}
+        {% if search_paged %}
+            <a href="" value="next" class="{{ search_paged < pages ? '' : 'disabled' }}">{{ __('Afficher plus', 'ismees') }} <span class="icon-drop-arrow-bottom"></span></a>
+        {% else %}
+            <a href="" value="next" class="{{ pages or pages and pages|length != params['pagenb'] ? '' : 'disabled' }}">{{ __('Load more', 'hme') }} <span class="icon-drop-arrow-bottom"></span></a>
+        {% endif %}
+    </div>
+</nav>

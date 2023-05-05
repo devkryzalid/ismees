@@ -1,0 +1,20 @@
+<div class="dropdown-filters">
+    <button class="filter-button">{{ name }}</button>
+    <div class="filter-ctn">
+        {% for filter in filters %}
+            <div class="filter-item">
+                <label for="{{ filter.slug }}" class="checkbox-ctn">
+                    {% set icon = fn('get_field', 'icon', taxonomy ~ '_' ~ filter.term_id) %}
+                    {% if icon %}
+                        <div class="card-icon-ctn">
+                            <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ icon ~ '.svg' }}" alt="" />
+                        </div>
+                    {% endif %}
+                    {{ filter.name }}
+                    <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in params[taxo_name]) ? 'checked' : '' }} {{ (filter.id in params[taxo_name]) ? 'checked' : '' }}>
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+

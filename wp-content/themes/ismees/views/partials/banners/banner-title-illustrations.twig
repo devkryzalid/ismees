@@ -5,12 +5,12 @@
             <h1 class="banner-title">{{ page.title }}</h1>
             {% if students %}
                 <p class="subtitle">{{ __('pour la ', 'ismees') }} <span class="background-line -green">{{ __('population étudiante', 'ismees') }}</span></p>
-                <img src="{{theme.link}}/assets/images/bubble-heart" alt="" />
+                <img class="right-illustration" src="{{theme.link ~ '/assets/images/bubble-heart.svg' }}" alt="" />
             {% elseif members %}
                 <p class="subtitle">{{ __('pour le ', 'ismees') }} <span class="background-line -red">{{ __('personnel des établissements', 'ismees') }}</span></p>
-                <img src="{{theme.link}}/assets/images/light-bulb" alt="" />
+                <img class="right-illustration" src="{{theme.link}}/assets/images/light-bulb.svg" alt="" />
             {% endif %}
-            <img src="{{theme.link}}/assets/images/loop-line-grey" alt="" />
+            <img class="left-illustration" src="{{theme.link ~ '/assets/images/loop-line-grey.svg'}}" alt="" />
         </div>
     </div>
 </div>

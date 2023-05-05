@@ -1,10 +1,10 @@
 {
-    "key": "group_6447e209d7239",
-    "title": "Taxonomie catégorie",
+    "key": "group_6452782179255",
+    "title": "Taxonomie types",
     "fields": [
         {
-            "key": "field_6447e20a1c076",
-            "label": "Icône",
+            "key": "field_64527821927b7",
+            "label": "Icônes",
             "name": "icon",
             "aria-label": "",
             "type": "icon-picker",
@@ -24,7 +24,14 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "resource_category"
+                "value": "resource_student_type"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "resource_member_type"
             }
         ]
     ],
@@ -37,5 +44,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683126294
+    "modified": 1683212024
 }

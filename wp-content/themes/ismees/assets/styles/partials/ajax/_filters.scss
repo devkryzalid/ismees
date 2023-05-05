@@ -1,0 +1,115 @@
+.filters-form {
+
+    .dropdown-mobile-filters-ctn {
+        padding-bottom: 110px;
+        background-color: white;
+    }
+
+    .subFilters-ctn {
+        background-color: $mainBG;
+        padding-top: 60px;
+        border-radius: 42px 42px 0 0;
+        margin-top: -50px;
+        z-index: 10;
+        position: relative;
+
+        .subFilters {
+            @include flex(center, space-between);
+            gap: 50px;
+
+            .dropdown-filters-ctn {
+                @include flex(center, flex-start);
+                gap: 20px;
+            }
+    
+            .filters-cta {
+                @include flex(center, flex-end);
+                gap: 15px;
+                flex-wrap: wrap;
+    
+                a,p {
+                    text-align: right;
+                }
+    
+                a {
+                    @include responsive-font($primaryFont, 600, 18, 18, 20, 20);
+                    text-decoration: underline;
+                }
+                p {
+                    @include responsive-font($primaryFont, 400, 16, 18, 24, 28);
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        .subFilters-ctn {
+            background-color: $mainBG;
+            padding-top: 60px;
+            border-radius: 42px 42px 0 0;
+            margin-top: -50px;
+            z-index: 10;
+            position: relative;
+    
+            .subFilters {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .dropdown-filters-ctn {
+                    @include flex(center, flex-start);
+                    gap: 20px;
+                }
+        
+                .filters-cta {
+                    justify-content: flex-start;
+                    
+                }
+            }
+        }
+
+    }
+
+    @media(max-width: 767px) {
+        .subFilters-ctn {
+            background-color: $mainBG;
+            padding-top: 60px;
+            border-radius: 42px 42px 0 0;
+            margin-top: -50px;
+            z-index: 10;
+            position: relative;
+    
+            .subFilters {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .dropdown-filters-ctn {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+        
+                .filters-cta {
+                    a,p {
+                        text-align: left;
+                    }
+                }
+            }
+    
+            
+        }
+    }
+
+    @media(max-width: 500px) {
+        .subFilters-ctn {
+    
+            .subFilters {
+
+                .dropdown-filters-ctn {
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+
+}

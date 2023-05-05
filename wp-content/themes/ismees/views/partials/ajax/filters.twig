@@ -1,0 +1,34 @@
+<form id="ajax-form" class="filters-form">
+    <input type="hidden" id="ajax-settings" data-url="{{ url }}">
+    <div class="dropdown-mobile-filters-ctn">
+        {% include "partials/filters/dropdown-mobile-filters.twig" with {
+            'taxonomy': resourceType,
+            'filters': types,
+            'taxo_name': 'type'
+        } %}
+    </div>
+    <div class="subFilters-ctn">
+        <div class="container" data-aos="fade-right" data-aos-delay="300">
+            <div class="subFilters">
+                <div class="dropdown-filters-ctn">
+                    {% include "partials/filters/dropdown-filters.twig" with {
+                        'taxonomy': 'resource_category',
+                        'filters': categories,
+                        'name': filterName,
+                        'taxo_name': 'category'
+                    } %}
+                    {% include "partials/filters/dropdown-filters.twig" with {
+                        'taxonomy': 'resource_category',
+                        'filters': student_subjects,
+                        'name': secondFilterName,
+                        'taxo_name': 'subjects'
+                    } %}
+                </div>
+                <div class="filters-cta">
+                    <p>{{__('Vous connaissez une ressource utile qui pourrait se retrouver ici ?','ismees')}}</p>
+                    <a href="{{options.config_about}}">{{__('Écrivez-nous','ismees')}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

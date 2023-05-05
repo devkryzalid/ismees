@@ -1,0 +1,164 @@
+.dropdown-mobile-filters {
+    background: white;
+    position: relative;
+
+    .mobile-container {
+        position: relative;
+    }
+
+    #filterMobileButton {
+        display: none;
+    }
+
+    .filters-ctn {
+        margin: 0 auto;
+        @include flex(flex-start, center);
+        gap: 15px;
+        flex-wrap: wrap;
+
+        .radio-ctn {
+            @include flex(center, center, column);
+            @include transition($basicTransition);
+            @include responsive-font($primaryFont, 600, 13, 15, 15, 18, uppercase);
+            max-width: 200px;
+            text-align: center;
+            padding: 23px 6px;
+            border-radius: 12px;
+            cursor: pointer;
+            gap: clamp-calc(15, 30);
+            width: 150px;
+
+            position: relative;
+
+            img {
+                max-width: 32px;
+                object-fit: contain;
+            }
+
+            &:hover {
+                background-color: $yellow;
+            }
+
+            input {
+                display: none;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 20px 20px 0 20px;
+                border-color: $blue transparent transparent transparent;
+                opacity: 0;
+                @include transition($basicTransition);
+            }
+
+            &.-checked {
+                background-color: $blue;
+                color: white;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 500px) {
+
+        #filterMobileButton {
+            @include flex(center, flex-start);
+            background-color: $blue;
+            gap: 15px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+
+            &::after {
+                content: "\e901";
+                position: absolute;
+                top: 35%;
+                right: 20px;
+                font-family: 'icomoon' !important;
+                transform: rotate(90deg);
+                font-size: 15px;
+                display: inline-block;
+                color: white;
+            }
+
+            img {
+                filter: brightness(0) invert(1);
+                width: 32px;
+                object-fit: contain            
+            }
+            
+            span {
+                @include responsive-font($primaryFont, 600, 13, 13, 15, 15, uppercase, null, white);
+            }
+        }
+
+        &.-show {
+            z-index: 11;
+
+            .filters-ctn {
+                opacity: 1;
+                max-height: 320px; 
+                pointer-events: initial;
+                overflow-y: scroll;
+            }
+        }
+        
+        .filters-ctn {
+            flex-direction: column;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: $basicTransition;
+            background-color: white;
+            position: absolute;
+            top: 82%;
+            left: 0;
+            right: 0;
+            border-radius: 0 0 20px 20px;
+            pointer-events: none;
+            border: 2px solid $blue;
+            gap: 0;
+
+            .radio-ctn {
+                flex-direction: row;
+                padding: 10px 20px;
+                text-align: start;
+                max-width: none;
+                justify-content: flex-start;
+                gap: 0;
+                width: 100%;
+
+                img {
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                }
+
+                &::after {
+                    content: none;
+                }
+    
+                &.-checked {
+                    background-color: $blue;
+                    color: white;
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+}

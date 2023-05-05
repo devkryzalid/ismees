@@ -1,0 +1,136 @@
+.dropdown-filters {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    z-index: 10;
+
+  .filter-button {
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    @include responsive-font($primaryFont, 500, 16, 18, 20, 20);
+    border: 2px solid $darkBlue;
+    border-radius: 8px;
+    background-color: transparent;
+    @include transition($basicTransition);
+    min-width: 290px;
+    display: flex;
+    justify-content: space-between;
+
+    &:hover {
+        background-color: rgba($darkBlue, 0.2);
+    }
+
+    &::after {
+        content: "\e901";
+        font-family: 'icomoon' !important;
+        margin-left: 10px;
+        transform: rotate(90deg);
+        font-size: 15px;
+        display: inline-block;
+    }
+  }
+
+  .filter-ctn {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: $basicTransition;
+    background-color: $mainBG;
+    position: absolute;
+    top: 89%;
+    left: 0;
+    pointer-events: none;
+    border-radius: 0 20px 20px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 418px;
+    border: 2px solid $darkBlue;
+
+    img {
+      width: 32px;
+      object-fit: contain;
+    }
+
+    .filter-item {
+      overflow: hidden;
+
+      &:last-child {
+        .checkbox-ctn {
+          border: none;
+        }
+      }
+
+      .checkbox-ctn {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        padding: 20px;
+        @include flex(center, flex-start);
+        gap: 15px;
+        border-bottom: 1px solid rgba($darkBlue, 0.5);
+        @include responsive-font($primaryFont, 400, 18, 20, 24, 26);
+        
+        input {
+          display: none;
+        }
+
+        &:hover {
+          background-color: $blue;
+          color: white;
+
+          img {
+              filter: brightness(0) invert(1);
+          }
+        }
+
+        &.-checked {
+          background-color: $blue;
+          color: white;
+
+          img {
+              filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  &.-show {
+    z-index: 11;
+    .filter-ctn {
+      opacity: 1;
+      max-height: 320px; 
+      pointer-events: initial;
+      overflow-y: scroll;
+    }
+      
+  }
+
+  @media(max-width: 767px) {
+    .filter-button {
+      width: 290px;
+    }
+
+    .filter-ctn {
+      left: 0;
+      border-radius: 0 0 20px 20px;
+      width: 290px;
+    }
+  }
+
+  @media(max-width: 500px) {    
+    width: 100%;
+    
+    .filter-button {
+      width: 100%;
+    }
+
+    .filter-ctn {
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+
+}

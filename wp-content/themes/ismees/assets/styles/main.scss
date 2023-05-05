@@ -36,7 +36,13 @@
 
 @import "partials/cards/basic-card";
 
+@import "partials/filters/dropdown-mobile-filters";
+@import "partials/filters/dropdown-filters";
+
 @import "partials/lists/basic-card-list";
+@import "partials/lists/list-items-ajax";
+
+@import "partials/ajax/filters";
 
 @import "partials/page-content/content-reviews";
 @import "partials/page-content/content-reviews-socials";

@@ -5,43 +5,70 @@ global $params;
 // set the POST param
 $limit        = empty($params['limit']) ? 15 : $params['limit'];
 $category     = empty($params['category']) ? null : $params['category'];
-$localization = empty($params['localization']) ? null : $params['localization'];
+$type         = empty($params['type']) ? null : $params['type'];
+$subjects     = empty($params['subjects']) ? null : $params['subjects'];
 $paged        = empty($params['pagenb']) ? 1 : $params['pagenb'];
 $national     = empty($params['national']) ? null : $params['national'];
 
-$organisms_args = [
-    'post_type'      => 'organism',
+$resources_args = [
+    'post_type'      => 'student-resource',
     'post_status'    => 'publish',
-    'orderby'       => 'title',
-    'order'          => 'ASC',
+    'orderby'        => 'date',
+    'posts_per_page' =>  15,
+    'paged'          => $paged,
+    'nopaging'       => false,
+    'meta_query'     => [],
+];
+
+$student_subjects = [
+    'post_type'      => 'subject',
+    'post_status'    => 'publish',
+    'orderby'       => 'date',
     'posts_per_page' =>  $limit,
     'paged'          => $paged,
     'nopaging'       => false,
 ];
 
 if (!empty($category)) {
-    $organisms_args['tax_query'][] = [
-        'taxonomy' => 'organism_category',
+    if (!is_array($category)) {
+        $category = explode(',', $category);
+    }
+    
+    $resources_args['tax_query'][] = [
+        'taxonomy' => 'resource_category',
         'field'    => 'term_id',
-        'terms'    => [$category],
+        'terms'    => $category,
     ];
 }
-if (!empty($localization)) {
-    $organisms_args['tax_query'][] = [
-        'taxonomy' => 'organism_localization',
+if (!empty($type)) {
+    $resources_args['tax_query'][] = [
+        'taxonomy' => 'resource_student_type',
         'field'    => 'term_id',
-        'terms'    => [$localization],
+        'terms'    => [$type],
+    ];
+}
+if (!empty($subjects)) {
+    if (!is_array($subjects)) {
+        $subjects = explode(',', $subjects);
+    }
+    
+    $subjects_pattern = implode('|', $subjects);
+    $resources_args['meta_query'][] = [
+        'key'     => 'subjects',
+        'value'   => $subjects_pattern,
+        'compare' => 'REGEXP',
     ];
 }
 
-$organisms = new Timber\PostQuery($organisms_args);
+$resources = new Timber\PostQuery($resources_args);
 
-if ($organisms->found_posts > 0) {
+if ($resources->found_posts > 0) {
     $response     = '';
-    $response    .= Timber::compile('partials/ajax/item-list-ajax.twig', ['items' => $organisms]);
+    $response    .= Timber::compile('partials/lists/basic-card-list.twig', ['items' => $resources]);
     $data['html'] = $response;
+    $data['pages_total'] = $posts->pagination(intval($limit))->total;
 } else {
-    $data['html'] = Timber::compile('partials/no-result-item.twig');
+    $data['html'] = Timber::compile('partials/ajax/no-result-item.twig');
 }
 
 wp_reset_query();
