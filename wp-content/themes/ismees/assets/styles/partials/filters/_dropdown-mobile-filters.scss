@@ -111,8 +111,8 @@
         }
         
         .filters-ctn {
-            padding-top: 50px;
             flex-direction: column;
+            justify-content: flex-start;
             opacity: 0;
             max-height: 0;
             overflow: hidden;
