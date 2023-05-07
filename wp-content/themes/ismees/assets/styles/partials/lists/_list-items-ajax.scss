@@ -2,4 +2,14 @@
     background-color: $mainBG;
     padding-top: 65px;
     padding-bottom: 165px;
+    
+    .inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: clamp-calc(50, 100, 375, 993);
+    }
+
+    .pagination-ctn {
+        padding-top: clamp-calc(85, 100);
+    }
 }

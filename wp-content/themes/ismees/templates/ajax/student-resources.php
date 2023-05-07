@@ -3,7 +3,7 @@
 global $params;
 
 // set the POST param
-$limit        = empty($params['limit']) ? 15 : $params['limit'];
+// $limit       = empty($params['limit']) ? 15 : $params['limit'];
 $category     = empty($params['category']) ? null : $params['category'];
 $type         = empty($params['type']) ? null : $params['type'];
 $subjects     = empty($params['subjects']) ? null : $params['subjects'];
@@ -24,7 +24,7 @@ $student_subjects = [
     'post_type'      => 'subject',
     'post_status'    => 'publish',
     'orderby'       => 'date',
-    'posts_per_page' =>  $limit,
+    'posts_per_page' =>  15,
     'paged'          => $paged,
     'nopaging'       => false,
 ];
@@ -66,7 +66,7 @@ if ($resources->found_posts > 0) {
     $response     = '';
     $response    .= Timber::compile('partials/lists/basic-card-list.twig', ['items' => $resources]);
     $data['html'] = $response;
-    $data['pages_total'] = $posts->pagination(intval($limit))->total;
+    $data['pages_total'] = $resources->pagination(intval(15))->total;
 } else {
     $data['html'] = Timber::compile('partials/ajax/no-result-item.twig');
 }

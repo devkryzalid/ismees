@@ -56,4 +56,14 @@ button {
             background-color: darken($blue, 20%);
         }
     }
+
+    &.-white {
+        background-color: white;
+        color: $blue;
+
+        &:hover {
+            background-color: $blue;
+            color: white;
+        }
+    }
 }

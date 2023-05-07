@@ -33,7 +33,7 @@ if (!empty($category)) {
         $category = explode(',', $category);
     }
     
-    $resources_args['tax_query'][] = [
+    $resources['tax_query'][] = [
         'taxonomy' => 'resource_category',
         'field'    => 'term_id',
         'terms'    => $category,
@@ -52,7 +52,7 @@ if (!empty($subjects)) {
     }
     
     $subjects_pattern = implode('|', $subjects);
-    $resources_args['meta_query'][] = [
+    $resources['meta_query'][] = [
         'key'     => 'subjects',
         'value'   => $subjects_pattern,
         'compare' => 'REGEXP',

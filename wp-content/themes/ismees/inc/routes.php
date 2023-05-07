@@ -13,6 +13,10 @@
 //});
 
 // Repertory for organisms
-Routes::map('/ajax/resources', function ($params) {
+Routes::map('/ajax/resources/students', function ($params) {
     Routes::load('templates/ajax/student-resources.php', array_merge($params, $_POST), 200);
+});
+// Repertory for organisms
+Routes::map('/ajax/resources/members', function ($params) {
+    Routes::load('templates/ajax/member-resources.php', array_merge($params, $_POST), 200);
 });

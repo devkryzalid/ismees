@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+{% block content %}
+<main class="resources-hub" data-aos="fade" data-aos-delay="300">
+    {% include "partials/banners/banner-title-illustrations.twig" with {
+        'members': true
+    } %}
+
+    {% include "partials/ajax/filters.twig" with {
+        'types': types,
+        'categories': categories,
+        'filterName': __('Thématiques', 'ismees'),
+        'secondFilterName': __('Population étudiante', 'ismees'),
+        'resourceType': 'resource_member_type',
+        'url': '/ajax/resources/members',
+        'subject': member_thematics,
+        'pagination': resources.pagination(15).pages,
+    } %}
+
+    {% include "partials/ajax/ajax-list.twig" with {
+        'items': resources,
+        'taxonomy': 'resource_category',
+    } %}
+    
+    {% include "partials/cta/footer-cta.twig" %}
+</main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/resources.js"></script>
+{% endblock %}

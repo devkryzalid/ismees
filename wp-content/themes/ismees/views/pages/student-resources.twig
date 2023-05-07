@@ -4,21 +4,16 @@
     {% include "partials/banners/banner-title-illustrations.twig" with {
         'students': true
     } %}
-{# 
-    <pre>
-    {% for resource in resources %}
-        {{ dd(resource.meta('subjects')) }}
-    {% endfor %}
-
-</pre> #}
 
     {% include "partials/ajax/filters.twig" with {
         'types': types,
         'categories': categories,
-        'filterName': __('Catégories', 'ismees'),
+        'filterName': __('Sujets', 'ismees'),
         'secondFilterName': __('Population étudiante', 'ismees'),
         'resourceType': 'resource_student_type',
-        'url': '/ajax/resources'
+        'url': '/ajax/resources/students',
+        'subject': student_subjects,
+        'pagination': resources.pagination(15).pages,
     } %}
 
     {% include "partials/ajax/ajax-list.twig" with {

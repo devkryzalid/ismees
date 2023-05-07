@@ -17,20 +17,24 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                {% if page.terms('resource_category') %}
-                    <div class="categories-ctn">
-                        {% if students %}
-                            <p class="categories-title">{{ __('Catégories', 'ismees') }}</p>
-                        {% else %}
-                            <p class="categories-title">{{ __('Populations étudiantes', 'ismees') }}</p>
-                        {% endif %}
+                <div class="categories-ctn">
+                    {% if students %}
+                        <p class="categories-title">{{ __('Catégories', 'ismees') }}</p>
+                    {% else %}
+                        <p class="categories-title">{{ __('Populations étudiantes', 'ismees') }}</p>
+                    {% endif %}
+                    {% if page.terms('resource_category')|length > 0 %}
                         {% for category in page.terms('resource_category') %}
                             <div class="category">
-                                <a>{{ category.name }}</a>
+                                <a href="{{ students ? options.config_students_resources ~ '?category=' ~ category.id : options.config_members_resources ~ '?category=' ~ category.id }}">{{ category.name }}</a>
                             </div>
                         {% endfor %}
-                    </div>
-                {% endif %}
+                    {% else %}
+                        <div class="category">
+                            <a href="{{ students ? options.config_students_resources : options.config_members_resources }}">{{ __('Toutes les ressources', 'ismees') }}</a>
+                        </div>
+                    {% endif %}
+                </div>
                 {% include "partials/socials/socials-share.twig" with {
                     'pageUrl': page.link,
                     'block': true

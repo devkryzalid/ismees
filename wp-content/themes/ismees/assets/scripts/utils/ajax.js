@@ -73,7 +73,8 @@ export default class AjaxForm {
     if (onLoadChangeCallback) this.onLoadChange = onLoadChangeCallback; // Called when loading status is changed
 
     // Add change listener to form checkboxes
-    this.formContainer.addEventListener('change', this.onFormChange);
+    this.formContainer.addEventListener('change', () => { this.onFormChange()});
+    this.formContainer.addEventListener('submit', (event) => { event.preventDefault(); this.onFormChange() });
 
     // Apply filters from url query string
     this.applyFiltersFromUrl();
@@ -111,10 +112,17 @@ export default class AjaxForm {
   }
 
   // Main form change callback, called on every checkbox event
-  onFormChange = async () => {
-    this.updateContentHtml(); // Clear current html
-    this.scrollToContent();
-    this.toggleLoading(true);
+  onFormChange = async (pagement = null) => {
+    
+    // Reset all HTML only if is filter change
+    if(!pagement){
+      this.updateContentHtml(); // Clear current html
+      this.scrollToContent('top');
+      this.currentPage = 1;
+      this.toggleLoading(true);
+    }
+    else
+      this.toggleLoading(true, 'loading-alt');
 
     const params = this.getFormData();
     const { data } = await this.fetchAjax(params);
@@ -122,7 +130,7 @@ export default class AjaxForm {
     this.updateCurrentUrl(params);
 
     this.toggleLoading(false);
-    this.updateContentHtml(data.html);
+    this.updateContentHtml(data.html, pagement);
 
     // Check if needed "next" button on new page
     this.checkPagination(data.pages_total);
@@ -132,7 +140,6 @@ export default class AjaxForm {
     this.toggleClearButton();
     this.setActiveFiltersCount();
   }
-
 
   // Return all form data and params in object format
   getFormData = () => {
@@ -146,7 +153,7 @@ export default class AjaxForm {
     this.previousParams = jsonParams;
     
     // Add paged param if needed
-    if (this.currentPage > 1) params.pg = this.currentPage;
+    if (this.currentPage > 1) params.pagenb = this.currentPage;
     return { ...params, limit: this.limit };
   }
 
@@ -154,7 +161,7 @@ export default class AjaxForm {
   applyFiltersFromUrl = () => {
     new URL(window.location.href).searchParams.forEach((values, param) => {
       // Change page if in params
-      if (param === 'pg') this.currentPage = values;
+      if (param === 'pagenb') this.currentPage = values;
       // Checkbox management
       else {
         values.split(',').forEach(id => {
@@ -163,15 +170,6 @@ export default class AjaxForm {
         });
       }
     })
-  }
-
-  // Check if needed "next" button on new page
-  checkPagination = (max) => {
-    const pageElement = this.pagination.querySelector('#next-page a');
-    if(!max || this.currentPage == max)
-      pageElement.classList.add('disabled');
-    else
-      pageElement.classList.remove('disabled');
   }
 
   // Axios ajax call
@@ -191,22 +189,28 @@ export default class AjaxForm {
   }
 
   // Toggle loading status, add class to container and throw callback
-  toggleLoading = (isLoading = null) => {
+  toggleLoading = (isLoading = null, type = loadingClass) => {
     this.loading = isLoading === null
       ? !this.loading
       : !!isLoading;
 
-    if (this.loading) this.contentContainer.classList.add(loadingClass);
-    else this.contentContainer.classList.remove(loadingClass);
+    if (this.loading) this.contentContainer.classList.add(type);
+    else {
+      this.contentContainer.classList.remove(loadingClass);
+      this.contentContainer.classList.remove('loading-alt');
+    }
 
     this.onLoadChange(this.loading)
   }
 
   // Update the content container with new html content (or clear contents if no param)
-  updateContentHtml = (html = '') => {
-    this.innerContainer.innerHTML = html;
-    this.initPagination();
-
+  updateContentHtml = (html = '', append = false) => {
+    if(append){
+      this.innerContainer.insertAdjacentHTML('beforeend', html);
+    }
+    else{
+      this.innerContainer.innerHTML = html;
+    }
     new jsBlockLink();
   }
   
@@ -215,25 +219,22 @@ export default class AjaxForm {
     // Get current URL and remove unused params
     const searchParams = new URLSearchParams(params);
     searchParams.delete('limit');
+    searchParams.delete('pagenb');
 
     // Build new url query string
     const urlPrefix = this.getCurrentUrlPrefix();
     const title = 'Ajax';
-    const url = urlPrefix + (Object.keys(params).length ? '?' + searchParams.toString() : '');
+    const anchor = window.location.hash.split('?')[0];
+    const url = urlPrefix + (Object.keys(params).length ? '?' + searchParams.toString() : '') + anchor;
 
     history.replaceState({ title, url }, title, url);
   }
 
   // Un-check all boxes and reload data
   clearFilters = () => {
-    this.formContainer.querySelectorAll('.dropdown-filter input:checked').forEach(i => { i.click(); });
-    
-    this.formContainer.querySelector('.search-ctn input').value = '';
-    this.currentPage = 1;
-
-    setTimeout(() => {
-      this.onFormChange();
-    }, 200);
+    event.preventDefault();
+    this.formContainer.querySelectorAll('input:checked').forEach(i => { i.checked = false; });
+    this.onFormChange();
   }
 
   // Fetch first part of current url, and remove trailing slash
@@ -251,38 +252,35 @@ export default class AjaxForm {
     if (!this.currentPage) this.currentPage = 1;
 
     // Count number of pages based on the last button
-    const pageButtons = this.pagination.querySelectorAll('.ajax-page');
-    this.nbPages = parseInt(pageButtons[pageButtons.length - 2].innerText);
+    const nextPage = this.pagination.querySelector('#next-page');
 
-    // Set disabled class on prev/next if needed
-    if (this.currentPage === 1) this.pagination.querySelector('.prev').classList.add('disabled');
-    if (this.currentPage == this.nbPages) this.pagination.querySelector('.next').classList.add('disabled');
-    
     // Set click listener on page buttons
-    pageButtons.forEach(page => { page.addEventListener('click', e => this.pageChange(e.target)); });
+    nextPage.addEventListener('click', e => this.pageChange(e.target));
+  }
+
+  // Check if needed "next" button on new page
+  checkPagination = (max) => {
+    const pageElement = this.pagination.querySelector('#next-page a');
+    if(!max || this.currentPage == max)
+      pageElement.classList.add('disabled');
+    else
+      pageElement.classList.remove('disabled');
   }
 
   // Change current page and trigger ajax fetch
   pageChange = pageElement => {
+    event.preventDefault();
     const value = pageElement.getAttribute('value');
-
-    // Ignore '...' buttons
-    if (!['prev', 'next', 'prec', 'suiv'].includes(value) && isNaN(parseInt(value))) return;
-    
-    // Toggle selected classes
-    document.querySelector('.ajax-page.current').classList.remove('current');
-    pageElement.classList.add('current');
 
     // Set current page
     if (value === 'prev') 
       this.currentPage = this.currentPage > 1 ? this.currentPage - 1 : 1;
     else if (value === 'next') 
-      this.currentPage = this.currentPage < this.nbPages ? this.currentPage + 1 : this.nbPages;
+      this.currentPage = this.currentPage + 1;
     else this.currentPage = +value;
-  
+
     // Reload ajax content
-    this.scrollToContent();
-    this.onFormChange();
+    this.onFormChange(true);
   }
 
   // Count total active filters
@@ -290,9 +288,12 @@ export default class AjaxForm {
     return this.formContainer.querySelectorAll('input:checked').length;
   }
 
-   // Scroll to ajax content
-   scrollToContent = () => {
-    setTimeout(() => { window.scroll({ top: this.formContainer.offsetTop + this.formContainer.offsetHeight - 150, behavior: 'smooth' }); }, 10); 
+  // Scroll to ajax content
+  scrollToContent = ( direction = null) => {
+    if(direction == 'top')
+      setTimeout(() => { window.scrollTo({ top: this.contentContainer.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 150, behavior: 'smooth' }); }, 10); 
+    else
+      setTimeout(() => { this.contentContainer.scrollIntoView({behavior: "smooth", block: 'start'}); }, 10); 
   }
   
   // Delay helper function
