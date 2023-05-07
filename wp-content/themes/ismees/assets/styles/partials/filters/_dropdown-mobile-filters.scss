@@ -84,6 +84,7 @@
             position: relative;
             margin: 0 auto;
             width: 100%;
+            @include transition($basicTransition);
 
             &::after {
                 content: "\e901";
@@ -95,6 +96,7 @@
                 font-size: 15px;
                 display: inline-block;
                 color: white;
+                @include transition($basicTransition);
             }
 
             img {
@@ -107,19 +109,9 @@
                 @include responsive-font($primaryFont, 600, 13, 13, 15, 15, uppercase, null, white);
             }
         }
-
-        &.-show {
-            z-index: 11;
-
-            .filters-ctn {
-                opacity: 1;
-                max-height: 320px; 
-                pointer-events: initial;
-                overflow-y: scroll;
-            }
-        }
         
         .filters-ctn {
+            padding-top: 50px;
             flex-direction: column;
             opacity: 0;
             max-height: 0;
@@ -127,13 +119,14 @@
             transition: $basicTransition;
             background-color: white;
             position: absolute;
-            top: 82%;
+            top: 100%;
             left: 0;
             right: 0;
             border-radius: 0 0 20px 20px;
             pointer-events: none;
             border: 2px solid $blue;
             gap: 0;
+            flex-wrap: nowrap;
 
             .radio-ctn {
                 flex-direction: row;
@@ -143,6 +136,17 @@
                 justify-content: flex-start;
                 gap: 0;
                 width: 100%;
+                overflow: none;
+                border-bottom: 1px solid rgba($darkBlue, 0.5);
+                border-radius: 0;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
 
                 img {
                     margin-bottom: 0;
@@ -158,6 +162,25 @@
                     color: white;
                     border-radius: 0;
                 }
+            }
+        }
+
+        &.-show {
+            z-index: 11;
+
+            #filterMobileButton {
+                border-radius: 12px 12px 0 0;
+    
+                &::after {
+                    transform: rotate(-90deg);
+                }
+            }
+
+            .filters-ctn {
+                opacity: 1;
+                max-height: 320px; 
+                pointer-events: initial;
+                overflow-y: scroll;
             }
         }
     }

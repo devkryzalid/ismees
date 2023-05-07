@@ -29,6 +29,7 @@
         transform: rotate(90deg);
         font-size: 15px;
         display: inline-block;
+        @include transition($basicTransition);
     }
   }
 
@@ -39,7 +40,7 @@
     transition: $basicTransition;
     background-color: $mainBG;
     position: absolute;
-    top: 89%;
+    top: 97%;
     left: 0;
     pointer-events: none;
     border-radius: 0 20px 20px 20px;
@@ -98,11 +99,23 @@
 
   &.-show {
     z-index: 11;
+
+    .filter-button {
+      border-radius: 12px 12px 0 0;
+    }
+
     .filter-ctn {
       opacity: 1;
       max-height: 320px; 
       pointer-events: initial;
       overflow-y: scroll;
+    }
+
+    .filter-button {
+  
+      &::after {
+          transform: rotate(-90deg);
+      }
     }
       
   }

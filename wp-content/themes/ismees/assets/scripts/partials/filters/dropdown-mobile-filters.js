@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dropdown behavior
     const toggleFilters = (event) => {
       event.preventDefault();
-      console.log(event.target.parentNode == filterMobileButton);
     
       // Check if the event target is the button or a child element of the button    
       if (event.target == filterMobileButton || event.target.parentNode == filterMobileButton) {
