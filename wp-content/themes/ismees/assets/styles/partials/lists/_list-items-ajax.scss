@@ -9,6 +9,25 @@
         row-gap: clamp-calc(50, 100, 375, 993);
     }
 
+    .loading {
+        position: relative;
+        min-height: 300px;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-image: url('/assets/images/square-loader.svg');
+            background-repeat: no-repeat;
+            margin: auto;
+        }
+    }
+
     .pagination-ctn {
         padding-top: clamp-calc(85, 100);
     }
