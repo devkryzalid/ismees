@@ -1,14 +1,11 @@
-<div class="banner-content-title">
+<div class="banner-title-subtitle-content">
     <div class="banner-content-ctn">
         <div class="container-lg">
             <div class="title-ctn">
                 {% include "partials/breadscrum.twig" %}
-                <p class="ontitle">{{ ontitle }}</p>
                 <h1 class="page-title" data-aos="fade-up" data-aos-delay="500">{{ post.title }}</h1>
-                {% if decoration %}
-                    <div class="title-decoration">
-                        {{ decoration }}
-                    </div>
+                {% if subTitle %}
+                    <p class="subTitle">{{ subTitle }}</p>
                 {% endif %}
                 {% if introduction %}
                     <div class="gutenberg">

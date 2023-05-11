@@ -1,8 +1,8 @@
 <div class="dropdown-filters">
-    <button class="filter-button">{{ name }}</button>
+    <button class="filter-button" tabindex="0">{{ name }}</button>
     <div class="filter-ctn">
         {% for filter in filters %}
-            <div class="filter-item">
+            <div class="filter-item" tabindex="0">
                 <label for="{{ filter.slug }}" class="checkbox-ctn">
                     {% set icon = fn('get_field', 'icon', taxonomy ~ '_' ~ filter.term_id) %}
                     {% if icon %}

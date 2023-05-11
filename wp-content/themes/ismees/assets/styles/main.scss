@@ -17,6 +17,7 @@
 @import "pages/member-resources";
 @import "pages/student-resources";
 @import "pages/single-resource";
+@import "pages/intervention";
 
 @import "partials/footer";
 @import "partials/header";
@@ -32,9 +33,11 @@
 @import "partials/banners/banner-image-title";
 @import "partials/banners/banner-image-title-author";
 @import "partials/banners/banner-content-title";
+@import "partials/banners/banner-title-subtitle-content";
 @import "partials/banners/banner-title-illustrations";
 
 @import "partials/cards/basic-card";
+@import "partials/cards/line-card";
 
 @import "partials/filters/dropdown-mobile-filters";
 @import "partials/filters/dropdown-filters";

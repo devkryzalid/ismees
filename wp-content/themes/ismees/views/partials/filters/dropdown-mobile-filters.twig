@@ -1,9 +1,9 @@
 <div class="dropdown-mobile-filters">
     <div class="container">
         <div class="mobile-container">
-            <button id="filterMobileButton"><span class="selected-icon"></span><span class="selected-text">SELECTED VALUE HERE</span></button>
+            <button tabindex="0" id="filterMobileButton"><span class="selected-icon"></span><span class="selected-text">SELECTED VALUE HERE</span></button>
             <div class="filters-ctn">
-                <label for="all" class="radio-ctn">
+                <label for="all" class="radio-ctn" tabindex="0">
                     <div class="card-icon-ctn">
                         <img class="card-icon" src="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" alt="" />
                     </div>
@@ -11,7 +11,7 @@
                     <input type="radio" data-icon="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" data-name="{{ __('Toutes les ressources', 'ismees') }}" name="{{ taxo_name }}" id="all" value=""  {{ (filter.term_id in params[taxo_name]) ? '' : 'checked' }}>
                 </label>
                 {% for filter in filters %}
-                    <label for="{{ filter.slug }}" class="radio-ctn">
+                    <label for="{{ filter.slug }}" class="radio-ctn" tabindex="0">
                         {% set icon = fn('get_field', 'icon', taxonomy ~ '_' ~ filter.term_id) %}
                         {% if icon %}
                             <div class="card-icon-ctn">

@@ -1,0 +1,16 @@
+<div class="line-card jsBlockLink" data-aos="fade-right" data-aos-delay="300">
+    <div class="content-ctn">
+        <p class="line-card__title">{{ item.title }}</p>
+        {% if item.post_excerpt and introduction %}
+            <p class="line-card__excerpt small">{{ item.post_excerpt }}</p>
+        {% endif %}
+        <div class="line-card__btn">
+            <a href="{{ item.link }}" aria-label="{{ __('Lien vers', 'ismees') ~ item.title }}"><i class="icon-arrow-right-bold"></i></a>
+        </div>
+    </div>
+    {% if item.thumbnail %}
+        <div class="image-ctn">
+            <img class="line-card__image" src="{{ item.thumbnail }}" alt="{{ __('Image de ', 'ismees') ~ item.title }}"/>
+        </div>
+    {% endif %}
+</div>

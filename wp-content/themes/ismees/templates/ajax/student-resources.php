@@ -3,7 +3,6 @@
 global $params;
 
 // set the POST param
-// $limit       = empty($params['limit']) ? 15 : $params['limit'];
 $category     = empty($params['category']) ? null : $params['category'];
 $type         = empty($params['type']) ? null : $params['type'];
 $subjects     = empty($params['subjects']) ? null : $params['subjects'];

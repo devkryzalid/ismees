@@ -6,14 +6,13 @@ $context      = Timber::context();
 $category     = empty($_GET['category']) ? null : $_GET['category'];
 $type         = empty($_GET['type']) ? null : $_GET['type'];
 $subjects      = empty($_GET['subjects']) ? null : $_GET['subjects'];
-$limit        = empty($_GET['limit']) ? 15 : $_GET['limit'];
 $paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 
 $resources = [
     'post_type'      => 'member-resource',
     'post_status'    => 'publish',
     'orderby'        => 'date',
-    'posts_per_page' =>  $limit,
+    'posts_per_page' =>  15,
     'paged'          => $paged,
     'nopaging'       => false,
     'meta_query'     => [],

@@ -1,0 +1,114 @@
+body.page-template-intervention {
+    background-color: $mainBG;
+
+    .page-intervention {
+        padding-bottom: 120px;
+    }
+
+    .page-content-ctn {
+        @include sectionSeparator();
+        padding-top: clamp-calc(65, 85);
+
+        .intervention-ctn {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 120px; 
+
+            &:last-child {
+                margin-bottom: 0; 
+            }
+    
+            .title-ctn {
+                @include flex(center, flex-start);
+    
+                .intervention-number-background {
+                    width: clamp-calc(71, 122);
+                    height: clamp-calc(82, 140);
+                    object-fit: contain;
+                }
+    
+                .intervention-number-ctn {
+                    margin-right: 30px;
+                    display: flex;
+                    position: relative;
+                }
+            
+                .intervention-number {
+                    @include responsive-font($primaryFont, 600, 40, 60, 47, 71);
+                    position: absolute;
+                    z-index: 2;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    margin: 0;
+                }
+            
+                .intervention-title {
+                    margin: 0;
+                }
+            }
+    
+            .line-card {
+                padding-right: 0;
+                padding-left: 0;
+    
+                .image-ctn {
+                    right: 0;
+    
+                    img {
+                        padding: 0;
+                        object-fit: cover;
+                    }
+                }
+    
+                &__title {
+                    width: 100%;
+                }
+    
+                &__btn {
+                    display: none;
+                }
+            }
+        }
+    
+        .anchors-ctn {
+            position: sticky;
+            top: 170px;
+            right: 0;
+            left: 0;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+    
+    
+            .anchor {
+                display: block;
+                @include responsive-font($primaryFont, 400, 16, 18, 19, 24);
+                padding: 20px 0;
+                border-bottom: 1px solid rgba($darkBlue, 0.2);
+
+                .anchor-number {
+                    margin-right: 10px;
+                }
+    
+                &:last-child {
+                    border: none;
+                }
+    
+                &:hover {
+                    font-weight: 700;
+                    color: $darkBlue;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        .page-content-row {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 77px;
+        }
+    }
+}
+
