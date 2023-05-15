@@ -4,13 +4,13 @@
             <div class="title-ctn">
                 {% include "partials/breadscrum.twig" %}
                 <h1 class="page-title" data-aos="fade-up" data-aos-delay="500">{{ post.title }}</h1>
-                {% if subTitle %}
-                    <p class="subTitle">{{ subTitle }}</p>
+                {% if subTitleStart and subTitleSpan and subTitleEnd %}
+                    <p class="subTitle">{{ subTitleStart }} <span class="background-line -green-alternative">{{ subTitleSpan }}</span> {{ subTitleEnd}}</p>
                 {% endif %}
                 {% if introduction %}
-                    <div class="gutenberg">
+                    <p class="introduction">
                         {{ introduction }}
-                    </div>
+                    </p>
                 {% endif %}
             </div>
         </div>

@@ -74,8 +74,7 @@ a {
 	background-repeat: no-repeat;
 	background-position: bottom;
 	display: inline-block;
-	background-size: 100% 100%;
-	padding-bottom: 30px;
+	background-size: contain;
 
 	&.-red {
 		background-image: url('/assets/images/brush-red.svg');
@@ -83,5 +82,9 @@ a {
 
 	&.-green {
 		background-image: url('/assets/images/brush-green.svg');
+	}
+
+	&.-green-alternative {
+		background-image: url('/assets/images/brush-green-alternative.svg');
 	}
 }

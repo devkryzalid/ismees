@@ -1,0 +1,29 @@
+.banner-title-subtitle-content {
+
+    .banner-content-ctn {
+        padding-top: clamp-calc(120, 185);
+        padding-bottom: clamp-calc(140, 190);
+        background-color: white;
+        @include flex(center, center, column);
+
+        .title-ctn {
+            @include flex(center, center, column);
+        }
+
+        .page-title {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .subTitle {
+            @include responsive-font($primaryFont, 400, 25, 45, 29, 53);
+            text-align: center;
+        }
+
+        .introduction {
+            text-align: center;
+            @include responsive-font($primaryFont, 400, 20, 26, 26, 36);
+        }
+    }
+}

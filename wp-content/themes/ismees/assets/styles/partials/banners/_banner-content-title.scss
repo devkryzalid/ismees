@@ -2,7 +2,7 @@
 
     .banner-content-ctn {
         padding-top: clamp-calc(120, 185);
-        padding-bottom: clamp-calc(140, 150);
+        padding-bottom: clamp-calc(140, 200);
         background-color: $yellow;
         @include flex(center, center, column);
 
@@ -20,18 +20,11 @@
             margin-bottom: 40px;
             text-align: center;
         }
-        
-        .title-decoration {
-            display: flex;
-
-            img {
-                width: clamp-calc(160, 260, 375, 992);
-            }
-        }
 
         .gutenberg {
           margin-top: 40px;
           margin-bottom: 0;
+          text-align: center;
 
           p {
             @include responsive-font($primaryFont, 400, 20, 26, 26, 36);

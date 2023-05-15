@@ -9,6 +9,24 @@ body.page-template-intervention {
         @include sectionSeparator();
         padding-top: clamp-calc(65, 85);
 
+        .explanations-ctn {
+            margin-bottom: 100px;
+            position: relative;
+
+            .decoration-svg {
+                position: absolute;
+                right: 0;
+                top: -25%;
+                width: clamp-calc(120, 190, 767);
+            }
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                margin-bottom: clamp-calc(50, 70);
+            }
+        }
+
         .intervention-ctn {
             display: flex;
             flex-direction: column;
@@ -44,7 +62,8 @@ body.page-template-intervention {
                 }
             
                 .intervention-title {
-                    margin: 0;
+                    margin-top: 0;
+                    margin-bottom: 20px;
                 }
             }
     
@@ -103,11 +122,48 @@ body.page-template-intervention {
         }
     }
 
+    @media(max-width: 992px) {
+        .page-content-row {
+
+            .explanations-ctn {
+    
+                .decoration-svg {
+                    top: -30%;
+                }
+            }
+        }
+    }
+
     @media(max-width: 767px) {
         .page-content-row {
             display: flex;
             flex-direction: column-reverse;
             gap: 77px;
+
+            .explanations-ctn {
+    
+                .decoration-svg {
+                    display: none;
+                }
+            }
+
+            .intervention-ctn {
+        
+                .title-ctn {
+                    flex-direction: column;
+
+                    .intervention-number-ctn {
+                        margin-right: 0;
+                    }
+
+                    .intervention-title {
+                        margin-top: 20px;
+                        text-align: center;
+
+                    }
+
+                }
+            }
         }
     }
 }

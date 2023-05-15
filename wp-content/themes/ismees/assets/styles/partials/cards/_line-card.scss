@@ -33,6 +33,7 @@
     &__title {
         @include transition($basicTransition);
         @include responsive-font($primaryFont, 400, 20, 32, 22, 40);
+        margin: 0;
     }
 
     &__excerpt {
@@ -85,7 +86,6 @@
 
         &__title {
             font-weight: 700;
-            margin: 0;
         }
 
         i {
