@@ -8,7 +8,7 @@
     {% set primaryType = get_primary_taxonomy(item.id, 'resource_member_type', true).name %}
 {% endif %}
 
-<div class="card-ctn jsBlockLink" data-aos="fade-up" data-aos-delay="500">
+<div class="card-ctn jsBlockLink" tabindex="0" data-aos="fade-up" data-aos-delay="500">
     <div class="card-image-ctn">
         {% if item.thumbnail %}
             <img class="card-image" src="{{ item.thumbnail.src }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />

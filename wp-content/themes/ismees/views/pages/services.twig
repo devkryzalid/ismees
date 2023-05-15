@@ -11,6 +11,7 @@
                             {{ post.content }}
                         </div>
                     {% endif %}
+                     {% include "partials/filters/autocomplete-search.twig" %}
                 </div>
             </div>
         </div>
@@ -54,4 +55,20 @@
             </div>
         {% endif %}
     </main>
+
+    {% set schoolsArray = [] %}
+    {% for service in post.meta('services_offered') %}
+        {% for school in service.schools %}
+            {% set schoolsArray = schoolsArray|merge([{'title': school.school_link.title, 'url': school.school_link.url}]) %}
+        {% endfor %}
+    {% endfor %}
+    <div id="autoCompleteData" style="display: none;">
+        {{ schoolsArray|json_encode|raw }}
+    </div>
+
+{% endblock %}
+
+
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/services.js"></script>
 {% endblock %}
