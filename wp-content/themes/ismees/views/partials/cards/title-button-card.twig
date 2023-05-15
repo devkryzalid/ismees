@@ -1,0 +1,8 @@
+<div class="title-button-card">
+    {% if item.title %}
+        <h3 class="card-title large">{{ item.title }}</h3>
+    {% endif %}
+    {% if item.button is not empty %}
+        <a class="main-button -blue"href="{{ item.button.url }}" target="{{ item.button.targets }}">{{ item.button.title }}</a>
+    {% endif %}
+</div>

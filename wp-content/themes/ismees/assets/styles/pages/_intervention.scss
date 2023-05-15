@@ -124,18 +124,6 @@ body.page-template-intervention {
 
     @media(max-width: 992px) {
         .page-content-row {
-
-            .explanations-ctn {
-    
-                .decoration-svg {
-                    top: -30%;
-                }
-            }
-        }
-    }
-
-    @media(max-width: 767px) {
-        .page-content-row {
             display: flex;
             flex-direction: column-reverse;
             gap: 77px;
@@ -146,11 +134,17 @@ body.page-template-intervention {
                     display: none;
                 }
             }
+        }
+    }
+
+    @media(max-width: 767px) {
+        .page-content-row {
 
             .intervention-ctn {
         
                 .title-ctn {
                     flex-direction: column;
+                    align-items: flex-start;
 
                     .intervention-number-ctn {
                         margin-right: 0;
@@ -158,10 +152,7 @@ body.page-template-intervention {
 
                     .intervention-title {
                         margin-top: 20px;
-                        text-align: center;
-
                     }
-
                 }
             }
         }

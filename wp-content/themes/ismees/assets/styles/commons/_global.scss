@@ -88,3 +88,21 @@ a {
 		background-image: url('/assets/images/brush-green-alternative.svg');
 	}
 }
+
+.cirle-center-background {
+	position: relative;
+    display: inline-block;
+    z-index: 1;
+	
+	&.-yellow::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: -20px;
+		bottom: -10px;
+		background: url('/assets/images/yellow-circles.svg') no-repeat;
+		background-size: contain;
+	}
+}

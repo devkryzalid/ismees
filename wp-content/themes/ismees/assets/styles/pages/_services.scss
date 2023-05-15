@@ -1,0 +1,86 @@
+body.page-template-services {
+    background-color: $lightBlue;
+
+    .services-banner {
+        padding-top: clamp-calc(120, 185);
+        padding-bottom: clamp-calc(140, 200);
+        @include flex(center, center, column);
+
+        .main-breadcrumbs {
+            @include flex();
+        }
+
+        .title-ctn {
+
+            .page-title {
+                text-align: center;
+                font-weight: 400;
+                
+                .-black {
+                    font-weight: 800;
+                }
+            }
+
+        }
+    }
+
+    .page-services {
+        
+        .services-lists {
+            @include sectionSeparator(white);
+            padding-bottom: clamp-calc(90, 190);
+            padding-top: 110px;
+            .service-ctn {
+                padding-bottom: 40px;
+                margin-bottom: 60px;
+                border-bottom: 1px solid $lightBlue;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+            .region {
+                margin: 0;
+            }
+            .school {
+                display: flex;
+                align-items: center;
+                @include fontSize(20px, 23px, 500, -0.01rem);
+                width: 100%;
+                @include transition($basicTransition);
+                border-radius: 12px;
+                padding: 15px 0;
+                padding-right: clamp-calc(15, 35);
+                padding-left: 15px;
+
+                i {
+                    margin-right: 15px;
+                    color: $blue;
+                    font-size: 13px;
+                }
+
+                &:hover {
+                    background-color: $yellow;
+                    cursor: pointer;
+                    color: $darkBlue;
+                }
+            }
+        }
+
+        .related-pages {
+            @include sectionSeparator($lightBlue);
+            padding-top: 130px;
+            padding-bottom: clamp-calc(75, 110);
+        }
+    }
+
+    @media(max-width: 767px) {
+        .page-services {
+            .services-lists {
+                .region {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

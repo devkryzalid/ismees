@@ -1,0 +1,57 @@
+{% extends 'base.twig' %}
+{% block content %}
+    <main class="page-services" data-aos="fade" data-aos-delay="300">
+        <div class="services-banner">
+            <div class="container-lg">
+                <div class="title-ctn" data-aos="fade-up" data-aos-delay="500">
+                    {% include "partials/breadscrum.twig" %}
+                    <h1 class="page-title"><span class="-black">{{ __('Services offerts', 'ismees') }}</span> {{ __('dans', 'ismees') }} <span class="-black cirle-center-background -yellow">{{ __('ton', 'ismees') }}</span> {{ __('établissement', 'ismees') }}</h1>
+                    {% if post.content %}
+                        <div class="gutenberg">
+                            {{ post.content }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% if post.meta('services_offered')|length > 0 %}
+            <div class="services-lists">
+                <div class="container">
+                    {% for service in post.meta('services_offered') %}
+                        <div class="service-ctn" data-aos="fade-up" data-aos-delay="300">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h3 class="region small">{{ service.region }}</h3>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        {% for school in service.schools %}
+                                            <div class="col-lg-6 mb-3">
+                                                <a class="school" href="{{ school.school_link.url }}" target="_blank"><i class="icon-external-link"></i>{{ school.school_link.title }}</a>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+        {% if post.meta('related_pages')|length > 0 %}
+            <div class="related-pages">
+                <div class="container">
+                    <div class="row">
+                        {% for related in post.meta('related_pages') %}
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-6" data-aos="fade-up" data-aos-delay="300">
+                                {% include "partials/cards/title-button-card.twig" with {
+                                    'item': related,
+                                } %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </main>
+{% endblock %}

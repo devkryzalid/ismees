@@ -1,9 +1,9 @@
 <div class="banner-title-subtitle-content">
     <div class="banner-content-ctn">
         <div class="container-lg">
-            <div class="title-ctn">
+            <div class="title-ctn" data-aos="fade-up" data-aos-delay="500">
                 {% include "partials/breadscrum.twig" %}
-                <h1 class="page-title" data-aos="fade-up" data-aos-delay="500">{{ post.title }}</h1>
+                <h1 class="page-title">{{ post.title }}</h1>
                 {% if subTitleStart and subTitleSpan and subTitleEnd %}
                     <p class="subTitle">{{ subTitleStart }} <span class="background-line -green-alternative">{{ subTitleSpan }}</span> {{ subTitleEnd}}</p>
                 {% endif %}
