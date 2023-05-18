@@ -18,6 +18,12 @@
         }
     }
 
+    .card-link {
+        &:hover {
+            color: $darkBlue;
+        }
+    }
+
     &:hover {
         transform: scale(1.1);
     }
