@@ -12,6 +12,7 @@
                     {% endif %}
                     {{ filter.name }}
                     <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in params[taxo_name]) ? 'checked' : '' }} {{ (filter.id in params[taxo_name]) ? 'checked' : '' }}>
+                    <span class="checkmark"></span>
                 </label>
             </div>
         {% endfor %}

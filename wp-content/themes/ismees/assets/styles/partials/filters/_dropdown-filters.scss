@@ -37,16 +37,19 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: $basicTransition;
-    background-color: $mainBG;
+    background-color: white;
     position: absolute;
-    top: 97%;
+    top: 104%;
     left: 0;
     pointer-events: none;
-    border-radius: 0 20px 20px 20px;
+    border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 418px;
-    border: 2px solid $darkBlue;
+    @include transition($basicTransition);
+    padding: 20px;
+    @include flex(flex-start, flex-start, column);
+    gap: 10px;
+
 
     img {
       width: 32px;
@@ -65,32 +68,51 @@
       .checkbox-ctn {
         position: relative;
         cursor: pointer;
-        display: inline-block;
-        padding: 20px;
         @include flex(center, flex-start);
-        gap: 15px;
-        border-bottom: 1px solid rgba($darkBlue, 0.5);
-        @include responsive-font($primaryFont, 400, 18, 20, 24, 26);
-        
-        input {
-          display: none;
+        padding-left: 40px;
+        @include responsive-font($secondaryFont, 400, 16, 18, 20, 20, null, -0.01rem);
+
+        .card-icon {
+          margin-right: 10px;
         }
 
-        &:hover {
-          background-color: $blue;
-          color: white;
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
 
-          img {
-              filter: brightness(0) invert(1);
+        .checkmark {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          height: 20px;
+          width: 20px;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid $darkBlue;
+
+          &::after {
+            font-family: 'icomoon' !important;
+            content: "\e90e";
+            position: absolute;
+            display: none;
+            color: white;
+            font-size: 12px;
           }
         }
 
-        &.-checked {
+        input:checked ~ .checkmark {
           background-color: $blue;
-          color: white;
+          border: none;
 
-          img {
-              filter: brightness(0) invert(1);
+          &::after {
+            display: block;
           }
         }
       }
@@ -99,10 +121,6 @@
 
   &.-show {
     z-index: 11;
-
-    .filter-button {
-      border-radius: 12px 12px 0 0;
-    }
 
     .filter-ctn {
       opacity: 1;
@@ -127,7 +145,6 @@
 
     .filter-ctn {
       left: 0;
-      border-radius: 0 0 20px 20px;
       width: 290px;
     }
   }

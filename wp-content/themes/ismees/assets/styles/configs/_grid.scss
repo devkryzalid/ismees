@@ -63,8 +63,8 @@
   padding-left: clamp-calc(20, 50);
 }
 .container-left-side {
-  padding-right: clamp-calc(20, 30);
-  padding-left: clamp-calc(20, 150);
+  padding-right: clamp-calc(20, 30, 767);
+  padding-left: clamp-calc(20, 150, 767);
 }
 
  .row {

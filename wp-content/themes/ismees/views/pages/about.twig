@@ -1,0 +1,71 @@
+{% extends 'base.twig' %}
+{% block content %}
+    <main class="page-about" data-aos="fade" data-aos-delay="300">
+        <div class="banner-content-ctn">
+            <div class="container-lg">
+                <div class="title-ctn" data-aos="fade-up" data-aos-delay="300">
+                    {% include "partials/breadscrum.twig" %}
+                    <h1 class="page-title" data-aos="fade-up" data-aos-delay="500">{{ post.title }}</h1>
+                    <div class="subtitle">
+                        {{ __('Station santé mentale étudiante','ismees') }}
+                    </div>
+                    <img class="banner-img" src="{{theme.link}}/assets/images/blue-banner-line.svg" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="container-left-side">
+                <div class="row reverse-row-mobile">
+                    <div class="col-lg-9 col-md-8">
+                        <div class="main-content-ctn">
+                            <div id="context" data-aos="fade-up" data-aos-delay="300">
+                                <h2 class="large section-title">{{ __('Contexte', 'ismees')}}</h2>
+                                <div class="gutenberg">
+                                    {{ post.content }}
+                                </div>
+                            </div>
+                            <div id="members" class="members-ctn">
+                                <h2 class="large section-title"  data-aos="fade-up" data-aos-delay="300">{{ __('Membre de l\'équipe', 'ismees')}}</h2>
+                                <div class="members-list">
+                                    {% for member in post.meta('members') %}
+                                        {% include "partials/cards/image-content-card.twig" with {
+                                            'item': member
+                                        } %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div id="partners" class="partners-ctn">
+                                <h2 class="section-title large"  data-aos="fade-up" data-aos-delay="300">{{ __('Réseau de collaboration', 'ismees')}}</h2>
+                                <div class="partners-introduction"  data-aos="fade-up" data-aos-delay="300">{{ post.meta('partners').intro }}</div>
+                                <div class="partners-list"  data-aos="fade-up" data-aos-delay="300">
+                                    {% for partner in post.meta('partners').items %}
+                                        {% include "partials/cards/image-link-card.twig" with {
+                                            'item': partner
+                                        } %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <div class="navigation-ctn"  data-aos="fade-up" data-aos-delay="300">
+                            <div class="anchors-ctn">
+                                <a class="anchor" href="#context">{{ __('Contexte', 'ismees') }}</a>
+                                <a class="anchor" href="#members">{{ __('Membres de l’équipe', 'ismees') }}</a>
+                                <a class="anchor" href="#partners">{{ __('Collaborateurs et partenaires', 'ismees') }}</a>
+                            </div>
+                            {% if post.meta('mail') %}
+                                <div class="button-ctn">
+                                    <a class="main-button -blue" href="mailto:{{post.meta('mail')}}">{{ __('Nous joindre par courriel', 'ismees') }}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="background-img -green" src="{{theme.link}}/assets/images/circle-green.svg" alt="" />
+        <img class="background-img -yellow" src="{{theme.link}}/assets/images/circle-yellow.svg" alt="" />
+        <img class="background-img -red" src="{{theme.link}}/assets/images/circle-red.svg" alt="" />
+    </main>
+{% endblock %}

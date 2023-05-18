@@ -22,7 +22,7 @@ $student_subjects = [
     'post_type'      => 'subject',
     'post_status'    => 'publish',
     'orderby'       => 'date',
-    'posts_per_page' =>  $limit,
+    'posts_per_page' =>  15,
     'paged'          => $paged,
     'nopaging'       => false,
 ];

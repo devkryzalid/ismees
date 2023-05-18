@@ -17,8 +17,9 @@
 @import "pages/member-resources";
 @import "pages/student-resources";
 @import "pages/single-resource";
-@import "pages/intervention"; 
+@import "pages/intervention";
 @import "pages/services";
+@import "pages/about";
 
 @import "partials/footer";
 @import "partials/header";
@@ -40,6 +41,8 @@
 @import "partials/cards/basic-card";
 @import "partials/cards/line-card";
 @import "partials/cards/title-button-card";
+@import "partials/cards/image-content-card";
+@import "partials/cards/image-link-card";
 
 @import "partials/filters/dropdown-mobile-filters";
 @import "partials/filters/dropdown-filters";

@@ -1,0 +1,24 @@
+.image-link-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    @include flex(flex-start, space-between, column);
+    transform: scale(1);
+    @include transition($basicTransition);
+
+    .image-ctn {
+        padding: clamp-calc(15, 20);
+        margin-bottom: 20px;
+        align-self: center;
+        @include flex();
+
+        .card-image {
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}

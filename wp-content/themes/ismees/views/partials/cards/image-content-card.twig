@@ -1,0 +1,26 @@
+<div class="image-content-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="row">
+        <div class="col-lg-4 d-flex align-items-center"> 
+            {% if item.image.url %}
+                <div class="card-image">
+                    <img src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-lg-8 d-flex align-items-center"> 
+            <div class="card-content">
+                {% if item.name %}
+                    <p class="card-title">{{ item.name }}</p>
+                {% endif %}
+                {% if item.description %}
+                    <p class="card-description">{{ item.description }}</p>
+                {% endif %}
+                {% if item.linkedin_member %}
+                    <div class="button-ctn">
+                        <a class="card-link" href="{{ item.linkedin_member }}" aria-label="LinkedIn profile for {{item.name}}" title="LinkedIn profile for {{item.name}}"><i class="icon-linkedin1"></i></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

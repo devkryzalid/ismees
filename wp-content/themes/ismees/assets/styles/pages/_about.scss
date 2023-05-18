@@ -1,0 +1,159 @@
+body.page-template-about {
+
+    .page-about {
+        position: relative;
+
+        .background-img {
+            position: absolute;
+            z-index: -1;
+
+            &.-green {
+                right: 0;
+                top: 10%;
+                width: clamp-calc(300, 768);
+            }
+
+            &.-red {
+                left: 0;
+                top: 40%;
+                width: clamp-calc(300, 981);
+            }
+
+            &.-yellow {
+                right: 0;
+                top: 70%;
+                width: clamp-calc(300, 835);
+            }
+        }
+        
+        .banner-content-ctn {
+            @include flex(center, center);
+            padding-top: clamp-calc(120, 185);
+    
+            .breadcrumb-ctn {
+    
+                #breadcrumbs {
+                    @include flex();
+                }
+    
+                margin-bottom: 100px;
+            }
+    
+            .title-ctn {
+                @include flex(center, center, column);
+    
+                .page-title {
+                    text-align: center;
+                }
+        
+                .subtitle {
+                    text-align: center;
+                    @include responsive-font($primaryFont, 400, 25, 35, 28, 38);
+                }
+    
+                .banner-img {
+                    margin-top: 25px;
+                    max-width: 70%;
+                }
+            }
+        }
+    
+        .page-content {
+            padding-bottom: clamp-calc(120, 200);
+    
+            .main-content-ctn {
+                @include flex(flex-start, center, column);
+                gap: clamp-calc(120, 150);
+            }
+    
+            .section-title {
+                margin-top: 0;
+                margin-bottom: clamp-calc(45, 50);
+            }
+    
+            .members-ctn {
+                @include flex(flex-start, center, column);
+    
+                .members-list {
+                    @include flex(flex-start, center, column);
+                    gap: 40px;
+                }
+            }
+    
+            .partners-ctn {
+    
+                .partners-introduction {
+                    margin-bottom: clamp-calc(80, 95);
+                }
+    
+                .partners-list {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: clamp-calc(20, 40);
+                }
+    
+            }
+
+            .navigation-ctn {
+                position: sticky;
+                top: 170px;
+                right: 0;
+                left: 0;
+                background-color: white;
+                border-radius: 20px;
+                padding: 20px;
+
+                &::after {
+                    content: url('/assets/images/blue-loop-arrow-down.svg');
+                    position: absolute;
+                    top: -22%;
+                    right: 20px;
+                }
+
+                .anchors-ctn {
+                    margin-bottom: 20px;
+            
+                    .anchor {
+                        display: block;
+                        @include responsive-font($primaryFont, 400, 16, 18, 19, 24);
+                        padding: 20px 0;
+                        border-bottom: 1px solid rgba($darkBlue, 0.2);
+        
+                        .anchor-number {
+                            margin-right: 10px;
+                        }
+            
+                        &:last-child {
+                            border: none;
+                        }
+            
+                        &:hover {
+                            font-weight: 700;
+                            color: $darkBlue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        .page-about {   
+            .page-content {
+
+                .reverse-row-mobile {
+                    @include flex(center, center, column-reverse);
+                    gap: 60px;
+                }
+
+                .partners-ctn {
+    
+                    .partners-list {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+    
+                }
+            }
+        }
+    }
+}

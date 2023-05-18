@@ -5,6 +5,8 @@ body.page-template-services {
         padding-top: clamp-calc(120, 185);
         padding-bottom: clamp-calc(140, 200);
         @include flex(center, center, column);
+        z-index: 2;
+        position: relative;
 
         .main-breadcrumbs {
             @include flex();
@@ -30,6 +32,7 @@ body.page-template-services {
             @include sectionSeparator(white);
             padding-bottom: clamp-calc(90, 190);
             padding-top: 110px;
+
             .service-ctn {
                 padding-bottom: 40px;
                 margin-bottom: 60px;
