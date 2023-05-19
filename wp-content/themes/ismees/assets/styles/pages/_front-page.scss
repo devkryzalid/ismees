@@ -8,6 +8,11 @@ body.page-template-front-page {
 
             // LEFT COLUMN
 
+            .banner-left {
+                @include flex(flex-start, space-between, column);
+                gap: 50px;
+            }
+
             .ontitle {
                 @include responsive-font($primaryFont, 400, 40, 63, 47, 75, null, -0.02rem);
                 margin-bottom: clamp-calc(15, 20);
@@ -19,20 +24,32 @@ body.page-template-front-page {
             }
 
             .page-title {
-                position: relative;
                 margin-top: 0;
 
-                &::after {
-                    content: url('/assets/images/home-images/blue-text-highlight.svg');
-                    right: 0;
-                    top: 0;
-                    transform: translate(50%, -50%);
-                    position: absolute;
+                span {
+                    display: inline-block;
+                    position: relative;
+
+                    &::after {
+                        content: url('/assets/images/home-images/blue-text-highlight.svg');
+                        right: 0;
+                        top: 0;
+                        transform: translate(90%, -50%);
+                        position: absolute;
+                    }
                 }
             }
 
             .subtitle {
                 @include responsive-font($primaryFont, 400, 18, 20, 26, 26);
+            }
+
+            .defilate {
+                p {
+                    transform: translate(20px, 10px) rotate(-25deg);
+                    position: relative;
+                    @include responsive-font($primaryFont, 400, 15, 15, 18, 18, null, -0.02rem);
+                }
             }
 
             // RIGHT COLUMN
@@ -202,6 +219,10 @@ body.page-template-front-page {
     
                 .image-ctn {
                     margin-top: 50px;
+                }
+
+                .defilate {
+                    display: none
                 }
             }
 
