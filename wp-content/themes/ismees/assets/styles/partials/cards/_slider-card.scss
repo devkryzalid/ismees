@@ -1,0 +1,76 @@
+.slider-card {
+    @include flex(flex-start, flex-start, column);
+    position: relative;
+
+    .card-title,
+    .card-image-ctn {
+        z-index: 5;
+    }
+
+    .card-image-ctn {
+        @include flex();
+        position: relative;
+        background-color: $darkBlue;
+        border-radius: 12px;
+        overflow: hidden;
+        width: 100%;
+        
+        &::before {
+            content: "";
+            display: block;
+            padding-bottom: 66.66%; 
+        }
+
+        .card-image {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            opacity: 0.6;
+            @include transition($basicTransition);
+        }
+    }
+
+    .card-title {
+        @include responsive-font($primaryFont, 400, 28, 32, 31, 40);
+        margin-top: clamp-calc(15, 25);
+
+        &:hover {
+            color: $darkBlue;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        left: -20px;
+        bottom: -20px;
+        background-color: white;
+        border-radius: 20px;
+        opacity: 0;
+        @include transition($basicTransition);
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+
+        .card-image-ctn {
+            .card-image {
+                opacity: 1;
+            }
+            .card-type {
+                opacity: 1;
+                border-radius: 12px;
+            }
+        }
+    }
+}

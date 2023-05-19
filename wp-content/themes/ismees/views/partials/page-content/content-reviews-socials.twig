@@ -4,7 +4,9 @@
         {% include "partials/socials/socials-share.twig" with {
             'pageUrl': page.link
         } %}
-        {% include "partials/page-content/content-reviews.twig" %}
+        {% include "partials/page-content/content-reviews.twig" with {
+            'backButton': true
+        } %}
     </div>
 </div>
 {% endif %}

@@ -68,3 +68,68 @@ button {
         }
     }
 }
+
+.arrow-button {
+    a {
+        display: inline-block;
+        padding: 35px 40px;
+        background-color: white;
+        width: 100%;
+        border-radius: 12px;
+        @include flex(center, space-between);
+        @include responsive-font($primaryFont, 500, 18, 22, 22, 26);
+
+        &::after {
+            font-family: "icomoon";
+            content: "\e900";
+            position: relative;
+            margin-left: 15px;
+            display: inline-block;
+            font-size: 40px;
+            right: 0;
+            @include transition($basicTransition);
+            color: $darkBlue;
+        }
+    }
+
+    &.-white {
+
+        &:hover {
+            a {
+                background-color: $blue;
+                color: white;
+
+                &::after {
+                    right: -10px;
+                    color: white;
+                }
+            }
+        }
+
+    }
+}
+
+.intern-button {
+    @include flex(center, flex-start);
+    @include responsive-font($primaryFont, 500, 20, 22, 24, 26);
+
+    &::before {
+        font-family: "icomoon";
+        content: "\e90c";
+        position: relative;
+        margin-left: 15px;
+        display: inline-block;
+        color: $blue;
+        margin-right: 15px;
+        position: relative;
+        left: 0;
+        @include transition($basicTransition);
+    }
+
+    &:hover {
+
+        &::before {
+            left: 8px;
+        }
+    }
+}

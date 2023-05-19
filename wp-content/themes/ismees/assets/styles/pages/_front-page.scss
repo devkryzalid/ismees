@@ -1,0 +1,230 @@
+body.page-template-front-page {
+    .front-page {
+
+        .banner-content-ctn {
+            padding-top: clamp-calc(160, 200);
+            padding-bottom: clamp-calc(0, 66, 767);
+            gap: clamp-calc(20, 50);
+
+            // LEFT COLUMN
+
+            .ontitle {
+                @include responsive-font($primaryFont, 400, 40, 63, 47, 75, null, -0.02rem);
+                margin-bottom: clamp-calc(15, 20);
+                margin-top: clamp-calc(0, 50);
+
+                span {
+                    font-weight: 400;
+                }
+            }
+
+            .page-title {
+                position: relative;
+                margin-top: 0;
+
+                &::after {
+                    content: url('/assets/images/home-images/blue-text-highlight.svg');
+                    right: 0;
+                    top: 0;
+                    transform: translate(50%, -50%);
+                    position: absolute;
+                }
+            }
+
+            .subtitle {
+                @include responsive-font($primaryFont, 400, 18, 20, 26, 26);
+            }
+
+            // RIGHT COLUMN
+
+            .image-ctn {
+                position: relative;
+                display: flex;
+
+                .banner-img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+
+                .thunder-image {
+                    right: 0;
+                    top: 0;
+                    position: absolute;
+                    width: clamp-calc(70, 135);
+                    object-fit: contain;
+                }
+
+                .asterisk-image {
+                    left: 20%;
+                    top: 50%;
+                    position: absolute;
+                    width: clamp-calc(22, 45);
+                    object-fit: contain;
+                }
+            }
+        }
+
+        // MAIN CONTENT
+
+        .page-content {
+            padding-bottom: clamp-calc(45, 110);
+            padding-top: 0;
+
+            .ctas-section {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                padding-bottom: 160px;
+
+                //CODE FOR BOTH COLUMNS CTA
+
+                .ctas-column {
+                    flex-grow: 1;
+                    padding-top: clamp-calc(80, 120);
+                    padding-bottom: clamp-calc(80, 120);
+                    @include flex(flex-start, space-between, column);
+                    gap: clamp-calc(80, 150);
+
+                    .section-content {
+                        @include flex(center, space-between);
+                        gap: 15px;
+                        padding-left: clamp-calc(20, 75, 992);
+                        padding-right: clamp-calc(1, 40, 767, 768);
+
+                        .title {
+                            @include responsive-font($primaryFont, 700, 35, 52, 40, 54, null, null, $darkBlue, normal, 992);
+                            margin-top: 0;
+                        }
+                    }
+
+                    .ctas-ctn {
+                        @include flex(center, center, column);
+                        width: 100%;
+                        gap: 15px;
+                        padding-left: clamp-calc(20, 75);
+                        padding-right: clamp-calc(20, 75);
+
+                        .arrow-button {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                //CODE FOR PER COLUMN CTA
+
+                .section-1 {
+                    background-color: $yellow;
+                    border-radius: 60px 0px 0px 60px;
+
+                    .img-ctn {
+                        display: flex;
+
+                        img {
+                            object-fit: contain;
+                            width: clamp-calc(150, 230, 992);
+                        }
+                    }
+                }
+
+                .section-2 {
+                    background-color: $darkBlue;
+                    border-radius: 0px 60px 60px 0px;
+
+                    .section-content {
+
+                        .title {
+                            color: $salmon;
+                        }
+    
+                        .introduction {
+                            color: white;
+                        }
+
+                    }
+
+                    .img-ctn {
+                        display: flex;
+                        
+                        img {
+                            object-fit: contain;
+                            width: clamp-calc(120, 180, 992);
+                        }
+                    }
+                }
+            }
+
+            .resources-ctn {
+                @include flex(center, space-between);
+                padding-bottom: clamp-calc(60, 80);
+                gap: 57px;
+
+                .resources-title {
+                    @include flex(flex-start, flex-start, column);
+                    margin: 0;
+                    @include responsive-font($primaryFont, 400, 35, 58, 40, 63);
+                }
+
+                .resources-ctas {
+                    a:first-child {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        .front-page {
+
+            .banner-content-ctn {
+                padding-top: clamp-calc(160, 200);
+                padding-bottom: clamp-calc(0, 66);
+                gap: clamp-calc(20, 50);
+    
+                .ontitle {
+                    text-align: center;
+    
+                    span {
+                        font-weight: 400;
+                    }
+                }
+    
+                .page-title {
+                    text-align: center;
+    
+                    &::after {
+                        display: none;
+                    }
+                }
+    
+                .subtitle {
+                    text-align: center;
+                }
+    
+                .image-ctn {
+                    margin-top: 50px;
+                }
+            }
+
+            .page-content {
+    
+                .ctas-section {
+                    @include flex(center, center, column);
+
+                    //CODE FOR PER COLUMN CTA
+    
+                    .section-1 {
+                        border-radius: 0;
+                    }
+    
+                    .section-2 {
+                        border-radius: 0;
+                    }
+                }
+
+                .resources-ctn {
+                    @include flex(flex-start, flex-start, column);
+                }
+            }
+        }
+    }
+}

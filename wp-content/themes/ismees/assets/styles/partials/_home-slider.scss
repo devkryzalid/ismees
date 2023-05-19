@@ -1,0 +1,111 @@
+.horizontal-multiple-slider {
+    position: relative;
+
+    .next.swiper-button-disabled + .swiper-container {
+        &::after {
+            left: 0;
+        }
+    }
+
+    .swiper-container {
+        overflow-x: hidden;
+        position: relative;
+        padding: 50px 0;
+        margin-left: clamp-calc(20, 75);
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        width: 100%;
+
+        .swiper-slide {
+            display: flex;
+            position: relative;
+            min-width: calc(100%/3 - 50px);
+
+            &:nth-child(odd) {
+                transform: translateY(-20px);
+            }
+            
+            &:nth-child(even) {
+                transform: translateY(20px);
+            }
+        }
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        width: clamp-calc(40, 80);
+        height: clamp-calc(40, 80);
+        border-radius: 50%;
+        opacity: 1;
+        @include transition($basicTransition);
+        background-color: white;
+        color: $purple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 5;
+        transform: scale(1);
+        top: 40%;
+        transform: translateY(-50%);
+
+        &:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+    }
+
+    .prev {
+        left: clamp-calc(0, 25);
+
+        i {
+            transform: rotate(180deg);
+        }
+    }
+
+    .next {
+        right: clamp-calc(0, 25);
+    }
+
+    .swiper-button-disabled {
+        opacity: 0;
+    }
+
+    @media (max-width: 992px) {
+        .swiper-wrapper {
+
+            .swiper-slide {
+
+                min-width: calc(100%/2 - 50px);
+            }
+        }  
+    }
+
+    @media (max-width: 600px) {
+
+        .swiper-container {
+            margin: 0 20px;
+        }
+
+        .swiper-wrapper {
+
+            .swiper-slide {
+
+                min-width: 100%;
+
+                &:nth-child(odd) {
+                    transform: translateY(0);
+                }
+                
+                &:nth-child(even) {
+                    transform: translateY(0);
+                }
+            }
+        } 
+    }
+
+
+
+}

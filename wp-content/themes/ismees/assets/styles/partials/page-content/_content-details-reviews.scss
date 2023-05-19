@@ -34,7 +34,12 @@
         .subjects-ctn {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+
+            .subjects-list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
 
             .subject {
                 a {
@@ -48,7 +53,12 @@
         .categories-ctn {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+
+            .categories-list {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
 
             .category {
                 display: flex;
@@ -60,6 +70,7 @@
                     border-radius: 30px;
                     background-color: $secondaryBG;
                     display: block;
+                    text-align: center;
                     
 
                     &:hover {
@@ -68,6 +79,20 @@
                     }
                 }
             }
+        }
+
+        .publication-ctn {
+            @include flex(flex-start, flex-start, column);
+            gap: 5px;
+
+            .date {
+                margin: 0;
+                @include responsive-font($primaryFont, 400, 13, 13, 15, 15, null, null, rgba($darkBlue, 0.7));
+            }
+        }
+
+        .share-content .socials-share-ctn .list-ctn i {
+            font-size: 20px;
         }
     }
     

@@ -1,4 +1,85 @@
 {% extends 'base.twig' %}
 {% block content %}
-    <h1>Kryzalid Wordpress BoilerPlate</h1>
+    <main class="front-page" data-aos="fade" data-aos-delay="300">
+        <div class="container">
+            <div class="banner-content-ctn">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="title-ctn" data-aos="fade-up" data-aos-delay="300">
+                            <p class="ontitle">{{ __('La', 'ismees')}} <span class="bottom-decoration -blue">{{ __('station', 'ismees')}}</span> {{ __('pour soutenir la', 'ismees')}}</p>
+                            <h1 class="page-title" data-aos="fade-up">{{ __('santé', 'ismees')}} <span>{{ __('mentale', 'ismees')}}</span> {{ __('étudiante', 'ismees')}}</h1>
+                            <div class="subtitle" data-aos="fade-up">
+                                {{ post.content }}
+                            </div>
+                        </div>
+                        <div class="defilate">
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="image-ctn">
+                            <img class="banner-img" src="{{theme.link}}/assets/images/home-images/home-image.png" alt="" />
+                            <img class="thunder-image" src="{{theme.link}}/assets/images/home-images/blue-thunder.svg" alt="" />
+                            <img class="asterisk-image" src="{{theme.link}}/assets/images/home-images/blue-asterisk.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="ctas-section">
+                <div class="ctas-column section-1" data-aos="fade" data-aos-delay="300">
+                    <div class="section-content" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-ctn">
+                            <h2 class="title">{{ post.meta('cta_section_1').title }}</h2>
+                            <p class="introduction small">{{ post.meta('cta_section_1').introduction }}</p>
+                        </div>
+                        <div class="img-ctn">
+                            <img src="{{theme.link}}/assets/images/bubble-heart-purple.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="ctas-ctn">
+                        {% for cta in post.meta('cta_section_1').ctas %}
+                            <div class="arrow-button -white" data-aos="fade-up" data-aos-delay="300">
+                                <a href="{{ cta.link.url }}">{{ cta.link.title }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="ctas-column section-2" data-aos="fade" data-aos-delay="300">
+                    <div class="section-content" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-ctn">
+                            <h2 class="title">{{ post.meta('cta_section_2').title }}</h2>
+                            <p class="introduction small">{{ post.meta('cta_section_2').introduction }}</p>
+                        </div>
+                        <div class="img-ctn">
+                            <img src="{{theme.link}}/assets/images/light-bulb-salmon.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="ctas-ctn">
+                        {% for cta in post.meta('cta_section_2').ctas %}
+                            <div class="arrow-button -white" data-aos="fade-up" data-aos-delay="300">
+                                <a href="{{ cta.link.url }}">{{ cta.link.title }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="resources-ctn" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="resources-title">{{ __('Nos ressources', 'ismees') }} <span class="cirle-center-background -darkblue">{{ __('à découvrir', 'ismees') }}</span></h2>
+                    <div class="resources-ctas">
+                        <a class="intern-button" href="{{ options.config_members_resources }}">{{ __('Pour personnel des établissements', 'ismees') }}</a>
+                        <a class="intern-button" href="{{ options.config_students_resources }}">{{ __('Pour population étudiante', 'ismees') }}</a>
+                    </div>
+                </div>
+            </div>
+            {% include "partials/home-slider.twig" with {
+                'items': post.meta('featured_pages'),
+            } %}
+        </div>
+    </main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/front-page.js"></script>
 {% endblock %}

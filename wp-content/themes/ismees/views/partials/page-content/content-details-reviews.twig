@@ -10,11 +10,13 @@
                         {% else %}
                             <p class="subjects-title">{{ __('Thématiques', 'ismees') }}</p>  
                         {% endif %}
-                        {% for subject in page.meta('subjects') %}
-                            <div class="subject">
-                                <a href="{{ subject.link }}">{{ subject.name }}</a>
-                            </div>
-                        {% endfor %}
+                        <div class="subjects-list">
+                            {% for subject in page.meta('subjects') %}
+                                <div class="subject">
+                                    <a href="{{ subject.link }}">{{ subject.name }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 {% endif %}
                 <div class="categories-ctn">
@@ -23,24 +25,34 @@
                     {% else %}
                         <p class="categories-title">{{ __('Populations étudiantes', 'ismees') }}</p>
                     {% endif %}
-                    {% if page.terms('resource_category')|length > 0 %}
-                        {% for category in page.terms('resource_category') %}
+                    <div class="categories-list">
+                        {% if page.terms('resource_category')|length > 0 %}
+                            {% for category in page.terms('resource_category') %}
+                                <div class="category">
+                                    <a href="{{ students ? options.config_students_resources ~ '?category=' ~ category.id : options.config_members_resources ~ '?category=' ~ category.id }}">{{ category.name }}</a>
+                                </div>
+                            {% endfor %}
+                        {% else %}
                             <div class="category">
-                                <a href="{{ students ? options.config_students_resources ~ '?category=' ~ category.id : options.config_members_resources ~ '?category=' ~ category.id }}">{{ category.name }}</a>
+                                <a href="{{ students ? options.config_students_resources : options.config_members_resources }}">{{ __('Toutes les ressources', 'ismees') }}</a>
                             </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="category">
-                            <a href="{{ students ? options.config_students_resources : options.config_members_resources }}">{{ __('Toutes les ressources', 'ismees') }}</a>
-                        </div>
-                    {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
                 {% include "partials/socials/socials-share.twig" with {
                     'pageUrl': page.link,
                     'block': true
                 } %}
+                <div class="publication-ctn">
+                    <p class="date">{{ __('Publié le', 'ismees')}} {{ post.post_date|date('j F Y') }}</p>
+                    {% if post.post_modified %}
+                        <p class="date">{{ __('Mise à jour le', 'ismees') }} {{ post.post_modified|date('j F Y') }}</p>
+                    {% endif %}
+                </div>
             </div>
-            {% include "partials/page-content/content-reviews.twig" %}
+            {% include "partials/page-content/content-reviews.twig" with {
+                'backButton': true
+            }  %}
         </div>
     </div>
 </div>

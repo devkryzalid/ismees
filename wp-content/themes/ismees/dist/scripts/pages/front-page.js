@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/scripts/pages/page.js":
-/*!**************************************!*\
-  !*** ./assets/scripts/pages/page.js ***!
-  \**************************************/
+/***/ "./assets/scripts/pages/front-page.js":
+/*!********************************************!*\
+  !*** ./assets/scripts/pages/front-page.js ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_custom_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/custom-blocks */ \"./assets/scripts/utils/custom-blocks.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\n});\n\n//# sourceURL=webpack://ismees/./assets/scripts/pages/page.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _partials_horizontal_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/horizontal-slider */ \"./assets/scripts/partials/horizontal-slider.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    \n});\n\n//# sourceURL=webpack://ismees/./assets/scripts/pages/front-page.js?");
 
 /***/ }),
 
-/***/ "./assets/scripts/utils/custom-blocks.js":
-/*!***********************************************!*\
-  !*** ./assets/scripts/utils/custom-blocks.js ***!
-  \***********************************************/
+/***/ "./assets/scripts/partials/horizontal-slider.js":
+/*!******************************************************!*\
+  !*** ./assets/scripts/partials/horizontal-slider.js ***!
+  \******************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\n\nswiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation]);\n\n// Apply Swiper mechanics to all single-image sliders\ndocument.querySelectorAll('.gutenberg-slider-single').forEach((el, index) => {\n  const id = 'slider-' + index;\n  el.setAttribute('id', id);\n  const swiperContainer = el.querySelector('.swiper-container');\n  const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](swiperContainer, {\n      speed: 300,\n      loop: true,\n      navigation: { nextEl: `#${id} .next`, prevEl: `#${id} .prev`, }\n  });\n});\n\n// Apply Swiper mechanics to all multiple-image sliders\ndocument.querySelectorAll('.gutenberg-slider-multiple').forEach((el, index) => {\n  const id = 'slider-multiple-' + index;\n  el.setAttribute('id', id);\n  const swiperContainer = el.querySelector('.swiper-container');\n  const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](swiperContainer, {\n      speed: 300,\n      loop: false,\n      slidesPerView: 1,\n      spaceBetween: 30,\n      navigation: { nextEl: `#${id} .next`, prevEl: `#${id} .prev` },\n      breakpoints: {\n        768: { slidesPerView: 3 },\n        500: { slidesPerView: 2 },\n      }\n  });\n});\n\n// Apply accordion mechanics to all Accordions\ndocument.querySelectorAll('.content-accordion-ctn').forEach((el, index) => {\n  el.setAttribute('id', 'accordion-' + index);\n\n  const title = el.querySelector('.title');\n  el.style.height = title.offsetHeight + 'px';\n\n  title.addEventListener('click', ({ target }) => {\n    const parent = target.parentElement\n    const content = parent.querySelector('.inner');\n\n    if (parent.classList.contains('open')) {\n      parent.classList.remove('open');\n      parent.style.height = target.offsetHeight + 'px';\n\n    } else {\n      parent.classList.add('open');\n      parent.style.height = target.offsetHeight + content.offsetHeight + 'px';\n    }\n  });\n});\n\n\n//# sourceURL=webpack://ismees/./assets/scripts/utils/custom-blocks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\n\nswiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation]);\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n   \n    document.querySelectorAll('.horizontal-multiple-slider').forEach((el, index) => {\n        const id = 'slider-multiple-' + index;\n        el.setAttribute('id', id);\n        const swiperContainer = el.querySelector('.swiper-container');\n        const slider = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"](swiperContainer, {\n            speed: 500,\n            loop: true,\n            slidesPerView: 'auto',\n            spaceBetween: 30,\n            navigation: { nextEl: `#${id} .next`, prevEl: `#${id} .prev` },\n        });\n    });\n\n});\n\n//# sourceURL=webpack://ismees/./assets/scripts/partials/horizontal-slider.js?");
 
 /***/ }),
 
@@ -1110,7 +1110,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./assets/scripts/pages/page.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./assets/scripts/pages/front-page.js");
 /******/ 	
 /******/ })()
 ;

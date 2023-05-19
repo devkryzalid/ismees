@@ -55,25 +55,6 @@
                 line-height: clamp-calc(43, 80, 1200, 1700);
                 text-transform: none;
             }
-
-            .anchor {
-                @include flex(center, flex-start);
-                @include responsive-font($primaryFont, 500, 20, 22, 24, 26);
-
-                i {
-                    color: $blue;
-                    margin-right: 15px;
-                    position: relative;
-                    left: 0;
-                    @include transition($basicTransition);
-                }
-
-                &:hover {
-                    i {
-                        left: 8px;
-                    }
-                }
-            }
         }
 
         .banner-image {

@@ -18,41 +18,57 @@
                 <div class="row reverse-row-mobile">
                     <div class="col-lg-9 col-md-8">
                         <div class="main-content-ctn">
-                            <div id="context" data-aos="fade-up" data-aos-delay="300">
-                                <h2 class="large section-title">{{ __('Contexte', 'ismees')}}</h2>
-                                <div class="gutenberg">
-                                    {{ post.content }}
+
+                            {% if post.content %}
+                                <div id="context" data-aos="fade-up" data-aos-delay="300">
+                                    <h2 class="large section-title">{{ __('Contexte', 'ismees')}}</h2>
+                                    <div class="gutenberg">
+                                        {{ post.content }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="members" class="members-ctn">
-                                <h2 class="large section-title"  data-aos="fade-up" data-aos-delay="300">{{ __('Membre de l\'équipe', 'ismees')}}</h2>
-                                <div class="members-list">
-                                    {% for member in post.meta('members') %}
-                                        {% include "partials/cards/image-content-card.twig" with {
-                                            'item': member
-                                        } %}
-                                    {% endfor %}
+                            {% endif %}
+
+                            {% if post.meta('members')|length > 0 %}
+                                <div id="members" class="members-ctn">
+                                    <h2 class="large section-title"  data-aos="fade-up" data-aos-delay="300">{{ __('Membre de l\'équipe', 'ismees')}}</h2>
+                                    <div class="members-list">
+                                        {% for member in post.meta('members') %}
+                                            {% include "partials/cards/image-content-card.twig" with {
+                                                'item': member
+                                            } %}
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="partners" class="partners-ctn">
-                                <h2 class="section-title large"  data-aos="fade-up" data-aos-delay="300">{{ __('Réseau de collaboration', 'ismees')}}</h2>
-                                <div class="partners-introduction"  data-aos="fade-up" data-aos-delay="300">{{ post.meta('partners').intro }}</div>
-                                <div class="partners-list"  data-aos="fade-up" data-aos-delay="300">
-                                    {% for partner in post.meta('partners').items %}
-                                        {% include "partials/cards/image-link-card.twig" with {
-                                            'item': partner
-                                        } %}
-                                    {% endfor %}
+                            {% endif %}
+
+                            {% if post.meta('partners')|length > 0 %}
+                                <div id="partners" class="partners-ctn">
+                                    <h2 class="section-title large"  data-aos="fade-up" data-aos-delay="300">{{ __('Réseau de collaboration', 'ismees')}}</h2>
+                                    <div class="partners-introduction"  data-aos="fade-up" data-aos-delay="300">{{ post.meta('partners').intro }}</div>
+                                    <div class="partners-list"  data-aos="fade-up" data-aos-delay="300">
+                                        {% for partner in post.meta('partners').items %}
+                                            {% include "partials/cards/image-link-card.twig" with {
+                                                'item': partner
+                                            } %}
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4">
                         <div class="navigation-ctn"  data-aos="fade-up" data-aos-delay="300">
                             <div class="anchors-ctn">
-                                <a class="anchor" href="#context">{{ __('Contexte', 'ismees') }}</a>
-                                <a class="anchor" href="#members">{{ __('Membres de l’équipe', 'ismees') }}</a>
-                                <a class="anchor" href="#partners">{{ __('Collaborateurs et partenaires', 'ismees') }}</a>
+                                {% if post.content %}
+                                    <a class="anchor" href="#context">{{ __('Contexte', 'ismees') }}</a>
+                                {% endif %}
+                                {% if post.meta('members')|length > 0 %}
+                                    <a class="anchor" href="#members">{{ __('Membres de l’équipe', 'ismees') }}</a>
+                                {% endif %}
+                                {% if post.meta('partners')|length > 0 %}
+                                    <a class="anchor" href="#partners">{{ __('Collaborateurs et partenaires', 'ismees') }}</a>
+                                 {% endif %}
                             </div>
                             {% if post.meta('mail') %}
                                 <div class="button-ctn">

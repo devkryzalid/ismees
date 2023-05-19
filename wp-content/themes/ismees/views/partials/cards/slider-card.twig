@@ -1,0 +1,10 @@
+<div class="slider-card jsBlockLink">
+    <div class="card-image-ctn">
+        {% if item.image.url  %}
+            <img class="card-image" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+        {% else %}
+            <img class="card-image" src="{{ theme.link }}/assets/images/default-image.png" alt="{{ item.image.alt }}" />
+        {% endif %}
+    </div>
+    <p class="card-title" href="{{ item.link.url }}">{{ item.link.title }}</p>
+</div>

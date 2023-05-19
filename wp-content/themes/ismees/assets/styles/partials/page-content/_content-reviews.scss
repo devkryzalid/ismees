@@ -6,6 +6,10 @@
         @include flex(center, space-between);
         border-top: 2px solid rgba($darkBlue, 0.7);
 
+        &.-align-right {
+            justify-content: flex-end;
+        }
+
         p {
             @include responsive-font($primaryFont, 600, 14, 16, 24, 24, null, null, rgba($darkBlue, 0.7));
             margin: 0;

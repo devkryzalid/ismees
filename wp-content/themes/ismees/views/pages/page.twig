@@ -9,11 +9,7 @@
             {% include "partials/socials/socials-share.twig" with {
                 'pageUrl': page.link
             }%}
-            <div class="container-sm" data-aos="fade-up" data-aos-delay="300">
-                <div class="gutenberg">
-                    {{ page.content }}
-                </div>
-            </div>
+            {% include "partials/page-content/content-reviews.twig" %}
         </div>
     </div>
 </main>

@@ -2,8 +2,10 @@
     <div class="gutenberg">
         {{ page.content }}
     </div>
-    <div class="reviews-back-ctn">
-        <a class="back-button" href="{{ backBtnLink }}"><i class="icon-right-arrow-long"></i>{{ backBtnText }}</a>
+    <div class="reviews-back-ctn {{ backButton ? '' : '-align-right' }}">
+        {% if backButton %}
+            <a class="back-button" href="{{ backBtnLink }}"><i class="icon-right-arrow-long"></i>{{ backBtnText }}</a>
+        {% endif %}
         <div class="reviews-ctn">
             <p>{{ __('Ce contenu vous a-t-il été utile ?', 'ismees') }}</p>
             {% filter shortcodes %}
