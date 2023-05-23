@@ -44,7 +44,7 @@
                     <div class="ctas-ctn">
                         {% for cta in post.meta('cta_section_1').ctas %}
                             <div class="arrow-button -white" data-aos="fade-up" data-aos-delay="300">
-                                <a href="{{ cta.link.url }}">{{ cta.link.title }}</a>
+                                <a href="{{ cta.link.url }}" target="{{ cta.link.target }}">{{ cta.link.title }}</a>
                             </div>
                         {% endfor %}
                     </div>

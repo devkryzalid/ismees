@@ -12,11 +12,15 @@
 	//Routes::load('templates/ajax/job_subcategories.php', $params, 200);
 //});
 
-// Repertory for organisms
+// Repertory for students
 Routes::map('/ajax/resources/students', function ($params) {
     Routes::load('templates/ajax/student-resources.php', array_merge($params, $_POST), 200);
 });
-// Repertory for organisms
+// Repertory for members
 Routes::map('/ajax/resources/members', function ($params) {
     Routes::load('templates/ajax/member-resources.php', array_merge($params, $_POST), 200);
+});
+// General search
+Routes::map('/ajax/resources/all', function ($params) {
+    Routes::load('templates/ajax/research.php', array_merge($params, $_POST), 200);
 });

@@ -21,6 +21,7 @@
 @import "pages/services";
 @import "pages/about";
 @import "pages/front-page";
+@import "pages/research";
 
 @import "partials/footer";
 @import "partials/header";
@@ -46,6 +47,7 @@
 @import "partials/cards/image-content-card";
 @import "partials/cards/image-link-card";
 @import "partials/cards/slider-card";
+@import "partials/cards/single-card";
 
 @import "partials/filters/dropdown-mobile-filters";
 @import "partials/filters/dropdown-filters";
@@ -56,6 +58,7 @@
 @import "partials/lists/pagination";
 
 @import "partials/ajax/filters";
+@import "partials/ajax/search-filters";
 
 @import "partials/page-content/content-reviews";
 @import "partials/page-content/content-reviews-socials";

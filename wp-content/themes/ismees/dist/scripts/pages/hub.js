@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",(()=>{}));
+document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll(".line-card").forEach((e=>{e.addEventListener("mouseover",(t=>{const n=e.getBoundingClientRect(),o=(t.clientX-n.right)/n.width,c=e.querySelector(".image-ctn");c.style.top=t.offsetY+"px";const d=35+35*o;c.style.right=`${d}px`}))}))}));

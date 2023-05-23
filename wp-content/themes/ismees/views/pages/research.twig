@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+{% block content %}
+<main class="search-page" data-aos="fade" data-aos-delay="300">
+    <div class="search-header">
+        <h1 class="page-title">{{ post.title }}</h1>
+        {# {% include "/partials/ajax/search-filters.twig" with {
+           'url': '/ajax/resources/all',
+        }%} #}
+        
+    </div>
+    {% for item in resources %}
+        {# <pre>
+            {{ dd(item) }}
+        </pre> #}
+            {% include "partials/cards/single-card.twig" %}
+        {% endfor %}
+</main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/research.js"></script>
+{% endblock %}

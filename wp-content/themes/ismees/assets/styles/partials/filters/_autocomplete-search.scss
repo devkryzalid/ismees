@@ -1,7 +1,4 @@
 #searchContainer {
-    max-width: 800px;
-    margin: 50px auto 0;
-    position: relative;
 
     &.-show {
         
@@ -17,40 +14,6 @@
             border-radius: 0 0 40px 40px;
             border-top: 1px solid $lightBlue;
             box-shadow: 0px 0px 100px rgba(36, 36, 87, 0.15);
-        }
-    }
-
-    .input-ctn {
-        width: 100%;
-        position: relative;
-        background-color: white;
-        padding: 30px 40px;
-        border-radius: 40px;
-        @include transition($basicTransition);
-
-        &:after{
-            font-family: "icomoon";
-            position: absolute;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            content: "\e904";
-            font-size: 32px;
-        }
-
-        input[type="text"]  {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            border: none;
-            outline: none;
-            background-color: transparent;
-            @include responsive-font($primaryFont, 400, 22, 30, 26, 34, null, null, $darkBlue);
-
-            &::placeholder {
-                @include responsive-font($primaryFont, 400, 22, 30, 26, 34, null, null, $darkBlue);
-            }
         }
     }
 

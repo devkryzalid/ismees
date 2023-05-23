@@ -59,6 +59,8 @@ a {
 	cursor: pointer;
 }
 
+//GLOBAL TEXT DECORATION
+
 .bottom-decoration {
 	font-weight: 700;
 	position: relative;
@@ -119,4 +121,47 @@ a {
 		background-size: contain;
 	}
 
+}
+
+// GLOBAL SEARCH INPUT STYLE
+
+.search-input-ctn {
+	max-width: 800px;
+	width: 100%;
+	margin: 50px auto 0;
+	position: relative;
+
+	.input-ctn {
+		width: 100%;
+		position: relative;
+		background-color: white;
+		padding: 30px 40px;
+		border-radius: 40px;
+		@include transition($basicTransition);
+
+		&:after{
+			font-family: "icomoon";
+			position: absolute;
+			right: 40px;
+			top: 50%;
+			transform: translateY(-50%);
+			content: "\e910";
+			font-size: 32px;
+		}
+
+		input[type="text"]  {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			border: none;
+			outline: none;
+			background-color: transparent;
+			@include responsive-font($primaryFont, 400, 22, 30, 26, 34, null, null, $darkBlue);
+
+			&::placeholder {
+				@include responsive-font($primaryFont, 400, 22, 30, 26, 34, null, null, $darkBlue);
+			}
+		}
+	}
 }

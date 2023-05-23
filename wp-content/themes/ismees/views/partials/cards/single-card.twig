@@ -1,0 +1,40 @@
+{% if item.terms('resource_category') %}
+    {% set iconCategory = get_primary_taxonomy(item.id, 'resource_category', true).icon %}
+{% endif %}
+{% if item.terms('resource_student_type') %}
+    {% set primaryType = get_primary_taxonomy(item.id, 'resource_student_type', true).name %}
+{% endif %}
+{% if item.terms('resource_member_type') %}
+    {% set primaryType = get_primary_taxonomy(item.id, 'resource_member_type', true).name %}
+{% endif %}
+
+<div class="single-card-ctn jsBlockLink" tabindex="0" data-aos="fade-up" data-aos-delay="500">
+    <div class="card-image-ctn">
+        {% if item.thumbnail %}
+            <img class="card-image" src="{{ item.thumbnail.src }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
+        {% else %}
+            <img class="card-image" src="{{site.home_url ~ '/wp-content/themes/ismees/assets/images/default-image.png' }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
+        {% endif %}
+        {% if iconCategory %}
+            <div class="card-icon-ctn">
+                <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ iconCategory ~ '.svg' }}" alt="" />
+            </div>
+        {% endif %}
+        {% if primaryType %}
+            <div class="card-type">
+                <p>{{primaryType}}</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="card-description">
+        <a href="{{ item.link }}" class="card-title">{{ item.title }}</a>
+        <p class=" card-introduction"></p>
+        {% if item.terms('resource_category') %}
+            <div class="card-taxonomies-ctn">
+                {% for taxonomy in item.terms('resource_category') %}
+                    <p class="card-taxonomy">{{ taxonomy.name }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>

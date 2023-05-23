@@ -34,14 +34,15 @@
     .menu-item-has-children {   
 
         .child-menu {
+            @include transition($basicTransition);
+            transform: scaleY(0);
+            transform-origin: top;
+            @include position(100%, 0, null, 0);
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
             padding: 50px 30px 80px;
             padding-left: clamp-calc(35, 60);
-            z-index: 1100;
-            position: absolute;
-            @include position(100%, 0, null, 0);
-            width: 100%;
-            opacity: 0;
-            visibility: hidden;
             background-color: white;
 
             &:has(> .has-sub-child) {
@@ -51,6 +52,7 @@
             li {
                 margin-top: 15px;
                 margin-bottom: 15px;
+                opacity: 0;
 
                 &:first-child {
                     margin-top: 0;
@@ -101,8 +103,12 @@
             }
 
             .child-menu {
-                opacity: 1;
-                visibility: visible;
+                transform: scaleY(1);
+                z-index: 1100;
+
+                li {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -125,8 +131,8 @@
                 background-color: transparent;
                 opacity: 1;
                 padding: 0;
+                transform: scaleY(1);
                 position: initial;
-                visibility: visible;
                 @include transition($basicTransition);
 
                 &:has(> .has-sub-child) {

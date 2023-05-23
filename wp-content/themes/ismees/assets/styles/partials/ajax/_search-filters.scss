@@ -1,0 +1,67 @@
+.search-filters-form {
+
+    .subfilters-ctn {
+
+        #togglerContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        
+            #unchecked-label,
+            #checked-label {
+                position: relative;
+                @include responsive-font($primaryFont, 600, 16, 18, 20, 20);
+                @include transition($basicTransition);
+                padding: 20px 25px;
+                border-radius: 30px;
+                margin: 5px 0 5px 5px;
+                width: 50%;
+                text-align: center;
+            }
+
+            #checked-label {
+                color: $darkBlue;
+            }
+
+            #unchecked-label {
+                color: white;
+            }
+        
+            &::before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                bottom: 5px;
+                border-radius: 30px;
+                width: 50%;
+                background-color: $darkGreen;
+                transform: translateX(0);
+                transition: transform 0.3s ease-in-out;
+            }
+        
+            &.-checked {
+                &::before {
+                    right: 5px;
+                    transform: translateX(100%);
+                }
+        
+                #checked-label {
+                    color: white;
+                }
+        
+                #unchecked-label {
+                    color: $darkBlue;
+                }
+            }
+        
+            input[type=checkbox] {
+                display: none;
+            }
+        }
+    }
+}
