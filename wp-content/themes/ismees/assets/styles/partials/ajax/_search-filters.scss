@@ -1,26 +1,28 @@
 .search-filters-form {
 
     .subfilters-ctn {
+        @include flex(center, space-between);
+        gap: 40px;
 
         #togglerContainer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex(center, space-between);
             background-color: white;
-            border-radius: 30px;
+            border-radius: 40px;
             position: relative;
             overflow: hidden;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: clamp-calc(15, 20);
+            padding-bottom: clamp-calc(15, 20);
         
             #unchecked-label,
             #checked-label {
                 position: relative;
                 @include responsive-font($primaryFont, 600, 16, 18, 20, 20);
                 @include transition($basicTransition);
-                padding: 20px 25px;
-                border-radius: 30px;
-                margin: 5px 0 5px 5px;
                 width: 50%;
                 text-align: center;
+                cursor: pointer;
             }
 
             #checked-label {
@@ -37,17 +39,16 @@
                 top: 5px;
                 left: 5px;
                 bottom: 5px;
-                border-radius: 30px;
+                border-radius: 40px;
                 width: 50%;
                 background-color: $darkGreen;
                 transform: translateX(0);
-                transition: transform 0.3s ease-in-out;
+                @include transition($basicTransition);
             }
         
             &.-checked {
                 &::before {
-                    right: 5px;
-                    transform: translateX(100%);
+                    transform: translateX(calc(100% - 10px));
                 }
         
                 #checked-label {
@@ -61,6 +62,42 @@
         
             input[type=checkbox] {
                 display: none;
+            }
+        }
+
+        .display-filters-ctn {
+            @include flex(center, space-between);
+            gap: 40px;
+        }
+
+        #filtersToggler {
+            @include flex(center, center);
+            cursor: pointer;
+            gap: 10px;
+
+            i {
+                font-size: 18px;
+            }
+        }
+
+        .result-counter {
+            @include responsive-font($primaryFont, 400, 18, 18, 24, 24, null, null, rgba($darkBlue, 0.7));
+        }
+
+    }
+
+    @media(max-width: 992px) {
+
+        .subfilters-ctn {
+            @include flex(center, space-between, column);
+
+            #togglerContainer {
+                background-color: transparent;
+                border: 1px solid $lightBlue;
+            }
+
+            .display-filters-ctn {
+                width: 100%;
             }
         }
     }

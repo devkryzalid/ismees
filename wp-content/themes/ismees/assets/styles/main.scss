@@ -1,15 +1,18 @@
+// CONFIG
 @import "configs/reset";
 @import "configs/mixins";
 @import "configs/variables";
 @import "configs/icons";
 @import "configs/grid";
 
+// COMMONS
 @import "commons/global";
 @import "commons/hamburger";
 @import "commons/print";
 @import "commons/buttons";
 @import "commons/gutenberg";
 
+// PAGES
 @import "pages/page";
 @import "pages/hub";
 @import "pages/single-subject";
@@ -23,6 +26,7 @@
 @import "pages/front-page";
 @import "pages/research";
 
+// PARTIALS
 @import "partials/footer";
 @import "partials/header";
 @import "partials/form";
@@ -31,9 +35,11 @@
 @import "partials/more-resources";
 @import "partials/home-slider";
 
+// MENU
 @import "partials/menu/primary-menu";
 @import "partials/menu/secondary-menu";
 
+// BANNERS
 @import "partials/banners/basic-banner";
 @import "partials/banners/banner-image-title";
 @import "partials/banners/banner-image-title-author";
@@ -41,6 +47,7 @@
 @import "partials/banners/banner-title-subtitle-content";
 @import "partials/banners/banner-title-illustrations";
 
+// CARDS
 @import "partials/cards/basic-card";
 @import "partials/cards/line-card";
 @import "partials/cards/title-button-card";
@@ -49,23 +56,31 @@
 @import "partials/cards/slider-card";
 @import "partials/cards/single-card";
 
+// FILTERS
 @import "partials/filters/dropdown-mobile-filters";
 @import "partials/filters/dropdown-filters";
 @import "partials/filters/autocomplete-search";
 
+// LISTS
 @import "partials/lists/basic-card-list";
-@import "partials/lists/list-items-ajax";
+@import "partials/lists/single-card-list";
 @import "partials/lists/pagination";
 
+// AJAX
 @import "partials/ajax/filters";
 @import "partials/ajax/search-filters";
+@import "partials/ajax/ajax-list";
 
+// PAGE CONTENT
 @import "partials/page-content/content-reviews";
 @import "partials/page-content/content-reviews-socials";
 @import "partials/page-content/content-details-reviews";
 
+// CTA
 @import "partials/cta/footer-cta";
 
+
+// BLOCS
 @import "blocs/accordion";
 @import "blocs/bloc-cta";
 @import "blocs/title-arrow";

@@ -1,19 +1,20 @@
 {% extends 'base.twig' %}
 {% block content %}
 <main class="search-page" data-aos="fade" data-aos-delay="300">
-    <div class="search-header">
-        <h1 class="page-title">{{ post.title }}</h1>
-        {# {% include "/partials/ajax/search-filters.twig" with {
-           'url': '/ajax/resources/all',
-        }%} #}
-        
+    <div class="search-header" data-aos="fade-up" data-aos-delay="300">
+        <div class="container">
+            <h1 class="page-title">{{ post.title }}</h1>
+        </div>
     </div>
-    {% for item in resources %}
-        {# <pre>
-            {{ dd(item) }}
-        </pre> #}
-            {% include "partials/cards/single-card.twig" %}
-        {% endfor %}
+    <div class="container">
+        {% include "/partials/ajax/search-filters.twig" with {
+            'url': '/ajax/resources/all',
+        } %}
+    </div>
+    {% include "partials/ajax/ajax-list.twig" with {
+        'oneColumn': true,
+        'items': resources
+    } %}
 </main>
 {% endblock %}
 {% block specific_script %}

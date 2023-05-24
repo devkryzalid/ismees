@@ -7,18 +7,47 @@ body.page-template-research {
         position: relative;
 
         .page-title {
-            margin: 0;
+            margin: 0 auto;
+            text-align: center;
         }
 
         &::after {
-            content:"";
-            background-image: url('/assets/images/research/green-loop-arrow.svg');
+            content: '';
             position: absolute;
+            background: url('/assets/images/research/green-loop-arrow.svg') no-repeat center;
+            background-size: contain;
+            top: 50%;
+            right: 15%;
+            width: clamp-calc(146, 245);
+            height: 205px;
         }
+    }
+
+    .list-items-ajax {
+        background-color: transparent;
+        padding-top: clamp-calc(40, 65);
     }
 
     .search-input-ctn {
         margin-top: clamp-calc(55, 60);
         margin-bottom: clamp-calc(30, 135, 375, 992);
+    }
+
+    @media(max-width: 992px) {
+        .search-header {
+    
+            &::after {
+                top: 30%;
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+        .search-header {
+    
+            &::after {
+                top: 20%;
+            }
+        }
     }
 }

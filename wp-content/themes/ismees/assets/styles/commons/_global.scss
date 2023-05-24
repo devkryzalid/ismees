@@ -135,7 +135,10 @@ a {
 		width: 100%;
 		position: relative;
 		background-color: white;
-		padding: 30px 40px;
+		padding-left: clamp-calc(30, 40);
+		padding-right: clamp-calc(30, 40);
+		padding-top: clamp-calc(20, 30);
+		padding-bottom: clamp-calc(20, 30);
 		border-radius: 40px;
 		@include transition($basicTransition);
 

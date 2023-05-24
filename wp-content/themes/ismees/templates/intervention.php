@@ -9,7 +9,7 @@ $thematics = [
     'post_status'    => 'publish',
     'orderby'       => 'title',
     'order'          => 'ASC',
-    'nopaging'       => false,
+    'nopaging'       => true,
 ];
 
 $interventions = get_terms(['taxonomy' => 'thematic_intervention']);

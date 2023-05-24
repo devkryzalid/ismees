@@ -8,7 +8,7 @@ $category     = empty($params['category']) ? null : $params['category'];
 $type         = empty($params['type']) ? null : $params['type'];
 $subjects     = empty($params['subjects']) ? null : $params['subjects'];
 $paged        = empty($params['pagenb']) ? 1 : $params['pagenb'];
-$for_members     = empty($_GET['for_members']) ? null : $_GET['for_members'];
+$for_members     = empty($params['for_members']) ? null : $params['for_members'];
 
 $resources_args = [
     'post_type'      => 'member-resource',

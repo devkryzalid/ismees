@@ -9,7 +9,7 @@ $subjects = [
     'post_status'    => 'publish',
     'orderby'       => 'title',
     'order'          => 'ASC',
-    'nopaging'       => false,
+    'nopaging'       => true,
 ];
 
 $context['subjects'] = new Timber\PostQuery($subjects);

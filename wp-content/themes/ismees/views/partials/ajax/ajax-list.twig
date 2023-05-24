@@ -7,9 +7,13 @@
                 {% if items is empty %}
                     {% include 'partials/ajax/no-result-item.twig' %}
                 {% else %}
-                    {% include 'partials/lists/basic-card-list.twig' with {
-                        'items': resources
-                    } %}
+                    {% if oneColumn %}
+                        {% include 'partials/lists/single-card-list.twig' %}
+                    {% else %}
+                        {% include 'partials/lists/basic-card-list.twig' with {
+                            'items': resources
+                        } %}
+                    {% endif %}
                 {% endif %}
             </div>
         </div>

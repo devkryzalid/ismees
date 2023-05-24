@@ -2,6 +2,8 @@
     @include flex(center, flex-start);
     gap: clamp-calc(20, 60);
     position: relative;
+    background-color: white;
+    border-radius: 18px;
 
     .card-title,
     .card-image-ctn,
@@ -12,16 +14,16 @@
     .card-image-ctn {
         @include flex();
         position: relative;
-        background-color: $darkBlue;
         border-radius: 12px;
         overflow: hidden;
+        padding: 24px 0 24px 24px;
+        width: 30%;
 
         .card-image {
             height: clamp-calc(200, 300);
             width: 100%;
             object-fit: cover;
-            border-radius: 12px;
-            opacity: 0.6;
+            border-radius: 8px;
             @include transition($basicTransition);
         }
 
@@ -33,8 +35,8 @@
             height: clamp-calc(42, 60);
             border-radius: 50%;
             padding: 10px;
-            bottom: clamp-calc(14, 20);
-            left: clamp-calc(14, 20);
+            bottom: clamp-calc(28, 40);
+            left: clamp-calc(28, 40);
             z-index: 6;
 
             .card-icon {
@@ -49,6 +51,7 @@
             @include position(0, 0, 0, 0);
             @include transition($basicTransition);
             @include flex();
+            margin: 24px 0 24px 24px;
             text-align: center;
             opacity: 0;
             background-color: $darkBlue;
@@ -61,7 +64,6 @@
 
     .card-taxonomies-ctn {
         @include flex(center, flex-start);
-        margin-top: clamp-calc(15, 25);
         flex-wrap: wrap;
         gap: 5px 15px;
         z-index: 5;
@@ -69,7 +71,8 @@
         .card-taxonomy {
             display: flex;
             align-items: center;
-            @include responsive-font($primaryFont, 500, 13, 15, 16, 18, null, null, rgba($darkBlue, 0.7));
+            @include responsive-font($primaryFont, 600, 13, 14, 15, 17, null, null, rgba($darkBlue, 0.7));
+            text-transform: uppercase;
             position: relative;
             margin: 0;
 
@@ -100,12 +103,19 @@
     }
 
     .card-title {
-        @include responsive-font($primaryFont, 400, 28, 32, 31, 40);
-        margin-top: clamp-calc(15, 25);
+        @include responsive-font($primaryFont, 400, 25, 35, 26, 40);
+        display: inline-block;
+        margin: 0 0 20px;
 
         &:hover {
             color: $darkBlue;
         }
+    }
+
+    .card-highlight {
+        @include responsive-font($secondaryFont, 400, 16, 18, 24, 25, null, null, rgba($darkBlue, 0.7));
+        margin-top: 0;
+        margin-bottom: 40px;
     }
 
     &:hover {
@@ -118,6 +128,28 @@
                 opacity: 1;
                 border-radius: 12px;
             }
+        }
+    }
+
+    @media(max-width: 767px) {
+        @include flex(flex-start, flex-start, column);
+
+        .card-image-ctn {
+            padding: 24px 20px 0 20px;
+            width: 100%;
+        }
+
+        .card-taxonomies-ctn {
+            margin-bottom: 20px;
+        }
+
+        .card-description {
+            @include flex(flex-start, flex-start, column-reverse);
+            padding: 0 20px 24px;
+        }
+
+        .card-highlight {
+            margin-bottom: 0;
         }
     }
 }
