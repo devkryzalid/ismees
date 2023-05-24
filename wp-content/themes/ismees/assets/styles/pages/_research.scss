@@ -1,5 +1,6 @@
 body.page-template-research {
     background-color: $paleBlue;
+    position: relative;
 
     .search-header {
         @include flex(center, center, column);

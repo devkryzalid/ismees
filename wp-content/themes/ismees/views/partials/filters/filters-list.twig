@@ -1,0 +1,15 @@
+{% if filters|length > 0 %}
+    <div class="filters-list-ctn">
+        {% if title %}
+            <p class="filters-title">{{ title }}</p>
+        {% endif %}
+        <ul class="filters-list"> 
+            {% for filter in filters %}
+                <li class="single-filter">
+                    <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in params[taxo_name]) ? 'checked' : '' }} {{ (filter.id in params[taxo_name]) ? 'checked' : '' }}>
+                    <label for="{{ filter.slug }}" class="checkbox-ctn">{{ filter.name }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

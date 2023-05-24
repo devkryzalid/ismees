@@ -8,24 +8,48 @@
     <div class="subfilters-ctn">
         <div id="togglerContainer" data-aos="fade-left" data-aos-delay="300">
             <label for="filtersToggler" id="unchecked-label">{{__('Étudiant.es', 'ismees')}}</label>
-            <input type="checkbox" name="for_members" id="filtersToggler" {% if for_members %}checked{% endif %}>
+            <input type="checkbox" name="member" id="filtersToggler" {% if member %}checked{% endif %}>
             <label for="filtersToggler" id="checked-label">{{__('Personnel des établissements', 'ismees')}}</label>
         </div>
         <div class="display-filters-ctn" data-aos="fade-right" data-aos-delay="300">
             <p class="result-counter"><span id="result-count">{{ resources.found_posts }}</span> {{__('résultats', 'simees')}}</p>
             <div class="filters-button">
-                <a class="main-button -blue" id="filtersToggler"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}</a>
+                <a class="main-button -blue" id="sidebarOpener"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}</a>
             </div>
         </div>
     </div>
-    <div class="sidebar-filters">
-        <div>
-            <p>{{__('Types de ressource', 'ismees')}}</p>
-            <ul>    
-                {% for item in items %}
-                    <li><a></a></li>
-                {% endfor %}
-            </ul>
+    <div id="sidebarFilters">
+        <div class="close-sidebar cross-ctn">
+            <i class="icon-cross cross"></i>
+        </div>
+        <div class="sidebar-list">
+            {% include "partials/filters/filters-list.twig" with {
+                'title': __('Obtenir du soutien', 'ismees'),
+                'filters': categories,
+                'taxo_name': 'category'
+                }
+            %}
+            {% include "partials/filters/filters-list.twig" with {
+                'title': __('Thèmes', 'ismees'),
+                'filters': subjects,
+                'taxo_name': 'subjects'
+                }
+            %}
+            {% include "partials/filters/filters-list.twig" with {
+                'title': __('Types de ressource', 'ismees'),
+                'filters': types,
+                'taxo_name': 'type'
+                }
+            %}
+        </div>
+        <div class="button-ctn close-sidebar">
+            {% if resources.found_posts > 1 %}
+                <a class="main-button -blue">{{__('Afficher les', 'ismees')}} <span> {{ resources.found_posts }} </span> {{__('résultats', 'ismees')}}</a>
+            {% elseif resources.found_posts == 1 %}
+                <a class="main-button -blue">{{__('Afficher 1 résultat', 'ismees')}}</a>
+            {% else %}
+                <a class="main-button -blue">{{__('Pas de résultat', 'ismees')}}</a>
+            {% endif %}
         </div>
     </div>
 </form>

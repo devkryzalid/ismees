@@ -8,27 +8,34 @@ $type         = empty($_GET['type']) ? null : $_GET['type'];
 $subjects      = empty($_GET['subjects']) ? null : $_GET['subjects'];
 $paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 $search       = empty($_GET['search']) ? null : $_GET['search'];
-$for_members     = empty($_GET['for_members']) ? null : $_GET['for_members'];
+$member     = empty($_GET['member']) ? null : $_GET['member'];
 
-$member_resources = [
-    'post_type'      => 'member-resource',
-    'post_status'    => 'publish',
-    'orderby'        => 'date',
-    'posts_per_page' =>  15,
-    'paged'          => $paged,
-    'nopaging'       => false,
-    'meta_query'     => [],
-];
 
-$student_resources = [
-    'post_type'      => 'student-resource',
-    'post_status'    => 'publish',
-    'orderby'        => 'date',
-    'posts_per_page' =>  15,
-    'paged'          => $paged,
-    'nopaging'       => false,
-    'meta_query'     => [],
-];
+if (!empty($member) && $member == true) {
+
+    $resources = [
+        'post_type'      => 'member-resource',
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'posts_per_page' =>  15,
+        'paged'          => $paged,
+        'nopaging'       => false,
+        'meta_query'     => [],
+    ];
+
+} else {
+
+    $resources = [
+        'post_type'      => 'student-resource',
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'posts_per_page' =>  15,
+        'paged'          => $paged,
+        'nopaging'       => false,
+        'meta_query'     => [],
+    ];
+
+}
 
 $member_thematics = [
     'post_type'      => 'thematic',
@@ -63,13 +70,7 @@ if (!empty($category)) {
         'terms'    => $category,
     ];
 }
-if (!empty($type)) {
-    $resources['tax_query'][] = [
-        'taxonomy' => 'resource_member_type',
-        'field'    => 'term_id',
-        'terms'    => [$type],
-    ];
-}
+
 if (!empty($subjects)) {
     if (!is_array($subjects)) {
         $subjects = explode(',', $subjects);
@@ -83,23 +84,33 @@ if (!empty($subjects)) {
     ];
 }
 
-if (!empty($for_members)) {
-    $organisms['meta_query'][] = [
-        [
-            'key'   => 'for_members',
-            'value' =>  TRUE
-        ]
-    ];
-}
+if (!empty($member) && $member == true) {
 
-if (!empty($for_members) && $for_members == 'true') {
-    $context['resources'] = new Timber\PostQuery($member_resources);
-    $context['member_thematics'] = new Timber\PostQuery($member_thematics);
+    if (!empty($type)) {
+        $resources['tax_query'][] = [
+            'taxonomy' => 'resource_member_type',
+            'field'    => 'term_id',
+            'terms'    => [$type],
+        ];
+    }
+    $context['subjects'] = new Timber\PostQuery($member_thematics);
+    $context['types'] = get_terms(['taxonomy' => 'resource_member_type']);
+
 } else {
-    $context['resources'] = new Timber\PostQuery($student_resources);
-    $context['student_subjects'] = new Timber\PostQuery($student_subjects);
+
+    if (!empty($type)) {
+        $resources['tax_query'][] = [
+            'taxonomy' => 'resource_student_type',
+            'field'    => 'term_id',
+            'terms'    => [$type],
+        ];
+    }
+    
+    $context['types'] = get_terms(['taxonomy' => 'resource_student_type']);
+    $context['subjects'] = new Timber\PostQuery($student_subjects);
 }
-$context['types'] = get_terms(['taxonomy' => 'resource_member_type']);
+$context['resources'] = new Timber\PostQuery($resources);
+$context['member'] = $member;
 $context['categories'] = get_terms(['taxonomy' => 'resource_category']);
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;

@@ -1,0 +1,57 @@
+.filters-list-ctn {
+
+    .filters-title {
+        @include responsive-font($primaryFont, 700, 16, 18, 19, 21, uppercase, null, $darkGreen);
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .filters-list {
+        padding: 0;
+        margin: 0;
+        @include flex(center, flex-start);
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .single-filter {
+            border-radius: 30px;
+            background-color: $paleBlue;
+            padding: 6px 15px;
+            text-align: center;
+            @include flex();
+            @include transition($basicTransition);
+
+            &:hover {
+                background-color: $yellow;
+            }
+
+            label {
+                display: inline-block;
+                @include responsive-font($primaryFont, 500, 13, 14, 16, 17, null, null);
+                cursor: pointer;
+                
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            input[type="checkbox"]:checked ~ label {
+                background-color: $blue;
+                color: white;
+
+                &:hover {
+                    text-decoration: line-through;
+                }
+
+                &::after {
+                    content: "\e911";
+                    font-family: 'icomoon' !important;
+                    margin-left: 7px;
+                    font-size: 10px;
+                    display: inline-block;
+                    @include transition($basicTransition);
+                }
+            }
+        }
+    }
+}

@@ -10,8 +10,8 @@
 */
 @font-face {
   font-family: "icomoon";
-  src: url(../icons/icomoon.fb01038feb460e3afa5c.eot?s5951j);
-  src: url(../icons/icomoon.fb01038feb460e3afa5c.eot?s5951j#iefix) format("embedded-opentype"), url(../icons/icomoon.5c722b870edb46a1d568.ttf?s5951j) format("truetype"), url(../icons/icomoon.4bd095f9c0ca70bf53bf.woff?s5951j) format("woff"), url(../icons/icomoon.106db17c9893b4c97b51.svg?s5951j#icomoon) format("svg");
+  src: url(../icons/icomoon.5a875007d944b57ebdca.eot?s5951j);
+  src: url(../icons/icomoon.5a875007d944b57ebdca.eot?s5951j#iefix) format("embedded-opentype"), url(../icons/icomoon.d2ad0af0b50ebd3fbf14.ttf?s5951j) format("truetype"), url(../icons/icomoon.241b06d9f2e8aadf433b.woff?s5951j) format("woff"), url(../icons/icomoon.5a586faf0997864af0eb.svg?s5951j#icomoon) format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -40,6 +40,10 @@
 
 .icon-pinterest:before {
   content: "\ead1";
+}
+
+.icon-cross:before {
+  content: "\e911";
 }
 
 .icon-filter:before {

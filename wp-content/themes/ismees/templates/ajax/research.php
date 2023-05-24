@@ -64,7 +64,7 @@ $resources = new Timber\PostQuery($resources_args);
 
 if ($resources->found_posts > 0) {
     $response     = '';
-    $response    .= Timber::compile('partials/lists/basic-card-list.twig', ['items' => $resources]);
+    $response    .= Timber::compile('partials/lists/single-card-list.twig', ['items' => $resources]);
     $data['html'] = $response;
     $data['pages_total'] = $resources->pagination(intval(15))->total;
 } else {
