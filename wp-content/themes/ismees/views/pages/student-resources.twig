@@ -27,3 +27,9 @@
 {% block specific_script %}
 	<script src="{{ theme.link }}/dist/scripts/pages/resources.js"></script>
 {% endblock %}
+
+{% block addsearch_param %}
+  <script id="addsearch-param">
+    {{ addsearch_array|json_encode }}
+  </script>
+{% endblock %}

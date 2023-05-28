@@ -6,6 +6,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="{{ site.charset }}" />
+	{% block addsearch_meta %}{% endblock %}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,6 +23,7 @@
 	{% include 'partials/footer.twig' %}
 	{{ function('wp_footer') }}
 
+	{% block addsearch_param %} <script id="addsearch-param"></script> {% endblock %}
 	{% block specific_script %}{% endblock %}
 </body>
 </html>

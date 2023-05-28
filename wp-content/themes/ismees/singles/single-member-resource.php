@@ -25,5 +25,6 @@ $related_posts = [
  */
 $context['post'] = $timber_post;
 $context['related_posts'] = new Timber\PostQuery($related_posts);
+$context['addsearch_array'] = createAddSearchArray($timber_post);
 
 Timber::render('pages/single-member-resource.twig', $context);

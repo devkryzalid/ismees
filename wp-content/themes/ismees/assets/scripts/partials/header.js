@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener('scroll', () => {
 
-        if(window.scrollY >= 50) {
+        if(window.scrollY >= 10) {
             header.classList.add("-sticky");
             header.classList.remove("-not-sticky");
 

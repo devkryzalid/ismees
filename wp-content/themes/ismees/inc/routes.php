@@ -24,3 +24,9 @@ Routes::map('/ajax/resources/members', function ($params) {
 Routes::map('/ajax/resources/all', function ($params) {
     Routes::load('templates/ajax/research.php', array_merge($params, $_POST), 200);
 });
+/**
+ * URL for search page
+ */
+Routes::map('/resultats-de-recherche', function ($params) {
+	Routes::load('templates/research.php', array_merge($params, $_POST), 200);
+});

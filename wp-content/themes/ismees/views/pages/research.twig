@@ -1,6 +1,9 @@
 {% extends 'base.twig' %}
 {% block content %}
 <main class="search-page">
+{# <pre>
+    {{ dd(resources) }}
+</pre> #}
     <div class="search-header" data-aos="fade-up" data-aos-delay="300">
         <div class="container">
             <h1 class="page-title">{{ post.title }}</h1>
@@ -13,7 +16,7 @@
     </div>
     {% include "partials/ajax/ajax-list.twig" with {
         'oneColumn': true,
-        'items': resources
+        'items': resources.hits
     } %}
 </main>
 {% endblock %}

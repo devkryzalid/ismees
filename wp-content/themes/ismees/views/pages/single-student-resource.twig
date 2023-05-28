@@ -22,3 +22,9 @@
     } %}
 </main>
 {% endblock %}
+
+{% block addsearch_param %}
+  <script id="addsearch-param">
+    {{ addsearch_array|json_encode }}
+  </script>
+{% endblock %}

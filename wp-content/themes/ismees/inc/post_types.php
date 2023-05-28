@@ -42,6 +42,7 @@ function register_post_types() {
 	thematic_custom_post_type();
 	member_resource_custom_post_type();
 	student_resource_custom_post_type();
+	activity_custom_post_type();
 }
 
 /**

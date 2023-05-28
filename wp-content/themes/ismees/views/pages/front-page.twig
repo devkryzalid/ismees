@@ -35,7 +35,10 @@
                     <div class="section-content" data-aos="fade-up" data-aos-delay="400">
                         <div class="text-ctn">
                             <h2 class="title">{{ post.meta('cta_section_1').title }}</h2>
-                            <p class="introduction small">{{ post.meta('cta_section_1').introduction }}</p>
+                            <div class="tablet-display">
+                                <p class="introduction small">{{ post.meta('cta_section_1').introduction }}</p>
+                                <img src="{{theme.link}}/assets/images/bubble-heart-purple.svg" alt="" />
+                            </div>
                         </div>
                         <div class="img-ctn">
                             <img src="{{theme.link}}/assets/images/bubble-heart-purple.svg" alt="" />
@@ -53,9 +56,12 @@
                     <div class="section-content" data-aos="fade-up" data-aos-delay="400">
                         <div class="text-ctn">
                             <h2 class="title">{{ post.meta('cta_section_2').title }}</h2>
-                            <p class="introduction small">{{ post.meta('cta_section_2').introduction }}</p>
+                            <div class="tablet-display">
+                                <p class="introduction small">{{ post.meta('cta_section_2').introduction }}</p>
+                                <img class="" src="{{theme.link}}/assets/images/light-bulb-salmon.svg" alt="" />
+                            </div>
                         </div>
-                        <div class="img-ctn">
+                        <div class="img-ctn desktop-display">
                             <img src="{{theme.link}}/assets/images/light-bulb-salmon.svg" alt="" />
                         </div>
                     </div>
