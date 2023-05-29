@@ -83,10 +83,14 @@
             @include responsive-font($primaryFont, 400, 18, 18, 24, 24, null, null, rgba($darkBlue, 0.7));
         }
     }
+
     #sidebarFilters {
         @include flex(flex-start, flex-start, column);
         background-color: white;
-        padding: 120px 60px 60px 80px;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        padding-left: clamp-calc(20, 60);
+        padding-right: clamp-calc(20, 60);
         overflow-y: scroll;
         position: fixed;
         top: 0;
@@ -131,8 +135,12 @@
         }
 
         .button-ctn {
-            a {
+            .main-button {
                 cursor: pointer;
+
+                span {
+                    margin: 0 3px;
+                }
             }
         }
     }
@@ -150,6 +158,17 @@
             .display-filters-ctn {
                 width: 100%;
             }
+        }
+
+        #sidebarFilters {
+            width: 60%;
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        #sidebarFilters {
+            width: 100%;
         }
     }
 }

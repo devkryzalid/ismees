@@ -19,7 +19,7 @@ body.page-template-research {
             background-size: contain;
             top: 50%;
             right: 15%;
-            width: clamp-calc(146, 245);
+            width: clamp-calc(130, 245);
             height: 205px;
         }
     }
@@ -39,15 +39,6 @@ body.page-template-research {
     
             &::after {
                 top: 30%;
-            }
-        }
-    }
-
-    @media(max-width: 767px) {
-        .search-header {
-    
-            &::after {
-                top: 20%;
             }
         }
     }

@@ -93,7 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentImageIndex = 0;
     const bannerImage = document.getElementById('bannerImageCtn');
 
-    function changeImage() {
+    const changeImage = () => {
+
         // Remove the old image
         while (bannerImage.firstChild) {
             bannerImage.firstChild.remove();

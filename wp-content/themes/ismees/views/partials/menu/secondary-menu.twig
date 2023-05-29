@@ -7,8 +7,7 @@
                 </li>
             {% endfor %}
         </ul>
-        <a href="#" class="wpml" aria-label="{{ __('Changement de langue', 'ismees') }}">EN</a>
-        <a class="header-search" href="{{ options.header_search.url }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i></a>
+        <a class="header-search" href="{{ options.header_search.url }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i><span class="search-label">{{__('Rechercher', 'ismees')}}</span></a>
     </div>
     <div class="header-cta">
         <a href="{{ options.header_cta.url }}">{{ options.header_cta.title }}</a>

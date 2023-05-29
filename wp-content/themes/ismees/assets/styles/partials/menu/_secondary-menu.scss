@@ -28,13 +28,34 @@
         .header-search {
             margin-right: clamp-calc(20, 35, 992, 1400);
             margin-left: clamp-calc(20, 35, 992, 1400);
+            position: relative;
 
             i {
                 font-size: 22px;
             }
 
+            .search-label {
+                position: absolute;
+                top: 140%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $blue;
+                padding: 5px 10px;
+                color: white;
+                @include responsive-font($primaryFont, 400, 13, 13, 15, 15);
+                border-radius: 8px;
+                text-align: center;
+                opacity: 0;
+                pointer-events: none;
+                @include transition($basicTransition);
+            }
+
             &:hover {
                 transform: scale(1.2);
+
+                .search-label {
+                    opacity: 1;
+                }
             }
         }
 

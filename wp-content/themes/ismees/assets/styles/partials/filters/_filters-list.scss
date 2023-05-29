@@ -14,23 +14,25 @@
         gap: 8px;
 
         .single-filter {
-            border-radius: 30px;
-            background-color: $paleBlue;
-            padding: 6px 15px;
             text-align: center;
             @include flex();
             @include transition($basicTransition);
 
             &:hover {
-                background-color: $yellow;
+                label {
+                    background-color: $yellow;
+                }
             }
 
             label {
                 display: inline-block;
                 @include responsive-font($primaryFont, 500, 13, 14, 16, 17, null, null);
                 cursor: pointer;
-                
+                padding: 6px 15px;
+                border-radius: 30px;
+                background-color: $paleBlue;
             }
+            
             input[type="checkbox"] {
                 display: none;
             }

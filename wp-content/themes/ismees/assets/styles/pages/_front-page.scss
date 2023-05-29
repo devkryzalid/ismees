@@ -81,6 +81,15 @@ body.page-template-front-page {
                 height: 100%;
                 overflow: hidden;
 
+                .banner-img {
+                    object-fit: contain;
+                    max-height: 100%;
+                    max-width: 100%;
+                    animation: slideUp 1s ease-in-out;
+                    transition: opacity 0.5s all;
+                    z-index: 2;
+                }
+
                 &::before {
                     content: "";
                     @include position(100px, 0, 0, 0);
@@ -88,6 +97,7 @@ body.page-template-front-page {
                     border-radius: 400px 400px 20px 20px;
                     z-index: -1;
                     animation: fade 1s ease-in-out;
+                    transition: opacity 0.5s all;
                 }
 
                 // SET THE BEFORE COLOR
@@ -126,6 +136,7 @@ body.page-template-front-page {
 
                 .overlay-image {
                     position: absolute;
+                    transition: opacity 1s all;
 
                     // Thunder
                     &__0-0 {
@@ -217,15 +228,8 @@ body.page-template-front-page {
                         animation: slideLeft 1s ease-in-out;
                     }
                 }
-            
-                .banner-img {
-                  object-fit: contain;
-                  max-height: 100%;
-                  max-width: 100%;
-                  animation: slideUp 1s ease-in-out;
-                  z-index: 2;
-                }
-              }
+        
+            }
         }
     }
     //**************************************************//
