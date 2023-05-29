@@ -3,11 +3,11 @@
     <main class="front-page" data-aos="fade" data-aos-delay="300">
         <div class="container">
             <div class="banner-content-ctn">
-                <div class="row">
+                <div class="row gx-3">
                     <div class="col-md-7 banner-left">
                         <div class="title-ctn" data-aos="fade-up" data-aos-delay="300">
                             <p class="ontitle">{{ __('La', 'ismees')}} <span class="bottom-decoration -blue">{{ __('station', 'ismees')}}</span> {{ __('pour soutenir la', 'ismees')}}</p>
-                            <h1 class="page-title" data-aos="fade-up">{{ __('santé', 'ismees')}} <span>{{ __('mentale', 'ismees')}}</span> {{ __('étudiante', 'ismees')}}</h1>
+                            <h1 class="page-title" data-aos="fade-up"><span class="style-mobile">{{ __('santé', 'ismees')}}</span> <span class="style-desktop">{{ __('mentale', 'ismees')}}</span> {{ __('étudiante', 'ismees')}}</h1>
                             <div class="subtitle" data-aos="fade-up">
                                 {{ post.content }}
                             </div>
@@ -20,10 +20,11 @@
                         </div>
                     </div>
                     <div class="col-md-5">
+                    {# MANAGE THE IMAGES IN THE JAVASCRIPT FILE : front-page.js #}
                         <div class="image-ctn">
-                            <img class="banner-img" src="{{theme.link}}/assets/images/home-images/home-image.png" alt="" />
-                            <img class="thunder-image" src="{{theme.link}}/assets/images/home-images/blue-thunder.svg" alt="" />
-                            <img class="asterisk-image" src="{{theme.link}}/assets/images/home-images/blue-asterisk.svg" alt="" />
+                            <div class="background-ctn">
+                                <div class="banner-image-ctn" id="bannerImageCtn"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

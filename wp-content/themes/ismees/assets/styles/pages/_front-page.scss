@@ -1,5 +1,9 @@
 body.page-template-front-page {
 
+    //**************************************************//
+    // SET THE HOMEPAGE BANNER
+    //**************************************************//
+
     .banner-content-ctn {
         padding-top: clamp-calc(160, 200);
         padding-bottom: 100px;
@@ -25,16 +29,27 @@ body.page-template-front-page {
         .page-title {
             margin-top: 0;
 
+            .style-mobile {
+                &::after {
+                    display: none;
+                }
+            }
+
             span {
                 display: inline-block;
                 position: relative;
 
                 &::after {
-                    content: url('/assets/images/home-images/blue-text-highlight.svg');
+                    content: "";
+                    background-image: url('/assets/images/home-images/blue-text-highlight.svg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
                     right: 0;
                     top: 0;
                     transform: translate(90%, -50%);
                     position: absolute;
+                    height: clamp-calc(32, 64);
+                    width: clamp-calc(35, 69);
                 }
             }
         }
@@ -55,33 +70,171 @@ body.page-template-front-page {
 
         .image-ctn {
             position: relative;
-            display: flex;
 
-            .banner-img {
-                width: 100%;
-                object-fit: contain;
+            .background-ctn {
+                display: flex;
             }
+          
+            .banner-image-ctn {
+                position: relative;
+                @include flex(flex-start, center);
+                height: 100%;
+                overflow: hidden;
 
-            .thunder-image {
-                right: 0;
-                top: 0;
-                position: absolute;
-                width: clamp-calc(70, 135);
-                object-fit: contain;
-            }
+                &::before {
+                    content: "";
+                    @include position(100px, 0, 0, 0);
+                    position: absolute;
+                    border-radius: 400px 400px 20px 20px;
+                    z-index: -1;
+                    animation: fade 1s ease-in-out;
+                }
 
-            .asterisk-image {
-                left: 20%;
-                top: 50%;
-                position: absolute;
-                width: clamp-calc(22, 45);
-                object-fit: contain;
-            }
+                // SET THE BEFORE COLOR
+
+                &.-blue {
+                    &::before {
+                        background-color: $lightBlue;
+                    }
+                }
+
+                &.-yellow {
+                    &::before {
+                        background-color: $yellow;
+                    }
+                }
+
+                &.-mint {
+                    &::before {
+                        background-color: $mint;
+                    }
+                }
+
+                &.-salmon {
+                    &::before {
+                        background-color: $salmon;
+                    }
+                }
+
+                &.-purple {
+                    &::before {
+                        background-color: $purple;
+                    }
+                }
+
+                // END OF BEFORE COLOR
+
+                .overlay-image {
+                    position: absolute;
+
+                    // Thunder
+                    &__0-0 {
+                        right: 0;
+                        top: 0;
+                        width: clamp-calc(70, 135);
+                        object-fit: contain;
+                        animation: slideDown 1s ease-in-out;
+                    }
+
+                    // Asterisque
+                    &__0-1 {
+                        left: 20%;
+                        top: 50%;
+                        width: clamp-calc(22, 45);
+                        object-fit: contain;
+                        animation: slideLeft 1s ease-in-out;
+                    }
+
+                    // Star
+                    &__1-0 {
+                        right: 0;
+                        top: 10%;
+                        width: clamp-calc(70, 135);
+                        object-fit: contain;
+                        animation: slideLeft 1s ease-in-out;
+                    }
+
+                    // Line
+                    &__1-1 {
+                        left: 0;
+                        top: 15%;
+                        width: clamp-calc(130, 200);
+                        object-fit: contain;
+                        animation: slideRight 1s ease-in-out;
+                    }
+
+                    // Line
+                    &__2-0 {
+                        left: 0;
+                        top: 10%;
+                        width: clamp-calc(130, 200);
+                        object-fit: contain;
+                        animation: slideRight 1s ease-in-out;
+                    }
+
+                    // Asterisque
+                    &__2-1 {
+                        right: 5%;
+                        top: 80%;
+                        width: clamp-calc(22, 45);
+                        object-fit: contain;
+                        animation: slideLeft 1s ease-in-out;
+                    }
+
+                    // Line
+                    &__3-0 {
+                        right: 0;
+                        top: 20%;
+                        width: clamp-calc(70, 135);
+                        object-fit: contain;
+                        animation: slideDown 1s ease-in-out;
+                    }
+
+                    // Asterisque
+                    &__3-1 {
+                        left: 5%;
+                        top: 40%;
+                        width: clamp-calc(22, 45);
+                        object-fit: contain;
+                        animation: slideLeft 1s ease-in-out;
+                    }
+
+                    // Line
+                    &__4-0 {
+                        left: 0;
+                        top: 7%;
+                        width: clamp-calc(130, 220);
+                        object-fit: contain;
+                        animation: slideRight 1s ease-in-out;
+                    }
+
+                    // Asterisque
+                    &__4-1 {
+                        right: 2%;
+                        top: 70%;
+                        width: clamp-calc(22, 45);
+                        object-fit: contain;
+                        animation: slideLeft 1s ease-in-out;
+                    }
+                }
+            
+                .banner-img {
+                  object-fit: contain;
+                  max-height: 100%;
+                  max-width: 100%;
+                  animation: slideUp 1s ease-in-out;
+                  z-index: 2;
+                }
+              }
         }
     }
+    //**************************************************//
+    //************ END HOMEPAGE BANNER *****************//
+    //**************************************************//
 
+     //**************************************************//
     // MAIN CONTENT
-
+    //**************************************************//
     .page-content {
         
         padding-bottom: clamp-calc(45, 110);
@@ -146,7 +299,7 @@ body.page-template-front-page {
                 }
             }
 
-            //CODE FOR PER COLUMN CTA
+            //******* CODE FOR PER COLUMN CTA *******//
 
             .section-1 {
                 background-color: $yellow;
@@ -194,6 +347,7 @@ body.page-template-front-page {
             }
         }
     }
+
     @media(max-width: 992px) {
         .page-content {
 
@@ -248,10 +402,7 @@ body.page-template-front-page {
 
             .page-title {
                 text-align: center;
-
-                &::after {
-                    display: none;
-                }
+                padding:0 20px ;
             }
 
             .subtitle {
@@ -285,6 +436,24 @@ body.page-template-front-page {
                         .title {
                             padding-right: clamp-calc(20, 75, 992);
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 449px) {
+        .banner-content-ctn {
+
+            .page-title {
+                .style-desktop {
+                    &::after {
+                        display: none;
+                    }
+                }
+                .style-mobile {
+                    &::after {
+                        display: block;
                     }
                 }
             }
