@@ -2,7 +2,7 @@ import '../partials/horizontal-slider'
 
 document.addEventListener("DOMContentLoaded", () => {
     const columns = document.querySelectorAll('.ctas-column');
-    const baseUrl = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+    const baseUrl = window.location.origin;
 
     // INCREASE THE WIDTH OF THE IMAGE AND THE COLUMN OF THE HOVERED COLUMN
     // REDUCE THE WIDTH OF THE OTHER
@@ -51,35 +51,35 @@ document.addEventListener("DOMContentLoaded", () => {
     // Image sources. You can add more overlays and images if you need.
     const images = [
         {
-            banner: 'http://ismees.local/wp-content/themes/ismees/assets/images/home-images/slide-01.png',
+            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-01.png`,
             overlays: [
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-1.svg`,
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
             ]
         },
         {
-            banner: 'http://ismees.local/wp-content/themes/ismees/assets/images/home-images/slide-02.png',
+            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-02.png`,
             overlays: [
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-etoile.svg`,
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-2.svg`,
             ]
         },
         {
-            banner: 'http://ismees.local/wp-content/themes/ismees/assets/images/home-images/slide-03.png',
+            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-03.png`,
             overlays: [
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-3.svg`,
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`,
             ]
         },
         {
-            banner: 'http://ismees.local/wp-content/themes/ismees/assets/images/home-images/slide-04.png',
+            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-04.png`,
             overlays: [
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-5.svg`,
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
             ]
           },
           {
-            banner: 'http://ismees.local/wp-content/themes/ismees/assets/images/home-images/slide-05.png',
+            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-05.png`,
             overlays: [
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-4.svg`,
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
