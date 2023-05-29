@@ -2,7 +2,7 @@ import '../partials/horizontal-slider'
 
 document.addEventListener("DOMContentLoaded", () => {
     const columns = document.querySelectorAll('.ctas-column');
-    const baseUrl = window.location.origin;
+    const baseUrl = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
 
     // INCREASE THE WIDTH OF THE IMAGE AND THE COLUMN OF THE HOVERED COLUMN
     // REDUCE THE WIDTH OF THE OTHER
