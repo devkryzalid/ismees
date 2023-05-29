@@ -1,0 +1,289 @@
+.banner-content-ctn {
+    padding-top: clamp-calc(160, 200);
+    padding-bottom: 100px;
+    gap: clamp-calc(20, 50);
+
+    //***********************************//
+    //********** LEFT COLUMN ************//
+    //***********************************//
+
+    .banner-left {
+        @include flex(flex-start, space-between, column);
+        gap: 50px;
+    }
+
+    .ontitle {
+        @include responsive-font($primaryFont, 400, 40, 63, 47, 75, null, -0.02rem);
+        margin-bottom: clamp-calc(15, 20);
+        margin-top: clamp-calc(0, 50);
+
+        span {
+            font-weight: 400;
+        }
+    }
+
+    .page-title {
+        margin-top: 0;
+
+        .style-mobile {
+            &::after {
+                display: none;
+            }
+        }
+
+        span {
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: "";
+                background-image: url('/assets/images/home-images/blue-text-highlight.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                right: 0;
+                top: 0;
+                transform: translate(90%, -50%);
+                position: absolute;
+                height: clamp-calc(32, 64);
+                width: clamp-calc(35, 69);
+            }
+        }
+    }
+
+    .subtitle {
+        @include responsive-font($primaryFont, 400, 18, 20, 26, 26);
+    }
+
+    .defilate {
+        p {
+            transform: translate(20px, 10px) rotate(-25deg);
+            position: relative;
+            @include responsive-font($primaryFont, 400, 15, 15, 18, 18, null, -0.02rem);
+        }
+    }
+
+    //***********************************//
+    //********* RIGHT COLUMN ***********//
+    //***********************************//
+
+    .image-ctn {
+        position: relative;
+
+        .background-ctn {
+            display: flex;
+        }
+
+        .slide-out {
+            animation: slideOut 0.4s forwards !important;
+        }
+
+        .slide-out-absolute {
+            animation: fade-out 0.4s forwards !important;
+        }
+      
+        .banner-image-ctn {
+            position: relative;
+            @include flex(flex-start, center);
+            height: 100%;
+            overflow: hidden;
+
+            .banner-img {
+                object-fit: contain;
+                max-height: 100%;
+                max-width: 100%;
+                animation: slideUp 700ms ease-in-out;
+                z-index: 2;
+            }
+
+            //***************************************//
+            //******** SET THE BEFORE COLOR *********//
+            //***************************************//
+
+            &::before {
+                content: "";
+                @include position(100px, 0, 0, 0);
+                position: absolute;
+                border-radius: 400px 400px 20px 20px;
+                z-index: -1;
+            }
+
+            &.-blue {
+                &::before {
+                    background-color: $lightBlue;
+                }
+            }
+
+            &.-yellow {
+                &::before {
+                    background-color: $yellow;
+                }
+            }
+
+            &.-mint {
+                &::before {
+                    background-color: $mint;
+                }
+            }
+
+            &.-salmon {
+                &::before {
+                    background-color: $salmon;
+                }
+            }
+
+            &.-purple {
+                &::before {
+                    background-color: $purple;
+                }
+            }
+
+            //*******************************//
+            //****** ABSOLUTE IMAGES ********//
+            //*******************************//
+
+            .overlay-image {
+                position: absolute;
+                transition: opacity 700ms all;
+
+                // Thunder
+                &__0-0 {
+                    right: 0;
+                    top: 0;
+                    width: clamp-calc(70, 135);
+                    object-fit: contain;
+                    animation: slideDown 700ms ease-in-out;
+                }
+
+                // Asterisque
+                &__0-1 {
+                    left: 20%;
+                    top: 50%;
+                    width: clamp-calc(22, 45);
+                    object-fit: contain;
+                    animation: slideLeft 700ms ease-in-out;
+                }
+
+                // Star
+                &__1-0 {
+                    right: 0;
+                    top: 10%;
+                    width: clamp-calc(70, 135);
+                    object-fit: contain;
+                    animation: slideLeft 700ms ease-in-out;
+                }
+
+                // Line
+                &__1-1 {
+                    left: 0;
+                    top: 15%;
+                    width: clamp-calc(130, 200);
+                    object-fit: contain;
+                    animation: slideRight 700ms ease-in-out;
+                }
+
+                // Line
+                &__2-0 {
+                    left: 0;
+                    top: 10%;
+                    width: clamp-calc(130, 200);
+                    object-fit: contain;
+                    animation: slideRight 700ms ease-in-out;
+                }
+
+                // Asterisque
+                &__2-1 {
+                    right: 5%;
+                    top: 80%;
+                    width: clamp-calc(22, 45);
+                    object-fit: contain;
+                    animation: slideLeft 700ms ease-in-out;
+                }
+
+                // Line
+                &__3-0 {
+                    right: 0;
+                    top: 20%;
+                    width: clamp-calc(70, 135);
+                    object-fit: contain;
+                    animation: slideDown 700ms ease-in-out;
+                }
+
+                // Asterisque
+                &__3-1 {
+                    left: 5%;
+                    top: 40%;
+                    width: clamp-calc(22, 45);
+                    object-fit: contain;
+                    animation: slideLeft 700ms ease-in-out;
+                }
+
+                // Line
+                &__4-0 {
+                    left: 0;
+                    top: 7%;
+                    width: clamp-calc(130, 220);
+                    object-fit: contain;
+                    animation: slideRight 700ms ease-in-out;
+                }
+
+                // Asterisque
+                &__4-1 {
+                    right: 2%;
+                    top: 70%;
+                    width: clamp-calc(22, 45);
+                    object-fit: contain;
+                    animation: slideLeft 700ms ease-in-out;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .banner-content-ctn {
+
+            .ontitle {
+                text-align: center;
+
+                span {
+                    font-weight: 400;
+                }
+            }
+
+            .page-title {
+                text-align: center;
+                padding:0 20px ;
+            }
+
+            .subtitle {
+                text-align: center;
+            }
+
+            .image-ctn {
+                margin-top: 50px;
+            }
+
+            .defilate {
+                display: none
+            }
+        }
+    }
+
+    @media(max-width: 449px) {
+        .banner-content-ctn {
+
+            .page-title {
+                .style-desktop {
+                    &::after {
+                        display: none;
+                    }
+                }
+                .style-mobile {
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

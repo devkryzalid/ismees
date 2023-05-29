@@ -2,78 +2,20 @@
 {% block content %}
     <main class="front-page" data-aos="fade" data-aos-delay="300">
         <div class="container">
-            <div class="banner-content-ctn">
-                <div class="row gx-3">
-                    <div class="col-md-7 banner-left">
-                        <div class="title-ctn" data-aos="fade-up" data-aos-delay="300">
-                            <p class="ontitle">{{ __('La', 'ismees')}} <span class="bottom-decoration -blue">{{ __('station', 'ismees')}}</span> {{ __('pour soutenir la', 'ismees')}}</p>
-                            <h1 class="page-title" data-aos="fade-up"><span class="style-mobile">{{ __('santé', 'ismees')}}</span> <span class="style-desktop">{{ __('mentale', 'ismees')}}</span> {{ __('étudiante', 'ismees')}}</h1>
-                            <div class="subtitle" data-aos="fade-up">
-                                {{ post.content }}
-                            </div>
-                        </div>
-                        <div class="defilate">
-                            <div>
-                                <p>{{ __('Défiler', 'ismees') }}</p>
-                            </div>
-                            <img src="{{theme.link}}/assets/images/home-images/blue-scroll-arrow-down.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                    {# MANAGE THE IMAGES IN THE JAVASCRIPT FILE : front-page.js #}
-                        <div class="image-ctn">
-                            <div class="background-ctn">
-                                <div class="banner-image-ctn" id="bannerImageCtn"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include "partials/banners/home-banner.twig" %}
         </div>
         <div class="page-content">
             <div class="ctas-section">
-                <div class="ctas-column section-1" data-aos="fade" data-aos-delay="300">
-                    <div class="section-content" data-aos="fade-up" data-aos-delay="400">
-                        <div class="text-ctn">
-                            <h2 class="title">{{ post.meta('cta_section_1').title }}</h2>
-                            <div class="tablet-display">
-                                <p class="introduction small">{{ post.meta('cta_section_1').introduction }}</p>
-                                <img src="{{theme.link}}/assets/images/bubble-heart-purple.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="img-ctn">
-                            <img src="{{theme.link}}/assets/images/bubble-heart-purple.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="ctas-ctn">
-                        {% for cta in post.meta('cta_section_1').ctas %}
-                            <div class="arrow-button -white" data-aos="fade-up" data-aos-delay="300">
-                                <a href="{{ cta.link.url }}" target="{{ cta.link.target }}">{{ cta.link.title }}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="ctas-column section-2" data-aos="fade" data-aos-delay="300">
-                    <div class="section-content" data-aos="fade-up" data-aos-delay="400">
-                        <div class="text-ctn">
-                            <h2 class="title">{{ post.meta('cta_section_2').title }}</h2>
-                            <div class="tablet-display">
-                                <p class="introduction small">{{ post.meta('cta_section_2').introduction }}</p>
-                                <img class="" src="{{theme.link}}/assets/images/light-bulb-salmon.svg" alt="" />
-                            </div>
-                        </div>
-                        <div class="img-ctn desktop-display">
-                            <img src="{{theme.link}}/assets/images/light-bulb-salmon.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="ctas-ctn">
-                        {% for cta in post.meta('cta_section_2').ctas %}
-                            <div class="arrow-button -white" data-aos="fade-up" data-aos-delay="300">
-                                <a href="{{ cta.link.url }}">{{ cta.link.title }}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
+                {% include "partials/cta/home-cta.twig" with {
+                    'item': post.meta('cta_section_1'),
+                    'class': 'section-1',
+                    'image': theme.link ~ '/assets/images/bubble-heart-purple.svg'
+                } %}
+                {% include "partials/cta/home-cta.twig" with {
+                    'item': post.meta('cta_section_2'),
+                    'class': 'section-2',
+                    'image': theme.link ~ '/assets/images/light-bulb-salmon.svg'
+                } %}
             </div>
             <div class="container">
                 <div class="resources-ctn" data-aos="fade-up" data-aos-delay="300">

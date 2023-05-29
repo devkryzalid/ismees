@@ -1,241 +1,5 @@
 body.page-template-front-page {
 
-    //**************************************************//
-    // SET THE HOMEPAGE BANNER
-    //**************************************************//
-
-    .banner-content-ctn {
-        padding-top: clamp-calc(160, 200);
-        padding-bottom: 100px;
-        gap: clamp-calc(20, 50);
-
-        // LEFT COLUMN
-
-        .banner-left {
-            @include flex(flex-start, space-between, column);
-            gap: 50px;
-        }
-
-        .ontitle {
-            @include responsive-font($primaryFont, 400, 40, 63, 47, 75, null, -0.02rem);
-            margin-bottom: clamp-calc(15, 20);
-            margin-top: clamp-calc(0, 50);
-
-            span {
-                font-weight: 400;
-            }
-        }
-
-        .page-title {
-            margin-top: 0;
-
-            .style-mobile {
-                &::after {
-                    display: none;
-                }
-            }
-
-            span {
-                display: inline-block;
-                position: relative;
-
-                &::after {
-                    content: "";
-                    background-image: url('/assets/images/home-images/blue-text-highlight.svg');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    right: 0;
-                    top: 0;
-                    transform: translate(90%, -50%);
-                    position: absolute;
-                    height: clamp-calc(32, 64);
-                    width: clamp-calc(35, 69);
-                }
-            }
-        }
-
-        .subtitle {
-            @include responsive-font($primaryFont, 400, 18, 20, 26, 26);
-        }
-
-        .defilate {
-            p {
-                transform: translate(20px, 10px) rotate(-25deg);
-                position: relative;
-                @include responsive-font($primaryFont, 400, 15, 15, 18, 18, null, -0.02rem);
-            }
-        }
-
-        // RIGHT COLUMN
-
-        .image-ctn {
-            position: relative;
-
-            .background-ctn {
-                display: flex;
-            }
-          
-            .banner-image-ctn {
-                position: relative;
-                @include flex(flex-start, center);
-                height: 100%;
-                overflow: hidden;
-
-                .banner-img {
-                    object-fit: contain;
-                    max-height: 100%;
-                    max-width: 100%;
-                    animation: slideUp 1s ease-in-out;
-                    transition: opacity 0.5s all;
-                    z-index: 2;
-                }
-
-                &::before {
-                    content: "";
-                    @include position(100px, 0, 0, 0);
-                    position: absolute;
-                    border-radius: 400px 400px 20px 20px;
-                    z-index: -1;
-                    animation: fade 1s ease-in-out;
-                    transition: opacity 0.5s all;
-                }
-
-                // SET THE BEFORE COLOR
-
-                &.-blue {
-                    &::before {
-                        background-color: $lightBlue;
-                    }
-                }
-
-                &.-yellow {
-                    &::before {
-                        background-color: $yellow;
-                    }
-                }
-
-                &.-mint {
-                    &::before {
-                        background-color: $mint;
-                    }
-                }
-
-                &.-salmon {
-                    &::before {
-                        background-color: $salmon;
-                    }
-                }
-
-                &.-purple {
-                    &::before {
-                        background-color: $purple;
-                    }
-                }
-
-                // END OF BEFORE COLOR
-
-                .overlay-image {
-                    position: absolute;
-                    transition: opacity 1s all;
-
-                    // Thunder
-                    &__0-0 {
-                        right: 0;
-                        top: 0;
-                        width: clamp-calc(70, 135);
-                        object-fit: contain;
-                        animation: slideDown 1s ease-in-out;
-                    }
-
-                    // Asterisque
-                    &__0-1 {
-                        left: 20%;
-                        top: 50%;
-                        width: clamp-calc(22, 45);
-                        object-fit: contain;
-                        animation: slideLeft 1s ease-in-out;
-                    }
-
-                    // Star
-                    &__1-0 {
-                        right: 0;
-                        top: 10%;
-                        width: clamp-calc(70, 135);
-                        object-fit: contain;
-                        animation: slideLeft 1s ease-in-out;
-                    }
-
-                    // Line
-                    &__1-1 {
-                        left: 0;
-                        top: 15%;
-                        width: clamp-calc(130, 200);
-                        object-fit: contain;
-                        animation: slideRight 1s ease-in-out;
-                    }
-
-                    // Line
-                    &__2-0 {
-                        left: 0;
-                        top: 10%;
-                        width: clamp-calc(130, 200);
-                        object-fit: contain;
-                        animation: slideRight 1s ease-in-out;
-                    }
-
-                    // Asterisque
-                    &__2-1 {
-                        right: 5%;
-                        top: 80%;
-                        width: clamp-calc(22, 45);
-                        object-fit: contain;
-                        animation: slideLeft 1s ease-in-out;
-                    }
-
-                    // Line
-                    &__3-0 {
-                        right: 0;
-                        top: 20%;
-                        width: clamp-calc(70, 135);
-                        object-fit: contain;
-                        animation: slideDown 1s ease-in-out;
-                    }
-
-                    // Asterisque
-                    &__3-1 {
-                        left: 5%;
-                        top: 40%;
-                        width: clamp-calc(22, 45);
-                        object-fit: contain;
-                        animation: slideLeft 1s ease-in-out;
-                    }
-
-                    // Line
-                    &__4-0 {
-                        left: 0;
-                        top: 7%;
-                        width: clamp-calc(130, 220);
-                        object-fit: contain;
-                        animation: slideRight 1s ease-in-out;
-                    }
-
-                    // Asterisque
-                    &__4-1 {
-                        right: 2%;
-                        top: 70%;
-                        width: clamp-calc(22, 45);
-                        object-fit: contain;
-                        animation: slideLeft 1s ease-in-out;
-                    }
-                }
-        
-            }
-        }
-    }
-    //**************************************************//
-    //************ END HOMEPAGE BANNER *****************//
-    //**************************************************//
-
      //**************************************************//
     // MAIN CONTENT
     //**************************************************//
@@ -246,61 +10,13 @@ body.page-template-front-page {
 
         .ctas-section {
             display: flex;
-            
             padding-bottom: 160px;
             width: 100%;
 
             //***** CODE FOR BOTH COLUMNS CTA ******//
 
-            .ctas-column {
+            .home-cta {
                 width: 50%;
-                flex-grow: 1;
-                padding-top: clamp-calc(80, 120);
-                padding-bottom: clamp-calc(80, 120);
-                @include flex(flex-start, space-between, column);
-                gap: clamp-calc(80, 150);
-                @include transition($shortTransition);
-                overflow: hidden;
-
-                .tablet-display {
-                    img {
-                        display: none;
-                    }
-                }
-
-                .img-ctn {
-                    display: flex;
-
-                    img {
-                        object-fit: contain;
-                        width: clamp-calc(150, 230, 992);
-                        @include transition($shortTransition);
-                    }
-                }
-
-                .section-content {
-                    @include flex(center, space-between);
-                    gap: 15px;
-                    padding-left: clamp-calc(20, 75, 992);
-                    padding-right: clamp-calc(20, 75, 992);
-
-                    .title {
-                        @include responsive-font($primaryFont, 700, 35, 52, 40, 54, null, null, $darkBlue, normal, 992);
-                        margin-top: 0;
-                    }
-                }
-
-                .ctas-ctn {
-                    @include flex(center, center, column);
-                    width: 100%;
-                    gap: 15px;
-                    padding-left: clamp-calc(20, 75, 992);
-                    padding-right: clamp-calc(20, 75, 992);
-
-                    .arrow-button {
-                        width: 100%;
-                    }
-                }
             }
 
             //******* CODE FOR PER COLUMN CTA *******//
@@ -355,36 +71,6 @@ body.page-template-front-page {
     @media(max-width: 992px) {
         .page-content {
 
-            .ctas-section {
-
-                .ctas-column {
-
-                    .img-ctn {
-                        display: none;
-                    }
-
-                    .tablet-display {
-                        @include flex(flex-start, space-between);
-                        gap: 15px;
-
-                        img {
-                            display: flex;
-                            width: 120px;
-                        }
-                    }
-                }  
-
-                //CODE PER COLUMN CTA
-
-                .section-1 {
-                    border-radius: 0;
-                }
-
-                .section-2 {
-                    border-radius: 0;
-                }
-            }
-
             .resources-ctn {
                 @include flex(flex-start, flex-start, column);
             }
@@ -394,71 +80,23 @@ body.page-template-front-page {
 
     @media(max-width: 767px) {
 
-        .banner-content-ctn {
-
-            .ontitle {
-                text-align: center;
-
-                span {
-                    font-weight: 400;
-                }
-            }
-
-            .page-title {
-                text-align: center;
-                padding:0 20px ;
-            }
-
-            .subtitle {
-                text-align: center;
-            }
-
-            .image-ctn {
-                margin-top: 50px;
-            }
-
-            .defilate {
-                display: none
-            }
-        }
-
         .page-content {
 
             .ctas-section {
                 @include flex(center, center, column);
 
-                .ctas-column {
+                 //CODE PER COLUMN CTA
+
+                 .section-1 {
+                    border-radius: 0;
+                }
+
+                .section-2 {
+                    border-radius: 0;
+                }
+
+                .home-cta {
                     width: 100%;
-
-                    .section-content {
-                        padding-right: 0;
-
-                        .tablet-display {
-                            padding-right: clamp-calc(0, 20, 375, 767);
-                        }
-    
-                        .title {
-                            padding-right: clamp-calc(20, 75, 992);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media(max-width: 449px) {
-        .banner-content-ctn {
-
-            .page-title {
-                .style-desktop {
-                    &::after {
-                        display: none;
-                    }
-                }
-                .style-mobile {
-                    &::after {
-                        display: block;
-                    }
                 }
             }
         }

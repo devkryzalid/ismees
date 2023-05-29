@@ -1,0 +1,31 @@
+<div class="home-cta {{ class }}" data-aos="fade" data-aos-delay="300">
+    <div class="section-content" data-aos="fade-up" data-aos-delay="400">
+        <div class="text-ctn">
+            {% if item.title %}
+                <h2 class="title">{{ item.title }}</h2>
+            {% endif %}
+            {% if item.introduction %}
+                <div class="tablet-display">
+                    <p class="introduction small">{{ item.introduction }}</p>
+                    {% if image %}
+                        <img src="{{ image }}" alt="" />
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        {% if image %}
+            <div class="img-ctn">
+                <img src="{{ image }}" alt="" />
+            </div>
+        {% endif %}
+    </div>
+    {% if item.ctas|length > 0 and item.ctas %}
+        <div class="ctas-ctn">
+            {% for cta in item.ctas %}
+                <div class="arrow-button -white" data-aos="fade-up" data-aos-delay="300">
+                    <a href="{{ cta.link.url }}" target="{{ cta.link.target }}">{{ cta.link.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

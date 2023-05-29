@@ -31,7 +31,7 @@
     }
 
     &__title {
-        @include transition($basicTransition);
+        @include transition($shortTransition);
         @include responsive-font($primaryFont, 400, 20, 32, 22, 40);
         margin: 0;
     }
