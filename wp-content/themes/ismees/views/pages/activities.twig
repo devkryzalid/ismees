@@ -1,14 +1,14 @@
 {% extends 'base.twig' %}
 {% block content %}
-    <main class="page-activities" data-aos="fade" data-aos-delay="300">
+    <main class="page-activities">
         <div class="activities-banner">
             <div class="container-lg">
                 <div class="banner-content-ctn">
                     {% include "partials/breadscrum.twig" with {
                         'reverseBreadscrum': true
                     }%}
-                    <h1 class="page-title"><span class="bottom-decoration -red">{{__('Activités', 'ismees')}} </span> {{__('à venir', 'ismees')}}</h1>
-                    <div class="gutenberg">{{ post.content }}</div>
+                    <h1 class="page-title" data-aos="fade-up" data-aos-delay="300"><span class="bottom-decoration -red">{{__('Activités', 'ismees')}} </span> {{__('à venir', 'ismees')}}</h1>
+                    <div class="gutenberg" data-aos="fade-up" data-aos-delay="300">{{ post.content }}</div>
                 </div>
             </div>
         </div>

@@ -1,11 +1,10 @@
-{% if item.terms('resource_category') %}
-    {% set iconCategory = get_primary_taxonomy(item.id, 'resource_category', true).icon %}
-{% endif %}
 {% if item.terms('resource_student_type') %}
     {% set primaryType = get_primary_taxonomy(item.id, 'resource_student_type', true).name %}
+    {% set iconType = get_primary_taxonomy(item.id, 'resource_student_type', true).icon %}
 {% endif %}
 {% if item.terms('resource_member_type') %}
     {% set primaryType = get_primary_taxonomy(item.id, 'resource_member_type', true).name %}
+    {% set iconType = get_primary_taxonomy(item.id, 'resource_member_type', true).icon %}
 {% endif %}
 
 <div class="card-ctn jsBlockLink" tabindex="0" data-aos="fade-up" data-aos-delay="500">
@@ -15,9 +14,9 @@
         {% else %}
             <img class="card-image" src="{{site.home_url ~ '/wp-content/themes/ismees/assets/images/default-image.png' }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
         {% endif %}
-        {% if iconCategory %}
+        {% if iconType %}
             <div class="card-icon-ctn">
-                <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ iconCategory ~ '.svg' }}" alt="" />
+                <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~  iconType ~ '.svg' }}" alt="" />
             </div>
         {% endif %}
         {% if primaryType %}

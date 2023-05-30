@@ -69,6 +69,35 @@ button {
     }
 }
 
+.secondary-button {
+    @include flex(center, space-between);
+    padding: 10px 20px;
+    border-radius: 20px;
+    gap: 10px;
+    @include responsive-font($primaryFont, 500, 14, 16, 17, 19);
+    cursor: pointer;
+    @include transition($basicTransition);
+
+    &.-grey {
+        background-color: $mainBG;
+
+        &:hover {
+            background-color: $darkBlue;
+            color: white;
+
+            i {
+                @include transition($basicTransition);
+                color: $yellow;
+            }
+        }
+
+        i {
+            font-size: 12px;
+            color: $blue;
+        }
+    }
+}
+
 .arrow-button {
     a {
         display: inline-block;
