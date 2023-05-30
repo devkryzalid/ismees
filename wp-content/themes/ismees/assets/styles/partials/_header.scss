@@ -45,6 +45,13 @@ body.customize-support {
 
         #secondary-menu .header-cta a {
             border-radius: 8px;
+            background-color: $yellow !important;
+            color: $darkBlue !important;
+
+            &:hover {
+                background-color: $darkBlue !important;
+                color: $yellow !important;
+            }
         }
     }
 
@@ -228,8 +235,9 @@ body.customize-support {
     
                 #secondary-menu  {
     
-                    .wpml, 
-                    a {
+                    .menu-items a,
+                    .header-search i,
+                    .header-cta a {
                         color: white;
     
                         &:hover {

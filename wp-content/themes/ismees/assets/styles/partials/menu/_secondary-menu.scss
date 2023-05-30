@@ -32,6 +32,7 @@
 
             i {
                 font-size: 22px;
+                @include transition($basicTransition);
             }
 
             .search-label {
@@ -51,7 +52,10 @@
             }
 
             &:hover {
-                transform: scale(1.2);
+
+                i {
+                    transform: scale(1.2);
+                }
 
                 .search-label {
                     opacity: 1;
@@ -69,7 +73,6 @@
             display: flex;
         }
 
-        .wpml, 
         .main-item a {
             @include responsive-font($primaryFont, 400, 14, 16, 17, 19, none, -0.03em);
         }

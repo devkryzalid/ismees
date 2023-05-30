@@ -14,7 +14,7 @@ $activities = [
     'meta_query'     => [],
 ];
 
-$context['activités'] = new Timber\PostQuery($activities);
+$context['activities'] = new Timber\PostQuery($activities);
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 

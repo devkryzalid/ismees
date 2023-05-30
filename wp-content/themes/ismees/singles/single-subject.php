@@ -8,7 +8,7 @@ $timber_post = new Timber\Post();
  * Timber context assignments
  */
 $context['subject'] = $timber_post;
-$context['addsearch_array'] = createAddSearchArray($timber_post);
+// $context['addsearch_array'] = createAddSearchArray($timber_post);
 
 Timber::render('pages/single-subject.twig', $context);
 

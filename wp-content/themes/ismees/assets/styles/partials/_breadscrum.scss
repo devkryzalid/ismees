@@ -34,4 +34,16 @@
         font-size: 10px;
         margin: 0 10px;
     }
+
+    &.-reverse {
+        #breadcrumbs {
+            span, a {
+                color: white;
+            }
+    
+            i {
+                color: rgba(white, 0.3);
+            }
+        }
+    }
 }

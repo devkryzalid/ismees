@@ -1,0 +1,35 @@
+body.page-template-activities {
+    #secondary-menu .header-cta a {
+        background-color: $salmon;
+        color: $darkBlue !important;
+    }
+
+    .activities-banner {
+        @include flex(center, center);
+        background-color: $darkBlue;
+        padding-top: clamp-calc(120, 185);
+        padding-bottom: clamp-calc(150, 200);
+
+        .banner-content-ctn {
+            @include flex(center, center, column);
+        }
+
+        .page-title {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 5px;
+
+            .bottom-decoration {
+                padding-bottom: 25px;
+            }
+        }
+
+        .gutenberg {
+            color: white;
+        }
+    }
+
+    .page-content {
+        @include sectionSeparator();
+    }
+}

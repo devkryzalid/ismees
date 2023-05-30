@@ -1,0 +1,49 @@
+{# Processes and decomposes the two dates #}
+{% set startDateString = activity.start_date[0:4] ~ '-' ~ activity.start_date[4:2] ~ '-' ~ activity.start_date[6:2] %}
+{% set startDate = date(startDateString) %}
+{% set startDay = startDate|date('l') %}
+{% set startDayNumber = startDate|date('j') %}
+{% set startMonth = startDate|date('F') %}
+{% set startYear = startDate|date('Y') %}
+
+{% set endDateString = activity.end_date[0:4] ~ '-' ~ activity.end_date[4:2] ~ '-' ~ activity.end_date[6:2] %}
+{% set endDate = date(endDateString) %}
+{% set endDay = endDate|date('l') %}
+{% set endDayNumber = endDate|date('j') %}
+{% set endMonth = endDate|date('F') %}
+{% set endYear = endDate|date('Y') %}
+
+<div class="activity-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="day">{{ startDay }} {% if endDay and startDate != endDate %} <span> {{__('à', 'ismees') ~ ' ' ~ endDay }}</span>{% endif %}</p>
+            <p class="day-number">{{ startDayNumber }} {% if endDate and startDate != endDate %} <span> {{ '-' ~ ' ' ~ endDayNumber }}</span>{% endif %}</p>
+            <p class="month-year">{{ startMonth ~ ' ' ~ startYear }} {% if endDate and startDate != endDate and startMonth != endMonth or startYear != endYear %} <span> {{ 'et' ~ ' ' ~ endMonth ~ ' ' ~ endYear }}</span>{% endif %}</p>
+        </div>
+        <div class="{{ activity.thumbnail ? 'col-md-6' : 'col-md-9' }}">
+            <p>{{ activity.title }}</p>
+            <p>{{ activity.excerpt }}</p>
+            <div class="card-ctas">
+                <div class="more">
+                    <a class="">{{__('Lire plus', 'ismees')}}</a>
+                    <div class="informations">
+                        <div class="gutenberg">
+                            {{ activity.content }}
+                        </div>
+                        <a>{{__('Lire moins', 'ismees')}}</a>
+                    </div>
+                </div>
+                <a class="" href="{{ activity.meta('activity_website') }}">{{__('Voir le détail de l’activité', 'ismees')}}</a>
+            </div>
+        </div>
+        {% if activity.thumbnail %}
+            <div class="col-md-3">
+                <img src="{{ activity.thumbnail }}" alt={{ __('Image de', 'ismees') ~ activity.title }}/>
+            </div>
+        {% endif %}
+    </div>
+
+    {# <pre>
+        {{ dd(activities) }}
+    </pre> #}
+</div>
