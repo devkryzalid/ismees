@@ -1,5 +1,4 @@
 <div class="list-items-ajax">
-
     <div class="container">
         <div id="ajax-content">
             <div id="display-filters"></div>
@@ -9,6 +8,8 @@
                 {% else %}
                     {% if oneColumn %}
                         {% include 'partials/lists/single-card-list.twig' %}
+                    {% elseif activities %}
+                        {% include 'partials/lists/activities-list.twig' %}
                     {% else %}
                         {% include 'partials/lists/basic-card-list.twig' with {
                             'items': resources
@@ -17,7 +18,8 @@
                 {% endif %}
             </div>
         </div>
-		{% include 'partials/lists/pagination.twig' with {'pages': pagination } %}
+        {% if activities == false %}
+		    {% include 'partials/lists/pagination.twig' with {'pages': pagination } %}
+        {% endif %}
     </div>
-
 </div>

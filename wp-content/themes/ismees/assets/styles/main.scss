@@ -70,11 +70,14 @@
 @import "partials/lists/basic-card-list";
 @import "partials/lists/single-card-list";
 @import "partials/lists/pagination";
+@import "partials/lists/activities-list";
 
 // AJAX
 @import "partials/ajax/filters";
 @import "partials/ajax/search-filters";
 @import "partials/ajax/ajax-list";
+@import "partials/ajax/activities-filters";
+@import "partials/ajax/no-results";
 
 // PAGE CONTENT
 @import "partials/page-content/content-reviews";

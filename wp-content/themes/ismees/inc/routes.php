@@ -20,6 +20,10 @@ Routes::map('/ajax/resources/students', function ($params) {
 Routes::map('/ajax/resources/members', function ($params) {
     Routes::load('templates/ajax/member-resources.php', array_merge($params, $_POST), 200);
 });
+// Repertory for activities
+Routes::map('/ajax/activities', function ($params) {
+    Routes::load('templates/ajax/activities.php', array_merge($params, $_POST), 200);
+});
 // General search
 Routes::map('/ajax/resources/all', function ($params) {
     Routes::load('templates/ajax/research.php', array_merge($params, $_POST), 200);

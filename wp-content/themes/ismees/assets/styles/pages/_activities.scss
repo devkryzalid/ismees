@@ -31,5 +31,10 @@ body.page-template-activities {
 
     .page-content {
         @include sectionSeparator();
+        padding-bottom: 0;
+    }
+
+    .list-items-ajax {
+        padding-bottom: clamp-calc(130, 210);
     }
 }

@@ -1,3 +1,7 @@
-<div>
-    <h3>{{ __('Aucun résultat trouvé', 'ismees') }}</h3>
+<div class="no-results">
+    {% if activities %}
+        <h3>{{ __('Il n\'y a pas d\'activité ce mois-ci', 'ismees') }}</h3>
+    {% else %}
+            <h3>{{ __('Aucun résultat trouvé', 'ismees') }}</h3>
+    {% endif %}
 </div>

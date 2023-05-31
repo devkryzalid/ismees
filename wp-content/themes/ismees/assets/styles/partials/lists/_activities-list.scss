@@ -1,0 +1,4 @@
+.activity-list-ctn {
+    @include flex(center, center, column);
+    gap: 40px;
+}

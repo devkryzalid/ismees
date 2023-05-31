@@ -36,19 +36,6 @@
     .prev,
     .next {
         position: absolute;
-        width: clamp-calc(40, 80);
-        height: clamp-calc(40, 80);
-        border-radius: 50%;
-        opacity: 1;
-        @include transition($basicTransition);
-        background-color: white;
-        color: $purple;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 5;
-        transform: scale(1);
         top: 40%;
         transform: translateY(-50%);
 
@@ -59,10 +46,6 @@
 
     .prev {
         left: clamp-calc(0, 25);
-
-        i {
-            transform: rotate(180deg);
-        }
     }
 
     .next {

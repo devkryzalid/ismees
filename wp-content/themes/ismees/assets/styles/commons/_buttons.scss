@@ -70,7 +70,7 @@ button {
 }
 
 .secondary-button {
-    @include flex(center, space-between);
+    @include flex(center, center);
     padding: 10px 20px;
     border-radius: 20px;
     gap: 10px;
@@ -159,6 +159,42 @@ button {
 
         &::before {
             left: 8px;
+        }
+    }
+}
+
+.button-previous,
+.button-next {
+    width: clamp-calc(40, 80);
+    height: clamp-calc(40, 80);
+    border-radius: 50%;
+    opacity: 1;
+    @include transition($basicTransition);
+    background-color: white;
+    color: $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.button-previous {
+    i {
+        transform: rotate(180deg);
+    }
+
+    &.disabled {
+        opacity: 0.5;
+
+        &:hover {
+            transform: scale(1);
+            cursor: default;
         }
     }
 }

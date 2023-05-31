@@ -6,18 +6,18 @@
                 <div class="banner-content-ctn">
                     {% include "partials/breadscrum.twig" with {
                         'reverseBreadscrum': true
-                    }%}
+                    } %}
                     <h1 class="page-title" data-aos="fade-up" data-aos-delay="300"><span class="bottom-decoration -red">{{__('Activités', 'ismees')}} </span> {{__('à venir', 'ismees')}}</h1>
                     <div class="gutenberg" data-aos="fade-up" data-aos-delay="300">{{ post.content }}</div>
                 </div>
             </div>
         </div>
         <div class="page-content">
-            <div class="container">
-                {% for activity in activities %}
-                    {% include "partials/cards/activity-card.twig" %}
-                {% endfor %}
-            </div>
+            {% include "partials/ajax/activities-filters.twig" %}
+            {% include "partials/ajax/ajax-list.twig" with {
+                'activities': true,
+                'items': activities
+            } %}
         </div>
     </main>
 {% endblock %}

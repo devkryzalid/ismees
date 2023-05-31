@@ -1,0 +1,16 @@
+.activities-filters {
+
+    .activities-form {
+        @include flex();
+        gap: clamp-calc(50, 150);
+
+        .month {
+            @include responsive-font($primaryFont, 700, 32, 58, 36, 60, uppercase);
+            pointer-events: none;
+
+            input {
+                display: none;
+            }
+        }
+    }
+}

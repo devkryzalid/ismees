@@ -1,0 +1,18 @@
+{% if elements.pages %}
+<div class="pagination-ctn" data-aos="fade-up" data-aos-delay="300">
+	<nav title="Pagination" id="ajax-pagination" class="main-pagination">
+        <div value="prev" class="ajax-page prev">
+            <a class="js-nav prev"><i class="icon-simple-arrow-right"></i></a>
+        </div>
+
+        <div value="{{ title }}" class="ajax-page {{ page.class }}">
+            <a class="js-nav">{{ title }}</a>
+        </div>
+
+        <div value="next" class="ajax-page next">
+            <a class="js-nav next"><i class="icon-simple-arrow-right"></i></a>
+        </div>
+
+	</nav>
+</div>
+{% endif %}
