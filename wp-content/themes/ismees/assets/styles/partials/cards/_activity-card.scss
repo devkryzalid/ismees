@@ -43,8 +43,27 @@
     }
 
     .card-ctas {
-        @include flex(center, flex-start);
-        gap: clamp-calc(10, 20);
+        @include flex(flex-start, flex-start, column);
+
+        .informations {
+            @include flex(flex-start, flex-start, column);
+            height: 0;
+            overflow: hidden;
+            @include transition($basicTransition);
+
+            .gutenberg {
+                p {
+                    margin-top: 0;
+                    margin-bottom: clamp-calc(20, 30);
+                    @include responsive-font($secondaryFont, 400, 16, 18, 24, 25, null, -0.01rem, rgba($darkBlue, 0.7));
+                }
+            }
+        }
+
+        .ctas-ctn {
+            @include flex(center, flex-start);
+            gap: clamp-calc(10, 20);
+        }
     }
 
     .image-ctn {

@@ -34,19 +34,23 @@
                 {% endif %}
                 <div class="card-ctas">
                     {% if item.content %}
-                        <div class="more">
-                            <a class="secondary-button -grey">{{__('Lire plus', 'ismees')}}<i class="icon-plus-alternative"></i></a>
-                            {# <div class="informations">
-                                <div class="gutenberg">
-                                    {{ item.content }}
-                                </div>
-                                <a class="secondary-button -grey">{{__('Lire moins', 'ismees')}}</a>
-                            </div> #}
+                        <div class="informations">
+                            <div class="gutenberg">
+                                {{ item.content }}
+                            </div>
                         </div>
                     {% endif %}
-                    {% if item.meta('activity_website') %}
-                        <a class="secondary-button -grey" href="{{ item.meta('activity_website') }}">{{__('Voir le détail de l’activité', 'ismees')}}<i class="icon-external-link"></i></a>
-                    {% endif %}
+                    <div class="ctas-ctn">
+                        {% if item.content %}
+                            <div class="more">
+                                <a class="secondary-button -grey read-more">{{__('Lire plus', 'ismees')}}<i class="icon-plus-alternative"></i></a>
+                                <a class="secondary-button -grey read-less">{{__('Lire moins', 'ismees')}}<i class="icon-less-alternative"></i></a>
+                            </div>
+                        {% endif %}
+                        {% if item.meta('activity_website') %}
+                            <a class="secondary-button -grey" href="{{ item.meta('activity_website') }}">{{__('Voir le détail de l’activité', 'ismees')}}<i class="icon-external-link"></i></a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

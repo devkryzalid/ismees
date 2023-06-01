@@ -18,9 +18,10 @@ body.page-template-activities {
             color: white;
             margin-top: 0;
             margin-bottom: 5px;
+            text-align: center;
 
             .bottom-decoration {
-                padding-bottom: 25px;
+                padding-bottom: clamp-calc(10, 25);
             }
         }
 

@@ -14,6 +14,7 @@
 // Dependancies
 import axios from 'axios';
 import jsBlockLink from './jsBlockLink';
+import moreLessButton from '../partials/cards/activity-card';
 
 // Default values for DOM elements ids
 const defaultFormId = 'ajax-form';
@@ -212,6 +213,7 @@ export default class AjaxForm {
       this.innerContainer.innerHTML = html;
     }
     new jsBlockLink();
+    new moreLessButton();
   }
   
   // Replace current url param string with new params

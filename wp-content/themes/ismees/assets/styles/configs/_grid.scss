@@ -494,7 +494,7 @@
    --bs-gutter-y: 3rem;
  }
  
- @media (min-width: 576px) {
+ @media (min-width: 300px) {
    .col-sm-auto {
      flex: 0 0 auto;
      width: auto;
@@ -1974,7 +1974,7 @@
    padding-left: 3rem !important;
  }
  
- @media (min-width: 576px) {
+ @media (min-width: 300px) {
    .d-sm-inline {
      display: inline !important;
    }

@@ -1,10 +1,28 @@
 import '../partials/header-reverse';
+import '../partials/cards/activity-card';
 import AjaxForm from '../utils/ajax';
+import moreLessButton from '../partials/cards/activity-card';
 
 document.addEventListener("DOMContentLoaded", () => {
     const ajax = new AjaxForm();
+    new moreLessButton();
+
+    const url = window.location.origin;
 
     const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    const monthNamesEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    // Function to return the right month names array based on the URL
+    const getMonthNames = (url) => {
+        if(url.includes('/en')) {
+            return monthNamesEn;
+        } else {
+            return monthNames;
+        }
+    };
+
+    getMonthNames(url);
+
     const prevButton = document.querySelector('#button-previous');
     const nextButton = document.querySelector('#button-next');
     const prevDate = prevButton.dataset.previousDate;

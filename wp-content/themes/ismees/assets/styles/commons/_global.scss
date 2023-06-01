@@ -66,8 +66,9 @@ a {
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: bottom;
+	background-size: contain;
 	display: inline-block;
-	padding-bottom: 15px;
+	padding-bottom: clamp-calc(10, 15);
 
 	&.-blue {
 		background-image: url('/assets/images/wave-blue.svg');

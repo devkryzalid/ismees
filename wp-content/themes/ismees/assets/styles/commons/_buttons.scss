@@ -77,6 +77,7 @@ button {
     @include responsive-font($primaryFont, 500, 14, 16, 17, 19);
     cursor: pointer;
     @include transition($basicTransition);
+    text-align: center;
 
     &.-grey {
         background-color: $mainBG;
@@ -190,7 +191,7 @@ button {
     }
 
     &.disabled {
-        opacity: 0.5;
+        opacity: 0.3;
 
         &:hover {
             transform: scale(1);
