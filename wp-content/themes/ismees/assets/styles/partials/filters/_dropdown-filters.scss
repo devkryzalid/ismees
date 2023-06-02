@@ -10,6 +10,7 @@
     border: none;
     cursor: pointer;
     @include responsive-font($primaryFont, 500, 16, 18, 20, 20);
+    color: $darkBlue;
     border: 2px solid $darkBlue;
     border-radius: 8px;
     background-color: transparent;
@@ -30,6 +31,7 @@
         font-size: 15px;
         display: inline-block;
         @include transition($basicTransition);
+        color: $darkBlue;
     }
   }
 

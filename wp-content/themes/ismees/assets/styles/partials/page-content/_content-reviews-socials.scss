@@ -1,9 +1,8 @@
-.content-reviews-socials.page-content {
-    border-radius: 50px 50px 0 0;
-    margin-top: -50px;
-    background-color: white;
+.content-reviews-socials {
+    @include sectionSeparator(white);
     position: relative;
     z-index: 2;
+    padding-top: clamp-calc(60, 100);
     padding-bottom: clamp-calc(150, 200);
     
     .container-lg {

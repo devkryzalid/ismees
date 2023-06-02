@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             speed: 500,
             loop: true,
             slidesPerView: 'auto',
-            spaceBetween: 30,
+            spaceBetween: 50,
             navigation: { nextEl: `#${id} .next`, prevEl: `#${id} .prev` },
         });
     });

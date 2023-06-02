@@ -64,6 +64,7 @@ body.page-template-about {
             .main-content-ctn {
                 @include flex(flex-start, center, column);
                 gap: clamp-calc(120, 150);
+                padding-right: clamp-calc(0, 110, 992);
             }
     
             .section-title {
@@ -101,7 +102,7 @@ body.page-template-about {
                 left: 0;
                 background-color: white;
                 border-radius: 20px;
-                padding: 20px;
+                padding: 30px;
 
                 &::after {
                     content: url('/assets/images/blue-loop-arrow-down.svg');

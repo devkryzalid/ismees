@@ -4,6 +4,12 @@
     padding: 0;
     margin: 0;
 
+    .header-arrows {
+        position: absolute;
+        top: 0;
+        transform: translateX(-100%);
+    }
+
     .main-item {
         min-height: 120px;
     }

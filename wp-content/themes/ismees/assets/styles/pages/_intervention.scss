@@ -9,6 +9,10 @@ body.page-template-intervention {
         @include sectionSeparator();
         padding-top: clamp-calc(65, 85);
 
+        .content-padding {
+            padding-right: clamp-calc(0, 110, 992);
+        }
+
         .explanations-ctn {
             margin-bottom: 100px;
             position: relative;
@@ -97,18 +101,19 @@ body.page-template-intervention {
             left: 0;
             background-color: white;
             border-radius: 20px;
-            padding: 20px;
+            padding: 30px;
     
     
             .anchor {
-                display: block;
-                @include responsive-font($primaryFont, 400, 16, 18, 19, 24);
+                @include flex(flex-start, flex-start);
+                gap: 10px;
                 padding: 20px 0;
                 border-bottom: 1px solid rgba($darkBlue, 0.2);
-                @include transition($shortTransition);
 
-                .anchor-number {
-                    margin-right: 10px;
+                .anchor-number, 
+                a {
+                    @include responsive-font($primaryFont, 400, 16, 18, 19, 24);
+                    @include transition($shortTransition);
                 }
     
                 &:last-child {
@@ -116,8 +121,11 @@ body.page-template-intervention {
                 }
     
                 &:hover {
-                    font-weight: 700;
+                    .anchor-number, 
+                    a {
+                        font-weight: 700;
                     color: $darkBlue;
+                    }
                 }
             }
         }

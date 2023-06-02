@@ -13,7 +13,7 @@
     }
 
     .ontitle {
-        @include responsive-font($primaryFont, 400, 40, 63, 47, 75, null, -0.02rem);
+        @include responsive-font($primaryFont, 400, 40, 55, 47, 67, null, -0.02rem);
         margin-bottom: clamp-calc(15, 20);
         margin-top: clamp-calc(0, 50);
 
@@ -24,6 +24,8 @@
 
     .page-title {
         margin-top: 0;
+        font-weight: 800;
+        letter-spacing: -2px;
 
         .style-mobile {
             &::after {
@@ -52,6 +54,7 @@
 
     .subtitle {
         @include responsive-font($primaryFont, 400, 18, 20, 26, 26);
+        max-width: 680px;
     }
 
     .defilate {

@@ -36,9 +36,10 @@
             bottom: clamp-calc(14, 20);
             left: clamp-calc(14, 20);
             z-index: 6;
+            @include flex();
 
             .card-icon {
-                width: 100%;
+                width: 80%;
                 height: 100%;
                 object-fit: contain;
             }
@@ -131,9 +132,22 @@
             .card-image {
                 opacity: 1;
             }
-            .card-type {
-                opacity: 1;
-                border-radius: 12px;
+            // .card-type {
+            //     opacity: 1;
+            //     border-radius: 12px;
+            // }
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .card-image-ctn {
+
+            .card-icon-ctn {
+
+                .card-icon {
+                    width: 85%;
+                }
             }
         }
     }

@@ -12,6 +12,10 @@ $subjects = [
     'nopaging'       => true,
 ];
 
+echo '<pre>';
+dd($subjects);
+echo '</pre>';
+
 $context['subjects'] = new Timber\PostQuery($subjects);
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;

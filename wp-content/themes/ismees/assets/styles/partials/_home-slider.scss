@@ -21,7 +21,7 @@
         .swiper-slide {
             display: flex;
             position: relative;
-            min-width: calc(100%/3 - 50px);
+            min-width: calc(100%/3.9);
 
             &:nth-child(odd) {
                 transform: translateY(-20px);
@@ -61,7 +61,7 @@
 
             .swiper-slide {
 
-                min-width: calc(100%/2 - 50px);
+                min-width: calc(100%/2.9);
             }
         }  
     }

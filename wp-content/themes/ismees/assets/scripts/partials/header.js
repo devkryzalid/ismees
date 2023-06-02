@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    const baseUrl = window.location.origin;
+
     // ********* Display / Hide menu mobile ********* //
 
     const mobileMenu = () => {
@@ -49,17 +51,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const menuMainItems = document.querySelectorAll("#primary-menu .menu-item-has-children.main-item");
 
+    // Create the primary menu arrows
+    menuMainItems.forEach((item, index) => {
+        const menuSubItems = item.querySelector(".child-menu");
+        // Create header arrows starting at the second element
+        if (index !== 0) {
+            let img = document.createElement('img');
+            img.src = `${baseUrl}/wp-content/themes/ismees/assets/images/header-arrows.svg`;
+            img.className = 'header-arrows';
+            menuSubItems.appendChild(img);
+        }
+    });
+
     window.addEventListener('resize', () => {
-        menuMainItems.forEach((item) => {
+        menuMainItems.forEach((item, index) => {
             const menuSubItems = item.querySelector(".child-menu");
             let marginItems = item.getBoundingClientRect().x;
 
-            window.innerWidth > 992 ? menuSubItems.style.paddingLeft = `${marginItems}px` : menuSubItems.style.paddingLeft = '0px';    
+            window.innerWidth > 992 ? menuSubItems.style.paddingLeft = `${marginItems}px` : menuSubItems.style.paddingLeft = '0px';
+
+            // Adjust arrows position
+            if (index !== 0) {
+                const img = item.querySelector(".header-arrows");
+                if (img) {
+                    img.style.left = `${marginItems - 60}px`;
+                }
+            }
         });
     });
 
-    window.dispatchEvent(new Event("resize"));
-    window.dispatchEvent(new Event("scroll"));
+window.dispatchEvent(new Event("resize"));
+window.dispatchEvent(new Event("scroll"));
+
 
     // ********* White background on the header when user hover the menu dropdown ********* //
 
