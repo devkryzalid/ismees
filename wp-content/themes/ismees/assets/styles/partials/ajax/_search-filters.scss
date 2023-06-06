@@ -68,6 +68,25 @@
         .display-filters-ctn {
             @include flex(center, space-between);
             gap: 40px;
+
+            .filters-button {
+                position: relative;
+
+                .main-button {
+
+                    #filters-count {
+                        position: absolute;
+                        top: -12px;
+                        right: -12px;
+                        @include flex();
+                        border-radius: 50%;
+                        background-color: $yellow;
+                        width: clamp-calc(20, 25);
+                        height: clamp-calc(20, 25);
+                        @include responsive-font($primaryFont, 700, 14, 16, 17, 19, null, null, $darkBlue);
+                    }
+                }
+            }
         }
 
         #sidebarOpener {

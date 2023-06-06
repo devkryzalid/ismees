@@ -1,5 +1,9 @@
 <div class="single-card-list-ctn">
     {% for item in items %}
+       
         {% include "partials/cards/single-card.twig" %}
+         <pre>
+            {{ dump(item) }}
+        </pre>
     {% endfor %}
 </div>

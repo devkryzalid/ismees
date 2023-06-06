@@ -41,6 +41,82 @@ function searchByAddsearch(string $search_term, array $simple_params = ['limit' 
     }
 
     $response = Requests::get($url . $term . $params . $cf_query);
-    return $response;
 
+    return $response;
+}
+
+/**
+ * Create an array with param and custom filed for crawler AddSearch
+ * WARNING: IF YOU CHANGE STATIC KEYS OR TRANSLATION TEXTS HERE
+ * PLEASE, CHANGE TOO IN SEARCH PAGE TEMPLATE IN FILE wp-content/themes/ores/templates/search.php
+ * FOR SYNC BETWEEN ADDSEARCH AND FILTER
+ *
+ * @param  mixed 	$post				Single post in current page
+ * @return array 	$array_addsearch	json there in template and addsearch understand this
+ */
+function createAddSearchArray($post)
+{
+    $array_addsearch = [];
+    $array_addsearch['post_title'] = $post->post_title;
+    // create post type same as search UI
+    switch ($post->post_type) {
+        case 'post':
+            $array_addsearch['post_type'][] = __('Nouvelles', 'ores');
+            $array_addsearch['start_date']  = date('Y-m-d', strtotime($post->post_date));
+            break;
+        case 'publication':
+            $array_addsearch['post_type'][] = __('Publications', 'ores');
+            if ($taxo = get_primary_taxonomy($post->id, 'publication_type', false)) {
+                $array_addsearch['post_type'][] = $taxo;
+            }
+            break;
+        case 'topic':
+            $array_addsearch['post_type'][] = __('Publications', 'ores');
+            $array_addsearch['post_type'][] = __('Dossiers', 'ores');
+            break;
+        case 'sub_topic':
+            $array_addsearch['post_type'][] = __('Publications', 'ores');
+            $array_addsearch['post_type'][] = __('Dossiers', 'ores');
+            if ($taxo = get_primary_taxonomy($post->id, 'sub_topic_type', false)) {
+                $array_addsearch['post_type'][] = $taxo;
+            }
+            break;
+        case 'activity':
+            $array_addsearch['post_type'][] = __('Activités', 'ores');
+            // add past are future
+            $filter_name = __('À venir', 'ores');
+            $past_parent = get_field('config_activity_past', 'options');
+            if ($past_parent == get_permalink($post->post_parent)) {
+                $filter_name = __('À revoir', 'ores');
+            }
+            $array_addsearch['post_type'][] = $filter_name;
+            if (!empty($post->meta('start_date'))) {
+                $array_addsearch['start_date'] = date('Y-m-d', strtotime($post->meta('start_date')));
+            }
+            if (!empty($post->meta('end_date'))) {
+                $array_addsearch['end_date'] = date('Y-m-d', strtotime($post->meta('end_date')));
+            }
+            break;
+        case 'focus':
+            $array_addsearch['post_type'][] = __('Veille', 'ores');
+            if ($taxo = get_primary_taxonomy($post->id, 'focus_type', false)) {
+                $array_addsearch['post_type'][] = $taxo;
+            }
+            break;
+        default:
+            $array_addsearch['post_type'][] = 'Page';
+            break;
+    }
+    // add array for global_thematic if exist
+    $global_thematic = $post->terms('global_thematic');
+    foreach ($global_thematic as $term) {
+        $array_addsearch['global_thematic'][] = $term->name;
+    }
+    // add array for education_order if exist
+    $education_order = $post->terms('education_order');
+    foreach ($education_order as $term) {
+        $array_addsearch['education_order'][] = $term->name;
+    }
+    // return array for json there in front script balise
+    return $array_addsearch;
 }

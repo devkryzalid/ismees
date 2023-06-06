@@ -1,12 +1,14 @@
 <?php
+require_once 'wp-content/themes/ismees/inc/search.php';
+
 global $params;
 
-$limit     = (!empty($params['limit'])) ? $params['limit'] : 10;
-$paged     = (!empty($params['pagenb'])) ? $params['pagenb'] : 1;
-$search    = (!empty($params['search'])) ? $params['search'] : null;
-$type      = (!empty($params['type'])) ? $params['type'] : null;
-$subjects  = (!empty($params['subjects'])) ? $params['subjects'] : null;
-$member    = (!empty($params['member'])) ? $params['member'] : null;
+$limit          = (!empty($params['limit'])) ? $params['limit'] : 10;
+$paged          = (!empty($params['pagenb'])) ? $params['pagenb'] : 1;
+$search         = empty($_GET['search']) ? ' ' : $_GET['search'];
+$type           = (!empty($params['type'])) ? $params['type'] : null;
+$subjects       = (!empty($params['subjects'])) ? $params['subjects'] : null;
+$member         = (!empty($params['member'])) ? $params['member'] : null;
 
 // AddSearch parameters
 $params = ['page' => $paged, 'limit' => $limit, 'lang' => 'en']; 
@@ -22,6 +24,7 @@ if ($subjects) {
 
 $response = searchByAddsearch($search, $params, $custom_field);
 
+// dd($response);
 $results = json_decode($response->body);
 
 $context = Timber::context();

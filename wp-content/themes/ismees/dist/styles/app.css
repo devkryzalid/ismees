@@ -10603,6 +10603,28 @@ body.customize-support #header {
   justify-content: space-between;
   gap: 40px;
 }
+.search-filters-form .subfilters-ctn .display-filters-ctn .filters-button {
+  position: relative;
+}
+.search-filters-form .subfilters-ctn .display-filters-ctn .filters-button .main-button #filters-count {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #FFE352;
+  width: clamp(1.25rem, 1.1543367347rem + 0.4081632653vw, 1.5625rem);
+  height: clamp(1.25rem, 1.1543367347rem + 0.4081632653vw, 1.5625rem);
+  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 0.8367346939rem + 0.1632653061vw, 1rem);
+  line-height: clamp(1.0625rem, 1.0242346939rem + 0.1632653061vw, 1.1875rem);
+  color: #242457;
+  font-style: normal;
+}
 .search-filters-form .subfilters-ctn #sidebarOpener {
   cursor: pointer;
   gap: 10px;

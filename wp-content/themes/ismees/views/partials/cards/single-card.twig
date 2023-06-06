@@ -29,7 +29,7 @@
     <div class="card-description">
         <div class="text-ctn">
             <a href="{{ item.link }}" class="card-title">{{ item.title }}</a>
-            <p class="card-highlight">TEST</p>
+            <p class="card-highlight">{{item.highlight}}</p>
         </div>
         {% if item.terms('resource_category') %}
             <div class="card-taxonomies-ctn">

@@ -23,8 +23,20 @@
 </main>
 {% endblock %}
 
-{# {% block addsearch_param %}
+{% block addsearch_param %}
   <script id="addsearch-param">
     {{ addsearch_array|json_encode }}
   </script>
-{% endblock %} #}
+{% endblock %}
+
+{% block head %}
+    {% set meta_tags = {
+        'category': categories,
+        'type': types,
+        'title': post.title,
+        'content': post.content,
+        'image': post.thumbnail
+    } %}
+
+    {{ parent() }}
+{% endblock %}

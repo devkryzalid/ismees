@@ -287,7 +287,7 @@ export default class AjaxForm {
 
   // Count total active filters
   countActiveFilters = () => {
-    return this.formContainer.querySelectorAll('input:checked').length;
+    return this.formContainer.querySelectorAll('.countable input:checked').length;
   }
 
   // Scroll to ajax content
@@ -315,6 +315,6 @@ export default class AjaxForm {
     if (!this.filtersCount) return false;
     this.filtersCount.innerHTML = '';
     const nb = this.countActiveFilters();
-    if (this.filtersCount && nb) this.filtersCount.innerHTML = `(${ nb })`;
+    if (this.filtersCount && nb) this.filtersCount.innerHTML = `${ nb }`;
   }
 }

@@ -12,9 +12,9 @@
             <label for="filtersToggler" id="checked-label">{{__('Personnel des établissements', 'ismees')}}</label>
         </div>
         <div class="display-filters-ctn" data-aos="fade-right" data-aos-delay="300">
-            <p class="result-counter"><span id="result-count">{{ resources.found_posts }}</span> {{__('résultats', 'simees')}}</p>
+            <p class="result-counter"><span id="result-count">{{ total }}</span> {{__('résultats', 'simees')}}</p>
             <div class="filters-button">
-                <a class="main-button -blue" id="sidebarOpener"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}</a>
+                <a class="main-button -blue" id="sidebarOpener"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}<span id="filters-count"></span/></a>
             </div>
         </div>
     </div>

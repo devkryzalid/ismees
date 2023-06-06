@@ -6,7 +6,7 @@
                 {% if items is empty %}
                     {% include 'partials/ajax/no-result-item.twig' %}
                 {% else %}
-                    {% if oneColumn %}
+                    {% if addSearch %}
                         {% include 'partials/lists/single-card-list.twig' %}
                     {% elseif activities %}
                         {% include 'partials/lists/activities-list.twig' %}
