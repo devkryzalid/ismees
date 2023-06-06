@@ -1,0 +1,32 @@
+<div class="addsearch-card-ctn jsBlockLink" tabindex="0" data-aos="fade-up" data-aos-delay="500">
+    <div class="card-image-ctn">
+        {% if item.custom_fields.image %}
+            <img class="card-image" src="{{ item.custom_fields.image }}" alt="{{ __('Photo de ', 'ismées') ~ item.custom_fields.title }}" />
+        {% else %}
+            <img class="card-image" src="{{site.home_url ~ '/wp-content/themes/ismees/assets/images/default-image.png' }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
+        {% endif %}
+        {% if item.custom_fields.icon %}
+            <div class="card-icon-ctn">
+                <img class="card-icon" src="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ item.custom_fields.icon ~ '.svg' }}" alt="" />
+            </div>
+        {% endif %}
+        {% if primaryType %}
+            <div class="card-type">
+                <p>{{item.custom_fields.type}}</p>
+            </div>
+        {% endif %}
+    </div>
+    <div class="card-description">
+        <div class="text-ctn">
+            <a href="{{ item.url }}" class="card-title">{{ item.custom_fields.title }}</a>
+            <p class="card-highlight">{{item.highlight}}</p>
+        </div>
+        {% if item.terms('resource_category') %}
+            <div class="card-taxonomies-ctn">
+                {% for taxonomy in item.terms('resource_category') %}
+                    <p class="card-taxonomy">{{ taxonomy.name }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
