@@ -8200,6 +8200,10 @@ body.customize-support #header {
 .more-resources .button-ctn .main-button {
   margin: 0 auto;
 }
+.more-resources .basic-card-list-ctn {
+  margin-top: 60px;
+  margin-bottom: 110px;
+}
 
 .horizontal-multiple-slider {
   position: relative;
@@ -10624,6 +10628,7 @@ body.customize-support #header {
   line-height: clamp(1.0625rem, 1.0242346939rem + 0.1632653061vw, 1.1875rem);
   color: #242457;
   font-style: normal;
+  display: none;
 }
 .search-filters-form .subfilters-ctn #sidebarOpener {
   cursor: pointer;

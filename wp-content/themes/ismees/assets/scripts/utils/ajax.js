@@ -314,7 +314,12 @@ export default class AjaxForm {
   setActiveFiltersCount = () => {
     if (!this.filtersCount) return false;
     this.filtersCount.innerHTML = '';
+    this.filtersCount.style.display = "none";
+
     const nb = this.countActiveFilters();
-    if (this.filtersCount && nb) this.filtersCount.innerHTML = `${ nb }`;
+    if (this.filtersCount && nb) {
+      this.filtersCount.style.display = "flex";
+      this.filtersCount.innerHTML = `${ nb }`;
+    }
   }
 }

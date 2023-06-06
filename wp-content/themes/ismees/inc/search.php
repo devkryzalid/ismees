@@ -46,7 +46,7 @@ function searchByAddsearch(string $search_term, array $simple_params = ['limit' 
 }
 
 /**
- * Create an array with param and custom filed for crawler AddSearch
+ * Create an array with param and custom field for crawler AddSearch
  * WARNING: IF YOU CHANGE STATIC KEYS OR TRANSLATION TEXTS HERE
  * PLEASE, CHANGE TOO IN SEARCH PAGE TEMPLATE IN FILE wp-content/themes/ores/templates/search.php
  * FOR SYNC BETWEEN ADDSEARCH AND FILTER
@@ -106,16 +106,6 @@ function createAddSearchArray($post)
         default:
             $array_addsearch['post_type'][] = 'Page';
             break;
-    }
-    // add array for global_thematic if exist
-    $global_thematic = $post->terms('global_thematic');
-    foreach ($global_thematic as $term) {
-        $array_addsearch['global_thematic'][] = $term->name;
-    }
-    // add array for education_order if exist
-    $education_order = $post->terms('education_order');
-    foreach ($education_order as $term) {
-        $array_addsearch['education_order'][] = $term->name;
     }
     // return array for json there in front script balise
     return $array_addsearch;

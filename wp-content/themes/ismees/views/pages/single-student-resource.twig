@@ -24,19 +24,20 @@
 {% endblock %}
 
 {% block addsearch_param %}
-  <script id="addsearch-param">
-    {{ addsearch_array|json_encode }}
-  </script>
+    <script id="addsearch-param" type="application/json">
+        {{ addsearch_array|json_encode }}
+    </script>
 {% endblock %}
 
-{% block head %}
+{% block addsearch_meta %}
     {% set meta_tags = {
         'category': categories,
         'type': types,
         'title': post.title,
-        'content': post.content,
         'image': post.thumbnail
     } %}
-
-    {{ parent() }}
+    
+    {% for tag, value in meta_tags %}
+        <meta name="{{ tag }}" content="{{ value }}">
+    {% endfor %}
 {% endblock %}

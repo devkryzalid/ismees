@@ -48,6 +48,8 @@ if (!empty($search)) {
 
     $results = json_decode($response->body);
 
+    // dd($results);
+
     // dd($results->total_hits);
 
     $hits = $results->hits;
@@ -56,7 +58,7 @@ if (!empty($search)) {
 
 $context['categories'] = get_terms(['taxonomy' => 'resource_category']);
 $context['member'] = $member;
-$context['results'] = new Timber\PostQuery($hits);
+$context['results'] = $hits;
 // $context['total'] = new Timber\PostQuery($total_items);
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
