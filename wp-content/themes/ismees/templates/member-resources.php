@@ -5,7 +5,7 @@
 $context      = Timber::context();
 $category     = empty($_GET['category']) ? null : $_GET['category'];
 $type         = empty($_GET['type']) ? null : $_GET['type'];
-$subjects      = empty($_GET['subjects']) ? null : $_GET['subjects'];
+$subjects     = empty($_GET['subjects']) ? null : $_GET['subjects'];
 $paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 
 $resources = [
@@ -24,7 +24,7 @@ $member_thematics = [
     'orderby'       => 'date',
     'posts_per_page' =>  15,
     'paged'          => $paged,
-    'nopaging'       => false,
+    'nopaging'       => true,
 ];
 
 if (!empty($category)) {

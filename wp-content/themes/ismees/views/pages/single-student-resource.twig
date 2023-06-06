@@ -33,11 +33,12 @@
     {% set meta_tags = {
         'category': categories,
         'type': types,
+        'subject': subjects_addSearch,
         'title': post.title,
         'image': post.thumbnail
     } %}
     
     {% for tag, value in meta_tags %}
-        <meta name="{{ tag }}" content="{{ value }}">
+        <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ value }}">
     {% endfor %}
 {% endblock %}

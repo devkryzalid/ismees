@@ -24,7 +24,7 @@ $student_subjects = [
     'orderby'       => 'date',
     'posts_per_page' =>  15,
     'paged'          => $paged,
-    'nopaging'       => false,
+    'nopaging'       => true,
 ];
 
 if (!empty($category)) {

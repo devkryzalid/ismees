@@ -27,3 +27,22 @@
     {{ addsearch_array|json_encode }}
   </script>
 {% endblock %}
+
+{% block addsearch_meta %}
+    {% set meta_tags = {
+        'category': categories,
+        'type': types,
+        'title': post.title,
+        'image': post.thumbnail
+    } %}
+    
+    {% for tag, value in meta_tags %}
+        {% if value is iterable %}
+            {% for item in value %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ item }}">
+            {% endfor %}
+        {% else %}
+            <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ value }}">
+        {% endif %}
+    {% endfor %}
+{% endblock %}
