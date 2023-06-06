@@ -37,8 +37,17 @@
         'title': post.title,
         'image': post.thumbnail
     } %}
-    
     {% for tag, value in meta_tags %}
-        <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ value }}">
+        {% if value %}
+            {% if value is iterable %}
+                {% set meta_content = [] %}
+                {% for item in value %}
+                    {% set meta_content = meta_content|merge([tag ~ "=" ~ item]) %}
+                {% endfor %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ meta_content|join(';') }}">
+            {% else %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ value }}">
+            {% endif %}
+        {% endif %}
     {% endfor %}
 {% endblock %}

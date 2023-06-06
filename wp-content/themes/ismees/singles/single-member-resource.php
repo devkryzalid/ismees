@@ -25,8 +25,8 @@ $related_posts = [
 /**
  * Timber context assignments
  */
-$context['types'] = implode(';', $types);
-$context['categories'] = implode(';', $categories);
+$context['types'] = $types;
+$context['categories'] = $categories;
 
 $context['post'] = $timber_post;
 $context['related_posts'] = new Timber\PostQuery($related_posts);

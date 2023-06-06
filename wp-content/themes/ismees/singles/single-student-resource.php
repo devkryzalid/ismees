@@ -9,13 +9,13 @@ $subjects = $timber_post->meta('subjects');
 //GET THE CUSTOMS FIELDS FOR ADDSEARCH
 $categories = wp_get_post_terms($timber_post->ID, 'resource_category', ['fields' => 'names']);
 $types = wp_get_post_terms($timber_post->ID, 'resource_student_type', ['fields' => 'names']);
-$subjects_addSearch = implode(';', $timber_post->meta('subjects'));
+$subjects_addSearch = $timber_post->meta('subjects');
 
 /**
  * Timber context assignments
  */
-$context['types'] = implode(';', $types);
-$context['categories'] = implode(';', $categories);
+$context['types'] = $types;
+$context['categories'] = $categories;
 $context['subjects_addSearch'] = $subjects_addSearch;
 
 $context['post'] = $timber_post;
