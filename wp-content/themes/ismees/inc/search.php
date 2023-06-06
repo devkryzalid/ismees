@@ -61,7 +61,7 @@ function createAddSearchArray($post)
     // create post type same as search UI
     switch ($post->post_type) {
         case 'member-resource':
-            $array_addsearch['post_type'][] = __('Ressources pour le personnel', 'ores');
+            $array_addsearch['post_type'][] = 'Ressources pour le personnel';
             break;
         default:
             $array_addsearch['post_type'][] = 'Page';
