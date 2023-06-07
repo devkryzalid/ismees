@@ -31,8 +31,9 @@
 {# META FOR ADDSEARCH CUSTOM FIELDS #}
 {% block addsearch_meta %}
     {% set meta_tags = {
+        'page': 'research',
         'title': thematic.title,
-        'subject_id': thematic.id,
+        'subject_ids': thematic.id,
         'image': thematic.thumbnail,
         'resource': 'member'
     } %}

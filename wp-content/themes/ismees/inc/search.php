@@ -29,6 +29,7 @@ function searchByAddsearch(string $search_term, array $simple_params = ['limit' 
         $term .= $separator . 'term=' . str_replace(' ', '+', stripslashes($search_term));
         $separator = '&';
     }
+    
     foreach ($simple_params as $p_name => $p_value) {
         $params .= $separator . $p_name . '=' . urlencode(stripslashes($p_value));
     }
@@ -43,30 +44,4 @@ function searchByAddsearch(string $search_term, array $simple_params = ['limit' 
     $response = Requests::get($url . $term . $params . $cf_query);
 
     return $response;
-}
-
-/**
- * Create an array with param and custom field for crawler AddSearch
- * WARNING: IF YOU CHANGE STATIC KEYS OR TRANSLATION TEXTS HERE
- * PLEASE, CHANGE TOO IN SEARCH PAGE TEMPLATE IN FILE wp-content/themes/ores/templates/search.php
- * FOR SYNC BETWEEN ADDSEARCH AND FILTER
- *
- * @param  mixed 	$post				Single post in current page
- * @return array 	$array_addsearch	json there in template and addsearch understand this
- */
-function createAddSearchArray($post)
-{
-    $array_addsearch = [];
-    $array_addsearch['post_title'] = $post->post_title;
-    // create post type same as search UI
-    switch ($post->post_type) {
-        case 'member-resource':
-            $array_addsearch['post_type'][] = 'Ressources pour le personnel';
-            break;
-        default:
-            $array_addsearch['post_type'][] = 'Page';
-            break;
-    }
-    // return array for json there in front script balise
-    return $array_addsearch;
 }

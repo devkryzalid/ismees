@@ -25,8 +25,9 @@
 {# META FOR ADDSEARCH CUSTOM FIELDS #}
 {% block addsearch_meta %}
     {% set meta_tags = {
+        'page': 'research',
         'title': subject.title,
-        'subject_id': subject.id,
+        'subject_ids': subject.id,
         'image': subject.thumbnail,
         'resource': 'student',
     } %}
