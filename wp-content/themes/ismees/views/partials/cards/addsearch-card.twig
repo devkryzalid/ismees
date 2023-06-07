@@ -21,10 +21,11 @@
             <a href="{{ item.url }}" class="card-title">{{ item.custom_fields.title }}</a>
             <p class="card-highlight">{{item.highlight}}</p>
         </div>
-        {% if item.terms('resource_category') %}
+        {% if item.custom_fields.category %}
             <div class="card-taxonomies-ctn">
-                {% for taxonomy in item.terms('resource_category') %}
-                    <p class="card-taxonomy">{{ taxonomy.name }}</p>
+                {% for category in item.custom_fields.category %}
+                    
+                    <p class="card-taxonomy">{{ category }}</p>
                 {% endfor %}
             </div>
         {% endif %}

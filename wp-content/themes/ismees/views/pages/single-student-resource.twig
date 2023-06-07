@@ -14,7 +14,7 @@
             'backBtnText': __('Retour aux ressources', 'ismees')
         }
     %}
-    
+
     {% include "partials/more-resources.twig" with {
         'items': related_posts,
         'taxonomy': 'resource_category',
@@ -29,11 +29,12 @@
     </script>
 {% endblock %}
 
+{# META FOR ADDSEARCH CUSTOM FIELDS #}
 {% block addsearch_meta %}
     {% set meta_tags = {
-        'category': categories,
-        'type': types,
-        'subject': subjects_addSearch,
+        'category': categories_addsearch,
+        'types': type_addsearch,
+        'subjects': subjects_addsearch,
         'title': post.title,
         'icon': icon,
         'image': post.thumbnail
@@ -52,3 +53,4 @@
         {% endif %}
     {% endfor %}
 {% endblock %}
+
