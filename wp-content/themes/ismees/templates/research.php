@@ -18,7 +18,7 @@ $hits = [];
 $custom_fields = [];
 
 //Set the documents needed to the research
-$custom_fields['page'] = 'research';
+$custom_fields['page'] = ['research'];
 
 if (!empty($member) && $member == true) {
     $context['types'] = get_terms(['taxonomy' => 'resource_member_type']);
@@ -33,7 +33,7 @@ if (!empty($member) && $member == true) {
     ];
 
     $context['subjects'] = new Timber\PostQuery($member_thematics);
-    $custom_fields['resource'] = 'member';
+    $custom_fields['resource'] = ['member'];
 } else {
     $context['types'] = get_terms(['taxonomy' => 'resource_student_type']);
 
@@ -47,7 +47,7 @@ if (!empty($member) && $member == true) {
     ];
 
     $context['subjects'] = new Timber\PostQuery($student_subjects);
-    $custom_fields['resource'] = 'student';
+    $custom_fields['resource'] = ['student'];
 }
 
 if (!empty($category)) {
