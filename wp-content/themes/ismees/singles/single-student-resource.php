@@ -15,7 +15,7 @@ $related_posts = [
         [
             'taxonomy' => 'resource_category',
             'field'    => 'term_id',
-            'terms'    => $category,e
+            'terms'    => $category,
         ]
     ]
 ];
@@ -23,33 +23,38 @@ $related_posts = [
 //GET THE CUSTOMS FIELDS FOR ADDSEARCH
 $subjects = $timber_post->meta('subjects');
 
-$subjects_addsearch = [];
+$subjects_addsearch_names = [];
+$subjects_addsearch_ids = [];
 
 if(is_array($subjects)){
     foreach ($subjects as $subject) {
-        $subjects_addsearch[] = $subject->name . ";" . $subject->id . ";";
+        $subjects_addsearch_names[] = $subject->name;
+        $subjects_addsearch_ids[] = $subject->id;
     }
 }
 
 $categories = wp_get_post_terms($timber_post->ID, 'resource_category');
 
-$category_addsearch = [];
+$category_addsearch_names = [];
+$category_addsearch_ids = [];
 
 // Get the name and the ID for each category
 foreach ($categories as $category) {
-    if (isset($category->name) && isset($category->term_id)) {
-        $category_addsearch[] = $category->name . ";" . $category->term_id . ";";
-    }
+    $category_addsearch_names[] = $category->name;
+    $category_addsearch_ids[] = $category->term_id;
 }
 
 $type = get_primary_taxonomy($timber_post->ID, 'resource_student_type', true);
 
+$type_addsearch_name = null;
+$type_addsearch_id = null;
+
 // Get the name and the ID of the type
 if ($type && isset($type->name) && isset($type->id)) {
-    $type_addsearch = $type->name . ";" . $type->id . ";";
-} else {
-    $type_addsearch = null;
+    $type_addsearch_name = $type->name;
+    $type_addsearch_id = $type->id;
 }
+
 // Get the type icon
 if ($type) {
     $icon = get_field('icon', $type);
@@ -59,13 +64,18 @@ if ($type) {
 /**
  * Timber context assignments
  */
-$context['type_addsearch'] = $type_addsearch;
-$context['categories_addsearch'] = $category_addsearch;
-$context['subjects_addsearch'] = $subjects_addsearch;
+
+ //Addsearch context
+$context['type_addsearch_name'] = $type_addsearch_name;
+$context['type_addsearch_id'] = $type_addsearch_id;
+$context['categories_addsearch_names'] = $category_addsearch_names;
+$context['categories_addsearch_ids'] = $category_addsearch_ids;
+$context['subjects_addsearch_names'] = $subjects_addsearch_names;
+$context['subjects_addsearch_ids'] = $subjects_addsearch_ids;
 $context['icon'] = $icon;
 
+// Post context
 $context['post'] = $timber_post;
 $context['related_posts'] = new Timber\PostQuery($related_posts);
-$context['addsearch_array'] = createAddSearchArray($timber_post);
 
 Timber::render('pages/single-student-resource.twig', $context);

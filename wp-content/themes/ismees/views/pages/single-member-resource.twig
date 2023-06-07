@@ -22,27 +22,26 @@
 </main>
 {% endblock %}
 
-{% block addsearch_param %}
-  <script id="addsearch-param">
-    {{ addsearch_array|json_encode }}
-  </script>
-{% endblock %}
-
-{# {% block addsearch_meta %}
+{# META FOR ADDSEARCH CUSTOM FIELDS #}
+{% block addsearch_meta %}
     {% set meta_tags = {
-        'category': categories,
-        'type': types,
-        'subject': subjects_addSearch,
+        'category_names': categories_addsearch_names,
+        'category_ids': categories_addsearch_ids,
+        'type_name': type_addsearch_name,
+        'type_id': type_addsearch_id,
+        'subject_names': subjects_addsearch_names,
+        'subject_ids': subjects_addsearch_ids,
         'title': post.title,
-        'image': post.thumbnail
+        'icon': icon,
+        'image': post.thumbnail,
+        'resource': 'member'
     } %}
-    
     {% for tag, value in meta_tags %}
-        {% if value != "" %}
+        {% if value %}
             {% if value is iterable %}
                 {% set meta_content = [] %}
                 {% for item in value %}
-                    {% set meta_content = meta_content|merge([tag ~ "=" ~ item.slug]) %}
+                    {% set meta_content = meta_content|merge([tag ~ "=" ~ item]) %}
                 {% endfor %}
                 <meta name="addsearch-custom-field" data-type="text" content="{{ meta_content|join(';') }}">
             {% else %}
@@ -50,4 +49,4 @@
             {% endif %}
         {% endif %}
     {% endfor %}
-{% endblock %} #}
+{% endblock %}

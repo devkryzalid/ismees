@@ -8,6 +8,5 @@ $timber_post = new Timber\Post();
  * Timber context assignments
  */
 $context['thematic'] = $timber_post;
-$context['addsearch_array'] = createAddSearchArray($timber_post);
 
 Timber::render('pages/single-thematic.twig', $context);

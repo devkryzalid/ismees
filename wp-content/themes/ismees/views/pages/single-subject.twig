@@ -22,21 +22,26 @@
 </main>
 {% endblock %}
 
-{% block addsearch_param %}
-  <script id="addsearch-param">
-    {{ addsearch_array|json_encode }}
-  </script>
-{% endblock %}
-
+{# META FOR ADDSEARCH CUSTOM FIELDS #}
 {% block addsearch_meta %}
     {% set meta_tags = {
-        'category': categories,
-        'type': types,
-        'title': post.title,
-        'image': post.thumbnail
+        'title': subject.title,
+        'subject_id': subject.id,
+        'image': subject.thumbnail,
+        'resource': 'student',
     } %}
-    
+
     {% for tag, value in meta_tags %}
-        <meta name="addsearch-custom-field" data-type="text" content="{{tag}}={{value}}">
+        {% if value %}
+            {% if value is iterable %}
+                {% set meta_content = [] %}
+                {% for item in value %}
+                    {% set meta_content = meta_content|merge([tag ~ "=" ~ item]) %}
+                {% endfor %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ meta_content|join(';') }}">
+            {% else %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ value }}">
+            {% endif %}
+        {% endif %}
     {% endfor %}
 {% endblock %}

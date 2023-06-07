@@ -23,20 +23,18 @@
 </main>
 {% endblock %}
 
-{% block addsearch_param %}
-    <script id="addsearch-param" type="application/json">
-        {{ addsearch_array|json_encode }}
-    </script>
-{% endblock %}
-
 {# META FOR ADDSEARCH CUSTOM FIELDS #}
 {% block addsearch_meta %}
     {% set meta_tags = {
-        'category': categories_addsearch,
-        'types': type_addsearch,
-        'subjects': subjects_addsearch,
+        'category_names': categories_addsearch_names,
+        'category_ids': categories_addsearch_ids,
+        'type_name': type_addsearch_name,
+        'type_id': type_addsearch_id,
+        'subject_names': subjects_addsearch_names,
+        'subject_ids': subjects_addsearch_ids,
         'title': post.title,
         'icon': icon,
+        'resource': 'student',
         'image': post.thumbnail
     } %}
     {% for tag, value in meta_tags %}
