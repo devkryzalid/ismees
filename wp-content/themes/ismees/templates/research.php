@@ -12,6 +12,24 @@ $paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 $search       = empty($_GET['search']) ? '*' : $_GET['search'];
 $member       = empty($_GET['member']) ? null : $_GET['member'];
 
+$member_thematics = [
+    'post_type'      => 'thematic',
+    'post_status'    => 'publish',
+    'orderby'       => 'date',
+    'posts_per_page' =>  15,
+    'paged'          => $paged,
+    'nopaging'       => true,
+];
+
+$student_subjects = [
+    'post_type'      => 'subject',
+    'post_status'    => 'publish',
+    'orderby'       => 'date',
+    'posts_per_page' =>  15,
+    'paged'          => $paged,
+    'nopaging'       => true,
+];
+
 // AddSearch parameters array, you have to push all your filters in this array
 $custom_fields = [];
 
@@ -19,32 +37,8 @@ $custom_fields = [];
 $custom_fields['page'] = ['research'];
 
 if (!empty($member) && $member == true) {
-    $context['types'] = get_terms(['taxonomy' => 'resource_member_type']);
-
-    $member_thematics = [
-        'post_type'      => 'thematic',
-        'post_status'    => 'publish',
-        'orderby'       => 'date',
-        'posts_per_page' =>  15,
-        'paged'          => $paged,
-        'nopaging'       => true,
-    ];
-
-    $context['subjects'] = new Timber\PostQuery($member_thematics);
     $custom_fields['resource'] = ['member'];
 } else {
-    $context['types'] = get_terms(['taxonomy' => 'resource_student_type']);
-
-    $student_subjects = [
-        'post_type'      => 'subject',
-        'post_status'    => 'publish',
-        'orderby'       => 'date',
-        'posts_per_page' =>  15,
-        'paged'          => $paged,
-        'nopaging'       => true,
-    ];
-
-    $context['subjects'] = new Timber\PostQuery($student_subjects);
     $custom_fields['resource'] = ['student'];
 }
 
@@ -73,6 +67,12 @@ if (!empty($subjects)) {
 $response = searchByAddsearch($search, ['limit' => 10, 'page' => $paged], $custom_fields);
 
 $results = json_decode($response->body);
+
+$context['types_students'] = get_terms(['taxonomy' => 'resource_student_type']);
+$context['types_members'] = get_terms(['taxonomy' => 'resource_member_type']);
+
+$context['subjects_members'] = new Timber\PostQuery($member_thematics);
+$context['subjects_students'] = new Timber\PostQuery($student_subjects);
 
 $context['categories'] = get_terms(['taxonomy' => 'resource_category']);
 $context['member'] = $member;

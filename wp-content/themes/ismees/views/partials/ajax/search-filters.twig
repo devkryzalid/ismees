@@ -29,18 +29,34 @@
                 'taxo_name': 'category'
                 }
             %}
-            {% include "partials/filters/filters-list.twig" with {
-                'title': __('Thèmes', 'ismees'),
-                'filters': subjects,
-                'taxo_name': 'subjects'
-                }
-            %}
-            {% include "partials/filters/filters-list.twig" with {
-                'title': __('Types de ressource', 'ismees'),
-                'filters': types,
-                'taxo_name': 'type'
-                }
-            %}
+            <div class="student-filters">
+                {% include "partials/filters/filters-list.twig" with {
+                    'title': __('Thèmes', 'ismees'),
+                    'filters': subjects_students,
+                    'taxo_name': 'subjects'
+                    }
+                %}
+                {% include "partials/filters/filters-list.twig" with {
+                    'title': __('Types de ressource', 'ismees'),
+                    'filters': types_students,
+                    'taxo_name': 'type'
+                    }
+                %}
+            </div>
+            <div class="member-filters">
+                {% include "partials/filters/filters-list.twig" with {
+                    'title': __('Thèmes', 'ismees'),
+                    'filters': subjects_members,
+                    'taxo_name': 'subjects'
+                    }
+                %}
+                {% include "partials/filters/filters-list.twig" with {
+                    'title': __('Types de ressource', 'ismees'),
+                    'filters': types_members,
+                    'taxo_name': 'type'
+                    }
+                %}
+            </div>
         </div>
         <div class="button-ctn close-sidebar">
             {% if results and results|length > 1 %}

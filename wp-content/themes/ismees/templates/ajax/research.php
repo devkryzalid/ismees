@@ -24,8 +24,6 @@ $custom_fields = [];
 $custom_fields['page'] = ['research'];
 
 if (!empty($member) && $member == true) {
-    $types_args = get_terms(['taxonomy' => 'resource_member_type']);
-
     $member_thematics = [
         'post_type'      => 'thematic',
         'post_status'    => 'publish',
@@ -35,11 +33,8 @@ if (!empty($member) && $member == true) {
         'nopaging'       => true,
     ];
 
-    $subjects_args = new Timber\PostQuery($member_thematics);
     $custom_fields['resource'] = ['member'];
 } else {
-    $types_args = get_terms(['taxonomy' => 'resource_student_type']);
-
     $student_subjects = [
         'post_type'      => 'subject',
         'post_status'    => 'publish',
@@ -49,7 +44,6 @@ if (!empty($member) && $member == true) {
         'nopaging'       => true,
     ];
 
-    $subjects_args = new Timber\PostQuery($student_subjects);
     $custom_fields['resource'] = ['student'];
 }
 
