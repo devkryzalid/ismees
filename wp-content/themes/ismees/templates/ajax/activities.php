@@ -3,7 +3,6 @@
 global $params;
 
 // set the POST param
-// $limit       = empty($params['limit']) ? 15 : $params['limit'];
 $date     = empty($params['date']) ? null : $params['date'];
 
 $activities_args = [

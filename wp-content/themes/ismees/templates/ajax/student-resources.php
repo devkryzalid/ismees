@@ -19,15 +19,6 @@ $resources_args = [
     'meta_query'     => [],
 ];
 
-$student_subjects = [
-    'post_type'      => 'subject',
-    'post_status'    => 'publish',
-    'orderby'       => 'date',
-    'posts_per_page' =>  15,
-    'paged'          => $paged,
-    'nopaging'       => false,
-];
-
 if (!empty($category)) {
     if (!is_array($category)) {
         $category = explode(',', $category);

@@ -8,16 +8,16 @@ $context      = Timber::context();
 $category     = empty($_GET['category']) ? null : $_GET['category'];
 $type         = empty($_GET['type']) ? null : $_GET['type'];
 $subjects     = empty($_GET['subjects']) ? null : $_GET['subjects'];
-$paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 $search       = empty($_GET['search']) ? '*' : $_GET['search'];
 $member       = empty($_GET['member']) ? null : $_GET['member'];
+$paged        = empty($params['pagenb']) ? 1 : $params['pagenb'];
+
+$limit = 10;
 
 $member_thematics = [
     'post_type'      => 'thematic',
     'post_status'    => 'publish',
     'orderby'       => 'date',
-    'posts_per_page' =>  15,
-    'paged'          => $paged,
     'nopaging'       => true,
 ];
 
@@ -25,8 +25,6 @@ $student_subjects = [
     'post_type'      => 'subject',
     'post_status'    => 'publish',
     'orderby'       => 'date',
-    'posts_per_page' =>  15,
-    'paged'          => $paged,
     'nopaging'       => true,
 ];
 
@@ -64,7 +62,7 @@ if (!empty($subjects)) {
 }
 
 // Push your custom_fields to addSearch
-$response = searchByAddsearch($search, ['limit' => 10, 'page' => $paged], $custom_fields);
+$response = searchByAddsearch($search, ['limit' => $limit, 'page' => $paged], $custom_fields);
 
 $results = json_decode($response->body);
 

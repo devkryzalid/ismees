@@ -27,6 +27,10 @@ body.page-template-research {
     .list-items-ajax {
         background-color: transparent;
         padding-top: clamp-calc(40, 65);
+
+        .inner {
+            row-gap: 30px;
+        }
     }
 
     .search-input-ctn {

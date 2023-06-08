@@ -70,6 +70,7 @@
         flex-wrap: wrap;
         gap: 5px 20px;
         z-index: 5;
+        margin-top: 40px;
 
         .card-taxonomy {
             display: flex;
@@ -117,8 +118,11 @@
 
     .card-highlight {
         @include responsive-font($secondaryFont, 400, 16, 18, 24, 25, null, null, rgba($darkBlue, 0.7));
-        margin-top: 0;
-        margin-bottom: 40px;
+        margin: 0;
+
+        em {
+            font-weight: 900;
+        }
     }
 
     &:hover {

@@ -2,7 +2,6 @@
 
 global $params;
 
-$limit        = (!empty($params['limit'])) ? $params['limit'] : 10;
 $category     = empty($params['category']) ? null : $params['category'];
 $type         = empty($params['type']) ? null : $params['type'];
 $subjects     = empty($params['subjects']) ? null : $params['subjects'];
@@ -11,6 +10,8 @@ $search       = empty($params['search']) ? '*' : $params['search'];
 $member       = empty($params['member']) ? null : $params['member'];
 
 // ADDSEARCH PARAM AND RESEARCH
+
+$limit = 10;
 
 // set the query strings
 $params       = ['page' => $paged, 'limit' => $limit, 'lang' => 'fr'];
@@ -24,26 +25,8 @@ $custom_fields = [];
 $custom_fields['page'] = ['research'];
 
 if (!empty($member) && $member == true) {
-    $member_thematics = [
-        'post_type'      => 'thematic',
-        'post_status'    => 'publish',
-        'orderby'       => 'date',
-        'posts_per_page' =>  15,
-        'paged'          => $paged,
-        'nopaging'       => true,
-    ];
-
     $custom_fields['resource'] = ['member'];
 } else {
-    $student_subjects = [
-        'post_type'      => 'subject',
-        'post_status'    => 'publish',
-        'orderby'       => 'date',
-        'posts_per_page' =>  15,
-        'paged'          => $paged,
-        'nopaging'       => true,
-    ];
-
     $custom_fields['resource'] = ['student'];
 }
 
@@ -79,7 +62,7 @@ if ($results->total_hits > 0) {
     $response    .= Timber::compile('partials/lists/addsearch-card-list.twig', ['items' => $results->hits]);
     $data['html'] = $response;
     $data['count'] = $results->total_hits;
-    $data['total_pages'] = ceil($results->total_hits / $limit);
+    $data['pages_total'] = ceil($results->total_hits / $limit);
 } else {
     $data['html'] = Timber::compile('partials/ajax/no-result-item.twig');
     $data['count'] = "0";

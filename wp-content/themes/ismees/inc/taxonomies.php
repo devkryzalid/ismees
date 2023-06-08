@@ -37,7 +37,6 @@ function register_taxonomies() {
         'show_in_rest'      => true
 	];
 	
-	target_taxonomy($labelsGlobal, $argsGlobal);
     thematic_intervention_taxonomy($labelsGlobal, $argsGlobal);
     resource_category_taxonomy($labelsGlobal, $argsGlobal);
     resource_student_type_taxonomy($labelsGlobal, $argsGlobal);

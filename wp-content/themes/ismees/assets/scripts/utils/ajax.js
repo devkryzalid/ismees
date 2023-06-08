@@ -273,7 +273,7 @@ export default class AjaxForm {
   // Check if needed "next" button on new page
   checkPagination = (max) => {
     const pageElement = this.pagination.querySelector('#next-page a');
-    if(!max || this.currentPage == max)
+    if(this.currentPage == max)
       pageElement.classList.add('disabled');
     else
       pageElement.classList.remove('disabled');
