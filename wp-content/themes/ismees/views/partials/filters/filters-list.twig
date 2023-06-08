@@ -1,12 +1,14 @@
 {% if filters|length > 0 and filters %}
+{% set param_array = params[taxo_name] is not empty ? params[taxo_name]|split(',') : [] %}
+
     <div class="filters-list-ctn">
         {% if title %}
             <p class="filters-title">{{ title }}</p>
         {% endif %}
-        <ul class="filters-list"> 
+        <ul class="filters-list">
             {% for filter in filters %}
                 <li class="single-filter countable">
-                    <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in params[taxo_name]) ? 'checked' : '' }} {{ (filter.id in params[taxo_name]) ? 'checked' : '' }}>
+                    <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in param_array) ? 'checked' : '' }} {{ (filter.id in param_array) ? 'checked' : '' }}>
                     <label for="{{ filter.slug }}" class="checkbox-ctn">{{ filter.name }}</label>
                 </li>
             {% endfor %}

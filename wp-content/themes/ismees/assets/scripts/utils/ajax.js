@@ -27,6 +27,7 @@ const filtersCountId = 'filters-count';
 // Default values for DOM elements classes
 const loadingClass = 'loading';
 const innerClass = 'inner';
+const resultCountClass = '.result-count';
 
 export default class AjaxForm {
   // Necessary DOM containers for form and ajax html results
@@ -38,6 +39,7 @@ export default class AjaxForm {
   clearButton;
   filtersCount;
   pagination;
+  resultCounter;
 
   // Status 
   loading = false;
@@ -91,6 +93,9 @@ export default class AjaxForm {
     
     // Set filters counter on button (optional)
     this.setActiveFiltersCount();
+
+    // Set result counter (optional)
+    this.setActiveResultCount();
   }
 
   // Set form and container DOM elements, and returns false if one of them can't be found
@@ -114,7 +119,7 @@ export default class AjaxForm {
 
   // Main form change callback, called on every checkbox event
   onFormChange = async (pagement = null) => {
-    
+
     // Reset all HTML only if is filter change
     if(!pagement){
       this.updateContentHtml(); // Clear current html
@@ -140,6 +145,11 @@ export default class AjaxForm {
     this.onDataChange(data);
     this.toggleClearButton();
     this.setActiveFiltersCount();
+    if(data.count) {
+      this.resultCounter = document.querySelectorAll(resultCountClass);
+      this.setActiveResultCount(data.count);
+    } 
+
   }
 
   // Return all form data and params in object format
@@ -320,6 +330,14 @@ export default class AjaxForm {
     if (this.filtersCount && nb) {
       this.filtersCount.style.display = "flex";
       this.filtersCount.innerHTML = `${ nb }`;
+    }
+  }
+
+  setActiveResultCount = (number) => {
+    if(this.resultCounter) {
+      this.resultCounter.forEach((counter) => {
+        counter.innerHTML = number;
+      });
     }
   }
 }

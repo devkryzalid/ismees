@@ -12,9 +12,7 @@ $paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 $search       = empty($_GET['search']) ? '*' : $_GET['search'];
 $member       = empty($_GET['member']) ? null : $_GET['member'];
 
-// Initialize an empty hits array for addSearch results
-$hits = [];
-
+// AddSearch parameters array, you have to push all your filters in this array
 $custom_fields = [];
 
 //Set the documents needed to the research
@@ -51,35 +49,35 @@ if (!empty($member) && $member == true) {
 }
 
 if (!empty($category)) {
-    $custom_fields['category_ids'] = [$category];
+    if (!is_array($category)) {
+        $category = explode(',', $category);
+    }
+    $custom_fields['category_ids'] = $category;
 }
 
 if (!empty($type)) {
-    $custom_fields['type_id'] = [$type];
+    if (!is_array($type)) {
+        $type = explode(',', $type);
+    }
+    $custom_fields['type_id'] = $type;
 }
 
 if (!empty($subjects)) {
     if (!is_array($subjects)) {
         $subjects = explode(',', $subjects);
     }
-    $custom_fields['subjects_ids'] = $subjects;
+    $custom_fields['subject_ids'] = $subjects;
 }
 
-// Call the searchByAddsearch function to fetch the response
-$response = searchByAddsearch($search, ['limit' => 15, 'page' => $paged], $custom_fields);
+// Push your custom_fields to addSearch
+$response = searchByAddsearch($search, ['limit' => 10, 'page' => $paged], $custom_fields);
 
 $results = json_decode($response->body);
 
-// Iterate through each hit in the response
-foreach($results->hits as $hit) {
-    // Check if custom field exists in the hit
-    if(isset($hit->custom_fields)) {
-        $hits[] = $hit;
-    }
-}
-
+$context['categories'] = get_terms(['taxonomy' => 'resource_category']);
 $context['member'] = $member;
-$context['results'] = $hits;
+$context['results'] = $results->hits;
+$context['total'] = $results->total_hits;
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 $context['params'] = $_GET;

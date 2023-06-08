@@ -6,13 +6,13 @@
         </div>
     </div>
     <div class="subfilters-ctn">
-        <div id="togglerContainer" data-aos="fade-left" data-aos-delay="300">
+        <div id="togglerContainer" data-aos="fade-up" data-aos-delay="300">
             <label for="filtersToggler" id="unchecked-label">{{__('Étudiant.es', 'ismees')}}</label>
             <input type="checkbox" name="member" id="filtersToggler" {% if member %}checked{% endif %}>
             <label for="filtersToggler" id="checked-label">{{__('Personnel des établissements', 'ismees')}}</label>
         </div>
-        <div class="display-filters-ctn" data-aos="fade-right" data-aos-delay="300">
-            <p class="result-counter"><span id="result-count">{{ total }}</span> {{__('résultats', 'simees')}}</p>
+        <div class="display-filters-ctn" data-aos="fade-up" data-aos-delay="300">
+            <p class="result-counter"><span class="result-count">{{ total }}</span> {{__('résultats', 'simees')}}</p>
             <div class="filters-button">
                 <a class="main-button -blue" id="sidebarOpener"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}<span id="filters-count"></span/></a>
             </div>
@@ -43,12 +43,12 @@
             %}
         </div>
         <div class="button-ctn close-sidebar">
-            {% if resources.found_posts > 1 %}
-                <a class="main-button -blue">{{__('Afficher les', 'ismees')}} <span> {{ resources.found_posts }} </span> {{__('résultats', 'ismees')}}</a>
-            {% elseif resources.found_posts == 1 %}
-                <a class="main-button -blue">{{__('Afficher 1 résultat', 'ismees')}}</a>
+            {% if results and results|length > 1 %}
+                <a class="main-button -blue" href="#resultsList">{{__('Afficher les', 'ismees')}} <span class="result-count"> {{ total }} </span> {{__('résultats', 'ismees')}}</a>
+            {% elseif results and results|length == 1 %}
+                <a class="main-button -blue" href="#resultsList">{{__('Afficher 1 résultat', 'ismees')}}</a>
             {% else %}
-                <a class="main-button -blue">{{__('Pas de résultat', 'ismees')}}</a>
+                <a class="main-button -blue" href="#resultsList">{{__('Pas de résultat', 'ismees')}}</a>
             {% endif %}
         </div>
     </div>

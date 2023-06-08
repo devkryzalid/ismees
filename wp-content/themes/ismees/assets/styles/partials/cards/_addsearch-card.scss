@@ -4,6 +4,7 @@
     position: relative;
     background-color: white;
     border-radius: 18px;
+    padding: clamp-calc(20, 24, 767, 992);
 
     .card-title,
     .card-image-ctn,
@@ -16,12 +17,14 @@
         position: relative;
         border-radius: 12px;
         overflow: hidden;
-        padding: 24px 0 24px 24px;
+        min-width: 30%;
         width: 30%;
+        background-color: $darkBlue;
 
         .card-image {
             height: clamp-calc(200, 300);
             width: 100%;
+            opacity: 0.5;
             object-fit: cover;
             border-radius: 8px;
             @include transition($basicTransition);
@@ -35,8 +38,8 @@
             height: clamp-calc(42, 60);
             border-radius: 50%;
             padding: 10px;
-            bottom: clamp-calc(28, 40);
-            left: clamp-calc(28, 40);
+            bottom: 15px;
+            left: 15px;
             z-index: 6;
 
             .card-icon {
@@ -124,10 +127,10 @@
             .card-image {
                 opacity: 1;
             }
-            .card-type {
-                opacity: 1;
-                border-radius: 12px;
-            }
+            // .card-type {
+            //     opacity: 1;
+            //     border-radius: 12px;
+            // }
         }
     }
 
@@ -135,7 +138,6 @@
         @include flex(flex-start, flex-start, column);
 
         .card-image-ctn {
-            padding: 24px 20px 0 20px;
             width: 100%;
         }
 
@@ -145,7 +147,6 @@
 
         .card-description {
             @include flex(flex-start, flex-start, column-reverse);
-            padding: 0 20px 24px;
         }
 
         .card-highlight {

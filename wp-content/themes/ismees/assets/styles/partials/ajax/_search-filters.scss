@@ -84,7 +84,6 @@
                         width: clamp-calc(20, 25);
                         height: clamp-calc(20, 25);
                         @include responsive-font($primaryFont, 700, 14, 16, 17, 19, null, null, $darkBlue);
-                        display: none;
                     }
                 }
             }
