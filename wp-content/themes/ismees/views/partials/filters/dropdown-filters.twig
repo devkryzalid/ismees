@@ -1,3 +1,4 @@
+{% set param_array = params[taxo_name] is not empty ? params[taxo_name]|split(',') : [] %}
 <div class="dropdown-filters">
     <button class="filter-button" tabindex="0">{{ name }}</button>
     <div class="filter-ctn">
@@ -5,7 +6,7 @@
             <div class="filter-item" tabindex="0">
                 <label for="{{ filter.slug }}" class="checkbox-ctn">
                     {{ filter.name }}
-                    <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in params[taxo_name]) ? 'checked' : '' }} {{ (filter.id in params[taxo_name]) ? 'checked' : '' }}>
+                    <input type="checkbox" id="{{ filter.slug }}" data-name="{{ filter.name }}" name="{{ taxo_name }}" value="{{ filter.term_id ? filter.term_id : filter.id }}" {{ (filter.term_id in param_array) ? 'checked' : '' }} {{ (filter.id in param_array) ? 'checked' : '' }}>
                     <span class="checkmark"></span>
                 </label>
             </div>

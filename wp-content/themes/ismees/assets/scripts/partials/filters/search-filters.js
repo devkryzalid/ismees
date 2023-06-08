@@ -4,7 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const togglerContainer = document.getElementById("togglerContainer");
     const sidebar = document.getElementById("sidebarFilters");
 
+    let isFirstLoad = true;
+
     const resetFilters = () => {
+        if (isFirstLoad) {
+            isFirstLoad = false;
+            return;
+        }
         const filtersChecked = document.querySelectorAll('.countable input:checked');
         filtersChecked.forEach(i => { i.click(); });
     };

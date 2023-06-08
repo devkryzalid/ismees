@@ -65,6 +65,7 @@ if ($results->total_hits > 0) {
     $data['pages_total'] = ceil($results->total_hits / $limit);
 } else {
     $data['html'] = Timber::compile('partials/ajax/no-result-item.twig');
+    $data['pages_total'] = ceil($results->total_hits / $limit);
     $data['count'] = "0";
 }
 

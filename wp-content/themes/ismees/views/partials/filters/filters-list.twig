@@ -1,6 +1,5 @@
 {% if filters|length > 0 and filters %}
 {% set param_array = params[taxo_name] is not empty ? params[taxo_name]|split(',') : [] %}
-
     <div class="filters-list-ctn">
         {% if title %}
             <p class="filters-title">{{ title }}</p>

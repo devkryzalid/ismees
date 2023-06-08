@@ -8,11 +8,13 @@ $type         = empty($_GET['type']) ? null : $_GET['type'];
 $subjects     = empty($_GET['subjects']) ? null : $_GET['subjects'];
 $paged        = empty($_GET['pagenb']) ? 1 : $_GET['pagenb'];
 
+$limit = 15;
+
 $resources = [
     'post_type'      => 'member-resource',
     'post_status'    => 'publish',
     'orderby'        => 'date',
-    'posts_per_page' =>  15,
+    'posts_per_page' =>  $limit,
     'paged'          => $paged,
     'nopaging'       => false,
     'meta_query'     => [],
@@ -57,6 +59,7 @@ if (!empty($subjects)) {
         'compare' => 'REGEXP',
     ];
 }
+
 $context['resources'] = new Timber\PostQuery($resources);
 $context['member_thematics'] = new Timber\PostQuery($member_thematics);
 $context['types'] = get_terms(['taxonomy' => 'resource_member_type']);
@@ -64,5 +67,8 @@ $context['categories'] = get_terms(['taxonomy' => 'resource_category']);
 $timber_post = new Timber\Post();
 $context['page'] = $timber_post;
 $context['params'] = $_GET;
+// Variables for the pagination
+$context['limit'] = $limit;
+$context['total'] = $context['resources']->found_posts;
 
 Timber::render( array( 'pages/member-resources.twig' ), $context );

@@ -64,8 +64,8 @@ body.customize-support {
         @include flex(center, space-between);
         position: relative;
         min-height: 120px;
-        padding-left: clamp-calc(15, 60);
-        padding-right: clamp-calc(15, 60);
+        padding-right: clamp-calc(20, 75, 375, 992);
+        padding-left: clamp-calc(20, 75, 375, 992);
     }
 
     #header-ctn {

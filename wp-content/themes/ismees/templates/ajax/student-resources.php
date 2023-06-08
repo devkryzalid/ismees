@@ -9,11 +9,13 @@ $subjects     = empty($params['subjects']) ? null : $params['subjects'];
 $paged        = empty($params['pagenb']) ? 1 : $params['pagenb'];
 $national     = empty($params['national']) ? null : $params['national'];
 
+$limit = 15;
+
 $resources_args = [
     'post_type'      => 'student-resource',
     'post_status'    => 'publish',
     'orderby'        => 'date',
-    'posts_per_page' =>  15,
+    'posts_per_page' =>  $limit,
     'paged'          => $paged,
     'nopaging'       => false,
     'meta_query'     => [],
@@ -59,6 +61,7 @@ if ($resources->found_posts > 0) {
     $data['pages_total'] = $resources->pagination(intval(15))->total;
 } else {
     $data['html'] = Timber::compile('partials/ajax/no-result-item.twig');
+    $data['pages_total'] = $resources->pagination(intval(15))->total;
 }
 
 wp_reset_query();

@@ -79,5 +79,6 @@ $context['total'] = $results->total_hits;
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
 $context['params'] = $_GET;
+$context['limit'] = $limit;
 
 Timber::render( array( 'pages/research.twig' ), $context );

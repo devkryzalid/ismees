@@ -1,5 +1,5 @@
 <nav data-aos="fade" data-aos-delay="300" id="ajax-pagination" class="pagination-ctn">
     <div class="ajax-page next" id="next-page">
-        <a href="" value="next" class="main-button -white ">{{ __('Afficher plus', 'ismees') }}</a>
+        <a href="" value="next" class="main-button -white {{ limit and total > limit ? '' : 'disabled' }}">{{ __('Afficher plus', 'ismees') }}</a>
     </div>
 </nav>

@@ -1,3 +1,4 @@
+{% set param_array = params[taxo_name] is not empty ? params[taxo_name]|split(',') : [] %}
 <div class="dropdown-mobile-filters">
     <div class="container">
         <div class="mobile-container">
@@ -8,7 +9,7 @@
                         <img class="card-icon" src="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" alt="" />
                     </div>
                     {{ __('Toutes les ressources', 'ismees') }}
-                    <input type="radio" data-icon="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" data-name="{{ __('Toutes les ressources', 'ismees') }}" name="{{ taxo_name }}" id="all" value=""  {{ (filter.term_id in params[taxo_name]) ? '' : 'checked' }}>
+                    <input type="radio" data-icon="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" data-name="{{ __('Toutes les ressources', 'ismees') }}" name="{{ taxo_name }}" id="all" value=""  {{ (filter.term_id in param_array) ? '' : 'checked' }}>
                 </label>
                 {% for filter in filters %}
                     <label for="{{ filter.slug }}" class="radio-ctn" tabindex="0">
@@ -19,7 +20,7 @@
                             </div>
                         {% endif %}
                         {{ filter.name }}
-                        <input type="radio" id="{{ filter.slug }}" data-name="{{ filter.name }}" data-icon="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ icon ~ '.svg' }}" name="{{ taxo_name }}" value="{{ filter.term_id }}" {{ (filter.term_id in params[taxo_name]) ? 'checked' : '' }}>
+                        <input type="radio" id="{{ filter.slug }}" data-name="{{ filter.name }}" data-icon="{{ site.home_url ~ '/wp-content/plugins/acf-icon-picker/assets/img/acf/' ~ icon ~ '.svg' }}" name="{{ taxo_name }}" value="{{ filter.term_id }}" {{ (filter.term_id in param_array) ? 'checked' : '' }}>
                     </label>
                 {% endfor %}
             </div>
