@@ -1,0 +1,91 @@
+.page-404 {
+    padding-top: clamp-calc(160, 200);
+    padding-bottom: 150px;
+
+    .page-404-content {
+        @include flex(center, space-between);
+        gap: clamp-calc(50, 200);
+
+        .right-column,
+        .left-column {
+            width: 50%;
+        }
+    }
+
+    //***********************************//
+    //********** LEFT COLUMN ************//
+    //***********************************//
+
+    .left-column {
+        @include flex(flex-start, space-between, column);
+        gap: 50px;
+    }
+
+    .ontitle {
+        @include responsive-font($primaryFont, 400, 40, 62, 47, 73, null, -0.02rem);
+        margin-bottom: clamp-calc(15, 20);
+        margin-top: clamp-calc(0, 50);
+
+        span {
+            font-weight: 400;
+        }
+    }
+
+    .page-title {
+        margin-top: 0;
+        @include responsive-font($primaryFont, 800, 80, 160, 86, 166, null, -2px);
+    }
+
+    .subtitle {
+        @include responsive-font($secondaryFont, 400, 18, 20, 26, 26);
+        max-width: 680px;
+    }
+
+
+    //***********************************//
+    //********* RIGHT COLUMN ***********//
+    //***********************************//
+
+    .image-ctn {
+        position: relative;
+        height: clamp-calc(500, 788);
+        width: 100%;
+
+        &::before {
+            content: "";
+            @include position(50px, 0, 0, 0);
+            position: absolute;
+            border-radius: 400px 400px 20px 20px;
+            z-index: -1;
+            background-color: $yellow;
+        }
+
+        .absolute-image {
+            position: absolute;
+            top: 30%;
+            left: -80px;
+            object-fit: contain;
+            width: clamp-calc(150, 323);
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .page-404-content {
+            flex-direction: column;
+            gap: clamp-calc(50, 200);
+    
+            .left-column {
+                width: 100%;
+            }
+
+        }
+
+        .image-ctn {
+
+            &::before {
+                @include position(0, 0, 0, 0);
+            }
+        }
+    }
+}

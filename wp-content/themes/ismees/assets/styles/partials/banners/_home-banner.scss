@@ -53,7 +53,7 @@
     }
 
     .subtitle {
-        @include responsive-font($primaryFont, 400, 18, 20, 26, 26);
+        @include responsive-font($secondaryFont, 400, 18, 20, 26, 26);
         max-width: 680px;
     }
 

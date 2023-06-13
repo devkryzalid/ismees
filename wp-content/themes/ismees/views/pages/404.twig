@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+{% block content %}
+<main class="page-404" data-aos="fade" data-aos-delay="300">
+    <div class="container">
+        <div class="page-404-content">
+            <div class="left-column">
+                <div class="title-ctn" data-aos="fade-up" data-aos-delay="300">
+                    <p class="ontitle">{{ __('Erreur 404', 'ismees')}}</p>
+                    <h1 class="page-title" data-aos="fade-up">{{ __('Oups!', 'ismees')}}</h1>
+                    <p class="subtitle" data-aos="fade-up">{{ __('Lorem ipsum dolor sit amet consectetur. Vrrolutpat nullam nec sed bibendum a feugiat enim faucibus. Ut nibh fermentum gravida tempus porta vel. Volutpat vestibulum ipsum lorem est ipsum.', 'ismees')}}</p>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="image-ctn">
+                    <img class="absolute-image" src="{{ theme.link ~ '/assets/images/bubble-404.svg' }}" alt=""/>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
