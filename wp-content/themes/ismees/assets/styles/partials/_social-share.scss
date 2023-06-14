@@ -1,7 +1,7 @@
 .share-content {
     position: absolute;
     top: 0;
-    right: 15px;
+    right: clamp-calc(20, 50);
     height: 100%;
     
     .socials-share-ctn {

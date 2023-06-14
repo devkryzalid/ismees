@@ -5,26 +5,16 @@
         @include fontSize(13px, 17px);
         font-family: $primaryFont;
         @include transition($basicTransition);
-
-        span:nth-of-type(odd) {
+        color: rgba($darkBlue, 0.77);
+        
+        a {
             font-weight: 500;
             text-decoration: underline;
+            opacity: 1;
+            color: $darkBlue;
 
-            a {
-                &:hover {
-                    opacity: 0.7;
-                }
-            }
-        }
-
-        span:nth-of-type(even) {
-            font-weight: 400;
-            opacity: 0.77;
-
-            &:has(a) {
-                &:hover {
-                    opacity: 1;
-                }
+            &:hover {
+                opacity: 0.7;
             }
         }
     }
