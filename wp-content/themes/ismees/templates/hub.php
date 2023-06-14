@@ -14,9 +14,9 @@ $subjects = [
 
 $all_subjects = new Timber\PostQuery($subjects);
 
-// Filter out the subject with the slug 'aider-quelquun'
+// Hide subjects with category caché and slug = hidden
 $filtered_subjects = array_filter($all_subjects->get_posts(), function($subject) {
-    return $subject->post_name !== 'aider-quelquun';
+    return !has_term('hidden', 'subject_category', $subject);
 });
 
 $context['subjects'] = $filtered_subjects;

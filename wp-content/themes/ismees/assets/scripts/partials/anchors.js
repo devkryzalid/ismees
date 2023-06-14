@@ -10,17 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', function(){
         let sections = document.querySelectorAll('.anchor-section');
 
-        sections.forEach(function(section, index){
+        sections.forEach((section, index) => {
             let rect = section.getBoundingClientRect();
+
             if(rect.top <= offset && rect.bottom >= offset){
+                // Add the bold behavior on the numbers if it exists
                 if (navigationOrder.length > 0) {
                     navigationOrder.forEach((navLink) => { 
-                        navLink.style.fontWeight = 'normal'; 
+                        navLink.style.fontWeight = ''; 
                     });
                     navigationOrder[index].style.fontWeight = 'bold';
                 }
                 navigationLinks.forEach((navLink) => { 
-                    navLink.style.fontWeight = 'normal'; 
+                    navLink.style.fontWeight = ''; 
                 });
                 navigationLinks[index].style.fontWeight = 'bold';
             }

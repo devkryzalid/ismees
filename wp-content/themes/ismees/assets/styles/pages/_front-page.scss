@@ -59,6 +59,13 @@ body.page-template-front-page {
                 @include flex(flex-start, flex-start, column);
                 margin: 0;
                 @include responsive-font($primaryFont, 400, 35, 58, 40, 63);
+
+                .cirle-center-background::before {
+                    top: -5px;
+                    right: -50px;
+                    bottom: -20px;
+                    left: -20px;
+                }   
             }
 
             .resources-ctas {
