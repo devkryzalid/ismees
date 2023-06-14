@@ -17,6 +17,7 @@ body.page-template-front-page {
 
             .home-cta {
                 width: 50%;
+                @include transition($basicTransition);
             }
 
             //******* CODE FOR PER COLUMN CTA *******//

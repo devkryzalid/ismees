@@ -20,7 +20,7 @@ body.page-template-intervention {
             .decoration-svg {
                 position: absolute;
                 right: 0;
-                top: -25%;
+                top:-15%;
                 width: clamp-calc(120, 190, 767);
             }
 
@@ -104,14 +104,14 @@ body.page-template-intervention {
             padding: 30px;
     
     
-            .anchor {
+            .anchor-ctn {
                 @include flex(flex-start, flex-start);
                 gap: 10px;
                 padding: 20px 0;
                 border-bottom: 1px solid rgba($darkBlue, 0.2);
 
                 .anchor-number, 
-                a {
+                .anchor {
                     @include responsive-font($primaryFont, 400, 16, 18, 19, 24);
                     @include transition($shortTransition);
                 }
@@ -122,9 +122,9 @@ body.page-template-intervention {
     
                 &:hover {
                     .anchor-number, 
-                    a {
+                    .anchor {
                         font-weight: 700;
-                    color: $darkBlue;
+                        color: $darkBlue;
                     }
                 }
             }

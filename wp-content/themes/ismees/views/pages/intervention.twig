@@ -25,7 +25,7 @@
                             {% for intervention in interventions %}
                                 {% set interventionNumber = fn('get_field', 'number_intervention', 'term_' ~ intervention.term_id) %}
                                 {% set interventionColor = fn('get_field', 'color_intervention', 'term_' ~ intervention.term_id) %}
-                                <div class="intervention-ctn" id="{{intervention.slug}}">
+                                <div class="intervention-ctn anchor-section" id="{{intervention.slug}}">
                                     <div class="title-ctn" data-aos="fade-right" data-aos-delay="300">
                                         <div class="intervention-number-ctn">
                                             <p class="intervention-number">{{ interventionNumber }}</p>
@@ -51,9 +51,9 @@
                     <div class="col-lg-4">
                         <div class="anchors-ctn" data-aos="fade-up" data-aos-delay="300">
                             {% for intervention in interventions %}
-                                <div class="anchor jsBlockLink">
+                                <div class="anchor-ctn jsBlockLink">
                                     <span class="anchor-number">{{ loop.index }}.</span>
-                                    <a href="#{{intervention.slug}}"> {{ intervention.name}}</a>
+                                    <a class="anchor" href="#{{intervention.slug}}"> {{ intervention.name}}</a>
                                 </div>
                             {% endfor %}
                         </div>

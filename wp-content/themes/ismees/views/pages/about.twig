@@ -20,7 +20,7 @@
                         <div class="main-content-ctn">
 
                             {% if post.content %}
-                                <div id="context" data-aos="fade-up" data-aos-delay="300">
+                                <div id="context" class="anchor-section" data-aos="fade-up" data-aos-delay="300">
                                     <h2 class="large section-title">{{ __('Contexte', 'ismees')}}</h2>
                                     <div class="gutenberg">
                                         {{ post.content }}
@@ -29,7 +29,7 @@
                             {% endif %}
 
                             {% if post.meta('members')|length > 0 %}
-                                <div id="members" class="members-ctn">
+                                <div id="members" class="anchor-section members-ctn">
                                     <h2 class="large section-title"  data-aos="fade-up" data-aos-delay="300">{{ __('Membre de l\'équipe', 'ismees')}}</h2>
                                     <div class="members-list">
                                         {% for member in post.meta('members') %}
@@ -42,7 +42,7 @@
                             {% endif %}
 
                             {% if post.meta('partners')|length > 0 %}
-                                <div id="partners" class="partners-ctn">
+                                <div id="partners" class="anchor-section partners-ctn">
                                     <h2 class="section-title large"  data-aos="fade-up" data-aos-delay="300">{{ __('Réseau de collaboration', 'ismees')}}</h2>
                                     <div class="partners-introduction"  data-aos="fade-up" data-aos-delay="300">{{ post.meta('partners').intro }}</div>
                                     <div class="partners-list"  data-aos="fade-up" data-aos-delay="300">
@@ -84,4 +84,7 @@
         <img class="background-img -yellow" src="{{theme.link}}/assets/images/circle-yellow.svg" alt="" />
         <img class="background-img -red" src="{{theme.link}}/assets/images/circle-red.svg" alt="" />
     </main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/about.js"></script>
 {% endblock %}

@@ -119,6 +119,7 @@ body.page-template-about {
                         @include responsive-font($primaryFont, 400, 16, 18, 19, 24);
                         padding: 20px 0;
                         border-bottom: 1px solid rgba($darkBlue, 0.2);
+                        @include transition($shortTransition);
         
                         .anchor-number {
                             margin-right: 10px;
