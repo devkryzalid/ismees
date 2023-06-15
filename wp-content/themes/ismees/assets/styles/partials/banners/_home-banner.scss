@@ -77,11 +77,11 @@
         }
 
         .slide-out {
-            animation: slideOut 0.5s forwards ease !important;
+            animation: slideOut 0.5s forwards ease-in !important;
         }
 
         .slide-out-absolute {
-            animation: fade-out 0.5s forwards ease !important;
+            animation: fade-out 0.5s forwards ease-in !important;
         }
       
         .banner-image-ctn {
