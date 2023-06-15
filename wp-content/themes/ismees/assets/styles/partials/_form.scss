@@ -1,6 +1,5 @@
 .footer-form {
     position: relative;
-    margin-bottom: -40px;
     @include transition($basicTransition);
 
     &.-show {
