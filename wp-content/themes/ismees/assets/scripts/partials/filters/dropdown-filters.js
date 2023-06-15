@@ -5,11 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll('.filter-button');
 
     const handleClick = (e) => {
+        e.stopPropagation();
         e.preventDefault();
         const filterCtn = e.target.parentNode;
-
+        console.log(e);
         // Prevents the dropdown from opening when triggered by pressing "Enter" key in the input search
-        if (e.pointerType || e.type === "touchstart") {
+        if (e.pointerType || e.type === "touchstart" || e.type === "click") {
             // Close other dropdowns
             filterButtons.forEach(otherFilterButton => {
                 if (otherFilterButton !== e.target) {

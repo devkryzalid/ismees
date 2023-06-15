@@ -1,7 +1,7 @@
 .banner-content-title {
 
     .banner-content-ctn {
-        padding-top: clamp-calc(120, 185);
+        padding-top: clamp-calc(140, 185);
         padding-bottom: clamp-calc(140, 200);
         background-color: $yellow;
         @include flex(center, center, column);

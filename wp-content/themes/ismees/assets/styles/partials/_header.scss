@@ -137,6 +137,7 @@ body.customize-support {
             background-color: white;
             @include flex(flex-start, flex-start, column);
             overflow: scroll;
+            overscroll-behavior: contain;
 
             .logo-ctn {
                 display: none;

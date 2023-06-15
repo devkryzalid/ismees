@@ -51,10 +51,6 @@
             padding-left: clamp-calc(35, 60);
             background-color: white;
 
-            &:has(> .has-sub-child) {
-                display: flex;
-            }
-
             .header-arrows {
                 opacity: 0;
             }
@@ -127,6 +123,7 @@
     @media(max-width: 992px) {
         flex-wrap: wrap;
         margin-bottom: 40px !important;
+        gap: 50px;
 
         .menu-item-has-children {   
             display: flex;
@@ -145,10 +142,6 @@
                 transform: scaleY(1);
                 position: initial;
                 @include transition($basicTransition);
-
-                &:has(> .has-sub-child) {
-                    gap: 30px;
-                }
 
                 li {
                     margin-top: 0;

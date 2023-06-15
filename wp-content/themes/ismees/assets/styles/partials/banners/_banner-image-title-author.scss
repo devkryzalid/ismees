@@ -1,7 +1,7 @@
 .banner-image-title-author {
     @include flex(center, center);
     background-color: $mainBG;
-    padding-top: clamp-calc(120, 185);
+    padding-top: clamp-calc(140, 185);
     padding-bottom: clamp-calc(120, 150);
 
     .banner-ctn {

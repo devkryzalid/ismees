@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Dropdown behavior
     const toggleFilters = (event) => {
+      event.stopPropagation();
       event.preventDefault();
-    
       // Check if the event target is the button or a child element of the button    
       if (event.target == filterMobileButton || event.target.parentNode == filterMobileButton) {
         filterCtn.classList.toggle('-show');

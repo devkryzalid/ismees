@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-window.dispatchEvent(new Event("resize"));
-window.dispatchEvent(new Event("scroll"));
+    window.dispatchEvent(new Event("resize"));
+    window.dispatchEvent(new Event("scroll"));
 
 
     // ********* White background on the header when user hover the menu dropdown ********* //
@@ -96,5 +96,30 @@ window.dispatchEvent(new Event("scroll"));
         item.addEventListener('mouseleave', () => {
             header.classList.remove('-white-background');
         });
+    });
+
+    //******* Set style to primary menu if it has sub-children *********//
+
+    // Select all elements with class .child-menu
+    const childMenus = document.querySelectorAll('.child-menu');
+
+    // Iterate over all selected elements
+    childMenus.forEach(function(childMenu) {
+        // If the childMenu has a descendant with class .has-sub-child
+        if (childMenu.querySelector('.has-sub-child')) {
+            childMenu.style.display = 'flex';
+
+            if (window.innerWidth <= 992) {
+                childMenu.style.gap = '30px';
+            }
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 992) {
+                    childMenu.style.gap = '30px';
+                } else {
+                    childMenu.style.gap = '0';
+                }
+            });
+        }
     });
 });
