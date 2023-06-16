@@ -201,22 +201,30 @@ export default class AjaxForm {
 
   // Toggle loading status, add class to container and throw callback
   toggleLoading = (isLoading = null, type = loadingClass) => {
-    const pageElement = this.pagination.querySelector('#next-page a');
-
+    let pageElement = null;
+  
+    if (this.pagination) {
+      pageElement = this.pagination.querySelector('#next-page a');
+    }
+  
     this.loading = isLoading === null
       ? !this.loading
       : !!isLoading;
-
+  
     if (this.loading) {
       this.contentContainer.classList.add(type);
-      pageElement.classList.add('disabled');
+      if (pageElement) {
+        pageElement.classList.add('disabled');
+      }
     }
     else {
       this.contentContainer.classList.remove(loadingClass);
       this.contentContainer.classList.remove('loading-alt');
-      pageElement.classList.remove('disabled');
+      if (pageElement) {
+        pageElement.classList.remove('disabled');
+      }
     }
-
+  
     this.onLoadChange(this.loading)
   }
 
@@ -278,13 +286,21 @@ export default class AjaxForm {
 
   // Check if needed "next" button on new page
   checkPagination = (max) => {
-    const pageElement = this.pagination.querySelector('#next-page a');
-    if(this.currentPage == max || max == 0)
-      pageElement.classList.add('disabled');
-    else
-      pageElement.classList.remove('disabled');
+    let pageElement = null;
+  
+    if (this.pagination) {
+      pageElement = this.pagination.querySelector('#next-page a');
+    }
+  
+    if (pageElement) {
+      if (this.currentPage === max || max === 0) {
+        pageElement.classList.add('disabled');
+      }
+      else {
+        pageElement.classList.remove('disabled');
+      }
+    }
   }
-
   // Change current page and trigger ajax fetch
   pageChange = pageElement => {
     event.preventDefault();

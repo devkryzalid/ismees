@@ -44,6 +44,7 @@ $hooks_actions = [
 	],
 	'after_setup_theme' => [
 		10 => ['name' => 'theme_supports', 'args' => 1],
+		15 => ['name' => 'wpdocs_theme_setup', 'args' => 1],
 	],
 	'wp_enqueue_scripts' => [
 		10 => ['name' => 'adding_scripts_and_styles', 'args' => 1],

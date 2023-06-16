@@ -1,0 +1,881 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Station SME\n"
+"POT-Creation-Date: 2023-06-16 10:11-0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: views/pages/404.twig:8
+msgid "Erreur 404"
+msgstr "404 Error"
+
+#: views/pages/404.twig:9
+msgid "Oups!"
+msgstr "Oups!"
+
+#: views/pages/404.twig:10
+msgid ""
+"Lorem ipsum dolor sit amet consectetur. Vrrolutpat nullam nec sed bibendum a "
+"feugiat enim faucibus. Ut nibh fermentum gravida tempus porta vel. Volutpat "
+"vestibulum ipsum lorem est ipsum."
+msgstr ""
+"Lorem ipsum dolor sit amet consectetur. Vrrolutpat nullam nec sed bibendum a "
+"feugiat enim faucibus. Ut nibh fermentum gravida tempus porta vel. Volutpat "
+"vestibulum ipsum lorem est ipsum."
+
+#: views/pages/about.twig:10
+msgid "Station santé mentale étudiante"
+msgstr "Student Mental Health Station"
+
+#: views/pages/about.twig:24 views/pages/about.twig:64
+msgid "Contexte"
+msgstr "Context"
+
+#: views/pages/about.twig:33
+msgid "Membre de l'équipe"
+msgstr "Team member"
+
+#: views/pages/about.twig:46
+msgid "Réseau de collaboration"
+msgstr "Collaborative network"
+
+#: views/pages/about.twig:67
+msgid "Membres de l’équipe"
+msgstr "Team members"
+
+#: views/pages/about.twig:70
+msgid "Collaborateurs et partenaires"
+msgstr "Employees and partners"
+
+#: views/pages/about.twig:75
+msgid "Nous joindre par courriel"
+msgstr "Contact us by e-mail"
+
+#: views/pages/activities.twig:10
+#: inc/post_types/activity_custom_post_type.php:9
+#: inc/post_types/activity_custom_post_type.php:20
+msgid "Activités"
+msgstr "Activities"
+
+#: views/pages/activities.twig:10
+msgid "à venir"
+msgstr "coming soon"
+
+#: views/pages/front-page.twig:22
+msgid "Nos ressources"
+msgstr "Our resources"
+
+#: views/pages/front-page.twig:22
+msgid "à découvrir"
+msgstr "to discover"
+
+#: views/pages/front-page.twig:24
+msgid "Pour personnel des établissements"
+msgstr "For facility staff"
+
+#: views/pages/front-page.twig:25
+msgid "Pour population étudiante"
+msgstr "For students"
+
+#: views/pages/intervention.twig:6
+msgid "pour"
+msgstr "for"
+
+#: views/pages/intervention.twig:7
+msgid "soutenir"
+msgstr "support"
+
+#: views/pages/intervention.twig:8
+msgid "la santé mentale étudiante"
+msgstr "student mental health"
+
+#: views/pages/member-resources.twig:11
+#: views/partials/page-content/content-details-reviews.twig:11
+#: inc/post_types/thematic_custom_post_type.php:9
+#: inc/post_types/thematic_custom_post_type.php:20
+msgid "Thématiques"
+msgstr "Thematics"
+
+#: views/pages/member-resources.twig:12 views/pages/student-resources.twig:12
+msgid "Population étudiante"
+msgstr "Student population"
+
+#: views/pages/services.twig:8
+msgid "Services offerts"
+msgstr "Services offered"
+
+#: views/pages/services.twig:8
+msgid "dans"
+msgstr "in"
+
+#: views/pages/services.twig:8
+msgid "ton"
+msgstr "your"
+
+#: views/pages/services.twig:8
+msgid "établissement"
+msgstr "establishment"
+
+#: views/pages/single-member-resource.twig:13
+#: views/pages/single-student-resource.twig:14
+msgid "Retour aux ressources"
+msgstr "Back to resources"
+
+#: views/pages/single-subject.twig:13
+msgid "Retour aux sujets"
+msgstr "Back to subjects"
+
+#: views/pages/single-thematic.twig:16
+msgid "Retour aux niveaux d’intervention"
+msgstr "Back to intervention levels"
+
+#: views/pages/student-resources.twig:11
+#: views/partials/page-content/content-details-reviews.twig:9
+#: inc/post_types/subject_custom_post_type copy.php:9 copy.php:20
+msgid "Sujets"
+msgstr "Subjects"
+
+#: views/partials/ajax/filters.twig:28
+msgid "Vous connaissez une ressource utile qui pourrait se retrouver ici ?"
+msgstr "Do you know of a useful resource that could be found here?"
+
+#: views/partials/ajax/filters.twig:29
+msgid "Écrivez-nous"
+msgstr "Write to us"
+
+#: views/partials/ajax/no-result-item.twig:3
+msgid "Il n'y a pas d'activité ce mois-ci"
+msgstr "No activity this month"
+
+#: views/partials/ajax/no-result-item.twig:5
+msgid "Aucun résultat trouvé"
+msgstr "No results found"
+
+#: views/partials/ajax/search-filters.twig:10
+msgid "Étudiant.es"
+msgstr "Students"
+
+#: views/partials/ajax/search-filters.twig:12
+msgid "Personnel des établissements"
+msgstr "Facility staff"
+
+#: views/partials/ajax/search-filters.twig:15
+#: views/partials/ajax/search-filters.twig:63
+msgid "résultats"
+msgstr "results"
+
+#: views/partials/ajax/search-filters.twig:17
+msgid "Filtres"
+msgstr "Filters"
+
+#: views/partials/ajax/search-filters.twig:27
+msgid "Obtenir du soutien"
+msgstr "Getting support"
+
+#: views/partials/ajax/search-filters.twig:34
+#: views/partials/ajax/search-filters.twig:48
+msgid "Thèmes"
+msgstr "Themes"
+
+#: views/partials/ajax/search-filters.twig:40
+#: views/partials/ajax/search-filters.twig:54
+msgid "Types de ressource"
+msgstr "Resource types"
+
+#: views/partials/ajax/search-filters.twig:63
+msgid "Afficher les"
+msgstr "Show"
+
+#: views/partials/ajax/search-filters.twig:65
+msgid "Afficher 1 résultat"
+msgstr "Show 1 result"
+
+#: views/partials/ajax/search-filters.twig:67
+#: inc/post_types/activity_custom_post_type.php:18
+#: inc/post_types/activity_custom_post_type.php:19
+#: inc/post_types/member_resource_custom_post_type.php:18
+#: inc/post_types/member_resource_custom_post_type.php:19
+#: inc/post_types/student_resource_custom_post_type.php:18
+#: inc/post_types/student_resource_custom_post_type.php:19
+#: inc/post_types/subject_custom_post_type copy.php:18 copy.php:19
+#: inc/post_types/thematic_custom_post_type.php:18
+#: inc/post_types/thematic_custom_post_type.php:19
+msgid "Pas de résultat"
+msgstr "No results"
+
+#: views/partials/banners/banner-image-title-author.twig:12
+#: views/partials/banners/banner-image-title-author.twig:14
+#: views/partials/banners/banner-image-title.twig:13
+#: views/partials/banners/banner-image-title.twig:15
+#: views/partials/banners/basic-banner.twig:16
+#: views/partials/cards/activity-card.twig:60
+msgid "Image de"
+msgstr "Image of"
+
+#: views/partials/banners/banner-image-title-author.twig:35
+msgid "Par"
+msgstr "By"
+
+#: views/partials/banners/banner-image-title.twig:31
+#: views/partials/banners/banner-title-illustrations.twig:6
+#: views/partials/banners/banner-title-illustrations.twig:10
+msgid "Ressources utiles"
+msgstr "Useful resources"
+
+#: views/partials/banners/banner-title-illustrations.twig:7
+msgid "pour la "
+msgstr "for the"
+
+#: views/partials/banners/banner-title-illustrations.twig:7
+msgid "population étudiante"
+msgstr "student population"
+
+#: views/partials/banners/banner-title-illustrations.twig:11
+msgid "pour le "
+msgstr "for the"
+
+#: views/partials/banners/banner-title-illustrations.twig:11
+msgid "personnel des établissements"
+msgstr "facility staff"
+
+#: views/partials/banners/home-banner.twig:5
+msgid "La"
+msgstr "The"
+
+#: views/partials/banners/home-banner.twig:5
+msgid "station"
+msgstr "station"
+
+#: views/partials/banners/home-banner.twig:5
+msgid "pour soutenir la"
+msgstr "to support"
+
+#: views/partials/banners/home-banner.twig:6
+msgid "santé"
+msgstr "student"
+
+#: views/partials/banners/home-banner.twig:6
+msgid "mentale"
+msgstr "mental"
+
+#: views/partials/banners/home-banner.twig:6
+msgid "étudiante"
+msgstr "health"
+
+#: views/partials/banners/home-banner.twig:13
+msgid "Défiler"
+msgstr "Scroll"
+
+#: views/partials/breadscrum.twig:3
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+#: views/partials/cards/activity-card.twig:24
+msgid "à"
+msgstr "to"
+
+#: views/partials/cards/activity-card.twig:46
+msgid "Lire plus"
+msgstr "Read more"
+
+#: views/partials/cards/activity-card.twig:47
+msgid "Lire moins"
+msgstr "Read less"
+
+#: views/partials/cards/activity-card.twig:51
+msgid "Voir le détail de l’activité"
+msgstr "See activity details"
+
+#: views/partials/filters/dropdown-mobile-filters.twig:11
+#: views/partials/page-content/content-details-reviews.twig:37
+msgid "Toutes les ressources"
+msgstr "All resources"
+
+#: views/partials/footer.twig:6
+msgid "Nous joindre"
+msgstr "Contact us"
+
+#: views/partials/footer.twig:28
+msgid "En partenariat avec"
+msgstr "In partnership with"
+
+#: views/partials/footer.twig:32
+msgid "Réalisé par"
+msgstr "Created by"
+
+#: views/partials/footer.twig:47
+msgid "Site web par"
+msgstr "Website by"
+
+#: views/partials/footer.twig:47
+msgid "Kryzalid"
+msgstr "Kryzalid"
+
+#: views/partials/form.twig:4
+msgid "Abonnez-vous à l’infolettre"
+msgstr "Subscribe to our newsletter"
+
+#: views/partials/form.twig:9
+msgid ""
+"Lorem ipsum dolor sit amet consectetur. In tristique posuere pharetra nulla "
+"nisl."
+msgstr ""
+"Lorem ipsum dolor sit amet consectetur. In tristique posuere pharetra nulla "
+"nisl."
+
+#: views/partials/form.twig:14
+msgid "Étudiant"
+msgstr "Student"
+
+#: views/partials/form.twig:19
+msgid "Membre du personnel"
+msgstr "Staff member"
+
+#: views/partials/form.twig:26
+msgid "Le prénom est invalide"
+msgstr "First name is invalid"
+
+#: views/partials/form.twig:30
+msgid "Le champs nom est invalide"
+msgstr "The name field is invalid"
+
+#: views/partials/form.twig:34
+msgid "Le courriel est invalide"
+msgstr "The email is invalid"
+
+#: views/partials/form.twig:38
+msgid "L'établissement est invalide"
+msgstr "The establishment is invalid"
+
+#: views/partials/form.twig:40
+msgid "Je m'abonne"
+msgstr "I subscribe"
+
+#: views/partials/lists/pagination.twig:3
+msgid "Afficher plus"
+msgstr "View more"
+
+#: views/partials/menu/secondary-menu.twig:10
+msgid "Rechercher"
+msgstr "Search"
+
+#: views/partials/more-resources.twig:5
+msgid "Ressources utiles "
+msgstr "Useful resources"
+
+#: views/partials/more-resources.twig:5
+msgid " à découvrir"
+msgstr "to discover"
+
+#: views/partials/more-resources.twig:8
+msgid "Consulter toutes les ressources"
+msgstr "View all resources"
+
+#: views/partials/page-content/content-details-reviews.twig:24
+#: inc/taxonomies/resource_category.php:11
+#: inc/taxonomies/subject_category.php:11
+msgid "Catégories"
+msgstr "Categories"
+
+#: views/partials/page-content/content-details-reviews.twig:26
+msgid "Populations étudiantes"
+msgstr "Student populations"
+
+#: views/partials/page-content/content-details-reviews.twig:47
+msgid "Publié le"
+msgstr "Published on"
+
+#: views/partials/page-content/content-details-reviews.twig:49
+msgid "Mise à jour le"
+msgstr "Updated on"
+
+#: views/partials/page-content/content-reviews.twig:10
+msgid "Ce contenu vous a-t-il été utile ?"
+msgstr "Did you find this content useful?"
+
+#: views/partials/socials/socials-share.twig:3
+msgid "Partager"
+msgstr "Share"
+
+#: functions.php:210 functions.php:211
+msgid "Configuration du thème"
+msgstr "Theme configuration"
+
+#: functions.php:219 functions.php:220
+msgid "Config du thème"
+msgstr "Theme config"
+
+#: inc/acf_hooks.php:38
+msgid "Le format du code postal doit être le suivant : A1A 1A1"
+msgstr "The zip code format must be as follows: A1A 1A1"
+
+#: inc/custom_block.php:27
+msgid "Accordéon"
+msgstr "Accordion"
+
+#: inc/custom_block.php:28
+msgid "Add a custom accordion"
+msgstr "Ajout d’un accordéon personnalisé"
+
+#: inc/custom_block.php:39
+msgid "Appel à l'action"
+msgstr "Call to action"
+
+#: inc/custom_block.php:40
+msgid "Ajouter un appel à l'action"
+msgstr "Add a call to action"
+
+#: inc/custom_block.php:51
+msgid "Titre et flèche"
+msgstr "Title and arrow"
+
+#: inc/custom_block.php:52
+msgid "Ajouter un titre avec une flèche"
+msgstr "Add a title with an arrow"
+
+#: inc/post_types/activity_custom_post_type.php:10
+msgid "Activité"
+msgstr "Activity"
+
+#: inc/post_types/activity_custom_post_type.php:11
+msgid "Toutes les activités"
+msgstr "All activities"
+
+#: inc/post_types/activity_custom_post_type.php:12
+#: inc/post_types/activity_custom_post_type.php:13
+#: inc/post_types/member_resource_custom_post_type.php:12
+#: inc/post_types/member_resource_custom_post_type.php:13
+#: inc/post_types/student_resource_custom_post_type.php:12
+#: inc/post_types/student_resource_custom_post_type.php:13
+#: inc/post_types/subject_custom_post_type copy.php:12 copy.php:13
+#: inc/post_types/thematic_custom_post_type.php:12
+#: inc/post_types/thematic_custom_post_type.php:13 inc/taxonomies.php:29
+msgid "Ajouter"
+msgstr "Add"
+
+#: inc/post_types/activity_custom_post_type.php:14
+#: inc/post_types/member_resource_custom_post_type.php:14
+#: inc/post_types/student_resource_custom_post_type.php:14
+#: inc/post_types/subject_custom_post_type copy.php:14
+#: inc/post_types/thematic_custom_post_type.php:14 inc/taxonomies.php:27
+#: inc/taxonomies.php:28
+msgid "Modifier"
+msgstr "Edit"
+
+#: inc/post_types/activity_custom_post_type.php:15
+#: inc/post_types/member_resource_custom_post_type.php:15
+#: inc/post_types/student_resource_custom_post_type.php:15
+#: inc/post_types/subject_custom_post_type copy.php:15
+#: inc/post_types/thematic_custom_post_type.php:15 inc/taxonomies.php:30
+msgid "Nouveau"
+msgstr "New"
+
+#: inc/post_types/activity_custom_post_type.php:16
+msgid "Voir l'activité"
+msgstr "See the activity"
+
+#: inc/post_types/activity_custom_post_type.php:17
+msgid "Trouver une activité"
+msgstr "Find an activity"
+
+#: inc/post_types/activity_custom_post_type.php:21
+#: inc/post_types/member_resource_custom_post_type.php:21
+#: inc/post_types/student_resource_custom_post_type.php:21
+#: inc/post_types/subject_custom_post_type copy.php:21
+#: inc/post_types/thematic_custom_post_type.php:21
+msgid "Publié"
+msgstr "Published"
+
+#: inc/post_types/activity_custom_post_type.php:22
+#: inc/post_types/member_resource_custom_post_type.php:22
+#: inc/post_types/student_resource_custom_post_type.php:22
+#: inc/post_types/subject_custom_post_type copy.php:22
+#: inc/post_types/thematic_custom_post_type.php:22
+msgid "Publié de façon privée"
+msgstr "Published privately"
+
+#: inc/post_types/activity_custom_post_type.php:23
+#: inc/post_types/member_resource_custom_post_type.php:23
+#: inc/post_types/student_resource_custom_post_type.php:23
+#: inc/post_types/subject_custom_post_type copy.php:23
+#: inc/post_types/thematic_custom_post_type.php:23
+msgid "Programmé"
+msgstr "Programmed"
+
+#: inc/post_types/activity_custom_post_type.php:24
+#: inc/post_types/member_resource_custom_post_type.php:24
+#: inc/post_types/student_resource_custom_post_type.php:24
+#: inc/post_types/subject_custom_post_type copy.php:24
+#: inc/post_types/thematic_custom_post_type.php:24
+msgid "Mis à jour"
+msgstr "Updated"
+
+#: inc/post_types/activity_custom_post_type.php:43
+msgid "activité"
+msgstr "activity"
+
+#: inc/post_types/member_resource_custom_post_type.php:9
+#: inc/post_types/member_resource_custom_post_type.php:20
+msgid "Ressources pour le personnel"
+msgstr "Staff resources"
+
+#: inc/post_types/member_resource_custom_post_type.php:10
+msgid "Ressource pour le personnel"
+msgstr "Staff resource"
+
+#: inc/post_types/member_resource_custom_post_type.php:11
+msgid "Toutes les ressources pour le personnel"
+msgstr "All staff resources"
+
+#: inc/post_types/member_resource_custom_post_type.php:16
+msgid "Voir la ressource pour le personnel"
+msgstr "View resource for staff"
+
+#: inc/post_types/member_resource_custom_post_type.php:17
+msgid "Trouver une ressource le personnel"
+msgstr "Find a resource Staff"
+
+#: inc/post_types/member_resource_custom_post_type.php:43
+msgid "ressource-personnel"
+msgstr "staff-resource"
+
+#: inc/post_types/student_resource_custom_post_type.php:9
+msgid "Ressources pour les étudiant.es"
+msgstr "Resources for students"
+
+#: inc/post_types/student_resource_custom_post_type.php:10
+msgid "Ressource pour les étudiant.es"
+msgstr "Resource for students"
+
+#: inc/post_types/student_resource_custom_post_type.php:11
+msgid "Toutes les ressources pour les étudiant.es"
+msgstr "All resources for students"
+
+#: inc/post_types/student_resource_custom_post_type.php:16
+msgid "Voir la ressource pour les étudiant.es"
+msgstr "See the resource for students"
+
+#: inc/post_types/student_resource_custom_post_type.php:17
+msgid "Trouver une ressource pour les étudiant.es"
+msgstr "Find a resource for students"
+
+#: inc/post_types/student_resource_custom_post_type.php:20
+msgid "Ressources pour étudiant.es"
+msgstr "Resources for students"
+
+#: inc/post_types/student_resource_custom_post_type.php:43
+msgid "ressource-etudiant"
+msgstr "student-resource"
+
+#: inc/post_types/subject_custom_post_type copy.php:10
+msgid "Sujet"
+msgstr "Subject"
+
+#: inc/post_types/subject_custom_post_type copy.php:11
+msgid "Tous les Sujets"
+msgstr "All subjects"
+
+#: inc/post_types/subject_custom_post_type copy.php:16
+msgid "Voir le sujet"
+msgstr "See the subject"
+
+#: inc/post_types/subject_custom_post_type copy.php:17
+msgid "Trouver un sujet"
+msgstr "Find a subject"
+
+#: inc/post_types/subject_custom_post_type copy.php:43
+msgid "sujet"
+msgstr "subject"
+
+#: inc/post_types/thematic_custom_post_type.php:10
+msgid "Thématique"
+msgstr "Thematic"
+
+#: inc/post_types/thematic_custom_post_type.php:11
+msgid "Toutes les Thématiques"
+msgstr "All thematics"
+
+#: inc/post_types/thematic_custom_post_type.php:16
+msgid "Voir la thématique"
+msgstr "See the thematic"
+
+#: inc/post_types/thematic_custom_post_type.php:17
+msgid "Trouver une thématique"
+msgstr "Find a thematic"
+
+#: inc/post_types/thematic_custom_post_type.php:43
+msgid "thématique"
+msgstr "thematic"
+
+#: inc/taxonomies.php:25
+msgid "Recherche"
+msgstr "Search"
+
+#: inc/taxonomies.php:26
+msgid "Tous"
+msgstr "All"
+
+#: inc/taxonomies/resource_category.php:15
+msgid "catégories"
+msgstr "categories"
+
+#: inc/taxonomies/resource_member_type_taxonomy.php:11
+#: inc/taxonomies/resource_student_type_taxonomy.php:11
+msgid "Types"
+msgstr "Types"
+
+#: inc/taxonomies/resource_member_type_taxonomy.php:15
+msgid "member-type"
+msgstr "member-type"
+
+#: inc/taxonomies/resource_student_type_taxonomy.php:15
+#: inc/taxonomies/subject_category.php:15
+msgid "student-type"
+msgstr "student-type"
+
+#: inc/taxonomies/thematic_intervention_taxonomy.php:11
+msgid "Interventions"
+msgstr "Interventions"
+
+#: inc/taxonomies/thematic_intervention_taxonomy.php:15
+msgid "interventions"
+msgstr "interventions"
+
+#~ msgid "Retour à l'accueil"
+#~ msgstr "Back to the homepage"
+
+#~ msgid "En savoir plus"
+#~ msgstr "Learn more"
+
+#~ msgid "Produit complémentaire"
+#~ msgstr "Complementary product"
+
+#~ msgid "Produits complémentaires"
+#~ msgstr "Complementary products"
+
+#~ msgid "Pages"
+#~ msgstr "Pages"
+
+#~ msgid "Nouvelles"
+#~ msgstr "News"
+
+#~ msgid "Voir la solution"
+#~ msgstr "See solution"
+
+#~ msgid ""
+#~ "Nous n'avons pas de produits à vous proposer aujourd'hui. Revenez "
+#~ "bientôt !"
+#~ msgstr ""
+#~ "We don’t have any products to offer you today. Please come back soon!"
+
+#~ msgid "Visionneuse"
+#~ msgstr "Viewer"
+
+#~ msgid "Ajouter un slider personalisé"
+#~ msgstr "Add a custom slider"
+
+#~ msgid "Ajouter un accordéon customisé"
+#~ msgstr "Add a custom accordion"
+
+#~ msgid "Bref résumé"
+#~ msgstr "Brief summary"
+
+#~ msgid "Ajouter un blurb customisé"
+#~ msgstr "Add a custom blurb"
+
+#~ msgid "Produits"
+#~ msgstr "Products"
+
+#~ msgid "Produit"
+#~ msgstr "Product"
+
+#~ msgid "Trouver un produit"
+#~ msgstr "Find a product"
+
+#~ msgid "Solutions"
+#~ msgstr "Solutions"
+
+#~ msgid "Solution"
+#~ msgstr "Solution"
+
+#~ msgid "type"
+#~ msgstr "type"
+
+#~ msgid "Theme settings"
+#~ msgstr "Configurations du thème"
+
+#~ msgid "Theme config"
+#~ msgstr "Configurations du thème"
+
+#~ msgid "Add a custom slider"
+#~ msgstr "Ajouter un slider personalisé"
+
+#~ msgid "Produit inclus dans la gestion administrative"
+#~ msgstr "Product included in the administrative management"
+
+#~ msgid "Produits inclus dans la gestion administrative"
+#~ msgstr "Products included in the administrative management"
+
+#~ msgid "Add a custom blurb"
+#~ msgstr "Ajouter un slider personalisé"
+
+#~ msgid "Montreal Childrens Hospital"
+#~ msgstr "Hôpital de Montréal pour Enfants"
+
+#~ msgid "Newsroom"
+#~ msgstr "Chambre aux nouvelles"
+
+#~ msgid "Back"
+#~ msgstr "Retour"
+
+#~ msgid "Previous article"
+#~ msgstr "Article précédent"
+
+#~ msgid "Next article"
+#~ msgstr "Article suivant"
+
+#~ msgid "Related articles"
+#~ msgstr "Articles similaires"
+
+#~ msgid "Sorry"
+#~ msgstr "Désolé"
+
+#~ msgid "Alert Messages"
+#~ msgstr "Messages d’alerte"
+
+#~ msgid "Clinic"
+#~ msgstr "Clinique"
+
+#~ msgid "All the clinics"
+#~ msgstr "Toutes les cliniques"
+
+#~ msgid "Add a clinic"
+#~ msgstr "Ajouter une clinique"
+
+#~ msgid "Update clinic"
+#~ msgstr "Modifier une clinique"
+
+#~ msgid "New clinic"
+#~ msgstr "Nouvelle clinique"
+
+#~ msgid "See clinic"
+#~ msgstr "Voir la clinique"
+
+#~ msgid "Find an clinic"
+#~ msgstr "Trouver une clinique"
+
+#~ msgid "No result in trash"
+#~ msgstr "Aucun résultat dans la corbeil"
+
+#~ msgid "Clinics"
+#~ msgstr "Cliniques"
+
+#~ msgid "Health article"
+#~ msgstr "Article santé"
+
+#~ msgid "clinic-category"
+#~ msgstr "categories-de-clinique"
+
+#~ msgid "Symptoms"
+#~ msgstr "Symptômes"
+
+#~ msgid "Hello"
+#~ msgstr "Bonjour"
+
+#~ msgid "Outil Trouver ma direction"
+#~ msgstr "Find my direction tool"
+
+#~ msgid ""
+#~ "<h3>Notre questionnaire Trouver ma direction est temporairement "
+#~ "indisponible. </h3>Merci de votre patience pendant cette période de "
+#~ "maintenance planifiée."
+#~ msgstr ""
+#~ "<h3>Our questionnaire find my direction is temporarily unavailable.</"
+#~ "h3>Thank you for your patience during this scheduled maintenance period."
+
+#~ msgid ""
+#~ "À la recherche d'un sujet pour votre maîtrise ou votre doctorat, d'un "
+#~ "stage de 1er, 2e ou 3e cycle, d'un stage postdoctoral ou d'un programme "
+#~ "d'études? Ne cherchez plus. Trouvez votre direction à l'INRS en répondant "
+#~ "à 3 questions."
+#~ msgstr ""
+#~ "Looking for a topic for your master’s or doctorate? How about an "
+#~ "undergraduate or graduate internship, a postdoctoral fellowship, or even "
+#~ "a program of study? Look no further. You can find your path at INRS by "
+#~ "answering these three questions."
+
+#~ msgid "Vous pouvez cocher plus d'un choix."
+#~ msgstr "You can check more than one."
+
+#~ msgid "Je veux étudier"
+#~ msgstr "I want to study"
+
+#~ msgid "\"Je veux étudier\""
+#~ msgstr "\"I want to study\""
+
+#~ msgid "Je veux faire un stage postdoctoral"
+#~ msgstr "I want to complete a postdoctoral fellowship"
+
+#~ msgid "\"Je veux faire un stage postdoctoral\""
+#~ msgstr "\"I want to complete a postdoctoral fellowship\""
+
+#~ msgid "\"Passer à la prochaine question\""
+#~ msgstr "\"Next question\""
+
+#~ msgid "Dans quel domaine aimeriez-vous faire carrière?"
+#~ msgstr "In what field would you like to pursue a career?"
+
+#~ msgid "Vous pouvez cocher plus d'un domaine."
+#~ msgstr "You can check more than one field."
+
+#~ msgid "Vous pouvez cocher plus d'un intérêt."
+#~ msgstr "You can check more than one."
+
+#~ msgid "Voici votre direction à l'INRS."
+#~ msgstr "Here is your path at INRS."
+
+#~ msgid "Professeurs partageant vos intérêts de recherche"
+#~ msgstr "Professors sharing your research interests"
+
+#~ msgid "Projets de maîtrise/doctorat"
+#~ msgstr "Master’s/PhD projects"
+
+#~ msgid "Découvrez ce projet"
+#~ msgstr "See this project"
+
+#~ msgid "Question suivante\""
+#~ msgstr "Next question"
+
+#~ msgid "Lancer le questionnaire"
+#~ msgstr "Answer the questions"
+
+#~ msgid "Groupes d'expertises"
+#~ msgstr "Expertise Groups"
+
+#~ msgid "La page demandée est présentement introuvable."
+#~ msgstr ""
+#~ "Sorry, this page does not exist anymore or is currently unavailable."
+
+#~ msgid "stage_research"
+#~ msgstr "stage_research-en"
+
+#~ msgid "stage_post_doctoral"
+#~ msgstr "stage_post_doctoral-en"
+
+#~ msgid "Date de début"
+#~ msgstr "Start date"
+
+#~ msgid "dec."
+#~ msgstr "dec."
