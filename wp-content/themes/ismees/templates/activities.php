@@ -40,6 +40,21 @@ $activities = [
     ],
 ];
 
+// Param the target array for addsearch custom fields
+$post_id = get_the_ID();  
+
+$targets = get_the_terms($post_id, 'page_target');
+
+$target_slugs = [];
+if (!empty($targets)) {
+    foreach ($targets as $target) {
+        if (isset($target->slug)) {
+            $target_slugs[] = $target->slug;
+        }
+    }
+}
+
+$context['target'] = $target_slugs;
 $context['activities'] = new Timber\PostQuery($activities);
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
