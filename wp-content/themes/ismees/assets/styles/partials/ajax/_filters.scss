@@ -111,5 +111,58 @@
             
         }
     }
+}
 
+.filters-infos-ctn {
+    background-color: $mainBG;
+    padding-top: 30px;
+
+    .filters-infos,
+    #display-filters {
+        @include flex(center, flex-start, row);
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #clear-filters {
+        @include responsive-font($primaryFont, 600, 15, 18, 15, 18, null, null, $blue);
+
+        &::before {
+            content: "\e914";
+            font-family: 'icomoon' !important;
+            margin-right: 10px;
+            font-size: 12px;
+            display: inline-block;
+            @include transition($basicTransition);
+        }
+
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    }
+
+    .filter {
+        display: inline-block;
+        @include responsive-font($primaryFont, 500, 13, 14, 16, 17, null, null);
+        cursor: pointer;
+        padding: 6px 15px;
+        border-radius: 30px;
+        background-color: $blue;
+        color: white;
+        text-align: center;
+
+        &:hover {
+            text-decoration: line-through;
+        }
+
+        &::after {
+            content: "\e911";
+            font-family: 'icomoon' !important;
+            margin-left: 7px;
+            font-size: 10px;
+            display: inline-block;
+            @include transition($basicTransition);
+        }
+    }
 }

@@ -259,7 +259,10 @@ export default class AjaxForm {
   // Un-check all boxes and reload data
   clearFilters = () => {
     event.preventDefault();
-    this.formContainer.querySelectorAll('input:checked').forEach(i => { i.checked = false; });
+    this.formContainer.querySelectorAll('input:checked').forEach(i => { i.click(); });
+    if(this.formContainer.querySelector('input#all')) {
+      this.formContainer.querySelector('input#all').click();
+    };
     this.onFormChange();
   }
 
@@ -338,8 +341,19 @@ export default class AjaxForm {
   // (Optional) Show/hide clear button depending on checked filters
   toggleClearButton = () => {
     if (!this.clearButton) return false;
-    const filtersActive = !![...this.formContainer.querySelectorAll('input:checked')].length;
-    this.clearButton.style.display = filtersActive ? 'block' : 'none';
+    
+    const checkedInputs = [...this.formContainer.querySelectorAll('input:checked')];
+    
+    const filtersActive = checkedInputs.length;
+    
+    // Check if the 'all' filter is the only active one
+    const onlyAllFilterActive = filtersActive === 1 && checkedInputs[0].id === 'all';
+  
+    if(filtersActive && !onlyAllFilterActive) {
+      this.clearButton.style.display = 'block';
+    } else {
+      this.clearButton.style.display = 'none';
+    }
   }
 
   // (Optional) Indicate the number of filters currently active in filtersCount element
