@@ -20,7 +20,7 @@
     {% include "partials/more-resources.twig" with {
         'items': thematic.meta('resources'),
         'taxonomy': 'resource_category',
-        'redirectionUrl': options.config_members_resources
+        'redirectionUrl': options.config_students_resources ~ '?subjects=' ~ thematic.id
     } %}
 </main>
 {% endblock %}

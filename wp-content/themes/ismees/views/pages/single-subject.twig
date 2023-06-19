@@ -17,7 +17,7 @@
     {% include "partials/more-resources.twig" with {
         'items': subject.meta('resources'),
         'taxonomy': 'resource_category',
-        'redirectionUrl': options.config_students_resources
+        'redirectionUrl': options.config_members_resources ~ '?subjects=' ~ subject.id
     } %}
 </main>
 {% endblock %}

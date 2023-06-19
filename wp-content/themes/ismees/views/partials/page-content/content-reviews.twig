@@ -4,7 +4,9 @@
     </div>
     <div class="reviews-back-ctn {{ backButton ? '' : '-align-right' }}">
         {% if backButton %}
-            <a class="back-button" href="{{ backBtnLink }}"><i class="icon-right-arrow-long"></i>{{ backBtnText }}</a>
+            <div class="back-button-ctn">
+                <a class="back-button" href="{{ backBtnLink }}"><i class="icon-right-arrow-long"></i>{{ backBtnText }}</a>
+            </div>
         {% endif %}
         <div class="reviews-ctn">
             <p>{{ __('Ce contenu vous a-t-il été utile ?', 'ismees') }}</p>

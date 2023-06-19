@@ -3,7 +3,7 @@
 <main class="single-resource" data-aos="fade" data-aos-delay="300">
     {% include "partials/banners/banner-image-title-author.twig" with {
             'post': post,
-            'taxonomy': 'resource_category',
+            'taxonomy': 'resource_student_type',
         }
     %}
 
@@ -17,8 +17,8 @@
 
     {% include "partials/more-resources.twig" with {
         'items': related_posts,
-        'taxonomy': 'resource_category',
-        'redirectionUrl': options.config_students_resources
+        'taxonomy': 'resource_student_type',
+        'redirectionUrl': options.config_students_resources ~ '?category=' ~ main_category_id
     } %}
 </main>
 {% endblock %}

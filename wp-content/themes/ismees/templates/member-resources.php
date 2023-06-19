@@ -24,7 +24,7 @@ $member_thematics = [
     'post_type'      => 'thematic',
     'post_status'    => 'publish',
     'orderby'       => 'date',
-    'posts_per_page' =>  15,
+    'posts_per_page' =>  $limit,
     'paged'          => $paged,
     'nopaging'       => true,
 ];

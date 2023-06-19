@@ -8,18 +8,4 @@
     .container-xxl {
         position: relative;
     }
-    
-    @media(max-width: 767px) {
-
-        .reviews-back-ctn {
-            @include flex(flex-start, flex-start, column);
-
-            .reviews-ctn {
-                width: 100%;
-                padding-top: 30px;
-                margin-top: 30px;
-                border-top: 1px solid rgba($darkBlue, 0.3);
-            }
-        }
-    }
 }

@@ -73,6 +73,7 @@ $context['categories_addsearch_ids'] = $category_addsearch_ids;
 $context['subjects_addsearch_names'] = $subjects_addsearch_names;
 $context['subjects_addsearch_ids'] = $subjects_addsearch_ids;
 $context['icon'] = $icon;
+$context['main_category_id'] = $category->term_id;
 
 // Post context
 $context['post'] = $timber_post;

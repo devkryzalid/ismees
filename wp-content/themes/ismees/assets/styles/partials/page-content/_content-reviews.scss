@@ -62,11 +62,11 @@
         .reviews-back-ctn {
             @include flex(flex-start, flex-start, column);
 
-            .reviews-ctn {
+            .back-button-ctn {
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+                border-bottom: 1px solid rgba($darkBlue, 0.3);
                 width: 100%;
-                padding-top: 30px;
-                margin-top: 30px;
-                border-top: 1px solid rgba($darkBlue, 0.3);
             }
         }
     }
