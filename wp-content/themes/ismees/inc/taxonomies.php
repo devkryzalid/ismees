@@ -42,6 +42,7 @@ function register_taxonomies() {
     resource_category_taxonomy($labelsGlobal, $argsGlobal);
     resource_student_type_taxonomy($labelsGlobal, $argsGlobal);
     resource_member_type_taxonomy($labelsGlobal, $argsGlobal);
+    target_taxonomy($labelsGlobal, $argsGlobal);
 }
 
 /**

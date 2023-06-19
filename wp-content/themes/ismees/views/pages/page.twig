@@ -1,3 +1,4 @@
+{% set typeSlug = get_primary_taxonomy(page.id, 'page_target', true).slug %}
 {% extends 'base.twig' %}
 {% block content %}
 <main data-aos="fade" data-aos-delay="300">
@@ -16,4 +17,28 @@
 {% endblock %}
 {% block specific_script %}
 	<script src="{{ theme.link }}/dist/scripts/pages/page.js"></script>
+{% endblock %}
+
+{# META FOR ADDSEARCH CUSTOM FIELDS #}
+{% block addsearch_meta %}
+    {% set meta_tags = {
+        'page': 'research',
+        'title': page.title,
+        'image': page.thumbnail,
+        'resource': typeSlug,
+    } %}
+
+    {% for tag, value in meta_tags %}
+        {% if value %}
+            {% if value is iterable %}
+                {% set meta_content = [] %}
+                {% for item in value %}
+                    {% set meta_content = meta_content|merge([tag ~ "=" ~ item]) %}
+                {% endfor %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ meta_content|join(';') }}">
+            {% else %}
+                <meta name="addsearch-custom-field" data-type="text" content="{{ tag }}={{ value }}">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 {% endblock %}

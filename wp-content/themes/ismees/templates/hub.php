@@ -20,7 +20,6 @@ $filtered_subjects = array_filter($all_subjects->get_posts(), function($subject)
 });
 
 $context['subjects'] = $filtered_subjects;
-// dd($context['subjects']);
 
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
