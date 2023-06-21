@@ -257,14 +257,20 @@ export default class AjaxForm {
   }
 
   // Un-check all boxes and reload data
-  clearFilters = () => {
+  clearFilters = (event) => {
     event.preventDefault();
-    this.formContainer.querySelectorAll('input:checked').forEach(i => { i.click(); });
+    this.formContainer.querySelectorAll('input:checked').forEach(i => { 
+        // Check if the data-type is not 'notClearable' before clicking
+        if(i.dataset.type !== 'notClearable') {
+            i.click(); 
+        }
+    });
     if(this.formContainer.querySelector('input#all')) {
       this.formContainer.querySelector('input#all').click();
     };
     this.onFormChange();
   }
+
 
   // Fetch first part of current url, and remove trailing slash
   getCurrentUrlPrefix = () => {
@@ -344,17 +350,18 @@ export default class AjaxForm {
     
     const checkedInputs = [...this.formContainer.querySelectorAll('input:checked')];
     
-    const filtersActive = checkedInputs.length;
+    // Filter out the 'notClearable' input
+    const clearableInputs = checkedInputs.filter(input => input.dataset.type !== 'notClearable');
     
-    // Check if the 'all' filter is the only active one
-    const onlyAllFilterActive = filtersActive === 1 && checkedInputs[0].id === 'all';
+    const filtersActive = clearableInputs.length;
   
-    if(filtersActive && !onlyAllFilterActive) {
+    if(filtersActive) {
       this.clearButton.style.display = 'block';
     } else {
       this.clearButton.style.display = 'none';
     }
   }
+  
 
   // (Optional) Indicate the number of filters currently active in filtersCount element
   setActiveFiltersCount = () => {

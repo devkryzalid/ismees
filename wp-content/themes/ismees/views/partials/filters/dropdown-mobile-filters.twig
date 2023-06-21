@@ -9,7 +9,7 @@
                         <img class="card-icon" src="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" alt="" />
                     </div>
                     {{ __('Toutes les ressources', 'ismees') }}
-                    <input type="radio" data-icon="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" data-name="{{ __('Toutes les ressources', 'ismees') }}" name="{{ taxo_name }}" id="all" value=""  {{ (filter.term_id in param_array) ? '' : 'checked' }}>
+                    <input type="radio" data-icon="{{ site.home_url ~ '/wp-content/themes/ismees/assets/images/grid.svg' }}" data-type="notClearable" data-name="{{ __('Toutes les ressources', 'ismees') }}" name="{{ taxo_name }}" id="all" value=""  {{ (filter.term_id in param_array) ? '' : 'checked' }}>
                 </label>
                 {% for filter in filters %}
                     <label for="{{ filter.slug }}" class="radio-ctn" tabindex="0">

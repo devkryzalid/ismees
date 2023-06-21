@@ -199,3 +199,21 @@ button {
         }
     }
 }
+
+#clear-filters {
+    @include responsive-font($primaryFont, 600, 15, 18, 15, 18, null, null, $blue);
+
+    &::before {
+        content: "\e914";
+        font-family: 'icomoon' !important;
+        margin-right: 10px;
+        font-size: 12px;
+        display: inline-block;
+        @include transition($basicTransition);
+    }
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}

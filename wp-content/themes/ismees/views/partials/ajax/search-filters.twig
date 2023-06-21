@@ -8,7 +8,7 @@
     <div class="subfilters-ctn">
         <div id="togglerContainer" data-aos="fade-up" data-aos-delay="300">
             <label for="filtersToggler" id="unchecked-label">{{__('Étudiant.es', 'ismees')}}</label>
-            <input type="checkbox" name="member" id="filtersToggler" {% if member %}checked{% endif %}>
+            <input type="checkbox" name="member" id="filtersToggler" data-type="notClearable" {% if member %}checked{% endif %}>
             <label for="filtersToggler" id="checked-label">{{__('Personnel des établissements', 'ismees')}}</label>
         </div>
         <div class="display-filters-ctn" data-aos="fade-up" data-aos-delay="300">
@@ -67,5 +67,6 @@
                 <a class="main-button -blue" href="#resultsList">{{__('Pas de résultat', 'ismees')}}</a>
             {% endif %}
         </div>
+        <a id="clear-filters">{{ __('Réinitialiser', 'goute-au-loisir') }}</a>
     </div>
 </form>
