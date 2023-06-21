@@ -5,10 +5,15 @@
 			<span></span>
 			<span></span>
 		</div>
-		<div class="logo-ctn">
-			<a href="{{ site.home_url }}" aria-label="{{ __('Lien vers l\'accueil', 'ismees') }}"></a>
+		<div class="secondary-mobile">
+			<div class="logo-ctn">
+				<a href="{{ site.home_url }}" aria-label="{{ __('Lien vers l\'accueil', 'ismees') }}"></a>
+			</div>
+			<a class="header-search" href="{{ options.config_search }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i></a>
+			<div class="header-cta">
+				<a href="{{ options.header_cta.url }}">{{ options.header_cta.title }}</a>
+			</div>
 		</div>
-		<a class="header-search" href="{{ options.config_search }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i></a>
 	</div>
 	<div id="header-ctn">
 		<div class="burger-menu -opened">

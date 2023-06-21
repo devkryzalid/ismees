@@ -21,7 +21,7 @@
             display: flex;
             align-items: center;
             @include transition($basicTransition);
-            @include responsive-font($primaryFont, 500, 19, 22, 23, 26);
+            @include responsive-font($primaryFont, 500, 22, 22, 26, 26);
 
             i {
                 font-size: 12px;
@@ -124,10 +124,27 @@
         }
     }
 
-    @media(max-width: 992px) {
+    @media(max-width: 1440px) {
+
+        .menu-item {
+            a {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    @media(max-width: 1280px) {
         flex-wrap: wrap;
         margin-bottom: 40px !important;
         gap: 50px;
+
+        .menu-item {
+            a {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
 
         .menu-item-has-children {   
             display: flex;

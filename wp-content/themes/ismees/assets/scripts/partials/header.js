@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const menuSubItems = item.querySelector(".child-menu");
             let marginItems = item.getBoundingClientRect().x;
 
-            window.innerWidth > 992 ? menuSubItems.style.paddingLeft = `${marginItems}px` : menuSubItems.style.paddingLeft = '0px';
+            window.innerWidth > 1280 ? menuSubItems.style.paddingLeft = `${marginItems}px` : menuSubItems.style.paddingLeft = '0px';
 
             // Adjust arrows position
             if (index !== 0) {
@@ -111,12 +111,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (childMenu.querySelector('.has-sub-child')) {
             childMenu.style.display = 'flex';
 
-            if (window.innerWidth <= 992) {
+            if (window.innerWidth <= 1280) {
                 childMenu.style.gap = '30px';
             }
 
             window.addEventListener('resize', function() {
-                if (window.innerWidth <= 992) {
+                if (window.innerWidth <= 1280) {
                     childMenu.style.gap = '30px';
                 } else {
                     childMenu.style.gap = '0';
