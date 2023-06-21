@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const baseUrl = window.location.origin;
+    const childMenus = document.querySelectorAll('.child-menu');
+    const header = document.getElementById('header');
+    const menuMainItems = document.querySelectorAll("#primary-menu .menu-item-has-children.main-item");
+    const primaryMenuItems = document.querySelectorAll('#primary-menu .main-item');
+
 
     // ********* Display / Hide menu mobile ********* //
 
@@ -18,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu();
 
     // ********* Sticky Header Behavior ********* //
-
-    const header = document.getElementById('header');
 
     previousScrollPosition = 0;
 
@@ -48,8 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ********* Set sub menu alignment with its parent ********* //
-
-    const menuMainItems = document.querySelectorAll("#primary-menu .menu-item-has-children.main-item");
 
     // Create the primary menu arrows
     menuMainItems.forEach((item, index) => {
@@ -86,8 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ********* White background on the header when user hover the menu dropdown ********* //
 
-    const primaryMenuItems = document.querySelectorAll('#primary-menu .main-item');
-
     primaryMenuItems.forEach((item) => {
         item.addEventListener('mouseover', () => {
             header.classList.add('-white-background');
@@ -96,12 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener('mouseleave', () => {
             header.classList.remove('-white-background');
         });
+
     });
+
+    // ********* Open header on click ********* //
+
 
     //******* Set style to primary menu if it has sub-children *********//
 
     // Select all elements with class .child-menu
-    const childMenus = document.querySelectorAll('.child-menu');
 
     // Iterate over all selected elements
     childMenus.forEach(function(childMenu) {

@@ -2,7 +2,7 @@
 
     .banner-content-ctn {
         padding-top: clamp-calc(140, 185);
-        padding-bottom: clamp-calc(90, 150);
+        padding-bottom: clamp-calc(140, 200);
         background-color: $mint;
         @include flex(center, center, column);
 

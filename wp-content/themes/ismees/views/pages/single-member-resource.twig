@@ -13,10 +13,6 @@
             'backBtnText': __('Retour aux ressources', 'ismees')
         }
     %}
-
-    {# <pre>
-        {{ dd() }}
-    </pre> #}
     
     {% include "partials/more-resources.twig" with {
         'items': related_posts,
@@ -24,6 +20,9 @@
         'redirectionUrl': options.config_members_resources ~ '?category=' ~ main_category_id
     } %}
 </main>
+{% endblock %}
+{% block specific_script %}
+	<script src="{{ theme.link }}/dist/scripts/pages/singles.js"></script>
 {% endblock %}
 
 {# META FOR ADDSEARCH CUSTOM FIELDS #}

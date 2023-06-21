@@ -1,10 +1,13 @@
 body.page {
     background-color: $mainBG;
 
-    .page-content {
-
-        .container-xxxl {
-            position: relative;
+    .main-content {
+        .page-content {
+            @include sectionSeparator();
+    
+            .container-xxxl {
+                position: relative;
+            }
         }
-    }
+    }   
 }

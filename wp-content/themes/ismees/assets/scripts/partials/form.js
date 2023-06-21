@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const openFormButton = document.querySelector(".subscribe-button");
+    const form = document.getElementById('subscriptionForm');
+    const footerForm = document.querySelector(".footer-form");
+    const footer = document.querySelector(".footer");
+    let formHeight;
+    const fields = ['name', 'surname', 'email', 'establishment'];
+
     const patterns = {
         name: /^[a-zA-ZÀ-ÿ]+$/,
         surname: /^[a-zA-ZÀ-ÿ]+$/,
@@ -48,9 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const form = document.getElementById('subscriptionForm');
-    const fields = ['name', 'surname', 'email', 'establishment'];
-
     fields.forEach((fieldId) => {
         const field = document.getElementById(fieldId);
         field.addEventListener('blur', () => validateField(fieldId));
@@ -64,10 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const openFormButton = document.querySelector(".subscribe-button");
-    const footerForm = document.querySelector(".footer-form");
+    // TOGGLE THE FORM
 
-    openFormButton.addEventListener('click', () => {
-        footerForm.classList.toggle('-show');
+    if (!formHeight) {
+        form.style.height = 'auto';
+        formHeight = form.offsetHeight;
+        form.style.height = '0';
+    }
+
+    openFormButton.addEventListener('click', function () {
+
+        if (form.style.height !== '0px') {
+            form.style.height = '0';
+            footerForm.classList.remove("-show");
+        } else {
+            form.style.height = formHeight + 'px';
+            footerForm.classList.add("-show");
+        }
     });
 });
