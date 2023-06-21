@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const initialIntroWidths = Array.from(columns).map(column => column.querySelector('.introduction').offsetWidth);
 
         if (window.innerWidth >= 993) {
+            console.log(window.innerWidth); 
+
             columns.forEach((column, index) => {
                 const columnImage = column.querySelector('.img-ctn img');
                 let columnImageWidth = columnImage.offsetWidth;
@@ -29,15 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 intro.style.width = `${initialIntroWidths[index]}px`;
 
                 column.addEventListener('mouseover', () => {
-                    column.style.width = "57%";
-                    columnImage.style.width = `calc(${columnImageWidth}px + ${columnImageWidth * 0.3}px)`;
+                    column.style.width = "54%";
+                    columnImage.style.width = `calc(${columnImageWidth}px + ${columnImageWidth * 0.2}px)`;
 
                     columns.forEach((otherColumn) => {
                         const otherColumnImage = otherColumn.querySelector('.img-ctn img');
 
                         if (otherColumn !== column) {
-                            otherColumn.style.width = "43%";
-                            otherColumnImage.style.width = `calc(${columnImageWidth}px - ${columnImageWidth * 0.3}px)`;
+                            otherColumn.style.width = "46%";
+                            otherColumnImage.style.width = `calc(${columnImageWidth}px - ${columnImageWidth * 0.2}px)`;
                         }
                     });
                 });

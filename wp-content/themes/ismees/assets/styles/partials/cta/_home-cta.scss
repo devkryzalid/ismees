@@ -4,7 +4,7 @@
     padding-bottom: clamp-calc(80, 120);
     @include flex(flex-start, space-between, column);
     gap: clamp-calc(80, 150);
-    @include transition($shortTransition);
+    @include transition($basicTransition);
     overflow: hidden;
     width: 100%;
 
@@ -20,7 +20,7 @@
         img {
             object-fit: contain;
             width: clamp-calc(150, 230, 992);
-            @include transition($shortTransition);
+            @include transition($basicTransition);
         }
     }
 

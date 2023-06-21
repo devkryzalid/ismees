@@ -1,5 +1,19 @@
 .breadcrumb-ctn {
     margin-bottom: 80px;
+    @include flex();
+    width: 100%;
+    
+    #breadcrumbs {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 
     span {
         @include fontSize(13px, 17px);
@@ -35,5 +49,9 @@
                 color: rgba(white, 0.3);
             }
         }
+    }
+
+    @media(max-width: 767px) {
+        margin-right: -20px;
     }
 }

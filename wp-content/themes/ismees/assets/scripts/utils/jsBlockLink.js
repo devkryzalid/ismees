@@ -16,6 +16,8 @@ export default class JsBlockLink {
         element.classList.add('block-linked');
         element.addEventListener('click', event => {
           const link = event.currentTarget.querySelectorAll('a:not(.jsIgnoreBlockLink)')[0];
+
+          console.log(event.currentTarget);
       
           if (!link.classList.contains('jsIgnoreBlockLink')) {
             if ((link.getAttribute('target') && link.getAttribute('target') === '_blank') ||

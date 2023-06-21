@@ -13,7 +13,7 @@
     }
 
     .ontitle {
-        @include responsive-font($primaryFont, 400, 40, 55, 47, 67, null, -0.02rem);
+        @include responsive-font($primaryFont, 400, 28, 55, 47, 67, null, -0.02rem);
         margin-bottom: clamp-calc(15, 20);
         margin-top: clamp-calc(0, 50);
 
@@ -26,6 +26,8 @@
         margin-top: 0;
         font-weight: 800;
         letter-spacing: -2px;
+        font-size: clamp-calc(42, 99, 320);
+        line-height: clamp-calc(46, 104);
 
         .style-mobile {
             &::after {
@@ -108,6 +110,7 @@
                 position: absolute;
                 border-radius: 400px 400px 20px 20px;
                 z-index: -1;
+                @include transition($longTransition);
             }
 
             &.-blue {
@@ -243,48 +246,43 @@
 
     @media(max-width: 767px) {
 
-        .banner-content-ctn {
+        .ontitle {
+            text-align: center;
 
-            .ontitle {
-                text-align: center;
-
-                span {
-                    font-weight: 400;
-                }
+            span {
+                font-weight: 400;
             }
+        }
 
-            .page-title {
-                text-align: center;
-                padding:0 20px ;
-            }
+        .page-title {
+            text-align: center;
+            padding:0 20px ;
+        }
 
-            .subtitle {
-                text-align: center;
-            }
+        .subtitle {
+            text-align: center;
+        }
 
-            .image-ctn {
-                margin-top: 50px;
-            }
+        .image-ctn {
+            margin-top: 50px;
+        }
 
-            .defilate {
-                display: none
-            }
+        .defilate {
+            display: none
         }
     }
 
-    @media(max-width: 449px) {
-        .banner-content-ctn {
+    @media(max-width: 400px) {
 
-            .page-title {
-                .style-desktop {
-                    &::after {
-                        display: none;
-                    }
+        .page-title {
+            .style-desktop {
+                &::after {
+                    display: none;
                 }
-                .style-mobile {
-                    &::after {
-                        display: block;
-                    }
+            }
+            .style-mobile {
+                &::after {
+                    display: block;
                 }
             }
         }

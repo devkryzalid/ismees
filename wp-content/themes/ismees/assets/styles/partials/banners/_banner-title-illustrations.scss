@@ -1,6 +1,6 @@
 .banner-title-illustration {
     padding-top: clamp-calc(140, 185);
-    padding-bottom: clamp-calc(120, 150);
+    padding-bottom: clamp-calc(40, 150, 375, 992);
     background-color: white;
 
     .banner-ctn {
