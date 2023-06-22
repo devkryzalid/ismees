@@ -15,12 +15,11 @@ body.page-template-intervention {
 
         .explanations-ctn {
             margin-bottom: 100px;
-            position: relative;
 
             .decoration-svg {
                 position: absolute;
                 right: 0;
-                top:-15%;
+                top: -180px;
                 width: clamp-calc(120, 190, 767);
             }
 

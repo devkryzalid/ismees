@@ -24,12 +24,13 @@ function add_to_context( $context ) {
      * Create a custom breadcrumb
      */
     $timber_post = new Timber\Post();
-    $breadcrumbs = [];
-    foreach (get_post_ancestors($timber_post) as $item) {
-        $breadcrumbs[] = new Timber\Post($item);
-    }
-    $context['breadcrumbs']       = array_reverse($breadcrumbs);
-    $context['yoast_description'] = \WPSEO_Meta::get_value('metadesc');
+    // $breadcrumbs = [];
+    // foreach (get_post_ancestors($timber_post) as $item) {
+    //     $breadcrumbs[] = new Timber\Post($item);
+    // }
+
+    // $context['breadcrumbs']       = array_reverse($breadcrumbs);
+    // $context['yoast_description'] = \WPSEO_Meta::get_value('metadesc');
 
 	return $context;
 }

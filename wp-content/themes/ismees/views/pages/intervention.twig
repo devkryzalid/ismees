@@ -16,9 +16,9 @@
                             <svg class="decoration-svg" width="196" height="233" viewBox="0 0 196 233" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M192.807 2.5692C194.665 1.64154 188.937 4.19496 186.925 4.89309C182.902 6.28934 178.935 7.50458 175.121 8.94934C163.357 13.5972 151.538 18.426 141.001 24.9101C117.2 40.1572 67.2474 75.3452 58.1217 101.171C47.0624 131.788 80.9647 162.149 64.4615 191.504C55.965 206.61 41.9095 212.861 25.3524 220.667C19.0369 223.667 12.2054 226.159 5.52729 228.88C5.26181 229.013 2.71918 229.976 2.81635 230.386C3.0668 231.026 21.366 225.564 22.5812 225.264C31.5625 223.076 40.5849 221.48 49.8017 220.704C54.4381 220.226 63.6399 220.224 63.6399 220.224C63.6399 220.224 61.3778 220.282 60.2748 220.22C54.3821 220.407 48.5304 221.186 42.6787 221.965C35.1931 222.947 7.71818 229.776 2.88741 229.433C0.681407 229.31 5.78174 226.611 7.33356 225.224C10.2278 222.402 13.1221 219.58 15.807 216.709C24.2393 207.603 30.4246 197.783 37.0848 187.878" stroke="#242457" stroke-width="4" stroke-miterlimit="1.5" stroke-linecap="round"/>
                             </svg>
-                            <img data-aos="fade" data-aos-delay="300" src="{{theme.link}}/assets/images/interventions/interventions-graph.svg" alt="__('Graphique représentant les niveaux d'interventions', 'ismees')"/>
+                            <img data-aos="fade" data-aos-delay="300" src="{{ post.meta('interventions_image').url }}" alt="{{ post.meta('interventions_image').alt }}"/>
                             <div class="gutenberg" data-aos="fade-up" data-aos-delay="300">
-                                {{ post.content }}
+                                {{ post.meta('page_description') }}
                             </div>
                         </div>
                         <div class="interventions-ctn">
@@ -46,6 +46,9 @@
                                     {% endfor %}
                                 </div>
                             {% endfor %}
+                        </div>
+                        <div class="gutenberg" data-aos="fade-up" data-aos-delay="300">
+                            {{ post.content }}
                         </div>
                     </div>
                     <div class="col-lg-4">
