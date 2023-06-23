@@ -23,6 +23,7 @@ function subject_custom_post_type()
         'item_scheduled'           => __('Programmé', 'ismees'),
         'item_updated'             => __('Mis à jour', 'ismees'),
     );
+
     $args = array(
         'labels'              => $labels,
         'hierarchical'        => false,
@@ -37,10 +38,10 @@ function subject_custom_post_type()
         'show_in_admin_bar'   => true,
         'publicly_queryable'  => true,
         'exclude_from_search' => false,
-        'has_archive'         => true,
+        'has_archive'         => wp_make_link_relative(get_fields('options')['config_subjects']),
         'query_var'           => true,
         'can_export'          => true,
-        'rewrite'             => array('slug' => __('sujet', 'ismees'), 'with_front' => true),
+        'rewrite'             => array('slug' => __('explorer-par-sujet', 'ismees'), 'with_front' => true),
     );
     register_post_type('subject', $args);
 }

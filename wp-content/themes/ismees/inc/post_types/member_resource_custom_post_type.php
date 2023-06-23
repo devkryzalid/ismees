@@ -37,7 +37,7 @@ function member_resource_custom_post_type()
         'show_in_admin_bar'   => true,
         'publicly_queryable'  => true,
         'exclude_from_search' => false,
-        'has_archive'         => true,
+        'has_archive'         => wp_make_link_relative(get_fields('options')['config_members_resources']),
         'query_var'           => true,
         'can_export'          => true,
         'rewrite'             => array('slug' => __('ressource-personnel', 'ismees'), 'with_front' => true),

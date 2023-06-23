@@ -37,10 +37,10 @@ function thematic_custom_post_type()
         'show_in_admin_bar'   => true,
         'publicly_queryable'  => true,
         'exclude_from_search' => false,
-        'has_archive'         => true,
+        'has_archive'         => wp_make_link_relative(get_fields('options')['config_thematics']),
         'query_var'           => true,
         'can_export'          => true,
-        'rewrite'             => array('slug' => __('thématique', 'ismees'), 'with_front' => true),
+        'rewrite'             => array('slug' => __('niveaux-dintervention', 'ismees'), 'with_front' => true),
     );
     register_post_type('thematic', $args);
 }

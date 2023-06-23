@@ -1,20 +1,24 @@
 <form id="ajax-form" class="search-filters-form">
     <input type="hidden" id="ajax-settings" data-url="{{ url }}">
-    <div class="search-input-ctn" data-aos="fade-up" data-aos-delay="300">
-        <div class="input-ctn">
-            <input type="text" value="{{ params['search'] }}" name="search" placeholder="Rechercher" />
+    <div data-aos="fade-up" data-aos-delay="300">
+        <div class="search-input-ctn">
+            <div class="input-ctn">
+                <input type="text" value="{{ params['search'] }}" name="search" placeholder="Rechercher" />
+                <i class="icon-MagnifyingGlass search-icon unfilled"></i>
+                <i class="icon-cross search-icon filled"></i>
+            </div>
         </div>
-    </div>
-    <div class="subfilters-ctn">
-        <div id="togglerContainer" data-aos="fade-up" data-aos-delay="300">
-            <label for="filtersToggler" id="unchecked-label">{{__('Étudiant.es', 'ismees')}}</label>
-            <input type="checkbox" name="member" id="filtersToggler" data-type="notClearable" {% if member %}checked{% endif %}>
-            <label for="filtersToggler" id="checked-label">{{__('Personnel des établissements', 'ismees')}}</label>
-        </div>
-        <div class="display-filters-ctn" data-aos="fade-up" data-aos-delay="300">
-            <p class="result-counter"><span class="result-count">{{ total }}</span> {{__('résultats', 'simees')}}</p>
-            <div class="filters-button">
-                <a class="main-button -blue" id="sidebarOpener"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}<span id="filters-count"></span/></a>
+        <div class="subfilters-ctn">
+            <div id="togglerContainer">
+                <label for="filtersToggler" id="unchecked-label">{{__('Étudiant.es', 'ismees')}}</label>
+                <input type="checkbox" name="member" id="filtersToggler" data-type="notClearable" {% if member %}checked{% endif %}>
+                <label for="filtersToggler" id="checked-label">{{__('Personnel des établissements', 'ismees')}}</label>
+            </div>
+            <div class="display-filters-ctn">
+                <p class="result-counter"><span class="result-count">{{ total }}</span> {{__('résultats', 'simees')}}</p>
+                <div class="filters-button">
+                    <a class="main-button -blue" id="sidebarOpener"><i class="icon-filter"></i>{{ __('Filtres', 'ismees') }}<span id="filters-count"></span/></a>
+                </div>
             </div>
         </div>
     </div>

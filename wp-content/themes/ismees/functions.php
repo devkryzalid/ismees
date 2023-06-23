@@ -70,9 +70,9 @@ $hooks_actions = [
 	'wpseo_breadcrumb_separator' => [
 		10 => ['name' => 'filter_wpseo_breadcrumb_separator', 'args' => 1]
 	],
-	// 'wpseo_breadcrumb_links' => [
-	// 	10 => ['name' => 'my_wpseo_breadcrumb_links', 'args' => 1]
-	// ],
+	'wpseo_breadcrumb_links' => [
+		10 => ['name' => 'my_wpseo_breadcrumb_links', 'args' => 1]
+	],
 	'generate_rewrite_rules' => [
 		10 => ['name' => 'add_rewrite_rules', 'args' => 1]
 	]
