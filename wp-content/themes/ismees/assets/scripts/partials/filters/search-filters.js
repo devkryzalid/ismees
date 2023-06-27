@@ -45,4 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebar.classList.remove("-show");
         });
     });
+
+    const searchInput = document.getElementById("inputSearch");
+    const filledSearch = document.querySelector(".filled");
+    const unfilledSearch = document.querySelector(".unfilled");
+
+    searchInput.addEventListener('input', () => {
+        if(searchInput.value !== "") {
+            filledSearch.style.display = "block";
+            unfilledSearch.style.display = "none";
+        } else {
+            filledSearch.style.display = "none";
+            unfilledSearch.style.display = "block";
+        }
+    });
+
+    filledSearch.addEventListener('click', () => {
+        searchInput.value = "";
+        searchInput.dispatchEvent(new Event('input'));
+    });
+
+    searchInput.dispatchEvent(new Event('input'));
 });

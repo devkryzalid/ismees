@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById('searchInput');
     const elementsList = document.getElementById('searchResult');
     const searchContainer = document.getElementById('searchContainer');
+    const filledSearch = document.querySelector(".filled");
+    const unfilledSearch = document.querySelector(".unfilled");
 
     // Retrieve and parse the JSON data from the hidden DOM element
     let autoCompleteData = document.getElementById('autoCompleteData');
@@ -60,11 +62,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchContainer.classList.remove('-show');
                 elementsList.innerHTML = '';
             }
+
+            // Handle the icon display
+            if(searchInput.value !== "") {
+                filledSearch.style.display = "block";
+                unfilledSearch.style.display = "none";
+            } else {
+                filledSearch.style.display = "none";
+                unfilledSearch.style.display = "block";
+            }
         });
     };
 
+    filledSearch.addEventListener('click', () => {
+        searchInput.value = "";
+        searchInput.dispatchEvent(new Event('input'));
+    });
+
     searchInput.addEventListener('focus', handleSearch);
     searchInput.addEventListener('blur', () => {
-        searchContainer.classList.remove('-show');
+        setTimeout(() => {
+            searchContainer.classList.remove('-show');
+        }, 200);
     });
 });
