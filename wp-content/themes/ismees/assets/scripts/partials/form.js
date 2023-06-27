@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     openFormButton.addEventListener('click', function () {
 
         if (form.style.height !== '0px') {
-            form.style.height = '0';
+            form.style.height = '0px';
             footerForm.classList.remove("-show");
         } else {
-            form.style.height = formHeight + 'px';
+            form.style.height = formHeight - 50 + 'px';
             footerForm.classList.add("-show");
         }
     });

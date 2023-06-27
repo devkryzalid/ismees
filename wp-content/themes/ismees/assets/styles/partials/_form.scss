@@ -26,7 +26,7 @@
             content: "";
             position: absolute;
             @include position(0, 0, 0, 0);
-            background-image: url("/assets/images/ellipseBG.svg");
+            background-image: url("/assets/images/form/ellipseBG.svg");
             background-repeat: no-repeat;
         }
 
@@ -56,14 +56,18 @@
     }
 
     #subscriptionForm {
-        background-color: $yellow;
-        border-radius: 50px 0 0 0;
         @include transition($basicTransition);
         height: 0;
 
         .container {
             padding-top: clamp-calc(60, 100);
-            padding-bottom: clamp-calc(100, 140);
+            padding-bottom: clamp-calc(150, 190);
+        }
+
+        .container-style {
+            background-color: $yellow;
+            border-radius: 50px 0 0 0;
+            @include transition($basicTransition);
         }
 
         .error {
@@ -189,24 +193,26 @@
 
     @media(max-width: 767px) {
 
+        &.-show {
+
+            #subscriptionForm {
+
+                .container-style {
+                    border-radius: 0;
+                }
+            }
+        }
+
         .dropdown-form-button {
-            max-width: clamp-calc(400, 777, 400, 1600);
-            margin-left: auto;
-            position: relative;
-            border-radius: 50% 0 0 50%;
-            min-height: 200px;
-            @include flex();
     
             &::after {
-                content: "";
-                position: absolute;
-                @include position(0, 0, 0, 0);
-                background-image: url("/assets/images/ellipseBG.svg");
-                background-repeat: no-repeat;
+                background-image: url("/assets/images/form/ellipseBG-alt.svg");
+                background-size: cover;
             }
     
             .form-image {
-                top: 0;
+                top: -10px;
+                left: 40px;
             }
 
             .subscribe-button {
@@ -215,11 +221,28 @@
         }
 
         #subscriptionForm {
-            border-radius: 0;
+
             .inputs-ctn {
                 .input {
                     width: 100%;
                 }
+            }
+        }
+    }
+
+    @media(max-width: 400px) {
+
+        .dropdown-form-button {
+    
+            &::after {
+                background-image: url("/assets/images/form/ellipseBG-alternative.svg");
+            }
+        }
+
+        #subscriptionForm {
+
+            .container-style {
+                border-radius: 0;
             }
         }
     }
