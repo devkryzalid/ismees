@@ -10,18 +10,11 @@ body.page-template-intervention {
         padding-top: clamp-calc(65, 85);
 
         .content-padding {
-            padding-right: clamp-calc(0, 110, 992);
+            padding-right: clamp-calc(20, 110, 992);
         }
 
         .explanations-ctn {
             margin-bottom: 100px;
-
-            .decoration-svg {
-                position: absolute;
-                right: 0;
-                top: -180px;
-                width: clamp-calc(120, 190, 767);
-            }
 
             img {
                 object-fit: contain;
@@ -135,13 +128,6 @@ body.page-template-intervention {
             display: flex;
             flex-direction: column-reverse;
             gap: 77px;
-
-            .explanations-ctn {
-    
-                .decoration-svg {
-                    display: none;
-                }
-            }
         }
     }
 

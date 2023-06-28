@@ -67,6 +67,16 @@ button {
             color: white;
         }
     }
+
+    &.-yellow {
+        background-color: $yellow;
+        color: $darkBlue;
+
+        &:hover {
+            background-color: $darkBlue;
+            color: white;
+        }
+    }
 }
 
 .secondary-button {

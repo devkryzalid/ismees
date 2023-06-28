@@ -35,7 +35,7 @@ body.page-template-research {
 
     .search-input-ctn {
         margin-top: clamp-calc(55, 60);
-        margin-bottom: clamp-calc(30, 135, 375, 992);
+        margin-bottom: clamp-calc(30, 100, 375, 992);
     }
 
     @media(max-width: 992px) {

@@ -19,7 +19,7 @@
         .title-decoration {
             display: flex;
 
-            img {
+            svg {
                 width: clamp-calc(160, 260, 375, 992);
             }
         }
@@ -36,7 +36,7 @@
     
     path {
       stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
+      stroke-dashoffset: -1000;
       animation: draw 1.2s 1.8s linear forwards;
     }
 }
