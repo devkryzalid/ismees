@@ -1,5 +1,5 @@
 <header id="header" class="-not-sticky" data-aos="fade" data-aos-delay="300">
-	<div id="header-mobile">
+	<div id="header-mobile" class="mobile-menu">
 		<div class="burger-menu -closed">
 			<span></span>
 			<span></span>
@@ -16,9 +16,17 @@
 		</div>
 	</div>
 	<div id="header-ctn">
-		<div class="burger-menu -opened">
-			<span></span>
-			<span></span>
+		<div class="mobile-menu sidebar-header">
+			<div class="header-cta">
+				<a href="{{ options.header_cta.url }}">{{ options.header_cta.title }}</a>
+			</div>
+			<div class="sidebar-right-items">
+				<a class="header-search" href="{{ options.config_search }}" aria-label="{{ __('Lien vers la recherche', 'ismees') }}"><i class="icon-search"></i></a>
+				<div class="burger-menu -opened">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
 		</div>
 		<div class="logo-ctn">
 			<a href="{{ site.home_url }}" aria-label="{{ __('Lien vers l\'accueil', 'ismees') }}"></a>

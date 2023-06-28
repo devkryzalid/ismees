@@ -79,7 +79,7 @@
                     flex: 1;
 
                     .has-sub-child-title {
-                        @include responsive-font($primaryFont, 700, 17, 20, 21, 24, uppercase, null, $purple);
+                        @include responsive-font($primaryFont, 700, 18, 20, 21, 24, uppercase, null, $purple);
                         margin-bottom: clamp-calc(20, 40);
                         cursor: default;
                     }
@@ -136,7 +136,6 @@
 
     @media(max-width: 1280px) {
         flex-wrap: wrap;
-        margin-bottom: 40px !important;
         gap: 50px;
 
         .menu-item {
@@ -184,5 +183,55 @@
                 }
             }
         }
+    }
+
+    @media (max-width: 767px) {
+        gap: 0;
+
+        .main-item {
+            border-bottom: 1px solid $lightBlue;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .menu-item-has-children {
+            width: 100%;
+
+            .child-menu {
+                .subItem.has-sub-child .has-sub-child-title {
+                    color: $blue;
+                    font-size: 18px;
+                    line-height: 22px;
+                    @include flex(center, space-between);
+
+                    &::after {
+                        font-family: "icomoon";
+                        content: "\e901";
+                        position: relative;
+                        display: inline-block;
+                        font-size: 14px;
+                        transform: rotate(90deg);
+                        @include transition($basicTransition);
+                        color: $blue;
+                    }
+                }
+
+                .subItem a {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .has-child-link {
+            color: $purple;
+            font-weight: 500;
+            font-size: 22px;
+
+            i {
+                display: none;
+            }
+        }
+
+        
     }
 }

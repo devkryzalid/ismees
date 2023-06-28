@@ -69,9 +69,20 @@
             gap: 20px;
         }
 
+        .header-cta {
+            display: none;
+        }
+
         .header-secondary-links {
-            @include flex(flex-start, flex-start, column);
-            gap: 30px;
+
+            .main-item a {
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 500;
+            }
+            .menu-items {
+                @include flex();
+            }
 
             .header-search {
                 display: none;
