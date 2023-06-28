@@ -1,5 +1,9 @@
 {% extends 'base.twig' %}
 {% block content %}
+
+{% set interventionColor = get_primary_taxonomy(thematic.id, 'thematic_intervention', true).color_intervention %}
+<div id="interventionColor" style="display: none;">{{ interventionColor }}</div>
+
 <main class="single-subject" data-aos="fade" data-aos-delay="300">
     {% include "partials/banners/banner-image-title.twig" with {
             'post': thematic,

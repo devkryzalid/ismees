@@ -30,6 +30,26 @@
         }
     }
 
+    @media(min-width: 768px) {
+
+        #header.-not-sticky {
+
+            #header-mobile {
+
+                .secondary-mobile .header-cta a {
+                    background-color: $purple;
+                    color: white;
+            
+                    &:hover {
+                        background-color: white;
+                        color: $purple;
+                    }
+                }
+            }
+        
+        }
+    }
+
     @media(max-width: 992px) {
         .hub {
             .subjects-ctn {

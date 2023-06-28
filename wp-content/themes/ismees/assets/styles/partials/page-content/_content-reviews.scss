@@ -2,7 +2,7 @@
 
     .reviews-back-ctn {
         padding-top: clamp-calc(30, 50);
-        margin-top: clamp-calc(20, 80);
+        margin-top: clamp-calc(60, 80);
         @include flex(center, space-between);
         border-top: 2px solid rgba($darkBlue, 0.7);
 

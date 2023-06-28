@@ -160,6 +160,13 @@
             }
         }
 
+        .sidebar-buttons-ctn {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
         .button-ctn {
             .main-button {
                 cursor: pointer;
@@ -168,10 +175,6 @@
                     margin: 0 3px;
                 }
             }
-        }
-
-        #clear-filters {
-            margin-top: 40px;
         }
     }
 

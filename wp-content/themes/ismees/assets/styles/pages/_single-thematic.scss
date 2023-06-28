@@ -35,17 +35,34 @@ body.thematic-template-default {
 
                 .header-cta {
                     a {
-                        background-color: $mint;
+                        background-color: var(--button-color);;
                         color: $darkBlue;
                 
                         &:hover {
-                            background-color: white;
-                            color: $mint;
-                            opacity: 1;
+                            opacity: 0.8;
                         }
                     }
                 }
             }   
+        }
+    }
+
+    @media(min-width: 768px) {
+
+        #header.-not-sticky {
+
+            #header-mobile {
+
+                .secondary-mobile .header-cta a {
+                    background-color: var(--button-color);
+                    color: $darkBlue;
+            
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        
         }
     }
 }

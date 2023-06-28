@@ -62,15 +62,17 @@
                 %}
             </div>
         </div>
-        <div class="button-ctn close-sidebar">
-            {% if results and results|length > 1 %}
-                <a class="main-button -blue" href="#resultsList">{{__('Afficher les', 'ismees')}} <span class="result-count"> {{ total }} </span> {{__('résultats', 'ismees')}}</a>
-            {% elseif results and results|length == 1 %}
-                <a class="main-button -blue" href="#resultsList">{{__('Afficher 1 résultat', 'ismees')}}</a>
-            {% else %}
-                <a class="main-button -blue" href="#resultsList">{{__('Pas de résultat', 'ismees')}}</a>
-            {% endif %}
+        <div class="sidebar-buttons-ctn">
+            <div class="button-ctn close-sidebar">
+                {% if results and results|length > 1 %}
+                    <a class="main-button -blue" href="#resultsList">{{__('Afficher les', 'ismees')}} <span class="result-count"> {{ total }} </span> {{__('résultats', 'ismees')}}</a>
+                {% elseif results and results|length == 1 %}
+                    <a class="main-button -blue" href="#resultsList">{{__('Afficher 1 résultat', 'ismees')}}</a>
+                {% else %}
+                    <a class="main-button -blue" href="#resultsList">{{__('Pas de résultat', 'ismees')}}</a>
+                {% endif %}
+            </div>
+            <a id="clear-filters">{{ __('Réinitialiser', 'goute-au-loisir') }}</a>
         </div>
-        <a id="clear-filters">{{ __('Réinitialiser', 'goute-au-loisir') }}</a>
     </div>
 </form>

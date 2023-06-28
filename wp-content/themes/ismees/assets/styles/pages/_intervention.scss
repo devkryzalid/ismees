@@ -94,6 +94,13 @@ body.page-template-intervention {
             background-color: white;
             border-radius: 20px;
             padding: 30px;
+
+            &::after {
+                content: url('/assets/images/blue-loop-arrow-down.svg');
+                position: absolute;
+                top: -80px;
+                right: 20px;
+            }
     
     
             .anchor-ctn {
