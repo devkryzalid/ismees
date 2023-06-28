@@ -3,11 +3,11 @@
         <div class="banner-ctn">
             {% include "partials/breadscrum.twig" %}
             {% if students %}
-                <h1 class="banner-title">{{ __('Ressources utiles', 'ismees')}}</h1>
+                <h1 class="banner-title">{{ __('Outils pour les étudiant.es', 'ismees')}}</h1>
                 <p class="subtitle">{{ __('pour la ', 'ismees') }} <span class="background-line -green">{{ __('population étudiante', 'ismees') }}</span></p>
                 <img class="right-illustration" src="{{theme.link ~ '/assets/images/bubble-heart.svg' }}" alt="" />
             {% elseif members %}
-                <h1 class="banner-title">{{ __('Ressources utiles', 'ismees')}}</h1>
+                <h1 class="banner-title">{{ __('Outils pour le personnel des établissements', 'ismees')}}</h1>
                 <p class="subtitle">{{ __('pour le ', 'ismees') }} <span class="background-line -red">{{ __('personnel des établissements', 'ismees') }}</span></p>
                 <img class="right-illustration" src="{{theme.link}}/assets/images/light-bulb.svg" alt="" />
             {% endif %}

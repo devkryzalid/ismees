@@ -25,6 +25,12 @@ body.page-template-front-page {
             .section-1 {
                 background-color: $yellow;
                 border-radius: 60px 0px 0px 60px;
+
+                .img-ctn {
+                    img {
+                        width: clamp-calc(120, 180, 992);
+                    }
+                }
             }
 
             .section-2 {

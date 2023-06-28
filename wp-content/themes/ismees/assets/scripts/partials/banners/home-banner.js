@@ -1,5 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = window.location.origin;
+    const bannerImageCtn = document.getElementById('bannerImageCtn');
+    let bannerImageCtnWidth;
+
+    // FIX THE WIDTH OF THE BANNER CONTAINER
+    setTimeout(() => {
+        bannerImageCtnWidth = bannerImageCtn.offsetWidth;
+
+        window.dispatchEvent(new Event("resize"));
+    }, 1000);
+
+    window.addEventListener('resize', () => {
+        bannerImageCtn.style.width = "";
+        bannerImageCtnWidth = bannerImageCtn.offsetWidth;
+        bannerImageCtn.style.width = `${bannerImageCtnWidth}px`;
+    });
+
+    
 
     // SET THE HOMEPAGE IMAGES ANIMATION
 
@@ -104,5 +121,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     changeImage();
 
-    setInterval(changeImage, 4000);
+    setInterval(changeImage, 8000);
 });

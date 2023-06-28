@@ -91,6 +91,7 @@
             @include flex(flex-start, center);
             height: 100%;
             overflow: hidden;
+            margin-left: auto;
 
             .banner-img {
                 object-fit: contain;

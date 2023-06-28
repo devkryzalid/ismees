@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const initialIntroWidths = Array.from(columns).map(column => column.querySelector('.introduction').offsetWidth);
 
         if (window.innerWidth >= 993) {
-            console.log(window.innerWidth); 
-
             columns.forEach((column, index) => {
                 const columnImage = column.querySelector('.img-ctn img');
                 let columnImageWidth = columnImage.offsetWidth;
@@ -39,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (otherColumn !== column) {
                             otherColumn.style.width = "46%";
-                            otherColumnImage.style.width = `calc(${columnImageWidth}px - ${columnImageWidth * 0.2}px)`;
+                            otherColumnImage.style.width = `calc(${columnImageWidth}px - ${columnImageWidth * 0.3}px)`;
                         }
                     });
                 });
