@@ -1,22 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = window.location.origin;
     const bannerImageCtn = document.getElementById('bannerImageCtn');
-    let bannerImageCtnWidth;
+    let imageWidth;
 
     // FIX THE WIDTH OF THE BANNER CONTAINER
     setTimeout(() => {
-        bannerImageCtnWidth = bannerImageCtn.offsetWidth;
+        let image = document.querySelector(".banner-img");
+
+        if(image) {
+            imageWidth = image.offsetWidth;
+            bannerImageCtn.style.width = `${imageWidth}px`;
+        }
 
         window.dispatchEvent(new Event("resize"));
     }, 1000);
 
     window.addEventListener('resize', () => {
-        bannerImageCtn.style.width = "";
-        bannerImageCtnWidth = bannerImageCtn.offsetWidth;
-        bannerImageCtn.style.width = `${bannerImageCtnWidth}px`;
+        let image = document.querySelector(".banner-img");
+        if(image) {
+            bannerImageCtn.style.width = "";
+            imageWidth = image.offsetWidth;
+            bannerImageCtn.style.width = `${imageWidth}px`;
+        }
     });
-
-    
 
     // SET THE HOMEPAGE IMAGES ANIMATION
 
@@ -122,4 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
     changeImage();
 
     setInterval(changeImage, 8000);
+
+    document.addEventListener("visibilitychange", (event) => { 
+        if (document.visibilityState === "visible") {
+            changeImage();
+        }
+    });
 });

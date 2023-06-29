@@ -2,6 +2,12 @@
     padding-top: clamp-calc(160, 200);
     padding-bottom: 100px;
     gap: clamp-calc(20, 50);
+    display: flex;
+
+    .banner-left,
+    .banner-right {
+        width: 50%;
+    }
 
     //***********************************//
     //********** LEFT COLUMN ************//
@@ -9,7 +15,7 @@
 
     .banner-left {
         @include flex(flex-start, space-between, column);
-        gap: 50px;
+        gap: 40px;
     }
 
     .ontitle {
@@ -26,7 +32,7 @@
         margin-top: 0;
         font-weight: 800;
         letter-spacing: -2px;
-        font-size: clamp-calc(42, 99, 320);
+        font-size: clamp-calc(42, 94, 375);
         line-height: clamp-calc(46, 104);
 
         .style-mobile {
@@ -60,9 +66,12 @@
     }
 
     .defilate {
+        position: relative;
         p {
             transform: translate(20px, 10px) rotate(-25deg);
-            position: relative;
+            position: absolute;
+            top: 5px;
+            left: 35px;
             @include responsive-font($primaryFont, 400, 15, 15, 18, 18, null, -0.02rem);
         }
     }
@@ -89,8 +98,9 @@
         .banner-image-ctn {
             position: relative;
             @include flex(flex-start, center);
-            height: 100%;
+            margin: 0 auto;
             overflow: hidden;
+            max-height: 70vh;
             margin-left: auto;
 
             .banner-img {
@@ -245,7 +255,21 @@
         }
     }
 
-    @media(max-width: 767px) {
+    @media(max-width: 1500px) {
+
+        .image-ctn {
+            .banner-image-ctn {
+                max-height: 80vh;
+            }
+        }
+    }
+
+    @media(max-width: 1024px) {
+
+        .banner-left,
+        .banner-right {
+            width: 100%;
+        }
 
         .ontitle {
             text-align: center;
@@ -262,6 +286,7 @@
 
         .subtitle {
             text-align: center;
+            margin: 0 auto;
         }
 
         .image-ctn {
@@ -270,6 +295,15 @@
 
         .defilate {
             display: none
+        }
+    }
+
+    @media(max-width: 767px) {
+
+        .image-ctn {
+            .banner-image-ctn {
+                max-height: 60vh;
+            }
         }
     }
 
