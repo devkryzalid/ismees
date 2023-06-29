@@ -80,7 +80,7 @@
 
                     .has-sub-child-title {
                         @include responsive-font($primaryFont, 700, 18, 20, 21, 24, uppercase, null, $purple);
-                        margin-bottom: clamp-calc(20, 40);
+                        margin-bottom: clamp-calc(20, 40, 1280);
                         cursor: default;
                     }
                 }
@@ -136,7 +136,7 @@
 
     @media(max-width: 1280px) {
         flex-wrap: wrap;
-        gap: 50px;
+        gap: 0;
 
         .menu-item {
             a {
@@ -145,16 +145,31 @@
             }
         }
 
+        .main-item {
+            border-bottom: 1px solid $lightBlue;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
         .menu-item-has-children {   
             display: flex;
             flex-direction: column;
+            width: 100%;
 
             .has-child-link {
-                margin-bottom: 30px;
+                margin-bottom: 25px;
                 cursor: default;
+                color: $purple !important;
+                font-weight: 500;
+                font-size: 22px;
+
+                i {
+                    display: none;
+                }
             }
 
             .child-menu {
+                gap: 0;
                 @include flex(flex-start, flex-start, column);
                 background-color: transparent;
                 opacity: 1;
@@ -173,65 +188,44 @@
                 }
             }
 
-            &:hover {
-                .has-child-link {       
-                    color: $darkBlue; 
+            .subChild-menu {
+                max-height: 0;
+                overflow: hidden;
+                @include transition($basicTransition);
     
-                    i {
-                        transform: rotate(0);
-                    }
+                .lastItem:last-child {
+                    margin-bottom: 20px;
                 }
             }
-        }
-    }
 
-    @media (max-width: 767px) {
-        gap: 0;
+            .subItem.has-sub-child .has-sub-child-title {
+                color: $blue !important;
+                font-size: 18px;
+                line-height: 22px;
+                @include flex(center, space-between);
 
-        .main-item {
-            border-bottom: 1px solid $lightBlue;
-            padding-bottom: 40px;
-            margin-bottom: 40px;
-        }
-
-        .menu-item-has-children {
-            width: 100%;
-
-            .child-menu {
-                .subItem.has-sub-child .has-sub-child-title {
+                &::after {
+                    font-family: "icomoon";
+                    content: "\e901";
+                    position: relative;
+                    display: inline-block;
+                    font-size: 14px;
+                    transform: rotate(90deg);
+                    @include transition($basicTransition);
                     color: $blue;
-                    font-size: 18px;
-                    line-height: 22px;
-                    @include flex(center, space-between);
+                    @include transition($basicTransition);
+                }
 
+                &.-show {
                     &::after {
-                        font-family: "icomoon";
-                        content: "\e901";
-                        position: relative;
-                        display: inline-block;
-                        font-size: 14px;
-                        transform: rotate(90deg);
-                        @include transition($basicTransition);
-                        color: $blue;
+                        transform: rotate(270deg);
                     }
                 }
+            }
 
-                .subItem a {
-                    font-size: 18px;
-                }
+            .subItem a {
+                font-size: 18px;
             }
         }
-
-        .has-child-link {
-            color: $purple;
-            font-weight: 500;
-            font-size: 22px;
-
-            i {
-                display: none;
-            }
-        }
-
-        
     }
 }

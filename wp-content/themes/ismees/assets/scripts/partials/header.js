@@ -22,6 +22,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileMenu();
 
+    // *********  ********* //
+
+    // Calculate the subchildmenus initial height on load
+    const mobileDropdowns = () => {
+        let subChildMenus = document.querySelectorAll('.subChild-menu');
+
+        if(window.innerWidth <= 1280) { // 768px is a common breakpoint for mobile devices
+            subChildMenus.forEach((menu) => {
+              menu.style.maxHeight = 'none';
+              menu.dataset.scrollHeight = menu.scrollHeight + 'px';
+              menu.style.maxHeight = '0px';
+            });
+          
+            let titles = document.querySelectorAll('.has-sub-child-title');
+            
+            titles.forEach((title) => {
+              title.addEventListener('click', function(event) {
+                event.preventDefault();
+            
+                let subMenu = this.nextElementSibling;
+                if (subMenu.style.maxHeight !== '0px') {
+                  subMenu.style.maxHeight = '0px';
+                  this.classList.remove('-show');
+                } else {
+                  subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+                  this.classList.add('-show');
+                }
+              });
+            });
+        } else {
+            subChildMenus.forEach((menu) => {
+                menu.style.maxHeight = 'none';
+            });
+        }
+    }      
+
+    window.addEventListener('resize', function() {
+        mobileDropdowns();
+    });
+
     // ********* Sticky Header Behavior ********* //
 
     previousScrollPosition = 0;
@@ -81,10 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    window.dispatchEvent(new Event("resize"));
-    window.dispatchEvent(new Event("scroll"));
-
-
     // ********* White background on the header when user hover the menu dropdown ********* //
 
     primaryMenuItems.forEach((item) => {
@@ -103,25 +139,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //******* Set style to primary menu if it has sub-children *********//
 
-    // Select all elements with class .child-menu
-
     // Iterate over all selected elements
     childMenus.forEach(function(childMenu) {
         // If the childMenu has a descendant with class .has-sub-child
         if (childMenu.querySelector('.has-sub-child')) {
             childMenu.style.display = 'flex';
 
-            if (window.innerWidth <= 1280) {
-                childMenu.style.gap = '30px';
-            }
+            // if (window.innerWidth <= 1280) {
+            //     childMenu.style.gap = '30px';
+            // }
 
-            window.addEventListener('resize', function() {
-                if (window.innerWidth <= 1280) {
-                    childMenu.style.gap = '30px';
-                } else {
-                    childMenu.style.gap = '0';
-                }
-            });
+            // window.addEventListener('resize', function() {
+            //     if (window.innerWidth <= 1280) {
+            //         childMenu.style.gap = '30px';
+            //     } else {
+            //         childMenu.style.gap = '0';
+            //     }
+            // });
         }
     });
+
+
+    window.dispatchEvent(new Event("resize"));
+    window.dispatchEvent(new Event("scroll"));
 });
