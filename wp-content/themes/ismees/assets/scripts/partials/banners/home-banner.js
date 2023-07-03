@@ -1,3 +1,19 @@
+// Preload images
+const preloadImages = (imageArray, callback) => {
+    let imagesLoaded = 0;
+    let imagesToLoad = imageArray.length;
+    imageArray.forEach(imgSrc => {
+        const img = new Image();
+        img.onload = function() {
+            imagesLoaded++;
+            if (imagesLoaded === imagesToLoad) {
+                callback(); // callback function to execute after images loaded
+            }
+        };
+        img.src = imgSrc;
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const baseUrl = window.location.origin;
     const bannerImageCtn = document.getElementById('bannerImageCtn');
@@ -125,9 +141,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 600); // Adjust with the "slide-out" animation time
     }
 
-    changeImage();
+    // Now the preloading part
+    const imagesArray = images.reduce((acc, curr) => {
+        return acc.concat(curr.banner, curr.overlays);
+    }, []);
 
-    setInterval(changeImage, 8000);
+    // Call the preloading function
+    preloadImages(imagesArray, () => {
+        changeImage();
+        setInterval(changeImage, 8000);
+    });
 
     document.addEventListener("visibilitychange", (event) => { 
         if (document.visibilityState === "visible") {
