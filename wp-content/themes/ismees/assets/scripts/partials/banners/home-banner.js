@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             imageWidth = image.offsetWidth;
             bannerImageCtn.style.width = `${imageWidth}px`;
         }
-    }, 1000);
+    }, 2000);
 
     window.addEventListener('resize', () => {
         let image = document.querySelector(".banner-img");
