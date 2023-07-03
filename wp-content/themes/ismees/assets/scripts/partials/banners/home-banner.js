@@ -1,159 +1,83 @@
-// Preload images
-const preloadImages = (imageArray, callback) => {
-    let imagesLoaded = 0;
-    let imagesToLoad = imageArray.length;
-    imageArray.forEach(imgSrc => {
-        const img = new Image();
-        img.onload = function() {
-            imagesLoaded++;
-            if (imagesLoaded === imagesToLoad) {
-                callback(); // callback function to execute after images loaded
-            }
-        };
-        img.src = imgSrc;
-    });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-    const baseUrl = window.location.origin;
-    const bannerImageCtn = document.getElementById('bannerImageCtn');
-    let imageWidth;
+  const bannerImageCtn = document.getElementById('bannerImageCtn');
+  let imageWidth;
 
-    // FIX THE WIDTH OF THE BANNER CONTAINER
-    setTimeout(() => {
-        let image = document.querySelector(".banner-img");
+  // Get the first image
+  let image = document.querySelector(".banner-placeholder");
+  imageWidth = image.offsetWidth;
+  bannerImageCtn.style.width = `${imageWidth}px`;
 
-        if(image) {
-            imageWidth = image.offsetWidth;
-            bannerImageCtn.style.width = `${imageWidth}px`;
-        }
-    }, 2000);
+  // Adjust the width of the banner container on window resize
+  window.addEventListener('resize', () => {
+    bannerImageCtn.style.width = "";
+    imageWidth = image.offsetWidth;
+    bannerImageCtn.style.width = `${imageWidth}px`;
+  });
 
-    window.addEventListener('resize', () => {
-        let image = document.querySelector(".banner-img");
-        if(image) {
-            bannerImageCtn.style.width = "";
-            imageWidth = image.offsetWidth;
-            bannerImageCtn.style.width = `${imageWidth}px`;
-        }
+  const animationContainer = document.querySelector('.banner-image-ctn');
+  const bannerImages = Array.from(animationContainer.querySelectorAll('.banner-img'));
+  const colorArray = ['yellow', 'mint', 'blue', 'salmon', 'purple', 'darkGreen'];
+
+  let currentIndex = 0;
+
+  // Function to reset animation classes
+  const resetAnimationClasses = () => {
+    bannerImages.forEach((imageCtn) => {
+      imageCtn.classList.remove('slide-out');
+      imageCtn.classList.remove('slide-up');
+      
+      let overlayImages = imageCtn.parentNode.querySelectorAll('.overlay-image');
+      overlayImages.forEach((overlayImage) => {
+        overlayImage.classList.remove('fade-in-absolute');
+        overlayImage.classList.remove('fade-out-absolute');
+      });
     });
+  };
 
-    // SET THE HOMEPAGE IMAGES ANIMATION
+  // Function to slide in an image and its overlay
+  const slideIn = (index) => {
+    bannerImages[index].classList.add('slide-up');
+    let overlayImages = bannerImages[index].parentNode.querySelectorAll('.overlay-image');
+    overlayImages.forEach((overlayImage) => {
+      overlayImage.classList.add('fade-in-absolute');
+    });
+  };
 
-    // Image sources. You can add more overlays and images if you need.
-    const images = [
-        {
-            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-01.png`,
-            overlays: [
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-1.svg`,
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
-            ]
-        },
-        {
-            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-02.png`,
-            overlays: [
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-etoile.svg`,
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-2.svg`,
-            ]
-        },
-        {
-            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-03.png`,
-            overlays: [
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-3.svg`,
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`,
-            ]
-        },
-        {
-            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-04.png`,
-            overlays: [
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-5.svg`,
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
-            ]
-          },
-          {
-            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-05.png`,
-            overlays: [
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-4.svg`,
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
-            ]
-          },
-          {
-            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-06.png`,
-            overlays: [
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-etoile.svg`,
-                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-3.svg`
-            ]
-          },
-    ];
-
-    //Set the background color of the before element for each image => it must be set in the SCSS file with a new class
-    const colorClasses = ['-yellow', '-mint', '-blue', '-salmon','-purple','-darkGreen'];
-  
-    let currentImageIndex = 0;
-    const bannerImage = document.getElementById('bannerImageCtn');
-
-    const changeImage = () => {
-        // Fade out the current images
-        const oldImages = Array.from(bannerImage.querySelectorAll('.banner-img'));
-        oldImages.forEach((img) => {
-            img.classList.add('slide-out');
-        });
-
-        // Fade out the current overlay images
-        const oldOverlayImages = Array.from(bannerImage.querySelectorAll('.overlay-image'));
-        oldOverlayImages.forEach((img) => {
-            img.classList.add('slide-out-absolute');
-        });
-
-        // Set a delay before removing old images and adding new ones
-        setTimeout(() => {
-            // Remove old color classes and add new one
-            colorClasses.forEach((colorClass) => {
-                bannerImage.classList.remove(colorClass);
-            });
-
-            bannerImage.classList.add(colorClasses[currentImageIndex % colorClasses.length]);
-
-            // Create a new image
-            const newImage = document.createElement('img');
-            newImage.src = images[currentImageIndex].banner;
-            newImage.classList.add('banner-img');
-            bannerImage.appendChild(newImage);
-
-            // Create overlay images
-            images[currentImageIndex].overlays.forEach((overlayImage, index) => {
-                const newOverlayImage = document.createElement('img');
-                newOverlayImage.src = overlayImage;
-                newOverlayImage.classList.add('overlay-image', `overlay-image__${currentImageIndex}-${index}`);
-                bannerImage.appendChild(newOverlayImage);
-            });
-
-            // Prepare the index for the next image
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        }, 550); // Adjust with the animation time adn ensure it is lightly quicker than the setTiemout below
-
-        // Set a second delay to ensure that the "slide-out" animations complete
-        setTimeout(() => {
-            // Remove the old images
-            oldImages.forEach((img) => {
-                img.remove();
-            });
-
-            // Remove the old overlay images
-            oldOverlayImages.forEach((img) => {
-                img.remove();
-            });
-        }, 600); // Adjust with the "slide-out" animation time
+  // Function to slide out an image and its overlay
+  const slideOut = (index) => {
+    let prevIndex = index - 1 >= 0 ? index - 1 : bannerImages.length - 1;
+    if (bannerImages[prevIndex]) {
+      bannerImages[prevIndex].classList.add('slide-out');
+      let overlayImages = bannerImages[prevIndex].parentNode.querySelectorAll('.overlay-image');
+      overlayImages.forEach((overlayImage) => {
+        overlayImage.classList.add('fade-out-absolute');
+      });
     }
+  };
 
-    // Now the preloading part
-    const imagesArray = images.reduce((acc, curr) => {
-        return acc.concat(curr.banner, curr.overlays);
-    }, []);
+  // Function to change the color class of the animation container
+  const changeColor = (index) => {
+    const colorIndex = (index + colorArray.length - 1) % colorArray.length;
+    const previousColorIndex = (colorIndex - 1 + colorArray.length) % colorArray.length;
+    // Add new color class
+    animationContainer.classList.add(`-${colorArray[colorIndex]}`);
+    // Remove old color class
+    animationContainer.classList.remove(`-${colorArray[previousColorIndex]}`);
+  };
 
-    // Call the preloading function
-    preloadImages(imagesArray, () => {
-        changeImage();
-        setInterval(changeImage, 6000);
-    });
+  // Function to start the animation
+  const startAnimation = () => {
+    resetAnimationClasses();
+    slideIn(currentIndex);
+    slideOut(currentIndex);
+    currentIndex = (currentIndex + 1) % bannerImages.length;
+    setTimeout(() => {
+      changeColor(currentIndex);
+    }, 600); // Adjust the delay duration as needed
+  };
+
+  startAnimation();
+
+  // Repeat the animation every 6 seconds
+  setInterval(startAnimation, 6000);
 });
