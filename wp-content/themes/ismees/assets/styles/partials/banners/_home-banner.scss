@@ -88,11 +88,11 @@
         }
 
         .slide-out {
-            animation: slideOut 0.5s forwards ease-in !important;
+            animation: slideOut 0.6s forwards ease-in !important;
         }
 
         .slide-out-absolute {
-            animation: fade-out 0.5s forwards ease-in !important;
+            animation: fade-out 0.6s forwards ease-in !important;
         }
       
         .banner-image-ctn {
@@ -154,6 +154,12 @@
                 }
             }
 
+            &.-darkGreen {
+                &::before {
+                    background-color: $darkGreen;
+                }
+            }
+
             //*******************************//
             //****** ABSOLUTE IMAGES ********//
             //*******************************//
@@ -184,14 +190,14 @@
                 &__1-0 {
                     right: 0;
                     top: 10%;
-                    width: clamp-calc(70, 135);
+                    width: clamp-calc(80, 97);
                     object-fit: contain;
                     animation: slideLeft 700ms ease-in-out;
                 }
 
                 // Line
                 &__1-1 {
-                    left: 0;
+                    left: -30px;
                     top: 15%;
                     width: clamp-calc(130, 200);
                     object-fit: contain;
@@ -248,6 +254,23 @@
                     right: 2%;
                     top: 70%;
                     width: clamp-calc(22, 45);
+                    object-fit: contain;
+                    animation: slideLeft 700ms ease-in-out;
+                }
+                // Star
+                &__5-0 {
+                    left: 0;
+                    top: 20%;
+                    width: clamp-calc(80, 97);
+                    object-fit: contain;
+                    animation: slideRight 700ms ease-in-out;
+                }
+
+                // Line
+                &__5-1 {
+                    right: 0;
+                    top: 25%;
+                    width: clamp-calc(130, 200);
                     object-fit: contain;
                     animation: slideLeft 700ms ease-in-out;
                 }

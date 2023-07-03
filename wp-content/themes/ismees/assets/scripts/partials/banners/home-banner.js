@@ -79,10 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-asterisque.svg`
             ]
           },
+          {
+            banner: `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/slide-06.png`,
+            overlays: [
+                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-etoile.svg`,
+                `${baseUrl}/wp-content/themes/ismees/assets/images/home-images/handdraw-ligne-3.svg`
+            ]
+          },
     ];
 
     //Set the background color of the before element for each image => it must be set in the SCSS file with a new class
-    const colorClasses = ['-yellow', '-mint', '-blue', '-salmon','-purple'];
+    const colorClasses = ['-yellow', '-mint', '-blue', '-salmon','-purple','-darkGreen'];
   
     let currentImageIndex = 0;
     const bannerImage = document.getElementById('bannerImageCtn');
@@ -125,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Prepare the index for the next image
             currentImageIndex = (currentImageIndex + 1) % images.length;
-        }, 500); // Adjust with the animation time adn ensure it is lightly quicker than the setTiemout below
+        }, 550); // Adjust with the animation time adn ensure it is lightly quicker than the setTiemout below
 
         // Set a second delay to ensure that the "slide-out" animations complete
         setTimeout(() => {
@@ -149,12 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Call the preloading function
     preloadImages(imagesArray, () => {
         changeImage();
-        setInterval(changeImage, 8000);
-    });
-
-    document.addEventListener("visibilitychange", (event) => { 
-        if (document.visibilityState === "visible") {
-            changeImage();
-        }
+        setInterval(changeImage, 6000);
     });
 });
