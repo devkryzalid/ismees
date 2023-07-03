@@ -6,6 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuMainItems = document.querySelectorAll("#primary-menu .menu-item-has-children.main-item");
     const primaryMenuItems = document.querySelectorAll('#primary-menu .main-item');
 
+    let previousScrollPosition = 0;
+
+    // Define click handler as a named function
+    const titleClickHandler = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        let subMenu = this.nextElementSibling;
+        if (subMenu.style.maxHeight !== '0px') {
+            subMenu.style.maxHeight = '0px';
+            this.classList.remove('-show');
+        } else {
+            subMenu.style.maxHeight = subMenu.dataset.scrollHeight;
+            this.classList.add('-show');
+        }
+    }
 
     // ********* Display / Hide menu mobile ********* //
 
@@ -28,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileDropdowns = () => {
         let subChildMenus = document.querySelectorAll('.subChild-menu');
 
-        if(window.innerWidth <= 1280) { // 768px is a common breakpoint for mobile devices
+        if(window.innerWidth <= 1280) {
             subChildMenus.forEach((menu) => {
               menu.style.maxHeight = 'none';
               menu.dataset.scrollHeight = menu.scrollHeight + 'px';
@@ -38,18 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
             let titles = document.querySelectorAll('.has-sub-child-title');
             
             titles.forEach((title) => {
-              title.addEventListener('click', function(event) {
-                event.preventDefault();
-            
-                let subMenu = this.nextElementSibling;
-                if (subMenu.style.maxHeight !== '0px') {
-                  subMenu.style.maxHeight = '0px';
-                  this.classList.remove('-show');
-                } else {
-                  subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
-                  this.classList.add('-show');
-                }
-              });
+                // Remove previous click event listener
+                title.removeEventListener('click', titleClickHandler);
+                // Add new click event listener
+                title.addEventListener('click', titleClickHandler);
             });
         } else {
             subChildMenus.forEach((menu) => {
@@ -58,16 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }      
 
-    window.addEventListener('resize', function() {
-        mobileDropdowns();
-    });
+    mobileDropdowns();
+
+    window.addEventListener('resize', mobileDropdowns);
 
     // ********* Sticky Header Behavior ********* //
 
-    previousScrollPosition = 0;
-
     document.addEventListener('scroll', () => {
-
         if(window.scrollY >= 10) {
             header.classList.add("-sticky");
             header.classList.remove("-not-sticky");
@@ -83,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.classList.contains('customize-support') ? header.style.top = '32px' : header.style.top = '0';
                 previousScrollPosition = window.scrollY;
             }
-
         } else {
             header.classList.remove("-sticky");
             header.classList.add("-not-sticky");
@@ -131,11 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener('mouseleave', () => {
             header.classList.remove('-white-background');
         });
-
     });
 
     // ********* Open header on click ********* //
-
 
     //******* Set style to primary menu if it has sub-children *********//
 
@@ -144,22 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // If the childMenu has a descendant with class .has-sub-child
         if (childMenu.querySelector('.has-sub-child')) {
             childMenu.style.display = 'flex';
-
-            // if (window.innerWidth <= 1280) {
-            //     childMenu.style.gap = '30px';
-            // }
-
-            // window.addEventListener('resize', function() {
-            //     if (window.innerWidth <= 1280) {
-            //         childMenu.style.gap = '30px';
-            //     } else {
-            //         childMenu.style.gap = '0';
-            //     }
-            // });
         }
     });
 
-
-    window.dispatchEvent(new Event("resize"));
     window.dispatchEvent(new Event("scroll"));
 });
