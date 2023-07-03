@@ -203,6 +203,7 @@
                 font-size: 18px;
                 line-height: 22px;
                 @include flex(center, space-between);
+                cursor: pointer !important;
 
                 &::after {
                     font-family: "icomoon";

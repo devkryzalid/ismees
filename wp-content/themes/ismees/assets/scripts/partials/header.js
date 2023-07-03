@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileMenu();
 
-    // *********  ********* //
+    // ********* Add dropdown inside the sidebar menu ********* //
 
     // Calculate the subchildmenus initial height on load
     const mobileDropdowns = () => {

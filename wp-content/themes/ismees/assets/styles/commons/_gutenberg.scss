@@ -34,6 +34,17 @@
         }
     }
 
+    .wp-block-column {
+
+        &.has-background {
+            border-radius: 25px;
+            padding-left: clamp-calc(24, 50);
+            padding-right: clamp-calc(24, 50);
+            padding-top: clamp-calc(24, 50);
+            padding-bottom: clamp-calc(24, 50);
+        }
+    }
+
     .wp-block-embed-youtube {
         //max-width: 992px;
         margin-right: auto;

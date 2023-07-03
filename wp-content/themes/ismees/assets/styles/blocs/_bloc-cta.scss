@@ -1,11 +1,11 @@
 .bloc-cta {
     @include flex(center, center, column);
     background-color: white;
-    gap: 30px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: clamp-calc(17, 50);
-    padding-right: clamp-calc(17, 50);
+    gap: 10px;
+    padding-top: clamp-calc(24, 50);
+    padding-bottom: clamp-calc(24, 50);
+    padding-left: clamp-calc(24, 50);
+    padding-right: clamp-calc(24, 50);
     border-radius: 25px;
     margin-top: clamp-calc(60, 100);
     margin-bottom: clamp-calc(60, 100);

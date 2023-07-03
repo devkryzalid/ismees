@@ -76,14 +76,14 @@
 
                     #filters-count {
                         position: absolute;
-                        top: -12px;
-                        right: -12px;
+                        top: -11px;
+                        right: -11px;
                         @include flex();
                         border-radius: 50%;
-                        background-color: $yellow;
+                        background-color: $blue;
                         width: clamp-calc(20, 25);
                         height: clamp-calc(20, 25);
-                        @include responsive-font($primaryFont, 700, 14, 16, 17, 19, null, null, $darkBlue);
+                        @include responsive-font($primaryFont, 700, 14, 16, 17, 19, null, null, white);
                     }
                 }
             }
@@ -95,6 +95,7 @@
 
             i {
                 font-size: 18px;
+                margin-left: 0;
             }
         }
 
