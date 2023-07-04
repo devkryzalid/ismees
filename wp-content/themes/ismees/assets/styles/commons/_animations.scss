@@ -101,3 +101,11 @@
       stroke-dashoffset: 0;
     }
 }
+
+.write-svg {
+  path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 1.2s 1.2s linear forwards;
+  }
+}

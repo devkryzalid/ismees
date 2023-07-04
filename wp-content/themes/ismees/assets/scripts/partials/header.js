@@ -149,5 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    window.dispatchEvent(new Event("resize"));
     window.dispatchEvent(new Event("scroll"));
 });

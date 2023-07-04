@@ -303,8 +303,8 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "clamp(0.625rem, 0.5107rem + 0.4878vw, 0.9375rem)",
-						"bottom": "clamp(0.625rem, 0.5107rem + 0.4878vw, 0.9375rem)",
+						"top": "clamp(0.313rem, 0.5107rem + 0.4878vw, 0.625rem)",
+						"bottom": "clamp(0.313rem, 0.5107rem + 0.4878vw, 0.625rem)",
 						"left": "clamp(1.25rem, 1.0213rem + 0.9756vw, 1.875rem)",
 						"right": "clamp(1.25rem, 1.0213rem + 0.9756vw, 1.875rem)"
 					}

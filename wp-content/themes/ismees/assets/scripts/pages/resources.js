@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             displayFiltersDiv.appendChild(filterSpan);
+
         });
     }
 
@@ -68,4 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-

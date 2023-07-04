@@ -37,12 +37,11 @@ button {
     @include flex();
     @include responsive-font($primaryFont, 600, 16, 18, 18, 20, null, null);
     @include transition($basicTransition);
-    padding-top: clamp-calc(6, 15);
-    padding-bottom: clamp-calc(6, 15);
+    padding-top: clamp-calc(15, 20);
+    padding-bottom: clamp-calc(15, 20);
     padding-right: clamp-calc(20, 30);
     padding-left: clamp-calc(20, 30);
     border-radius: 8px;
-    min-height: 60px;
     text-align: center;
 
     i {
