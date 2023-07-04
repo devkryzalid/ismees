@@ -16,10 +16,12 @@
         }
     }
 
-    p {
-        &.has-small-font-size {
-            line-height: clamp-calc(24, 26);
-        }
+    .has-small-font-size {
+        line-height: clamp-calc(24, 26);
+    }
+
+    .has-large-font-size {
+        line-height: clamp-calc(33, 35);
     }
 
     .wp-block-image {
