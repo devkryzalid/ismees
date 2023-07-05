@@ -57,9 +57,10 @@ if ($type && isset($type->name) && isset($type->id)) {
     $type_addsearch_id = $type->id;
 }
 
-// Get the type icon
+// Get the type icon and placeholder
 if ($type) {
     $icon = get_field('icon', $type);
+    $placeholder = get_field('placeholder', $type);
 }
 // END OF THE CUSTOM FIELDS
 
@@ -74,6 +75,7 @@ $context['categories_addsearch_ids'] = $category_addsearch_ids;
 $context['subjects_addsearch_names'] = $subjects_addsearch_names;
 $context['subjects_addsearch_ids'] = $subjects_addsearch_ids;
 $context['icon'] = $icon;
+$context['placeholder'] = $placeholder;
 $context['main_category_id'] = $category->term_id;
 
 // Post context

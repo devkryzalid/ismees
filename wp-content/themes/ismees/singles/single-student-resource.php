@@ -55,9 +55,10 @@ if ($type && isset($type->name) && isset($type->id)) {
     $type_addsearch_id = $type->id;
 }
 
-// Get the type icon
+// Get the type icon and placeholder
 if ($type) {
     $icon = get_field('icon', $type);
+    $placeholder = get_field('placeholder', $type);
 }
 // END OF THE CUSTOM FIELDS
 

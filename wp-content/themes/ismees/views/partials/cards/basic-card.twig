@@ -1,16 +1,20 @@
 {% if item.terms('resource_student_type') %}
     {% set primaryType = get_primary_taxonomy(item.id, 'resource_student_type', true).name %}
     {% set iconType = get_primary_taxonomy(item.id, 'resource_student_type', true).icon %}
+    {% set placeholderImage = get_primary_taxonomy(item.id, 'resource_student_type', true).placeholder %}
 {% endif %}
 {% if item.terms('resource_member_type') %}
     {% set primaryType = get_primary_taxonomy(item.id, 'resource_member_type', true).name %}
     {% set iconType = get_primary_taxonomy(item.id, 'resource_member_type', true).icon %}
+    {% set placeholderImage = get_primary_taxonomy(item.id, 'resource_member_type', true).placeholder %}
 {% endif %}
 
 <div class="card-ctn jsBlockLink" tabindex="0" data-aos="fade-up" data-aos-delay="500">
     <div class="card-image-ctn">
         {% if item.thumbnail %}
             <img class="card-image" src="{{ item.thumbnail.src }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
+        {% elseif placeholderImage %}
+            <img class="card-image" src="{{ placeholderImage.url }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
         {% else %}
             <img class="card-image" src="{{site.home_url ~ '/wp-content/themes/ismees/assets/images/default-image.png' }}" alt="{{ __('Photo de ', 'ismées') ~ item.title }}" />
         {% endif %}

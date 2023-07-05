@@ -211,8 +211,8 @@ function mailtrap($phpmailer)
 if (function_exists('acf_add_options_page')) {
 
 	acf_add_options_page(array(
-		'page_title' => __('Configuration du thème', 'goute-au-loisir'),
-		'menu_title' => __('Configuration du thème', 'goute-au-loisir'),
+		'page_title' => __('Configuration du thème', 'ismees'),
+		'menu_title' => __('Configuration du thème', 'ismees'),
 		'menu_slug'  => 'theme-general-settings',
 		'capability' => 'edit_posts',
 		'redirect'   => true
@@ -220,8 +220,8 @@ if (function_exists('acf_add_options_page')) {
 
 	// Footer Option Page
 	acf_add_options_sub_page(array(
-		'page_title'  => __('Config du thème', 'goute-au-loisir'),
-		'menu_title'  => __('Config du thème', 'goute-au-loisir'),
+		'page_title'  => __('Config du thème', 'ismees'),
+		'menu_title'  => __('Config du thème', 'ismees'),
 		'parent_slug' => 'theme-general-settings',
 	));
 }

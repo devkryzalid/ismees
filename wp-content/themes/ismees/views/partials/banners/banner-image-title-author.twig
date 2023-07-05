@@ -1,6 +1,7 @@
 {% if taxonomy %}
     {% set onTitle = get_primary_taxonomy(post.id, taxonomy, true).name %}
     {% set iconCategory = get_primary_taxonomy(post.id, taxonomy, true).icon %}
+    {% set placeholderImage = get_primary_taxonomy(post.id, taxonomy, true).placeholder %}
 {% endif %}
 
 <div class="banner-image-title-author">
@@ -10,6 +11,8 @@
             <div class="banner-content-ctn">
                 {% if post.thumbnail %}
                     <img data-aos="fade-up" data-aos-delay="500" class="banner-image" src="{{ post.thumbnail }}" alt="{{ __('Image de', 'ismees') ~ post.title }}"/>
+                {% elseif placeholderImage %}
+                    <img data-aos="fade-up" data-aos-delay="500" class="banner-image" src="{{ placeholderImage.url }}" alt="{{ __('Image de', 'ismees') ~ post.title }}"/>
                 {% else %}
                     <img data-aos="fade-up" data-aos-delay="500" class="banner-image" src="{{ src ? src : theme.link ~ '/assets/images/default-image.png' }}" alt="{{ __('Image de', 'ismees') ~ post.title }}"/>
                 {% endif %}
