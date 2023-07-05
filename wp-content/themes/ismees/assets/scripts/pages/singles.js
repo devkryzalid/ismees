@@ -1,3 +1,5 @@
+import '../partials/like-button';
+
 document.addEventListener("DOMContentLoaded", () => {
     const moreResources = document.querySelector(".more-resources");
     const footerForm = document.querySelector(".footer-form");

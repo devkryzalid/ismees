@@ -10,9 +10,7 @@
         {% endif %}
         <div class="reviews-ctn">
             <p>{{ __('Ce contenu vous a-t-il été utile ?', 'ismees') }}</p>
-            {% filter shortcodes %}
-                [likebtn theme="custom" icon_l_url="http://ismees.kryzastage3.com/wp-content/uploads/2023/04/like.svg#161" icon_d_url="http://ismees.kryzastage3.com/wp-content/uploads/2023/04/dislike.svg#159" lang="fr" show_like_label="0" ef_voting="push" bp_notify="0"]
-            {% endfilter %}
+            <div id="like-dislike-ctn"></div>
         </div>
     </div>
 </div>
