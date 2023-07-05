@@ -303,15 +303,14 @@
 				},
 				"spacing": {
 					"padding": {
-						"top": "clamp(0.313rem, 0.5107rem + 0.4878vw, 0.625rem)",
-						"bottom": "clamp(0.313rem, 0.5107rem + 0.4878vw, 0.625rem)",
+						"top": "15px",
+						"bottom": "15px",
 						"left": "clamp(1.25rem, 1.0213rem + 0.9756vw, 1.875rem)",
 						"right": "clamp(1.25rem, 1.0213rem + 0.9756vw, 1.875rem)"
 					}
 				},
 				"typography": {
 					"fontFamily": "'Rubik', sans-serif",
-					"fontSize": "clamp(1.0625rem, 0.9482rem + 0.4878vw, 1.375rem)",
 					"fontWeight": "600"
 				},
 				"color": {

@@ -1,9 +1,15 @@
 <div class="slider-card jsBlockLink">
     <div class="card-image-ctn">
         {% if item.image.url  %}
-            <img class="card-image" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
+            <img class="card-image" src="{{ item.image.url }}" alt="{{ item.image.alt }}" />
         {% else %}
-            <img class="card-image" src="{{ theme.link }}/assets/images/default-image.png" alt="{{ item.image.alt }}" />
+            {% set post_id = url_to_postid(item.link.url) %}
+            {% if post_id %}
+                {% set post_thumbnail = get_post_thumbnail(post_id) %}
+                    <img class="card-image" src="{{ post_thumbnail }}" alt="{{ item.link.title }}" />
+                {% else %}
+                    <img class="card-image" src="{{ theme.link }}/assets/images/default-image.png" alt="{{ item.image.alt }}" />
+            {% endif %}
         {% endif %}
     </div>
     <a class="card-title" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a>

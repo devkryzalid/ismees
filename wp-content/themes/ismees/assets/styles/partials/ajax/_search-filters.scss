@@ -107,7 +107,7 @@
     #sidebarFilters {
         @include flex(flex-start, flex-start, column);
         background-color: white;
-        padding-top: 120px;
+        padding-top: 60px;
         padding-bottom: 80px;
         padding-left: clamp-calc(20, 60);
         padding-right: clamp-calc(20, 60);

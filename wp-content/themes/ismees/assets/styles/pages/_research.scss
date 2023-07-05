@@ -2,6 +2,10 @@ body.page-template-research {
     background-color: $paleBlue;
     position: relative;
 
+    #header {
+        top: 0 !important;
+    }
+
     .search-header {
         @include flex(center, center, column);
         padding-top: clamp-calc(240, 271);

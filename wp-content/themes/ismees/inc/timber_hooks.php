@@ -57,5 +57,13 @@ function add_to_twig($twig)
 	$twig->addFunction(new Timber\Twig_Function('get_primary_taxonomy', 'get_primary_taxonomy'));
 	$twig->addFunction(new Timber\Twig_Function('dd', 'dd'));
 
+	$twig->addFunction(new Timber\Twig_Function('url_to_postid', function($url) {
+        return url_to_postid($url);
+    }));
+
+	$twig->addFunction(new Timber\Twig_Function('get_post_thumbnail', function($post_id, $size = 'thumbnail') {
+        return get_the_post_thumbnail_url($post_id, $size);
+    }));
+
 	return $twig;
 }

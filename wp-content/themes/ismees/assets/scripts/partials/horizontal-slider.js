@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             slidesPerView: 'auto',
             spaceBetween: 50,
             navigation: { nextEl: `#${id} .next`, prevEl: `#${id} .prev` },
+            shortSwipes: false
         });
     });
 
