@@ -6,16 +6,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize ajax utils 
     const ajax = new AjaxForm();
 
-    /********************************* FILTERS DISPLAY *************************************/
-
-
-    //Handle the filters display when a checkbox is checked
+    // Handle the filters display when a checkbox is checked
     const filters = document.querySelectorAll('.filter-item input[type="checkbox"]');
     let filtersArray = [];
 
+    // Get the div elements
+    const filtersInfoCtn = document.querySelector('.filters-infos-ctn .container');
+    const filtersInfoCtnMobile = document.querySelector('.filters-infos-ctn-mobile');
+    const filtersInfoDiv = filtersInfoCtn.querySelector('.filters-infos');
+
+    // Function to update display based on viewport size
+    const handleWindowResize = () => {
+        if (window.innerWidth <= 992) {
+            if (!filtersInfoCtnMobile.contains(filtersInfoDiv)) {
+                filtersInfoCtnMobile.appendChild(filtersInfoDiv);
+            }
+        } else {
+            if (!filtersInfoCtn.contains(filtersInfoDiv)) {
+                filtersInfoCtn.appendChild(filtersInfoDiv);
+            }
+        }
+    };
+
+    // Define display filters function
     const displayFilters = () => {
         // Get the div element with the id 'display-filters'
-        const displayFiltersDiv = document.getElementById('display-filters');
+        const displayFiltersDiv = filtersInfoDiv.querySelector('#display-filters');
 
         // Clear the div's innerHTML to remove any previous filters
         displayFiltersDiv.innerHTML = '';
@@ -38,10 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             displayFiltersDiv.appendChild(filterSpan);
-
         });
-    }
+    };
 
+    // Add event listeners to filters
     filters.forEach((filter) => {
         // Add checked filters on page load
         if(filter.checked) { 
@@ -68,4 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // Handle window resize
+    window.addEventListener('resize', handleWindowResize);
+
+    // Call handleWindowResize on load to handle case where window is already <= 992px on load
+    handleWindowResize();
 });

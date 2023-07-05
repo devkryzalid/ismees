@@ -25,5 +25,8 @@
 
 	{% block addsearch_param %} <script id="addsearch-param"></script> {% endblock %}
 	{% block specific_script %}{% endblock %}
+	{% block globalScript %}
+		<script src="{{ theme.link }}/dist/scripts/pages/global.js"></script>
+	{% endblock %}
 </body>
 </html>

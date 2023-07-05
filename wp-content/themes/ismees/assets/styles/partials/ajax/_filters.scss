@@ -55,6 +55,7 @@
             .subFilters {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 30px;
 
                 .dropdown-filters-ctn {
                     @include flex(center, flex-start);
@@ -116,14 +117,17 @@
 .filters-infos-ctn {
     background-color: $mainBG;
     padding-top: 30px;
+}
 
-    .filters-infos,
-    #display-filters {
-        @include flex(center, flex-start, row);
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+.filters-infos,
+#display-filters, 
+#display-filters-mobile {
+    @include flex(center, flex-start, row);
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
+.filters-infos {
     .filter {
         display: inline-block;
         @include responsive-font($primaryFont, 500, 13, 14, 16, 17, null, null);
@@ -133,11 +137,11 @@
         background-color: $blue;
         color: white;
         text-align: center;
-
+    
         &:hover {
             text-decoration: line-through;
         }
-
+    
         &::after {
             content: "\e911";
             font-family: 'icomoon' !important;
