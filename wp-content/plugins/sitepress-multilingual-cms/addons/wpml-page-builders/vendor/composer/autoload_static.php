@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd1d01bd7ce63adf46be85c9deb725f8f
+class ComposerStaticIniteb627050efea67f0981dd871bc0302b0
 {
     public static $files = array (
         'b45b351e6b6f7487d819961fef2fda77' => __DIR__ . '/..' . '/jakeasmith/http_build_url/src/http_build_url.php',
@@ -46,6 +46,7 @@ class ComposerStaticInitd1d01bd7ce63adf46be85c9deb725f8f
         'WPML\\PB\\AutoUpdate\\TranslationStatus' => __DIR__ . '/../..' . '/classes/Shared/AutoUpdate/TranslationStatus.php',
         'WPML\\PB\\BeaverBuilder\\Config\\Factory' => __DIR__ . '/../..' . '/classes/Integrations/BeaverBuilder/Config/Factory.php',
         'WPML\\PB\\BeaverBuilder\\Hooks\\Editor' => __DIR__ . '/../..' . '/classes/Integrations/BeaverBuilder/Hooks/Editor.php',
+        'WPML\\PB\\BeaverBuilder\\Hooks\\Menu' => __DIR__ . '/../..' . '/classes/Integrations/BeaverBuilder/Hooks/Menu.php',
         'WPML\\PB\\BeaverBuilder\\Modules\\ModuleWithItemsFromConfig' => __DIR__ . '/../..' . '/classes/Integrations/BeaverBuilder/modules/ModuleWithItemsFromConfig.php',
         'WPML\\PB\\BeaverBuilder\\TranslationJob\\Hooks' => __DIR__ . '/../..' . '/classes/Integrations/BeaverBuilder/TranslationJob/Hooks.php',
         'WPML\\PB\\Config\\Factory' => __DIR__ . '/../..' . '/classes/Shared/Config/Factory.php',
@@ -62,6 +63,9 @@ class ComposerStaticInitd1d01bd7ce63adf46be85c9deb725f8f
         'WPML\\PB\\Elementor\\Config\\DynamicElements\\EssentialAddons\\ContentTimeline' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/EssentialAddons/ContentTimeline.php',
         'WPML\\PB\\Elementor\\Config\\DynamicElements\\FormPopup' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/FormPopup.php',
         'WPML\\PB\\Elementor\\Config\\DynamicElements\\Hotspot' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/Hotspot.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\IconList' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/IconList.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\LoopCarousel' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/LoopCarousel.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\LoopGrid' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/LoopGrid.php',
         'WPML\\PB\\Elementor\\Config\\DynamicElements\\Popup' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/Popup.php',
         'WPML\\PB\\Elementor\\Config\\DynamicElements\\Provider' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/Provider.php',
         'WPML\\PB\\Elementor\\Config\\DynamicElements\\WooProduct' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/WooProduct.php',
@@ -71,6 +75,7 @@ class ComposerStaticInitd1d01bd7ce63adf46be85c9deb725f8f
         'WPML\\PB\\Elementor\\DynamicContent\\Strings' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/DynamicContent/Strings.php',
         'WPML\\PB\\Elementor\\Helper\\Node' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Helper/Node.php',
         'WPML\\PB\\Elementor\\Helper\\StringFormat' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Helper/StringFormat.php',
+        'WPML\\PB\\Elementor\\Hooks\\CssCache' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/CssCache.php',
         'WPML\\PB\\Elementor\\Hooks\\DomainsWithMultisite' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/DomainsWithMultisite.php',
         'WPML\\PB\\Elementor\\Hooks\\DynamicElements' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/DynamicElements.php',
         'WPML\\PB\\Elementor\\Hooks\\Editor' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/Editor.php',
@@ -299,7 +304,7 @@ class ComposerStaticInitd1d01bd7ce63adf46be85c9deb725f8f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitd1d01bd7ce63adf46be85c9deb725f8f::$classMap;
+            $loader->classMap = ComposerStaticIniteb627050efea67f0981dd871bc0302b0::$classMap;
 
         }, null, ClassLoader::class);
     }

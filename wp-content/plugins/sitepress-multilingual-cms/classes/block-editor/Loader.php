@@ -18,23 +18,25 @@ class Loader implements \IWPML_Backend_Action, \IWPML_REST_Action {
 	private $localizedScriptData = [];
 
 	public function add_hooks() {
+		if ( \WPML_Block_Editor_Helper::is_active() ) {
+			Hooks::onAction( 'init' )
+			     ->then( [ $this, 'registerBlocks' ] );
 
-		Hooks::onAction( 'init' )
-			->then( [ $this, 'registerBlocks' ] );
+			Hooks::onAction( 'wp_enqueue_scripts' )
+			     ->then( [ $this, 'enqueueBlockStyles' ] );
 
-		Hooks::onAction( 'wp_enqueue_scripts' )
-		     ->then( [ $this, 'enqueueBlockStyles' ] );
+			Hooks::onAction( 'enqueue_block_editor_assets' )
+			     ->then( [ $this, 'enqueueBlockAssets' ] );
 
-		Hooks::onAction( 'enqueue_block_editor_assets' )
-			->then( [ $this, 'enqueueBlockAssets' ] );
-
-		Hooks::onFilter( 'block_categories_all', 10, 2 )
-			->then( spreadArgs( [ $this, 'registerCategory' ] ) );
+			Hooks::onFilter( 'block_categories_all', 10, 2 )
+			     ->then( spreadArgs( [ $this, 'registerCategory' ] ) );
+		}
 	}
 
 	/**
 	 * @param array[] $block_categories
 	 * @param \WP_Block_Editor_Context $editor_context
+	 *
 	 * @return mixed
 	 */
 	public function registerCategory( $block_categories, $editor_context ) {
@@ -48,6 +50,7 @@ class Loader implements \IWPML_Backend_Action, \IWPML_REST_Action {
 				]
 			);
 		}
+
 		return $block_categories;
 	}
 
@@ -63,12 +66,11 @@ class Loader implements \IWPML_Backend_Action, \IWPML_REST_Action {
 	 * @return void
 	 */
 	public function enqueueBlockAssets() {
-		$dependencies = [
+		$dependencies = array_merge( [
 			'wp-blocks',
 			'wp-i18n',
 			'wp-element',
-			'wp-editor',
-		];
+		], $this->getEditorDependencies() );
 		$localizedScriptData = [ 'name' => 'WPMLBlocks', 'data' => $this->localizedScriptData ];
 		$enqueuedApp = Resources::enqueueApp( 'blocks' );
 		$enqueuedApp( $localizedScriptData, $dependencies );
@@ -81,5 +83,18 @@ class Loader implements \IWPML_Backend_Action, \IWPML_REST_Action {
 			[],
 			ICL_SITEPRESS_VERSION
 		);
+	}
+
+	/**
+	 * @return string[]
+	 */
+	public function getEditorDependencies() {
+		global $pagenow;
+
+		if ( is_admin() && 'widgets.php' === $pagenow ) {
+			return [ 'wp-edit-widgets' ];
+		}
+
+		return [ 'wp-editor' ];
 	}
 }
