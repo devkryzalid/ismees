@@ -59,15 +59,15 @@
         @include transition($basicTransition);
         height: 0;
 
-        .container {
-            padding-top: clamp-calc(60, 100);
-            padding-bottom: clamp-calc(150, 190);
-        }
-
         .container-style {
             background-color: $yellow;
             border-radius: 50px 0 0 0;
             @include transition($basicTransition);
+            padding-top: clamp-calc(60, 100);
+            padding-bottom: clamp-calc(150, 190);
+            padding-right: clamp-calc(20, 75, 375, 992);
+            padding-left: clamp-calc(20, 75, 375, 992);
+            width: 100%;
         }
 
         .error {

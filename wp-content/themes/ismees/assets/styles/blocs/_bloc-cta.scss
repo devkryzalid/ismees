@@ -1,7 +1,7 @@
 .bloc-cta {
     @include flex(center, center, column);
     background-color: white;
-    gap: 10px;
+    gap: 30px;
     padding-top: clamp-calc(24, 50);
     padding-bottom: clamp-calc(24, 50);
     padding-left: clamp-calc(24, 50);
