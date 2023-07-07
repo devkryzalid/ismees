@@ -1,18 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const bannerImageCtn = document.getElementById('bannerImageCtn');
   let imageWidth;
-
-  // Get the first image
   let image = document.querySelector(".banner-placeholder");
   imageWidth = image.offsetWidth;
   bannerImageCtn.style.width = `${imageWidth}px`;
-
-  // Adjust the width of the banner container on window resize
-  window.addEventListener('resize', () => {
-    bannerImageCtn.style.width = "";
-    imageWidth = image.offsetWidth;
-    bannerImageCtn.style.width = `${imageWidth}px`;
-  });
 
   const animationContainer = document.querySelector('.banner-image-ctn');
   const bannerImages = Array.from(animationContainer.querySelectorAll('.banner-img'));
@@ -20,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentIndex = 0;
 
-  // Function to reset animation classes
+  // Remove all animation classes from all banner images and their overlay images
   const resetAnimationClasses = () => {
     bannerImages.forEach((imageCtn) => {
       imageCtn.classList.remove('slide-out');
@@ -34,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Function to slide in an image and its overlay
+  // Add slide-in and fade-in classes to a specified banner image and its overlay images
   const slideIn = (index) => {
     bannerImages[index].classList.add('slide-up');
     let overlayImages = bannerImages[index].parentNode.querySelectorAll('.overlay-image');
@@ -43,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Function to slide out an image and its overlay
+  // Add slide-out and fade-out classes to a specified banner image and its overlay images
   const slideOut = (index) => {
     let prevIndex = index - 1 >= 0 ? index - 1 : bannerImages.length - 1;
     if (bannerImages[prevIndex]) {
@@ -55,17 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Function to change the color class of the animation container
+  // Change the color class of the animation container based on the current index
   const changeColor = (index) => {
     const colorIndex = (index + colorArray.length - 1) % colorArray.length;
     const previousColorIndex = (colorIndex - 1 + colorArray.length) % colorArray.length;
-    // Add new color class
     animationContainer.classList.add(`-${colorArray[colorIndex]}`);
-    // Remove old color class
     animationContainer.classList.remove(`-${colorArray[previousColorIndex]}`);
   };
 
-  // Function to start the animation
+  // Reset all animations, then starts slide-in and slide-out animations, and schedules a color change
   const startAnimation = () => {
     resetAnimationClasses();
     slideIn(currentIndex);
@@ -76,7 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 600); // Adjust the delay duration as needed
   };
 
-  startAnimation();
+  // Set the width of the banner container to match the current width of the first image
+  const setBannerWidth = () => {
+    imageWidth = image.offsetWidth;
+    bannerImageCtn.style.width = `${imageWidth}px`;
+  };
+
+  // Set the initial width of the banner container
+  setBannerWidth();
+
+  // Update the width of the banner container when the window is resized
+  window.addEventListener('resize', () => {
+    requestAnimationFrame(setBannerWidth);
+  });
+
+  // Start the animation once the browser is ready to draw the next frame
+  requestAnimationFrame(startAnimation);
 
   // Repeat the animation every 6 seconds
   setInterval(startAnimation, 6000);
