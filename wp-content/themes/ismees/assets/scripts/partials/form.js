@@ -2,9 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const openFormButton = document.querySelector(".subscribe-button");
     const form = document.getElementById('subscriptionForm');
     const footerForm = document.querySelector(".footer-form");
-    const footer = document.querySelector(".footer");
     let formHeight;
     const fields = ['name', 'surname', 'email', 'establishment'];
+    const baseUrl = window.location.origin;
+    const successMessage = document.querySelector('.success-message');
 
     const patterns = {
         name: /^[a-zA-ZÀ-ÿ]+$/,
@@ -38,18 +39,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function submitForm() {
         const formData = new FormData(document.getElementById('subscriptionForm'));
-
+        
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+    
+        const requestData = {
+            email: data.email,
+            name: data.name,
+            surname: data.surname,
+            target: data.target,
+            status: 'subscribed',
+            establishment: data.establishment,
+        };
+    
         try {
-            // const response = await fetch('path/to/your/endpoint', {
-            //     method: 'POST',
-            //     body: formData
-            // });
+            const response = await fetch(`${baseUrl}/wp-content/themes/ismees/templates/form.php`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData)
+            });
 
-            // if (response.ok) {
-                console.log(formData);
-            // } else {
-            //     console.error('Failed to submit form.');
-            // }
+            if (response.ok) {
+                successMessage.style.display = 'block';
+                form.reset();
+            }
+
         } catch (error) {
             console.error('Error:', error);
         }

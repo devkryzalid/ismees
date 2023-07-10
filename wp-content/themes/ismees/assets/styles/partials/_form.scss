@@ -58,6 +58,7 @@
     #subscriptionForm {
         @include transition($basicTransition);
         height: 0;
+        position: relative;
 
         .container-style {
             background-color: $yellow;
@@ -160,6 +161,15 @@
                 white-space: nowrap;
             }
         }
+    }
+
+    .success-message {
+        display: none;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 40px;
+        text-align: center;
     }
 
     @media(max-width: 992px) {

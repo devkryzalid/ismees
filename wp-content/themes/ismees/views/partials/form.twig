@@ -9,12 +9,12 @@
                 <p>{{ __('Lorem ipsum dolor sit amet consectetur. In tristique posuere pharetra nulla nisl.', 'ismees') }}</p>
                 <div class="radio-ctn">
                     <label>
-                        <input type="radio" name="status" value="etudiant" required checked aria-label="{{ __('Étudiant', 'ismees') }}">
+                        <input type="radio" name="target" value="etudiant" required checked aria-label="{{ __('Étudiant', 'ismees') }}">
                         <span class="radio-circle"></span>
                         {{ __('Étudiant', 'ismees') }}
                     </label>
                     <label>
-                        <input type="radio" name="status" value="personnel" aria-label="{{ __('Membre du personnel', 'ismees') }}">
+                        <input type="radio" name="target" value="personnel" aria-label="{{ __('Membre du personnel', 'ismees') }}">
                         <span class="radio-circle"></span>
                         {{ __('Membre du personnel', 'ismees') }}
                     </label>
@@ -22,23 +22,24 @@
             </div>
             <div class="inputs-ctn">
                 <div class="input">
-                    <input type="text" id="name" placeholder="Prénom" required aria-label="{{ __('Prénom', 'ismees') }}">
+                    <input type="text" id="name" name="name" placeholder="Prénom" required aria-label="{{ __('Prénom', 'ismees') }}">
                     <span id="nameError" class="error" role="alert">{{ __('Le prénom est invalide', 'ismees') }}</span>
                 </div>
                 <div class="input">
-                    <input type="text" id="surname" placeholder="Nom" required aria-label="{{ __('Nom', 'ismees') }}">
+                    <input type="text" id="surname" name="surname" placeholder="Nom" required aria-label="{{ __('Nom', 'ismees') }}">
                     <span id="surnameError" class="error" role="alert">{{ __('Le champs nom est invalide', 'ismees') }}</span>
                 </div>
                 <div class="input">
-                    <input type="email" id="email" placeholder="Courriel" required aria-label="{{ __('Courriel', 'ismees') }}">
+                    <input type="email" id="email" name="email" placeholder="Courriel" required aria-label="{{ __('Courriel', 'ismees') }}">
                     <span id="emailError" class="error" role="alert">{{ __('Le courriel est invalide', 'ismees') }}</span>
                 </div>
                 <div class="input">
-                    <input type="text" id="establishment" placeholder="Établissement ou organisation" required aria-label="{{ __('Établissement ou organisation', 'ismees') }}">
+                    <input type="text" id="establishment" name="establishment" placeholder="Établissement ou organisation" required aria-label="{{ __('Établissement ou organisation', 'ismees') }}">
                     <span id="establishmentError" class="error" role="alert">{{ __('L\'établissement est invalide', 'ismees') }}</span>
                 </div>
                 <button class="main-button -blue" type="submit" aria-label="{{ __('Je m\'abonne', 'ismees') }}">{{ __('Je m\'abonne', 'ismees') }}<i class="icon-arrow-right-bold"></i></button>
             </div>
+            <p class="success-message">{{ __('Vous avez été enregistré avec succès !', 'ismees')}}</p>
         </div>
     </form>
 </div>
